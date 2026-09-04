@@ -70,18 +70,18 @@ Hiring directors at top international firms (*Foster + Partners*, *BIG*, *Gensle
 
 Based on our empirical study of top international portfolios, every spatial designer should map their work to one of these 10 distinct archetypes:
 
-| Archetype | Best For | Recommended Format | Key Proof Elements | Master Benchmark |
+| Archetype | Best For | Recommended Format | Key Proof Elements | Exemplar Typology Focus |
 | :--- | :--- | :--- | :--- | :--- |
-| **01. The Swiss Editorial Landscape** | Academic $	o$ Agency Junior Architects | 24 spreads (48p), 16:9 or A4 Landscape | Huge 20% opacity display numbers (`01`–`06`), circular vignettes, on-site construction drone photos | **Thibault Chrétien** (MJM Rennes) |
-| **02. The Technical Office Working Set** | Technical Office Engineers & Site Architects | 30–35 pages, A3/A4 Landscape | 90% technical working drawings, parapet waterproofing details, mechanical anchor brackets | **Salma Sameh** (Helwan Fine Arts) |
-| **03. The French Luxury Minimalist Book** | Interior Architects, Decorators & Ateliers | 28–32 pages, A4 Landscape | Custom monogram branding, warm greige palette, material triptychs, bespoke furniture prototype | **Orlane Bizeray** (`@byobstudio`) |
-| **04. The Phenomenological Storyboard** | Cultural, Memorial & Narrative Architects | 24–26 spreads (50p), A4 Landscape | 6-panel comic-strip graphic narratives, psychological user journeys, physical clay models | **Neha George** (MCAP Kerala) |
-| **05. The Feminist Urbanist & Social Researcher** | Urban Designers, Master Planners & Civic Think-Tanks | 24–30 pages, A4 Landscape | Empirical safety audits (Nirbhaya route), 12-factor inclusive typologies, circular before/after isometrics | **Aishwarya Bagwe** (IIT Chicago) |
-| **06. The Vernacular & Ecological Monograph** | Tropical, Bioclimatic & Heritage Practices | 30–36 pages, Square Format (1:1) | Terracotta/clay palette, graphite isometrics, published editorial monographs (*Stalapuranam*) | **Alif Ahammed** (MCAP Kerala) |
-| **07. The Regenerative Environmental Systems** | Climate Resilience & International Consultancies | 50–60 pages, A4 Landscape | Floating infrastructure, invasive species remediation, international competition laureates | **Nayera Sabet** (Cairo / Dar Al-Handasah) |
-| **08. The Commercial Interior Specifier** | Retail, Hospitality & Exhibition Designers | 45–52 pages, A4 Landscape | Full execution blueprints, luminaire schedules (L1–L29), exact material cost estimates (€/m²) | **Loan Lubrano** (MJM Marseille) |
-| **09. The Multi-Scale Infrastructure Architect** | Large Consultancies & Infrastructure Firms | 18–22 pages, A4 Landscape | Macro transit stations $	o$ structural exploded axonometrics $	o$ bespoke interior joinery | **Raden Ontoseno** (Diponegoro Univ) |
-| **10. The Industrial Housing & Net-Zero BIM** | Multi-Family Housing & BIM Specialists | 20–24 pages, A4 Landscape | Affordable workforce housing clusters, Solar Decathlon Net-Zero leadership, Grasshopper façades | **Sarfaraz Shaik** (SPA JNAFAU) |
+| **01. The Swiss Editorial Landscape** | Academic $\rightarrow$ Agency Junior Architects | 24 spreads (48p), 16:9 or A4 Landscape | Huge 20% opacity display numbers (`01`–`06`), circular vignettes, on-site construction drone photos | European Contemporary Agency Practice & Field Supervision |
+| **02. The Technical Office Working Set** | Technical Office Engineers & Site Architects | 30–35 pages, A3/A4 Landscape | 90% technical working drawings, parapet waterproofing details, mechanical anchor brackets | Large General Contractors & MEP/Structural Coordination |
+| **03. The French Luxury Minimalist Book** | Interior Architects, Decorators & Ateliers | 28–32 pages, A4 Landscape | Custom monogram branding, warm greige palette, material triptychs, bespoke furniture prototype | Parisian High-End Residential & Heritage Longère Ateliers |
+| **04. The Phenomenological Storyboard** | Cultural, Memorial & Narrative Architects | 24–26 spreads (50p), A4 Landscape | 6-panel comic-strip graphic narratives, psychological user journeys, physical clay models | Cultural Institutions & Narrative-Led Memorial Competitions |
+| **05. The Feminist Urbanist & Social Researcher** | Urban Designers, Master Planners & Civic Think-Tanks | 24–30 pages, A4 Landscape | Empirical safety audits (Nirbhaya route), 12-factor inclusive typologies, circular before/after isometrics | Progressive Civic Foundations & Inclusive Master Planning |
+| **06. The Vernacular & Ecological Monograph** | Tropical, Bioclimatic & Heritage Practices | 30–36 pages, Square Format (1:1) | Terracotta/clay palette, graphite isometrics, published editorial monographs (*Stalapuranam*) | Bioclimatic Vernacular Research & Publishing Collectives |
+| **07. The Regenerative Environmental Systems** | Climate Resilience & International Consultancies | 50–60 pages, A4 Landscape | Floating infrastructure, vertical agro-hubs, invasive remediation, international laureates | International Climate Consultancies & Environmental Infrastructure |
+| **08. The Commercial Interior Specifier** | Retail, Hospitality & Exhibition Designers | 45–52 pages, A4 Landscape | Full execution blueprints, luminaire schedules (L1–L29), exact material cost estimates (€/m²) | Commercial Retail Brands, Hospitality Fitouts & Trade Stands |
+| **09. The Multi-Scale Infrastructure Architect** | Large Consultancies & Infrastructure Firms | 18–22 pages, A4 Landscape | Macro transit stations $\rightarrow$ structural exploded axonometrics $\rightarrow$ bespoke interior joinery | Transit Authorities & Multi-Disciplinary Engineering Firms |
+| **10. The Industrial Housing & Net-Zero BIM** | Multi-Family Housing & BIM Specialists | 20–24 pages, A4 Landscape | Affordable workforce housing clusters, Solar Decathlon Net-Zero leadership, Grasshopper façades | Net-Zero Residential Developers & Computational BIM Practices |
 
 ---
 

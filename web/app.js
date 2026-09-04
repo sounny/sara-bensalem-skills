@@ -81,7 +81,7 @@ const ARCHETYPES_DATA = [
     category: "Architecture",
     budget: "24 Spreads (48 Pages)",
     format: "16:9 / A4 Landscape",
-    benchmark: "Thibault Chrétien (MJM Rennes / Agence VM)",
+    typology: "Contemporary European Agency & Field Practice",
     target: "European design consultancies & international agencies",
     summary: "Panoramic double-spread balance, large 20% opacity display numbers (01-06), circular vignettes, and on-site construction drone photography."
   },
@@ -91,8 +91,8 @@ const ARCHETYPES_DATA = [
     category: "Technical",
     budget: "30-35 Pages",
     format: "A3 / A4 Landscape",
-    benchmark: "Salma Sameh Mahdy (Helwan Univ Fine Arts)",
-    target: "General contractors & engineering consultancies (AECOM, Dar Al-Handasah)",
+    typology: "Tectonic Detailing, Working Sets & Execution Engineering",
+    target: "General contractors & engineering consultancies (AECOM, Bouygues, Dar Al-Handasah)",
     summary: "Reverses the render trap completely (90% technical working drawings, 10% renders), parapet waterproofing, mechanical stone anchor brackets."
   },
   {
@@ -101,9 +101,9 @@ const ARCHETYPES_DATA = [
     category: "Interior",
     budget: "28-32 Pages",
     format: "A4 Landscape",
-    benchmark: "Orlane Bizeray (@byobstudio / MJM Rennes)",
+    typology: "Parisian High-End Residential & Heritage Longère Ateliers",
     target: "Parisian interior architecture ateliers & luxury hospitality studios",
-    summary: "Custom monogram branding (OB), warm greige minimalism, historic Breton farmhouse conversions, and custom timber lamp prototyping."
+    summary: "Custom monogram branding, warm greige minimalism, historic stone longère conversions, and custom timber furniture prototyping."
   },
   {
     id: "04",
@@ -111,7 +111,7 @@ const ARCHETYPES_DATA = [
     category: "Architecture",
     budget: "26 Spreads (52 Pages)",
     format: "A4 Landscape",
-    benchmark: "Neha George Mampilly (Marian College of Architecture)",
+    typology: "Cultural Memorials & Phenomenological Spatial Storytelling",
     target: "Cultural institutions, memorial design studios, narrative firms",
     summary: "6-panel comic-strip graphic narrative walking reviewers through sensory and psychological user journeys, physical clay study models."
   },
@@ -121,9 +121,9 @@ const ARCHETYPES_DATA = [
     category: "Urban",
     budget: "24-30 Pages",
     format: "A4 Landscape",
-    benchmark: "Aishwarya Bagwe (MS Arch, IIT Chicago)",
+    typology: "Inclusive Urbanism, Empirical Safety Audits & Healing Environments",
     target: "Civic design foundations & progressive urban planning consultancies",
-    summary: "Empirical safety audit of the Delhi Nirbhaya transit corridor, 12-factor inclusive urban design typology, and circular before/after comparative isometrics."
+    summary: "Empirical safety audit of public transit corridors, 12-factor inclusive urban design typology, and circular before/after comparative isometrics."
   },
   {
     id: "06",
@@ -131,9 +131,9 @@ const ARCHETYPES_DATA = [
     category: "Architecture",
     budget: "30-36 Pages",
     format: "Square (1:1) / A4 Portrait",
-    benchmark: "Alif Ahammed (MCAP Kerala)",
-    target: "Bioclimatic practices (Biome Environmental), tropical institutes",
-    summary: "Restrained square format, terracotta/clay massing diagrams, graphite isometrics, and published research monographs as Chief Editor."
+    typology: "Bioclimatic Earth Craft & Architectural Research Monographs",
+    target: "Bioclimatic practices, tropical institutes, research foundations",
+    summary: "Restrained square format, terracotta/clay massing diagrams, graphite isometrics, and published research monographs."
   },
   {
     id: "07",
@@ -141,9 +141,9 @@ const ARCHETYPES_DATA = [
     category: "Urban",
     budget: "50-60 Pages",
     format: "A4 Landscape",
-    benchmark: "Nayera Sabet (Cairo Univ / Dar Al-Handasah)",
+    typology: "Climate Resilience, Agro-Industrial Hubs & Water Infrastructure",
     target: "Global concept consultancies (BIG, Foster + Partners, Snøhetta)",
-    summary: "Floating timber infrastructure on Lake Manzala solving invasive hyacinth crisis through community fisheries and international competition awards."
+    summary: "Aquatic remediation infrastructure, vertical automated hydroponics, salinity mitigation systems, and international competition awards."
   },
   {
     id: "08",
@@ -151,9 +151,9 @@ const ARCHETYPES_DATA = [
     category: "Interior",
     budget: "45-52 Pages",
     format: "A4 Landscape",
-    benchmark: "Loan Lubrano di Sbaraglione (MJM Marseille)",
+    typology: "Commercial Retail Showrooms, Hospitality & Lighting Execution",
     target: "Commercial retail agencies & exhibition stand architects",
-    summary: "Tender-ready specification sheets with luminaire schedules (L1-L29), exact material pricing (€/m²), and Tadao Ando-inspired showroom pavilions."
+    summary: "Tender-ready specification sheets with luminaire schedules (L1-L29), exact material pricing (€/m²), and high-end showroom pavilions."
   },
   {
     id: "09",
@@ -161,7 +161,7 @@ const ARCHETYPES_DATA = [
     category: "Architecture",
     budget: "18-22 Pages",
     format: "A4 Landscape",
-    benchmark: "Raden Ontoseno Haryoputra (Diponegoro Univ, GPA 3.74)",
+    typology: "Multi-Modal Transit Terminals & Tectonic Joinery",
     target: "Multidisciplinary consultancies & state transit infrastructure agencies",
     summary: "Balanced agility moving from macro LRT transit terminal stations to exploded structural skin axonometrics down to bespoke interior joinery."
   },
@@ -171,9 +171,9 @@ const ARCHETYPES_DATA = [
     category: "Technical",
     budget: "20-24 Pages",
     format: "A4 Landscape",
-    benchmark: "Sarfaraz Shaik (SPA JNAFAU Hyderabad)",
+    typology: "Net-Zero Multi-Family Housing & Parametric BIM Façades",
     target: "Multi-family residential developers & computational design studios",
-    summary: "Orvakal Drone Manufacturing Hub workforce housing cluster, Solar Decathlon India Net-Zero team leadership, and built freelance duplex commissions."
+    summary: "Modular workforce housing clusters, Solar Decathlon Net-Zero team leadership, built residential commissions, and parametric solar screens."
   }
 ];
 
@@ -419,8 +419,8 @@ function initArchetypes() {
               <span class="font-semibold text-slate-200">${a.format}</span>
             </div>
             <div class="text-slate-400 pt-1">
-              <span class="block text-slate-500 mb-0.5">Benchmark Citation:</span>
-              <span class="text-brand-300 font-medium">${a.benchmark}</span>
+              <span class="block text-slate-500 mb-0.5">Typology Focus:</span>
+              <span class="text-brand-300 font-medium">${a.typology}</span>
             </div>
           </div>
         </div>

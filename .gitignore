@@ -17,3 +17,18 @@ firebase-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# Portfolios, PDFs & External Candidate Data (Strictly Private)
+[Pp]ortfolios/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.tiff
+*case_study*
+*CASE_STUDY*
+extracted_content*
+pages/
+scratch/
+.temp/

@@ -59,16 +59,16 @@ Hiring directors at premier international studios (*Foster + Partners*, *BIG*, *
 4. **The Monotonous Grid Trap**: Identical 4-box grids on every spread with no breathing room or white space.
 
 ### The 10 Field-Tested Layout Archetypes
-1. **The Swiss Editorial Landscape** (Junior to Intermediate Agency Architects — *Benchmark: Thibault Chrétien*)
-2. **The Technical Office Working Set** (Execution & Site Architects — *Benchmark: Salma Sameh*)
-3. **The French Luxury Minimalist Book** (Interior Architects & Decorators — *Benchmark: Orlane Bizeray*)
-4. **The Phenomenological Storyboard** (Cultural & Narrative Architects — *Benchmark: Neha George*)
-5. **The Feminist Urbanist & Social Researcher** (Civic & Master Planners — *Benchmark: Aishwarya Bagwe*)
-6. **The Vernacular & Ecological Monograph** (Tropical & Heritage Practices — *Benchmark: Alif Ahammed*)
-7. **The Regenerative Environmental Systems** (Resilience Consultancies — *Benchmark: Nayera Sabet*)
-8. **The Commercial Interior Specifier** (Retail & Hospitality Designers — *Benchmark: Loan Lubrano*)
-9. **The Multi-Scale Infrastructure Architect** (Transit & Large Scale — *Benchmark: Raden Ontoseno*)
-10. **The Industrial Housing & Net-Zero BIM** (Affordable Housing & BIM — *Benchmark: Sarfaraz Shaik*)
+1. **The Swiss Editorial Landscape** (Junior to Intermediate Agency Architects — *Focus: Panoramic Editorial Grids & On-Site Practice*)
+2. **The Technical Office Working Set** (Execution & Site Architects — *Focus: 90% Tectonic Working Drawings & Code Compliance*)
+3. **The French Luxury Minimalist Book** (Interior Architects & Decorators — *Focus: Warm Greige Atelier Scenography & Custom Millwork*)
+4. **The Phenomenological Storyboard** (Cultural & Narrative Architects — *Focus: 6-Panel Graphic User Journeys & Sensory Storyboarding*)
+5. **The Feminist Urbanist & Social Researcher** (Civic & Master Planners — *Focus: Empirical Safety Audits & Therapeutic Concentric Plans*)
+6. **The Vernacular & Ecological Monograph** (Tropical & Heritage Practices — *Focus: Bioclimatic Earth Craft & Editorial Publishing*)
+7. **The Regenerative Environmental Systems** (Resilience Consultancies — *Focus: Agro-Industrial Hubs & Water Infrastructure Systems*)
+8. **The Commercial Interior Specifier** (Retail & Hospitality Designers — *Focus: Tender-Ready Spec Sheets & Luminaire Schedules*)
+9. **The Multi-Scale Infrastructure Architect** (Transit & Large Scale — *Focus: Macro Transit Terminals to Bespoke Foyer Detailing*)
+10. **The Industrial Housing & Net-Zero BIM** (Affordable Housing & BIM — *Focus: Net-Zero Prefabrication & Parametric Façades*)
 
 ### The 5-Act Spatial Case Study Structure
 - **Act I: The Hook & Project Passport** (Spread 1 Left: Title, Typology, Software, 2-sentence executive premise)
