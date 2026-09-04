@@ -2,7 +2,7 @@
 
 > Studio Location: Sara Bensalem Studio • Strasbourg Atelier [48°35'05"N 07°45'02"E]  
 > Production Site: [skills.sarabensalem.com](https://skills.sarabensalem.com)  
-> Core Thesis: "Not a web design system. A suite of specialized physical design skills for coding agents."
+> Core Thesis: "A suite of specialized physical design skills for coding agents."
 
 ---
 

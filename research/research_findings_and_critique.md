@@ -2,7 +2,7 @@
 
 > **Atelier:** Sara Bensalem Studio • Strasbourg Atelier [48°35'05"N 07°45'02"E]  
 > **Target System:** [skills.sarabensalem.com](https://skills.sarabensalem.com)  
-> **Core Architectural Doctrine:** *"Not a web design system. A suite of specialized physical design skills for coding agents."*
+> **Core Architectural Doctrine:** *"A suite of specialized physical design skills for coding agents."*
 
 ---
 
