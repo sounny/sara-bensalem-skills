@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bensalem Skills — Architectural AI Design Skills for Coding Agents</title>
-  <meta name="description" content="Not a web design system. A suite of specialized physical design skills that equip Claude, Cursor, and Antigravity with Swiss grid monograph layouts, 1:20 constructive wall sections, and Grill My Design Socratic review.">
+  <meta name="description" content="Not a web design system. A suite of specialized physical design skills that equip Claude, Cursor, and Antigravity with Swiss monograph layouts, 1:20 constructive wall sections, and Grill My Design Socratic review.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,91 +42,108 @@
 
   <!-- TOP MINIMAL NAVIGATION -->
   <header class="sticky top-0 z-50 backdrop-blur-md bg-[#F8F8F5]/90 border-b border-studio-border">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 group">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
         <div class="w-8 h-8 rounded-lg bg-studio-graphite text-white flex items-center justify-center font-display font-bold text-xs tracking-wider shadow-sm transition group-hover:bg-black">
           SBS
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
           <span class="font-display font-bold text-base text-studio-textPrimary tracking-tight">Sara Bensalem Skills</span>
-          <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-studio-subtle text-studio-textSecondary font-semibold border border-studio-border">v1.0</span>
+          <span class="hidden sm:inline text-studio-textMuted">•</span>
+          <span class="text-[10px] font-mono text-studio-textMuted hidden sm:inline">Strasbourg Atelier [48°35'05"N 07°45'02"E]</span>
         </div>
       </a>
 
       <div class="flex items-center gap-4">
-        <a href="#skills" class="text-xs font-mono text-studio-textSecondary hover:text-studio-textPrimary transition hidden md:inline font-medium">
-          The Skills
-        </a>
-        <a href="#grill" class="text-xs font-mono text-studio-textSecondary hover:text-studio-textPrimary transition hidden sm:inline font-medium">
-          Grill My Design
-        </a>
-        <a href="#preview" class="text-xs font-mono text-studio-textSecondary hover:text-studio-textPrimary transition hidden md:inline font-medium">
-          Live Spread
-        </a>
-        <a href="#install" class="text-xs font-mono text-studio-textSecondary hover:text-studio-textPrimary transition hidden sm:inline font-medium">
-          Setup Config
-        </a>
+        <nav class="hidden lg:flex items-center gap-5 text-xs font-mono text-studio-textSecondary">
+          <a href="#skills" class="hover:text-studio-textPrimary transition font-medium">Skills Suite</a>
+          <a href="#explorer" class="hover:text-studio-textPrimary transition font-medium">1:20 Explorer</a>
+          <a href="#grill" class="hover:text-studio-textPrimary transition font-medium">Grill My Design</a>
+          <a href="#install" class="hover:text-studio-textPrimary transition font-medium">Setup Config</a>
+        </nav>
         <span class="text-studio-border hidden sm:inline">|</span>
-        <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="text-xs font-mono font-bold text-white transition flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-studio-graphite hover:bg-black shadow-sm">
+        <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="text-xs font-mono font-bold text-white transition flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-studio-graphite hover:bg-black shadow-sm">
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           <span>Download All Skills</span>
+          <span class="text-[10px] opacity-75 font-normal px-1 rounded bg-white/20">88 KB</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       HERO: Turn Coding Agents into an Architectural Atelier
+       HERO: Precision Drafting Table & Studio Canvas
        ========================================================================= -->
   <main class="flex-1">
-    <section id="hero-section" class="pt-20 pb-16 px-4 sm:px-6 relative overflow-hidden">
+    <section id="hero-section" class="pt-16 pb-20 px-4 sm:px-6 relative overflow-hidden border-b border-studio-border">
       
+      <!-- Architectural Drafting Rulers -->
+      <div id="ruler-h" class="absolute top-0 left-0 right-0 h-4 border-b border-studio-border/60 pointer-events-none hidden sm:flex items-end justify-between px-6 font-mono text-[9px] text-studio-textMuted opacity-60">
+        <span>0 MM</span>
+        <span>500 MM</span>
+        <span>1000 MM</span>
+        <span>1500 MM</span>
+        <span>2000 MM</span>
+        <span>2500 MM</span>
+        <span>3000 MM</span>
+      </div>
+
       <!-- Interactive Kinetic Drafting Canvas (Mistral & Antigravity Style) -->
       <canvas id="drafting-canvas" class="absolute inset-0 w-full h-full pointer-events-auto cursor-crosshair z-0"></canvas>
 
       <!-- Live Cursor Millimeter Coordinate HUD -->
-      <div id="crosshair-hud" class="pointer-events-none fixed z-40 hidden -translate-x-1/2 -translate-y-12 px-2.5 py-1 rounded bg-studio-graphite/90 text-white font-mono text-[10px] tracking-wider backdrop-blur-xs border border-white/20 shadow-md">
-        X: <span id="hud-x">0</span>MM | Y: <span id="hud-y">0</span>MM • 1:20 SNAP
+      <div id="crosshair-hud" class="pointer-events-none fixed z-40 hidden -translate-x-1/2 -translate-y-12 px-3 py-1 rounded bg-studio-graphite/95 text-white font-mono text-[10px] tracking-wider backdrop-blur-xs border border-white/20 shadow-md">
+        X: <span id="hud-x">0</span>MM | Y: <span id="hud-y">0</span>MM • <span id="hud-scale">1:20 SNAP</span>
       </div>
 
       <div class="max-w-4xl mx-auto text-center relative z-10 pointer-events-none">
         
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 text-studio-textSecondary text-xs font-mono font-semibold mb-6 border border-studio-border shadow-2xs backdrop-blur-sm pointer-events-auto">
-          <span class="w-1.5 h-1.5 rounded-full bg-studio-graphite animate-pulse"></span>
-          <span>NOT A WEB DESIGN SYSTEM • A SUITE OF PHYSICAL DESIGN SKILLS</span>
+        <!-- Live Drafting Scale & Control Bar -->
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 text-studio-textSecondary text-xs font-mono font-semibold mb-6 border border-studio-border shadow-xs backdrop-blur-xs pointer-events-auto">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-studio-graphite animate-pulse"></span>
+            <span class="tracking-wide">PHYSICAL DESIGN SUITE FOR AI CODING AGENTS</span>
+          </div>
+          <span class="text-studio-border">|</span>
+          <div class="flex items-center gap-1">
+            <span class="text-studio-textMuted text-[10px]">SNAP:</span>
+            <button type="button" class="scale-toggle px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-studio-graphite text-white" data-scale="1:20">1:20</button>
+            <button type="button" class="scale-toggle px-1.5 py-0.5 rounded text-[10px] font-mono text-studio-textSecondary hover:text-studio-textPrimary" data-scale="1:50">1:50</button>
+            <button type="button" class="scale-toggle px-1.5 py-0.5 rounded text-[10px] font-mono text-studio-textSecondary hover:text-studio-textPrimary" data-scale="1:100">1:100</button>
+          </div>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black text-studio-textPrimary tracking-tight leading-[1.04] mb-6 pointer-events-auto">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black text-studio-textPrimary tracking-tight leading-[1.03] mb-6 pointer-events-auto">
           Turn coding agents into an architectural atelier.
         </h1>
 
-        <p class="text-lg sm:text-xl text-studio-textSecondary max-w-2xl mx-auto font-normal leading-relaxed mb-8 pointer-events-auto">
-          Sara Bensalem Skills equips your AI with a modular suite of physical design skills — from Swiss monograph publishing and 1:20 constructive wall sections to the Socratic Grill My Design jury.
+        <p class="text-base sm:text-lg lg:text-xl text-studio-textSecondary max-w-2xl mx-auto font-normal leading-relaxed mb-8 pointer-events-auto">
+          Sara Bensalem Skills equips your AI coding models with publication-grade spatial knowledge: Swiss monograph spreads, 1:20 constructive wall sections, PMR universal accessibility, and the Socratic Grill My Design jury.
         </p>
 
-        <div class="flex flex-wrap items-center justify-center gap-4 mb-16 pointer-events-auto">
-          <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="px-6 py-3.5 rounded-xl bg-studio-graphite hover:bg-black text-white font-display font-bold text-sm transition shadow-md shadow-stone-900/10 flex items-center gap-2.5">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-14 pointer-events-auto">
+          <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="px-6 py-3.5 rounded-xl bg-studio-graphite hover:bg-black text-white font-display font-bold text-sm transition shadow-md flex items-center gap-2.5">
             <i data-lucide="download" class="w-4 h-4"></i>
             <span>Download All Skills (.zip)</span>
           </a>
-          <a href="#grill" class="px-6 py-3.5 rounded-xl bg-white hover:bg-studio-subtle text-studio-textPrimary border border-studio-border font-mono text-xs font-semibold transition shadow-2xs flex items-center gap-2">
-            <i data-lucide="flame" class="w-4 h-4 text-studio-textSecondary"></i>
-            <span>Test Grill My Design</span>
+          <a href="#explorer" class="px-6 py-3.5 rounded-xl bg-white hover:bg-studio-subtle text-studio-textPrimary border border-studio-border font-mono text-xs font-semibold transition shadow-2xs flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-studio-textSecondary"></i>
+            <span>1:20 Wall Section Explorer</span>
           </a>
-          <a href="#install" class="px-6 py-3.5 rounded-xl bg-studio-subtle hover:bg-[#EAEAE2] text-studio-textSecondary font-mono text-xs font-medium transition flex items-center gap-2 border border-studio-borderLight">
-            <i data-lucide="terminal" class="w-4 h-4 text-studio-textSecondary"></i>
-            <span>1-Click AI Config</span>
+          <a href="#grill" class="px-6 py-3.5 rounded-xl bg-studio-subtle hover:bg-[#EAEAE2] text-studio-textSecondary font-mono text-xs font-semibold transition flex items-center gap-2 border border-studio-borderLight">
+            <i data-lucide="flame" class="w-4 h-4 text-studio-textSecondary"></i>
+            <span>Simulate Socratic Crit</span>
           </a>
         </div>
 
       </div>
 
-      <!-- 1-CLICK INTEGRATION WIDGET (FRONT & CENTER) -->
+      <!-- 1-CLICK AGENT CONFIGURATION WIDGET -->
       <div id="install" class="max-w-3xl mx-auto relative z-10">
         <div class="rounded-2xl bg-white/95 border border-studio-border p-6 sm:p-8 shadow-xl shadow-stone-900/5 relative overflow-hidden backdrop-blur-xs">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-studio-borderLight pb-4 mb-6">
             <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">1-Click Integration</span>
+              <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">1-Click Local-First Setup</span>
               <h2 class="text-lg font-display font-bold text-studio-textPrimary mt-0.5">Plug into Claude, Cursor, or Antigravity</h2>
             </div>
             <button id="copy-snippet-btn" type="button" class="px-4 py-2 rounded-lg bg-studio-graphite hover:bg-black text-white font-mono font-bold text-xs transition flex items-center gap-2 self-start sm:self-auto shadow-xs">
@@ -154,8 +171,8 @@
             <pre id="code-display" class="whitespace-pre leading-relaxed text-[#D6D6CF]"></pre>
           </div>
 
-          <div class="mt-4 flex items-center justify-between text-[11px] font-mono text-studio-textMuted">
-            <span>✓ Open source • Local-first • Zero telemetry • Strasbourg Atelier</span>
+          <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono text-studio-textMuted">
+            <span>✓ Open source • Local-first • Zero cloud telemetry • Strasbourg Atelier</span>
             <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-studio-textPrimary transition underline font-medium">View source on GitHub &rarr;</a>
           </div>
         </div>
@@ -163,14 +180,14 @@
     </section>
 
     <!-- =========================================================================
-         THE DESIGN SKILLS SUITE: "Instead of a design system, a set of design skills"
+         THE 6 MODULAR DESIGN SKILLS: "Instead of a design system, a set of design skills"
          ========================================================================= -->
-    <section id="skills" class="py-20 px-4 sm:px-6 border-t border-studio-border bg-studio-subtle/50">
+    <section id="skills" class="py-20 px-4 sm:px-6 border-b border-studio-border bg-studio-subtle/50">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">The Modular Skills Suite</span>
+          <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">The Modular Skills Matrix</span>
           <h2 class="text-3xl sm:text-4xl font-display font-bold text-studio-textPrimary mt-2">
-            Not a design system.<br>A set of specialized design skills.
+            Not a design system.<br>A suite of specialized design skills.
           </h2>
           <p class="text-sm text-studio-textSecondary mt-3">
             Each skill equips your AI model with verified architectural math, drafting conventions, constructive proof, and critical evaluation.
@@ -226,7 +243,7 @@
               Unforgiving Socratic critique jury simulating Harvard GSD crits and Foster + Partners hiring reviews. Cross-examines thermal bridges, egress, and recruiter trust.
             </p>
             <div class="pt-2 text-[11px] font-mono text-studio-textMuted border-t border-studio-borderLight">
-              Command: <code class="text-studio-textPrimary">/grill-my-design [project or spread]</code>
+              Command: <code class="text-studio-textPrimary">/grill-my-design [statement]</code>
             </div>
           </div>
 
@@ -286,48 +303,167 @@
     </section>
 
     <!-- =========================================================================
-         GRILL MY DESIGN — LIVE INTERACTIVE JURY SANDBOX
+         FLAGSHIP: INTERACTIVE 1:20 WALL SECTION & SPREAD EXPLORER (THE WOW SECTION)
          ========================================================================= -->
-    <section id="grill" class="py-20 px-4 sm:px-6 border-t border-studio-border bg-white">
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+    <section id="explorer" class="py-20 px-4 sm:px-6 border-b border-studio-border bg-white">
+      <div class="max-w-6xl mx-auto space-y-8">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Interactive Jury Sandbox</span>
-            <h3 class="text-2xl sm:text-3xl font-display font-bold text-studio-textPrimary mt-1">Grill My Design</h3>
-            <p class="text-xs text-studio-textSecondary mt-1">Simulate an unforgiving Socratic crit before high-stakes client reviews or job interviews.</p>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-studio-subtle text-studio-textSecondary text-[11px] font-mono font-semibold border border-studio-border mb-2">
+              <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+              <span>INTERACTIVE TECTONIC INSPECTOR • PLATE IV</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-display font-bold text-studio-textPrimary">
+              Interactive 1:20 Wall Section Explorer
+            </h2>
+            <p class="text-xs sm:text-sm text-studio-textSecondary mt-1">
+              Click or hover material assemblies to inspect real-time hygrothermal performance, acoustic damping, and constructive detailing.
+            </p>
           </div>
-          
-          <div class="flex items-center gap-2 text-xs font-mono">
-            <span class="text-studio-textMuted">Sample Presets:</span>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-studio-subtle hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs" data-preset="timber">
-              Timber Pavilion
+
+          <!-- Swiss Grid & Export Controls -->
+          <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+            <div class="flex items-center rounded-lg bg-studio-subtle border border-studio-border p-1">
+              <button id="grid-8-btn" type="button" class="grid-mode-btn px-2.5 py-1 rounded text-studio-textSecondary hover:text-studio-textPrimary font-medium transition" data-cols="8">8-Col</button>
+              <button id="grid-12-btn" type="button" class="grid-mode-btn active px-2.5 py-1 rounded bg-studio-graphite text-white font-bold transition shadow-2xs" data-cols="12">12-Col</button>
+              <button id="grid-16-btn" type="button" class="grid-mode-btn px-2.5 py-1 rounded text-studio-textSecondary hover:text-studio-textPrimary font-medium transition" data-cols="16">16-Col</button>
+            </div>
+            <button id="toggle-grid-btn" type="button" class="px-3 py-2 rounded-lg bg-white hover:bg-studio-subtle text-studio-textPrimary border border-studio-border shadow-2xs transition flex items-center gap-1.5 font-medium">
+              <i data-lucide="grid" class="w-3.5 h-3.5 text-studio-textSecondary"></i>
+              <span id="grid-btn-label">Hide Swiss Grid</span>
             </button>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-studio-subtle hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs" data-preset="glass">
-              Glass High-Rise
-            </button>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-studio-subtle hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs" data-preset="render">
-              3D Renders Only
+            <button id="download-svg-btn" type="button" class="px-3 py-2 rounded-lg bg-studio-graphite hover:bg-black text-white font-bold transition flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Export Vector SVG</span>
             </button>
           </div>
         </div>
 
-        <div class="p-6 sm:p-8 rounded-2xl bg-[#F8F8F5] border border-studio-border shadow-xl shadow-stone-900/5 space-y-5">
+        <!-- Layer Selector Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 text-xs font-mono">
+          <button class="layer-chip active px-3 py-1.5 rounded-lg bg-studio-graphite text-white font-bold transition shadow-2xs whitespace-nowrap" data-layer="all">
+            All Assemblies (1:20)
+          </button>
+          <button class="layer-chip px-3 py-1.5 rounded-lg bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary hover:bg-studio-borderLight transition whitespace-nowrap" data-layer="granite">
+            01 Breton Granite Ashlar (180mm)
+          </button>
+          <button class="layer-chip px-3 py-1.5 rounded-lg bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary hover:bg-studio-borderLight transition whitespace-nowrap" data-layer="hemp">
+            02 Lime-Hemp Biotamping (140mm)
+          </button>
+          <button class="layer-chip px-3 py-1.5 rounded-lg bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary hover:bg-studio-borderLight transition whitespace-nowrap" data-layer="break">
+            03 Thermal Break & EPDM Flashing
+          </button>
+          <button class="layer-chip px-3 py-1.5 rounded-lg bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary hover:bg-studio-borderLight transition whitespace-nowrap" data-layer="timber">
+            04 Oak Glulam Post & Beam
+          </button>
+          <button class="layer-chip px-3 py-1.5 rounded-lg bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary hover:bg-studio-borderLight transition whitespace-nowrap" data-layer="glazing">
+            05 Triple Glazed Envelope
+          </button>
+        </div>
+
+        <!-- Interactive Monograph Spread Canvas -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+          
+          <div class="lg:col-span-3 rounded-2xl overflow-hidden border border-studio-border shadow-xl shadow-stone-900/5 bg-white aspect-[16/9] relative" id="preview-canvas">
+            <!-- Vector SVG Injected via app.js -->
+          </div>
+
+          <!-- Real-Time Tectonic Performance Spec Card -->
+          <div class="lg:col-span-1 rounded-2xl bg-studio-bone border border-studio-border p-5 space-y-4 shadow-sm font-mono text-xs">
+            <div class="border-b border-studio-border pb-3">
+              <span class="text-[10px] uppercase tracking-wider text-studio-textMuted font-bold block">Tectonic Assembly Spec</span>
+              <h4 id="spec-title" class="font-display font-bold text-sm text-studio-textPrimary mt-0.5">01 Breton Granite Ashlar</h4>
+              <span id="spec-thickness" class="text-[11px] text-studio-textSecondary">Thickness: 180 mm</span>
+            </div>
+
+            <div class="space-y-2.5">
+              <div>
+                <span class="text-[10px] text-studio-textMuted uppercase block">Thermal Conductivity (λ):</span>
+                <span id="spec-lambda" class="font-bold text-studio-textPrimary">2.10 W/m·K</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-studio-textMuted uppercase block">Calculated System U-Value:</span>
+                <span id="spec-uvalue" class="font-bold text-studio-textPrimary">0.18 W/m²K (Passivhaus)</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-studio-textMuted uppercase block">Acoustic Damping (Rw):</span>
+                <span id="spec-acoustic" class="font-bold text-studio-textPrimary">54 dB (Flanking Protected)</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-studio-textMuted uppercase block">Embodied Carbon:</span>
+                <span id="spec-carbon" class="font-bold text-studio-textPrimary">-32 kgCO₂e/m² (Net Carbon Sink)</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-studio-textMuted uppercase block">Hygrothermal Vapor State:</span>
+                <span id="spec-vapor" class="font-bold text-studio-textPrimary">Vapor Open (μ = 5-10)</span>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-studio-border text-[10px] text-studio-textMuted">
+              <span>Strasbourg Atelier • Eurocode 5 & RT2020 Compliant</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         GRILL MY DESIGN: LIVE SOCRATIC JURY TRIBUNAL SANDBOX
+         ========================================================================= -->
+    <section id="grill" class="py-20 px-4 sm:px-6 border-b border-studio-border bg-studio-subtle/40">
+      <div class="max-w-4xl mx-auto space-y-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-white text-studio-textSecondary text-[11px] font-mono font-semibold border border-studio-border mb-2 shadow-2xs">
+              <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+              <span>SOCRATIC CRITIQUE ENGINE • /GRILL-MY-DESIGN</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-display font-bold text-studio-textPrimary">
+              Grill My Design Tribunal
+            </h3>
+            <p class="text-xs text-studio-textSecondary mt-1">
+              Simulate an unsparing architectural jury simulating Harvard GSD crits and Foster + Partners hiring reviews.
+            </p>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+            <span class="text-studio-textMuted">Presets:</span>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="timber">
+              Timber Pavilion
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="glass">
+              Glass High-Rise
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="render">
+              3D Renders Only
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="pmr">
+              PMR Urban Library
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-white border border-studio-border shadow-xl shadow-stone-900/5 space-y-5">
           <div>
             <label class="block text-xs font-mono font-bold text-studio-textSecondary uppercase mb-2">
               Your Architectural Project Statement or Portfolio Description:
             </label>
-            <textarea id="grill-input" rows="3" class="w-full p-4 rounded-xl bg-white border border-studio-border text-xs font-mono text-studio-textPrimary focus:outline-none focus:border-studio-graphite transition leading-relaxed resize-none" placeholder="e.g., A contemporary cultural pavilion featuring a cantilevered glulam roof, full-height west-facing curtain walls, polished concrete floors, and rooftop landscaped terraces..."></textarea>
+            <textarea id="grill-input" rows="3" class="w-full p-4 rounded-xl bg-studio-bone border border-studio-border text-xs font-mono text-studio-textPrimary focus:outline-none focus:border-studio-graphite transition leading-relaxed resize-none" placeholder="e.g., A contemporary cultural pavilion featuring a cantilevered glulam roof, full-height west-facing curtain walls, polished concrete floors, and rooftop landscaped terraces..."></textarea>
           </div>
 
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
             <div class="flex items-center gap-2 text-xs font-mono">
               <span class="text-studio-textMuted">Jury Persona:</span>
-              <select id="grill-persona" class="px-3 py-1.5 rounded-lg bg-white border border-studio-border text-studio-textPrimary font-mono text-xs focus:outline-none focus:border-studio-graphite">
-                <option value="full">Full Tribunal (Synthesized)</option>
+              <select id="grill-persona" class="px-3 py-1.5 rounded-lg bg-studio-bone border border-studio-border text-studio-textPrimary font-mono text-xs focus:outline-none focus:border-studio-graphite">
+                <option value="full">Full Tribunal (Synthesized Verdict)</option>
                 <option value="technical">Technical Partner (1:20 & Leaks)</option>
-                <option value="recruiter">15s Hiring Director (Recruiter Filter)</option>
-                <option value="spatial">Crit Chair (Circulation & PMR)</option>
-                <option value="environmental">Environmental Auditor (Solar & SHGC)</option>
+                <option value="recruiter">15s Hiring Director (Anti-Render-Trap Filter)</option>
+                <option value="spatial">Crit Chair (Circulation & PMR Egress)</option>
+                <option value="environmental">Environmental Auditor (Solar Gain & Carbon)</option>
               </select>
             </div>
 
@@ -338,68 +474,98 @@
           </div>
 
           <!-- Grill Results Panel -->
-          <div id="grill-result" class="hidden pt-5 border-t border-studio-borderLight space-y-4">
+          <div id="grill-result" class="hidden pt-6 border-t border-studio-borderLight space-y-5">
             <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span id="grill-verdict-badge" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-studio-graphite text-white">
+              <div class="flex items-center gap-2.5">
+                <span id="grill-verdict-badge" class="px-3 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-studio-graphite text-white">
                   VERDICT
                 </span>
-                <span id="grill-score-badge" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-white border border-studio-border text-studio-textPrimary">
-                  SCORE: 72/100
+                <span id="grill-score-badge" class="px-3 py-1 rounded text-[11px] font-mono font-bold bg-studio-bone border border-studio-border text-studio-textPrimary">
+                  SCORE: 74/100
                 </span>
               </div>
               <span class="text-[11px] font-mono text-studio-textMuted">Jury: Strasbourg Atelier</span>
             </div>
 
+            <!-- 5-Axis Dimensional Audit Bars -->
+            <div class="p-4 rounded-xl bg-studio-bone border border-studio-border space-y-3 font-mono text-xs">
+              <span class="text-[10px] uppercase tracking-wider text-studio-textMuted font-bold block">5-Axis Architectural Audit Breakdown:</span>
+              
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-[11px]">
+                  <span>1:20 Constructive Proof & Waterproofing</span>
+                  <span id="metric-constructive-val" class="font-bold">84%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-studio-border overflow-hidden">
+                  <div id="metric-constructive-bar" class="h-full bg-studio-graphite transition-all duration-500" style="width: 84%;"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-[11px]">
+                  <span>PMR Universal Accessibility & Egress Circles</span>
+                  <span id="metric-pmr-val" class="font-bold">92%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-studio-border overflow-hidden">
+                  <div id="metric-pmr-bar" class="h-full bg-studio-graphite transition-all duration-500" style="width: 92%;"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-[11px]">
+                  <span>Bioclimatic Thermodynamics & Building Physics</span>
+                  <span id="metric-bio-val" class="font-bold">78%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-studio-border overflow-hidden">
+                  <div id="metric-bio-bar" class="h-full bg-studio-graphite transition-all duration-500" style="width: 78%;"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-[11px]">
+                  <span>15-Second Recruiter Trust Ergonomics</span>
+                  <span id="metric-recruiter-val" class="font-bold">95%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-studio-border overflow-hidden">
+                  <div id="metric-recruiter-bar" class="h-full bg-studio-graphite transition-all duration-500" style="width: 95%;"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-[11px]">
+                  <span>Swiss Typographic & Modular Grid Precision</span>
+                  <span id="metric-swiss-val" class="font-bold">90%</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-studio-border overflow-hidden">
+                  <div id="metric-swiss-bar" class="h-full bg-studio-graphite transition-all duration-500" style="width: 90%;"></div>
+                </div>
+              </div>
+            </div>
+
             <div class="p-4 rounded-xl bg-white border border-studio-border space-y-2">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Relentless Jury Interrogation:</span>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Unforgiving Socratic Cross-Examination:</span>
               <p id="grill-question" class="text-xs sm:text-sm font-sans font-semibold text-studio-textPrimary leading-relaxed">
                 <!-- Injected via app.js -->
               </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div class="p-3.5 rounded-xl bg-white border border-studio-border space-y-1">
+              <div class="p-4 rounded-xl bg-studio-bone border border-studio-border space-y-1">
                 <span class="text-[10px] font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Fatal Vulnerability:</span>
                 <p id="grill-vulnerability" class="text-xs text-studio-textSecondary leading-relaxed"></p>
               </div>
-              <div class="p-3.5 rounded-xl bg-white border border-studio-border space-y-1">
+              <div class="p-4 rounded-xl bg-studio-bone border border-studio-border space-y-1">
                 <span class="text-[10px] font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Recommended Redline Fix:</span>
                 <p id="grill-remedy" class="text-xs text-studio-textSecondary leading-relaxed"></p>
               </div>
             </div>
+
+            <div class="p-3 rounded-xl bg-studio-subtle border border-studio-border flex items-center justify-between text-xs font-mono text-studio-textSecondary">
+              <span>Direct Agent Command: <code class="text-studio-textPrimary font-bold">/grill-my-design --focus constructibility</code></span>
+              <span class="text-[10px] text-studio-textMuted">Local Python Engine</span>
+            </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         LIVE SPREAD PREVIEW
-         ========================================================================= -->
-    <section id="preview" class="py-20 px-4 sm:px-6 border-t border-studio-border bg-[#F8F8F5]">
-      <div class="max-w-5xl mx-auto space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-studio-textMuted font-bold block">Live Monograph Output</span>
-            <h3 class="text-2xl sm:text-3xl font-display font-bold text-studio-textPrimary mt-1">Generated Monograph Spread</h3>
-            <p class="text-xs text-studio-textSecondary mt-1">Plate IV: 1:20 Wall Section generated purely from text via Sara Bensalem Skills.</p>
-          </div>
-          
-          <div class="flex items-center gap-2 text-xs font-mono">
-            <button id="toggle-grid-btn" type="button" class="px-3.5 py-2 rounded-lg bg-white hover:bg-studio-subtle text-studio-textPrimary border border-studio-border shadow-2xs transition flex items-center gap-1.5 font-medium">
-              <i data-lucide="grid" class="w-3.5 h-3.5 text-studio-textSecondary"></i>
-              <span id="grid-btn-label">Toggle Swiss Grid Overlay</span>
-            </button>
-            <button id="download-svg-btn" type="button" class="px-3.5 py-2 rounded-lg bg-studio-graphite hover:bg-black text-white font-bold transition flex items-center gap-1.5 shadow-sm">
-              <i data-lucide="download" class="w-3.5 h-3.5"></i>
-              <span>Download SVG</span>
-            </button>
-          </div>
-        </div>
-
-        <div id="preview-canvas" class="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-studio-border shadow-xl shadow-stone-900/5 bg-white">
-          <!-- Injected via app.js -->
         </div>
       </div>
     </section>
@@ -407,17 +573,19 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="py-10 px-4 sm:px-6 border-t border-studio-border bg-studio-subtle text-studio-textSecondary text-xs font-mono">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <span class="text-studio-textPrimary font-bold">Sara Bensalem Studio</span> • Strasbourg Atelier [48°35'05"N 07°45'02"E]
+  <footer class="py-12 px-4 sm:px-6 border-t border-studio-border bg-studio-subtle text-studio-textSecondary text-xs font-mono">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <div class="text-studio-textPrimary font-bold text-sm">Sara Bensalem Studio • Strasbourg Atelier</div>
+        <div class="text-studio-textMuted text-[11px]">[48°35'05"N 07°45'02"E] • Architectural AI Design Skills Suite v1.0</div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-studio-textPrimary transition font-medium">GitHub Repository</a>
-        <a href="#skills" class="hover:text-studio-textPrimary transition font-medium">The Skills</a>
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-studio-textPrimary transition font-medium">GitHub Repo</a>
+        <a href="#skills" class="hover:text-studio-textPrimary transition font-medium">Modular Skills</a>
+        <a href="#explorer" class="hover:text-studio-textPrimary transition font-medium">1:20 Explorer</a>
         <a href="#grill" class="hover:text-studio-textPrimary transition font-medium">Grill My Design</a>
-        <a href="#install" class="hover:text-studio-textPrimary transition font-medium">Install Guide</a>
-        <span>MIT License</span>
+        <a href="#install" class="hover:text-studio-textPrimary transition font-medium">Setup Config</a>
+        <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="text-studio-textPrimary font-bold underline">Download Suite (.zip)</a>
       </div>
     </div>
   </footer>

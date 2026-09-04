@@ -1,7 +1,7 @@
 /* Master Design System — Sara Bensalem Skills
    Minimalist Studio Monochrome (Archival Bone, Deep Graphite & Hairline Drafting Borders) */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -44,4 +44,22 @@ pre, code {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Architectural Drafting Crosshairs & Rulers */
+.ruler-tick {
+  border-left: 1px solid var(--border-strong);
+  height: 6px;
+}
+
+/* Smooth Transitions for Interactive Layers */
+.tectonic-layer {
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.tectonic-layer:hover, .tectonic-layer.active {
+  stroke-width: 2.5px !important;
+  stroke: #111110 !important;
+  filter: drop-shadow(0 2px 8px rgba(22, 22, 21, 0.15));
 }
