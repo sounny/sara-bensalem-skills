@@ -11,7 +11,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -20,13 +19,28 @@
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            amber: { 500: '#FFAF01', 600: '#FF7700' },
-            dark: {
-              950: '#090B0E',
-              900: '#10141B',
-              850: '#161C26',
-              800: '#1C2330',
-              750: '#262F40',
+            amber: {
+              50: '#FFFBEB',
+              100: '#FEF3C7',
+              200: '#FDE68A',
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            stone: {
+              50: '#FAFAF9',
+              100: '#F5F5F4',
+              150: '#EFEFEA',
+              200: '#E7E5E4',
+              300: '#D6D3D1',
+              400: '#A8A29E',
+              500: '#78716C',
+              600: '#57534E',
+              700: '#44403C',
+              800: '#292524',
+              900: '#1C1917',
+              950: '#0C0A09',
             }
           }
         }
@@ -36,159 +50,153 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col font-sans transition-colors duration-200">
+<body class="bg-[#FDFDFC] text-stone-900 antialiased min-h-screen flex flex-col font-sans">
 
   <!-- TOP MINIMAL NAVIGATION -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/80 dark:bg-slate-950/80 border-b border-white/5">
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-stone-200/80 shadow-xs">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center font-display font-bold text-slate-950 text-sm shadow">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 text-stone-950 flex items-center justify-center font-display font-extrabold text-sm shadow-sm transition group-hover:scale-105">
           SS
         </div>
         <div class="flex items-center gap-2">
-          <span class="font-display font-bold text-base text-white tracking-tight">spatial-stitch</span>
-          <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">v1.0</span>
+          <span class="font-display font-bold text-base text-stone-950 tracking-tight">spatial-stitch</span>
+          <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-800 font-semibold border border-amber-200">v1.0</span>
         </div>
       </a>
 
       <div class="flex items-center gap-3">
-        <a href="spatial-stitch.zip" download="spatial-stitch.zip" class="text-xs font-mono font-bold text-amber-400 hover:text-amber-300 transition flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30">
-          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+        <a href="spatial-stitch.zip" download="spatial-stitch.zip" class="text-xs font-mono font-bold text-stone-950 hover:text-amber-700 transition flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-400/25 hover:bg-amber-400/40 border border-amber-500/30 shadow-xs">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-amber-700"></i>
           <span>Download .zip</span>
         </a>
-        <a href="#install" class="text-xs font-mono text-slate-400 hover:text-white transition hidden sm:inline">
+        <a href="#install" class="text-xs font-mono text-stone-600 hover:text-stone-950 transition hidden sm:inline font-medium">
           Setup Config
         </a>
-        <span class="text-white/20">|</span>
-        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="p-2 rounded-lg bg-dark-900 hover:bg-dark-850 text-slate-300 hover:text-white border border-white/10 transition flex items-center gap-1.5 text-xs font-mono">
+        <span class="text-stone-300">|</span>
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="p-2 rounded-lg bg-stone-50 hover:bg-stone-100 text-stone-700 hover:text-stone-950 border border-stone-200 shadow-xs transition flex items-center gap-1.5 text-xs font-mono">
           <i data-lucide="github" class="w-4 h-4"></i>
           <span class="hidden sm:inline">GitHub</span>
         </a>
-        <button id="theme-toggle-btn" type="button" aria-label="Toggle Theme" class="p-2 rounded-lg bg-dark-900 hover:bg-dark-850 text-slate-300 hover:text-amber-400 border border-white/10 transition">
-          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
-        </button>
       </div>
     </div>
   </header>
 
-  <!-- =========================================================================
-       HERO: Hey, here is a skill you can download.
-       ========================================================================= -->
+  <!-- HERO SECTION: Crisp, luminous, welcoming -->
   <main class="flex-1">
-    <section class="pt-16 pb-12 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto text-center">
+    <section class="pt-16 pb-12 px-4 sm:px-6 relative overflow-hidden">
+      
+      <!-- Architectural Drafting Grid Background -->
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+      <div class="max-w-4xl mx-auto text-center relative">
         
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-mono mb-6 border border-amber-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-          <span>AGENTIC DESIGN SKILL FOR ARCHITECTURE</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 text-stone-800 text-xs font-mono font-semibold mb-6 border border-stone-200 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span>FREE & OPEN-SOURCE AI SKILL</span>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.08] mb-6">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black text-stone-950 tracking-tight leading-[1.08] mb-6">
           Spatial Stitch.
         </h1>
 
-        <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
-          A ready-to-use AI skill that equips <strong>Claude</strong>, <strong>Cursor</strong>, and <strong>Antigravity</strong> to generate publication-grade architectural monographs, 1:20 constructive wall sections, and Swiss grid layouts.
+        <p class="text-lg sm:text-xl text-stone-600 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
+          A ready-to-use skill that equips <strong class="text-stone-900 font-semibold">Claude</strong>, <strong class="text-stone-900 font-semibold">Cursor</strong>, and <strong class="text-stone-900 font-semibold">Antigravity</strong> to generate publication-grade architectural monographs, 1:20 constructive wall sections, and Swiss grid layouts.
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
-          <a href="spatial-stitch.zip" download="spatial-stitch.zip" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-display font-bold text-sm transition shadow-lg shadow-amber-500/20 flex items-center gap-2">
+          <a href="spatial-stitch.zip" download="spatial-stitch.zip" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-display font-bold text-sm transition shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 flex items-center gap-2">
             <i data-lucide="download" class="w-4 h-4"></i>
             <span>Download Skill (.zip)</span>
           </a>
-          <a href="#install" class="px-6 py-3.5 rounded-xl bg-dark-900 hover:bg-dark-850 text-slate-200 border border-white/10 font-mono text-xs transition flex items-center gap-2">
-            <i data-lucide="terminal" class="w-4 h-4 text-amber-400"></i>
-            <span>1-Click AI Config</span>
+          <a href="#install" class="px-6 py-3.5 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 font-mono text-xs font-semibold transition shadow-xs flex items-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4 text-amber-600"></i>
+            <span>1-Click Setup Config</span>
           </a>
-          <a href="#preview" class="px-6 py-3.5 rounded-xl bg-dark-900 hover:bg-dark-850 text-slate-400 hover:text-slate-200 border border-white/10 font-mono text-xs transition flex items-center gap-2">
-            <i data-lucide="eye" class="w-4 h-4 text-amber-400"></i>
+          <a href="#preview" class="px-6 py-3.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-mono text-xs font-medium transition flex items-center gap-2">
+            <i data-lucide="eye" class="w-4 h-4 text-amber-600"></i>
             <span>Live Spread Preview</span>
           </a>
         </div>
 
       </div>
 
-      <!-- =====================================================================
-           THE INSTALL WIDGET (FRONT & CENTER)
-           ===================================================================== -->
-      <div id="install" class="max-w-3xl mx-auto">
-        <div class="rounded-2xl bg-dark-900 border border-white/10 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-6">
+      <!-- THE 1-CLICK INSTALL WIDGET -->
+      <div id="install" class="max-w-3xl mx-auto relative">
+        <div class="rounded-2xl bg-white border border-stone-200 p-6 sm:p-8 shadow-xl shadow-stone-900/5 relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-100 pb-4 mb-6">
             <div>
-              <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block">1-Click Integration</span>
-              <h2 class="text-lg font-display font-bold text-white mt-0.5">Install Spatial Stitch in your AI tool</h2>
+              <span class="text-xs font-mono uppercase tracking-wider text-amber-700 font-bold block">1-Click Integration</span>
+              <h2 class="text-lg font-display font-bold text-stone-950 mt-0.5">Install Spatial Stitch in your AI tool</h2>
             </div>
-            <button id="copy-snippet-btn" type="button" class="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs transition flex items-center gap-2 self-start sm:self-auto">
+            <button id="copy-snippet-btn" type="button" class="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-950 font-mono font-bold text-xs transition flex items-center gap-2 self-start sm:self-auto shadow-xs">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span id="copy-label">Copy Snippet</span>
             </button>
           </div>
 
           <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-4 text-xs font-mono">
-            <button class="install-tab active px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition" data-target="claude">
+            <button class="install-tab active px-3 py-1.5 rounded-lg bg-stone-950 text-white font-bold transition shadow-xs" data-target="claude">
               Claude Desktop
             </button>
-            <button class="install-tab px-3 py-1.5 rounded-lg bg-dark-800 text-slate-400 hover:text-white transition" data-target="cursor">
+            <button class="install-tab px-3 py-1.5 rounded-lg bg-stone-100 text-stone-600 hover:text-stone-950 hover:bg-stone-200 transition" data-target="cursor">
               Cursor
             </button>
-            <button class="install-tab px-3 py-1.5 rounded-lg bg-dark-800 text-slate-400 hover:text-white transition" data-target="antigravity">
+            <button class="install-tab px-3 py-1.5 rounded-lg bg-stone-100 text-stone-600 hover:text-stone-950 hover:bg-stone-200 transition" data-target="antigravity">
               Antigravity / agy
             </button>
-            <button class="install-tab px-3 py-1.5 rounded-lg bg-dark-800 text-slate-400 hover:text-white transition" data-target="cli">
+            <button class="install-tab px-3 py-1.5 rounded-lg bg-stone-100 text-stone-600 hover:text-stone-950 hover:bg-stone-200 transition" data-target="cli">
               CLI (stdio)
             </button>
           </div>
 
-          <div class="rounded-xl bg-dark-950 border border-white/5 p-4 font-mono text-xs text-slate-300 overflow-x-auto relative">
+          <div class="rounded-xl bg-stone-950 border border-stone-900 p-4 font-mono text-xs text-stone-200 overflow-x-auto relative shadow-inner">
             <pre id="code-display" class="whitespace-pre leading-relaxed text-amber-300"></pre>
           </div>
 
-          <div class="mt-4 flex items-center justify-between text-[11px] font-mono text-slate-500">
-            <span>✓ Supports any JSON-RPC or MCP client</span>
-            <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-amber-400 transition underline">View source on GitHub &rarr;</a>
+          <div class="mt-4 flex items-center justify-between text-[11px] font-mono text-stone-500">
+            <span>✓ Works with Claude, Cursor, Antigravity, or raw stdio</span>
+            <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-amber-700 transition underline font-medium">View source on GitHub &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         WHAT THIS SKILL DOES (3 SIMPLE PILLARS)
-         ========================================================================= -->
-    <section class="py-16 px-4 sm:px-6 border-t border-white/5 bg-dark-950">
+    <!-- WHAT THE SKILL DOES (3 SIMPLE PILLARS) -->
+    <section class="py-16 px-4 sm:px-6 border-t border-stone-200/80 bg-stone-50/60">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
-          <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">What the skill gives your AI</h3>
-          <p class="text-sm text-slate-400 mt-2">Zero setup. Your assistant instantly understands spatial construction standards.</p>
+          <h3 class="text-2xl sm:text-3xl font-display font-bold text-stone-950">What the skill gives your AI</h3>
+          <p class="text-sm text-stone-600 mt-2">Zero setup. Your assistant instantly understands spatial construction standards.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold border border-amber-100">
               <i data-lucide="layout-grid" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-display font-bold text-base text-white">Swiss Modular Grids</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-stone-950">Swiss Modular Grids</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
               Generates mathematical 8, 12, and 16-column layouts with strict 4pt/8pt baseline grids, asymmetrical margins, and Neutral Grotesk typography.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold border border-emerald-100">
               <i data-lucide="ruler" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-display font-bold text-base text-white">1:20 Constructive Detailing</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-stone-950">1:20 Constructive Detailing</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
               Synthesizes real wall sections with thermal break callouts, vapor barriers, rainscreen sub-framing, and dimension chains to eliminate the 3D render trap.
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-dark-900 border border-white/10 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold">
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-xs hover:shadow-md transition space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold border border-blue-100">
               <i data-lucide="shield-check" class="w-5 h-5"></i>
             </div>
-            <h4 class="font-display font-bold text-base text-white">100-Point Audit Engine</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <h4 class="font-display font-bold text-base text-stone-950">100-Point Audit Engine</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
               Evaluates portfolios against top agency standards (Bespoke Careers & GrowthGrid rules) for 10-second readability, work rights, and individual attribution.
             </p>
           </div>
@@ -196,31 +204,29 @@
       </div>
     </section>
 
-    <!-- =========================================================================
-         INTERACTIVE LIVE SPREAD PREVIEW
-         ========================================================================= -->
-    <section id="preview" class="py-16 px-4 sm:px-6 border-t border-white/5 bg-slate-950">
+    <!-- INTERACTIVE LIVE SPREAD PREVIEW -->
+    <section id="preview" class="py-16 px-4 sm:px-6 border-t border-stone-200/80 bg-[#FDFDFC]">
       <div class="max-w-5xl mx-auto space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block">Live Skill Output</span>
-            <h3 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1">Generated Monograph Spread</h3>
-            <p class="text-xs text-slate-400 mt-1">Plate IV: 1:20 Wall Section generated purely from text via Spatial Stitch.</p>
+            <span class="text-xs font-mono uppercase tracking-wider text-amber-700 font-bold block">Live Skill Output</span>
+            <h3 class="text-2xl sm:text-3xl font-display font-bold text-stone-950 mt-1">Generated Monograph Spread</h3>
+            <p class="text-xs text-stone-600 mt-1">Plate IV: 1:20 Wall Section generated purely from text via Spatial Stitch.</p>
           </div>
           
           <div class="flex items-center gap-2 text-xs font-mono">
-            <button id="toggle-grid-btn" type="button" class="px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-300 border border-white/10 transition flex items-center gap-1.5">
-              <i data-lucide="grid" class="w-3.5 h-3.5 text-amber-400"></i>
+            <button id="toggle-grid-btn" type="button" class="px-3.5 py-2 rounded-lg bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 shadow-xs transition flex items-center gap-1.5 font-medium">
+              <i data-lucide="grid" class="w-3.5 h-3.5 text-amber-600"></i>
               <span id="grid-btn-label">Toggle Swiss Grid Overlay</span>
             </button>
-            <button id="download-svg-btn" type="button" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition flex items-center gap-1.5">
+            <button id="download-svg-btn" type="button" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold transition flex items-center gap-1.5 shadow-xs">
               <i data-lucide="download" class="w-3.5 h-3.5"></i>
               <span>Download SVG</span>
             </button>
           </div>
         </div>
 
-        <div id="preview-canvas" class="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white">
+        <div id="preview-canvas" class="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-stone-200 shadow-xl shadow-stone-900/5 bg-[#FBFBF8]">
           <!-- Injected via app.js -->
         </div>
       </div>
@@ -228,14 +234,14 @@
 
   </main>
 
-  <footer class="py-8 px-4 sm:px-6 border-t border-white/5 bg-dark-950 text-slate-500 text-xs font-mono">
+  <footer class="py-8 px-4 sm:px-6 border-t border-stone-200/80 bg-stone-50 text-stone-600 text-xs font-mono">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <span class="text-slate-300 font-bold">Sara Bensalem Studio</span> • Paris Atelier [48°51'24"N 02°21'07"E]
+        <span class="text-stone-900 font-bold">Sara Bensalem Studio</span> • Paris Atelier [48°51'24"N 02°21'07"E]
       </div>
       <div class="flex items-center gap-6">
-        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-amber-400 transition">GitHub Repository</a>
-        <a href="#install" class="hover:text-amber-400 transition">Install Guide</a>
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-amber-700 transition font-medium">GitHub Repository</a>
+        <a href="#install" class="hover:text-amber-700 transition font-medium">Install Guide</a>
         <span>MIT License</span>
       </div>
     </div>

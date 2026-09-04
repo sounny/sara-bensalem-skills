@@ -176,9 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => {
-        t.className = "install-tab px-3 py-1.5 rounded-lg bg-dark-800 text-slate-400 hover:text-white transition";
+        t.className = "install-tab px-3 py-1.5 rounded-lg bg-stone-100 text-stone-600 hover:text-stone-950 hover:bg-stone-200 transition";
       });
-      tab.className = "install-tab active px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition";
+      tab.className = "install-tab active px-3 py-1.5 rounded-lg bg-stone-950 text-white font-bold transition shadow-xs";
       setSnippet(tab.getAttribute('data-target'));
     });
   });
