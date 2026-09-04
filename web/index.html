@@ -410,42 +410,58 @@
           </p>
         </div>
 
+                <!-- Discipline Filters for Curated Looks -->
+        <div class="flex items-center justify-center gap-2 overflow-x-auto pb-1 text-xs font-mono">
+          <button class="look-filter-btn active px-3.5 py-1.5 rounded-full bg-studio-graphite text-white font-semibold transition text-[11px] shadow-xs" data-filter="all">
+            All Looks (12)
+          </button>
+          <button class="look-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="architecture">
+            Architecture (6)
+          </button>
+          <button class="look-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="interior">
+            Interior Architecture (4)
+          </button>
+          <button class="look-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="monograph">
+            Monograph & Scenography (2)
+          </button>
+        </div>
+
         <!-- Filter / Archetype Quick Switcher -->
-        <div class="flex items-center justify-center gap-2 overflow-x-auto pb-2 text-xs font-mono">
-          <button class="look-tab active px-3.5 py-1.5 rounded-lg bg-studio-graphite text-white font-bold transition shadow-xs whitespace-nowrap" data-look="swiss_editorial">
+        <div id="look-tabs-container" class="flex items-center justify-center gap-2 overflow-x-auto pb-2 text-xs font-mono">
+          <button class="look-tab active px-3.5 py-1.5 rounded-lg bg-studio-graphite text-white font-bold transition shadow-xs whitespace-nowrap" data-look="swiss_editorial" data-discipline="architecture monograph">
             01. Swiss Editorial
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="french_luxury">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="french_luxury" data-discipline="interior">
             02. French Luxury
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="technical_blueprints">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="technical_blueprints" data-discipline="architecture">
             03. Technical Blueprints
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="brutalist_tectonics">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="brutalist_tectonics" data-discipline="architecture">
             04. Brutalist Béton Brut
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="vernacular_bioclimatic">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="vernacular_bioclimatic" data-discipline="architecture">
             05. Bioclimatic Vernacular
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="art_deco_moderne">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="art_deco_moderne" data-discipline="interior">
             06. Art Deco
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="phenomenological_story">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="phenomenological_story" data-discipline="monograph">
             07. Phenomenological
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="structural_expression">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="structural_expression" data-discipline="architecture">
             08. Structural High-Tech
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="indic_spatial_systems">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="indic_spatial_systems" data-discipline="architecture interior">
             09. Indic Spatial Systems
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="ephemeral_scenography" data-category="scenography">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="ephemeral_scenography" data-discipline="monograph">
             10. Ephemeral Scenography
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="japandi_wabi_sabi" data-category="interior">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="japandi_wabi_sabi" data-discipline="interior">
             11. Japandi Wabi-Sabi
           </button>
-          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="alpine_bivouac" data-category="architecture">
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="alpine_bivouac" data-discipline="architecture">
             12. Alpine Bivouac
           </button>
         </div>
@@ -538,10 +554,26 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Movement Classification Filters -->
+        <div class="flex items-center justify-center gap-2 overflow-x-auto pb-1 text-xs font-mono">
+          <button class="movement-filter-btn active px-3.5 py-1.5 rounded-full bg-studio-graphite text-white font-semibold transition text-[11px] shadow-xs" data-filter="all">
+            All Movements (15)
+          </button>
+          <button class="movement-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="modern">
+            Tectonic Modern (6)
+          </button>
+          <button class="movement-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="historical">
+            Historical Classical (4)
+          </button>
+          <button class="movement-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]" data-filter="atmospheric">
+            Atmospheric & Regional (5)
+          </button>
+        </div>
+
+        <div id="movements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           <!-- Language 1: Brutalism & Béton Brut -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="modern">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 01</span>
               <span class="text-xs font-mono text-studio-textMuted">Reyner Banham, 1955</span>
@@ -556,10 +588,14 @@
               <div>• Truth to Materials (As-Found)</div>
               <div>• Board-Formed Shuttering Ties</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Brutalism & Béton Brut.&#10;Spatial Typology & Massing:&#10;- Monolithic stereotomic massing, deep shadow reveals, structural mass grounded in gravity.&#10;- Rhythmic pilotis, exposed circulation infrastructure, and monumental brise-soleil.&#10;Material Tectonics:&#10;- Board-formed shuttered concrete with expressed formwork seams and tie-rod holes.&#10;- Raw steel plate connections, unpolished stone, and valuation of materials 'as found'.&#10;Constructive Proof & Envelope:&#10;- Detail continuous structural thermal breaks at cantilevers (aerogel/EPDM decouplers, U-value <= 0.18 W/m²K).&#10;- Eliminate thermal bridging without obscuring tectonic expression.&#10;Portfolio Monograph:&#10;- High-contrast Swiss monograph layout, Space Grotesk / JetBrains Mono typography, uncropped 1:20 wall section.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 2: Tectonic Rationalism -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="modern">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 02</span>
               <span class="text-xs font-mono text-studio-textMuted">Ticino School</span>
@@ -574,10 +610,14 @@
               <div>• Le Corbusier Modulor & Golden Ratio</div>
               <div>• Calibrated Hairline Drafting (0.13mm)</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Tectonic Rationalism and the Swiss Ticino School.&#10;Spatial Typology & Massing:&#10;- Hyper-calibrated geometric discipline, strict 12/16-column modular grids, Modulor golden ratios.&#10;- Clear, uncompromised articulation of the stereotomic base vs the tectonic lightweight frame.&#10;Material Tectonics:&#10;- Honed stone plinths, crisp mass timber post-and-beam, flush glazed envelope transitions.&#10;- Hairline drafting precision (0.13mm to 0.50mm), verified load path continuity.&#10;Constructive Proof & Envelope:&#10;- Passivhaus envelope specs (Uw <= 0.80 W/m²K), air tightness barrier (Sd >= 1500m).&#10;Portfolio Monograph:&#10;- Strict Swiss International typography (Neue Haas Grotesk / Helvetica), baseline alignment, complete orthographic drawings.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 3: Phenomenological Minimalism -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="atmospheric">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 03</span>
               <span class="text-xs font-mono text-studio-textMuted">Peter Zumthor & Pallasmaa</span>
@@ -592,10 +632,14 @@
               <div>• 1:5 Shadow Reveals (Joint Creux)</div>
               <div>• Tactile Stone & Timber Triptychs</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Phenomenological Minimalism & Material Atmosphere (Zumthor / Pallasmaa).&#10;Spatial Typology & Massing:&#10;- Experiential choreography: compression and release (liminal threshold chambers leading to monumental volumes).&#10;- Sculptural raking natural daylight revealing surface micro-relief and texture.&#10;Material Tectonics:&#10;- Hand-troweled lime wash, thermal mass stone, tactile brushed oak, acoustic damping timber slats.&#10;Constructive Proof & Envelope:&#10;- 1:5 shadow reveals (joint creux) between floor, wall, and ceiling. Acoustic isolation (Rw >= 52 dB).&#10;- Concealed joinery fixings and continuous hygrothermal vapor-permeable envelope.&#10;Portfolio Monograph:&#10;- 40%+ white space breathing room, tactile material triptych swatches, quiet editorial typography (Garamond + JetBrains Mono).">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 4: Critical Regionalism -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="atmospheric">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 04</span>
               <span class="text-xs font-mono text-studio-textMuted">Kenneth Frampton</span>
@@ -610,10 +654,14 @@
               <div>• Monolithic Breathable Bio-Composites</div>
               <div>• Net-Negative Embodied Carbon (RE2020)</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Critical Regionalism & Bioclimatic Vernacular (Frampton / Bawa).&#10;Spatial Typology & Massing:&#10;- Passive solar orientation, prevailing wind cross-ventilation corridors, deep protective overhang eaves.&#10;- Authentic vernacular tectonic language resisting generic globalized corporate boxes.&#10;Material Tectonics:&#10;- Regionally quarried stone ashlar, breathable lime-hemp biotamping (lambda = 0.076 W/mK), local timber frames.&#10;Constructive Proof & Envelope:&#10;- Hygrothermal vapor-open envelope (Sd <= 0.2m), stack ventilation thermal calculations, carbon-negative life cycle.&#10;Portfolio Monograph:&#10;- Bioclimatic solar vector diagrams, quarry provenance coordinates, Passivhaus thermal envelope verification tables.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 5: Structural Expressionism -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="modern">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 05</span>
               <span class="text-xs font-mono text-studio-textMuted">Piano, Rogers & Rice</span>
@@ -628,10 +676,14 @@
               <div>• Kahnian Serviced vs Servant Hierarchy</div>
               <div>• Cast Steel Nodes & Pin Connections</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in High-Tech Structural Expressionism (Piano / Rogers / Rice).&#10;Spatial Typology & Massing:&#10;- Total visual legibility of structural tension rods, compression struts, and cast-steel nodes.&#10;- Separation of serviced spaces (flexible open floor plans) from servant spaces (external MEP cores, fire stairs).&#10;Material Tectonics:&#10;- Stainless steel rod rigging, structural glass louvers, cast ductile iron pin joints, perforated acoustic panels.&#10;Constructive Proof & Envelope:&#10;- 1:10 cast-steel node details, demountable dry joints, engineered thermal break gaskets.&#10;Portfolio Monograph:&#10;- Exploded isometric axonometrics, structural load calculations, engineering monochrome drawings on 16-column grid.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 6: Swiss Editorial Neue Grafik -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="modern">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 06</span>
               <span class="text-xs font-mono text-studio-textMuted">Lars Müller & El Croquis</span>
@@ -646,10 +698,14 @@
               <div>• Baseline Grid Precision (8pt Ratios)</div>
               <div>• Standardized Project Passports</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural editorial designer specialized in the Swiss Monograph Tradition (Neue Grafik / Lars Müller / El Croquis).&#10;Spatial Typology & Composition:&#10;- Strict 12-column Swiss typographic grid, baseline rhythm, asymmetrical white space balance.&#10;- Uncompromising rejection of decorative fluff in favor of verified architectural proof.&#10;Visual Language & Palette:&#10;- Archival bone white background (#F8F8F5), dense graphite text (#111110), warm stone hairlines (#E8E5DC).&#10;Constructive Proof:&#10;- Every case study must include a verified 1:20 constructive wall section, PMR accessibility compliance check, and material specs.&#10;Portfolio Monograph:&#10;- Exact Swiss typographical scale (48pt / 14pt / 9pt), uncropped orthographic plans, bilingual folio headers.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 7: Neoclassicism & Palladian Order -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="historical">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 07</span>
               <span class="text-xs font-mono text-studio-textMuted">Palladio & Schinkel</span>
@@ -664,10 +720,14 @@
               <div>• Monumental Axial Porticos & Colonnades</div>
               <div>• Stereotomic Rusticated Stone Base</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Neoclassicism & Palladian Proportions (Ledoux / Boullée / Schinkel).&#10;Spatial Typology & Massing:&#10;- Rigorous bilateral axial symmetry, tripartite vertical elevation (rusticated plinth, piano nobile, classical attic).&#10;- Monumental peristyle porticos, pediments, and canonical classical orders (Doric, Ionic, Corinthian).&#10;Material Tectonics:&#10;- Crisp ashlar limestone masonry, carved entablatures, bronze rosettes, lime mortar expansion joints.&#10;Constructive Proof & Envelope:&#10;- Structural stone stereotomy calculations, continuous capillary damp-proof course, modern thermal insulation backing.&#10;Portfolio Monograph:&#10;- Symmetrical double-page spreads, centered monumental roman serifs, copperplate hairline elevation engravings.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 8: Beaux-Arts & Monumental Hierarchy -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="historical">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 08</span>
               <span class="text-xs font-mono text-studio-textMuted">École des Beaux-Arts</span>
@@ -682,10 +742,14 @@
               <div>• The Marche (Choreographed Spatial Promenade)</div>
               <div>• Monumental Rotundas & Ceremonial Axis</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Beaux-Arts Monumental Architecture (Garnier / Labrouste / Hunt).&#10;Spatial Typology & Choreography:&#10;- Uncompromising architectural Parti Pris, choreographed ceremonial sequence (The Marche).&#10;- Grand vestibules, monumental imperial staircases, domed rotundas, and axial enfilades.&#10;Material Tectonics:&#10;- Deep-cut rusticated limestone, vaulted coffered plaster ceilings, wrought bronze balustrades, polished granite medallions.&#10;Constructive Proof & Envelope:&#10;- Structural ink wash poché cuts, ADA/PMR egress compliance (corridors >= 2400mm), transverse section elevations.&#10;Portfolio Monograph:&#10;- Lavish ink wash section cuts, monumental Didot / Bodoni display typography, choreographed circulation flow diagrams.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 9: Art Nouveau & Biomorphic Iron -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="historical">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 09</span>
               <span class="text-xs font-mono text-studio-textMuted">Horta, Guimard & Gaudí</span>
@@ -700,10 +764,14 @@
               <div>• Gesamtkunstwerk (Total Work of Art)</div>
               <div>• Biomorphic Wrought Iron Structural Stems</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Art Nouveau & Biomorphic Tectonics (Horta / Guimard / Gaudí).&#10;Spatial Typology & Form:&#10;- Dynamic whiplash curves (coup de fouet), organic spatial fluidity, Gesamtkunstwerk unity of structure and ornament.&#10;- Asymmetrical facade compositions responding to internal light and functional flow.&#10;Material Tectonics:&#10;- Sinuous cast and wrought iron structural columns blooming into floral brackets, carved blonde freestone, stained glass.&#10;Constructive Proof & Envelope:&#10;- Structural load verification of organic cantilever brackets, continuous lead flashing waterproofing at curvilinear joints.&#10;Portfolio Monograph:&#10;- Curvilinear editorial layout accents, botanical 1:5 ironwork details, warm bone paper with subtle vegetative hairlines.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 10: Art Deco & Geometric Modernism -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="historical">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 10</span>
               <span class="text-xs font-mono text-studio-textMuted">1925 Paris Exposition</span>
@@ -718,10 +786,14 @@
               <div>• Geometric Chevrons & Sunburst Reliefs</div>
               <div>• Luxurious Macassar Ebony & Satin Brass Inlays</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Art Deco & Streamlined Geometric Moderne (1925 Paris / Van Alen / Ruhlmann).&#10;Spatial Typology & Massing:&#10;- Stepped ziggurat setback massing, vertical speedline fluting, chevron and sunburst bas-relief friezes.&#10;- Monumental vertical symmetry and streamlined aerodynamic curves.&#10;Material Tectonics:&#10;- Polished black Belgian marble, brushed satin bronze, macassar ebony veneered paneling, nickel-plated hardware.&#10;Constructive Proof & Envelope:&#10;- 1:5 bespoke millwork joinery reveals (3mm brass inlays), concealed Blum/Hettich hinges, recessed cove lighting channels.&#10;Portfolio Monograph:&#10;- Stepped geometric framing borders, high-contrast typography, rich metallic bronze and onyx materiality swatches.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 11: Ephemeral Scenography & Olfactory Architecture -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="atmospheric">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 11</span>
               <span class="text-xs font-mono text-studio-textMuted">Al-’Ula / Atelier Adeline</span>
@@ -736,10 +808,14 @@
               <div>• Specular Desert Reflection & Dissolution</div>
               <div>• Negative Space Restraint (Knowing When to Stop)</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Ephemeral Scenography & Olfactory Architecture (Chouchane / Atelier Adeline).&#10;Spatial Typology & Concept:&#10;- Designing for invisible media: air, memory, mist, acoustic stillness, and site memory.&#10;- Dialectic between monumental timeless landscape and temporary textile/reflective interventions.&#10;Material Tectonics:&#10;- Mirrored stainless steel dissolving into desert rocks, translucent raw silk drapes, atomized mist chambers, compacted desert clay.&#10;Constructive Proof & Footprint:&#10;- Zero-impact demountable foundation footings, tensioned stainless steel wire rigging, 100% reversible intervention protocol.&#10;Portfolio Monograph:&#10;- Atmospheric photographic narrative sequences, tactile material swatches, poetic spatial threshold annotations.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 12: Indic Spatial Systems & Vāstu Tectonics -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="atmospheric">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 12</span>
               <span class="text-xs font-mono text-studio-textMuted">Doshi, Correa & Aayojan</span>
@@ -754,10 +830,14 @@
               <div>• Perception Continuum (Space ↔ Mind ↔ Form)</div>
               <div>• Passive Courtyard Microclimates & Jalis</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Indic Spatial Systems & Vāstu Tectonics (Doshi / Correa / Rewal).&#10;Spatial Typology & Geometry:&#10;- 9-square Vāstu-Purusha mandala cosmic grid, deep shaded colonnaded courtyards, stepped baoli water retention morphology.&#10;- Perceptual continuum between mind, space, form, and 100-year aggregate institutional growth.&#10;Material Tectonics:&#10;- Hand-carved red and yellow sandstone, exposed brick vaulted roofs, terracotta jali ventilation screens.&#10;Constructive Proof & Microclimate:&#10;- Passive evaporative cooling stack currents, deep solar shading cutoffs for tropical sun angles, load-bearing brick corbelling.&#10;Portfolio Monograph:&#10;- Cosmic mandala spatial diagrams, seasonal sun-path analysis, community gathering continuum documentation.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 13: Deconstructivism & Non-Euclidean Geometry -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="modern">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 13</span>
               <span class="text-xs font-mono text-studio-textMuted">Zaha Hadid & Libeskind</span>
@@ -772,10 +852,14 @@
               <div>• Moment-Frame Structural Cantilevers</div>
               <div>• Dynamic Asymmetric Kinetic Tension</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Deconstructivism & Non-Euclidean Geometry (Zaha Hadid / Libeskind / Eisenman).&#10;Spatial Typology & Form:&#10;- Fractured planes, non-rectilinear volumes, skewed kinetic axes, dramatic gravity-defying cantilevers.&#10;- Rejection of traditional Cartesian floor-wall-ceiling boundaries.&#10;Material Tectonics:&#10;- Double-curved titanium and zinc cladding panels, exposed structural steel moment frames, faceted structural glass prisms.&#10;Constructive Proof & Envelope:&#10;- Multi-axis structural moment joint engineering, 3D non-planar thermal break modeling, parametric panelization tolerances.&#10;Portfolio Monograph:&#10;- Dynamic diagonal grid monographs, exploded wireframe perspectives, complex joint detailing drawings.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 14: Japandi Hybrid & Wabi-Sabi Tectonics -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="atmospheric">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 14</span>
               <span class="text-xs font-mono text-studio-textMuted">Kuma, Ando & Vervoordt</span>
@@ -790,10 +874,14 @@
               <div>• Acoustic Washi Paper & Lime Plaster</div>
               <div>• Negative Space (Ma) as Spatial Element</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural design agent specialized in Japandi Hybrid & Wabi-Sabi Tectonics (Kuma / Ando / Vervoordt).&#10;Spatial Typology & Proportions:&#10;- Low-slung horizontal proportions, celebration of negative space (Ma), acoustic stillness, seamless indoor-outdoor engawa verandas.&#10;- Acceptance and elevation of transience and natural material patina.&#10;Material Tectonics:&#10;- Shou sugi ban (charred cedar), hand-troweled lime-hemp plaster, translucent washi paper screens, raw unsealed hinoki joinery.&#10;Constructive Proof & Craft:&#10;- Traditional Japanese interlocking wood joinery (kigumi) without metal fasteners, acoustic absorption modeling (alpha_w >= 0.70).&#10;Portfolio Monograph:&#10;- Serene minimalist spreads, generous margins, micro-detailed 1:5 joinery cross-sections, muted organic earth palettes.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
           <!-- Language 15: Haussmannian Classicism & Boiserie -->
-          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+          <div class="movement-card p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition flex flex-col justify-between" data-group="historical">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 15</span>
               <span class="text-xs font-mono text-studio-textMuted">Haussmann, Labrouste & Liaigre</span>
@@ -808,6 +896,10 @@
               <div>• Concealed Boiserie Pivot Doors</div>
               <div>• High-Contrast Tactile Stone Triptychs</div>
             </div>
+            <button class="copy-agent-prompt-btn mt-4 w-full py-2 px-3 rounded-lg bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border text-[11px] font-mono font-medium flex items-center justify-center gap-2 transition shadow-2xs group" data-prompt="You are an architectural and interior design agent specialized in Haussmannian Classicism & French Boiserie (Labrouste / Liaigre).&#10;Spatial Typology & Heritage:&#10;- Grand piano nobile proportions (3.6m+ ceiling heights), uninterrupted enfilade sightlines, tripartite stone facade rhythm.&#10;- Seamless dialogue between protected historical fabric and contemporary minimalist interventions.&#10;Material Tectonics:&#10;- Point de Hongrie chevron French oak parquet, Saint-Laurent and Arabescato marble fireplaces, full-height flush boiserie millwork.&#10;Constructive Proof & Millwork:&#10;- 1:5 bespoke joinery details, concealed 3-way adjustable SOSS/Tectus pivot hinges, acoustic floor decoupling (Delta Lw >= 19 dB).&#10;Portfolio Monograph:&#10;- Refined Parisian atelier monograph, classical serif and technical mono pairings, full-spread architectural joinery working sets.">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-studio-textMuted group-hover:text-studio-textPrimary transition"></i>
+              <span class="prompt-btn-label">Copy Agent Prompt</span>
+            </button>
           </div>
 
 

@@ -1238,6 +1238,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  
+  // --- Portfolio Looks Discipline Filtering ---
+  const lookFilterBtns = document.querySelectorAll('.look-filter-btn');
+  lookFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      lookFilterBtns.forEach(b => {
+        b.className = "look-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]";
+      });
+      btn.className = "look-filter-btn active px-3.5 py-1.5 rounded-full bg-studio-graphite text-white font-semibold transition text-[11px] shadow-xs";
+
+      let firstVisibleTab = null;
+      lookTabs.forEach(tab => {
+        const disc = tab.getAttribute('data-discipline') || '';
+        if (filter === 'all' || disc.includes(filter)) {
+          tab.style.display = 'inline-block';
+          if (!firstVisibleTab) firstVisibleTab = tab;
+        } else {
+          tab.style.display = 'none';
+        }
+      });
+
+      // If active tab is hidden, switch to first visible
+      const currentActiveTab = document.querySelector('.look-tab.active');
+      if (currentActiveTab && currentActiveTab.style.display === 'none' && firstVisibleTab) {
+        firstVisibleTab.click();
+      }
+    });
+  });
+
+  // --- Movements Group Filtering ---
+  const movementFilterBtns = document.querySelectorAll('.movement-filter-btn');
+  const movementCards = document.querySelectorAll('.movement-card');
+  movementFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      movementFilterBtns.forEach(b => {
+        b.className = "movement-filter-btn px-3.5 py-1.5 rounded-full bg-white hover:bg-studio-subtle text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border font-semibold transition text-[11px]";
+      });
+      btn.className = "movement-filter-btn active px-3.5 py-1.5 rounded-full bg-studio-graphite text-white font-semibold transition text-[11px] shadow-xs";
+
+      movementCards.forEach(card => {
+        const grp = card.getAttribute('data-group');
+        if (filter === 'all' || grp === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // --- Copy Agent System Prompt Handler ---
+  const copyPromptBtns = document.querySelectorAll('.copy-agent-prompt-btn');
+  copyPromptBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const prompt = btn.getAttribute('data-prompt');
+      const label = btn.querySelector('.prompt-btn-label');
+      if (!prompt) return;
+
+      navigator.clipboard.writeText(prompt).then(() => {
+        if (label) label.textContent = "✓ Prompt Copied!";
+        btn.classList.add('bg-studio-graphite', 'text-white');
+        btn.classList.remove('bg-white', 'text-studio-textSecondary');
+
+        setTimeout(() => {
+          if (label) label.textContent = "Copy Agent Prompt";
+          btn.classList.remove('bg-studio-graphite', 'text-white');
+          btn.classList.add('bg-white', 'text-studio-textSecondary');
+        }, 2000);
+      });
+    });
+  });
+
   renderLook('swiss_editorial');
 
   if (window.lucide) {
