@@ -442,5 +442,116 @@
       }
     ],
     "key_proof_elements": "Thermal bridge-free envelope details, 250 km/h wind deflection aerodynamic profiles, helicopter-drop assembly sequencing diagrams."
+  },
+  "landscape_ecology": {
+    "id": "landscape_ecology",
+    "category": "landscape",
+    "title": "13. The Landscape Ecology & Topographical Monograph",
+    "archetype": "Biophilic Landscape Systems & Heritage Mapping (Anu Kottummel Joy / Politecnico di Milano & OMGEVING)",
+    "ideal_for": "Landscape Architects, Ecological Urbanists, Botanical & Environmental Heritage Designers",
+    "spread_aspect": "Double-Page Hardcover Monograph (1:1.414)",
+    "grid": "8-Column Asymmetrical Grid w/ Topographical Stippling Margin",
+    "typography": {
+      "display": "Inter Display / Light (300)",
+      "body": "Neue Haas Grotesk / Inter (400)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Soft Sage Leaf",
+        "hex": "#B7C4B2",
+        "role": "Canopy Density & Shrub Layer"
+      },
+      {
+        "name": "Chalk Paper Ground",
+        "hex": "#FAFAF8",
+        "role": "Monograph Spread Canvas"
+      },
+      {
+        "name": "Topographical Charcoal",
+        "hex": "#2D2E2B",
+        "role": "Vector Contours & Text Stippling"
+      },
+      {
+        "name": "Wetland Ochre",
+        "hex": "#D8CEBC",
+        "role": "Riparian Hydrology & Soil Swales"
+      }
+    ],
+    "key_proof_elements": "QGIS topographical contour stippling, botanical planting density matrices, water runoff swales, Milan street tree microclimate study data."
+  },
+  "urban_morphology": {
+    "id": "urban_morphology",
+    "category": "architecture",
+    "title": "14. The Urban Morphology & Public Space Continuum",
+    "archetype": "Morphological Public Space Analysis & Block Typology (Palak Bhattad / CEPT University MUD)",
+    "ideal_for": "Master of Urban Design Candidates, City Planners & Civic Public Space Specialists",
+    "spread_aspect": "2:1 Panoramic Double-Square Spread (1190 x 595 mm)",
+    "grid": "12-Column Urban Morphology Grid w/ 50% Left Text Breathing Zone",
+    "typography": {
+      "display": "League Spartan / Oswald (700 Condensed Bold)",
+      "body": "Inter / Helvetica Neue (400, 500)",
+      "technical": "Space Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Krak\u00f3w Terracotta Roof",
+        "hex": "#C8523D",
+        "role": "Building Rooftops & Accent Grids"
+      },
+      {
+        "name": "Rynek Plaza Sand",
+        "hex": "#E8D8C8",
+        "role": "Pedestrian Cobblestone Ground Plane"
+      },
+      {
+        "name": "Planty Park Forest",
+        "hex": "#3D6B5E",
+        "role": "Green Belt Loop & Market Stalls"
+      },
+      {
+        "name": "Urban Ink Black",
+        "hex": "#1E1E1E",
+        "role": "Medieval Burgage Lot Line Work"
+      }
+    ],
+    "key_proof_elements": "Full-spread isometric market square axonometrics, medieval burgage lot subdivision plans, Planty green belt pedestrian loop flow diagrams."
+  },
+  "tropical_resilience": {
+    "id": "tropical_resilience",
+    "category": "architecture",
+    "title": "15. Tropical Resilience & Modular Public Infrastructure",
+    "archetype": "Interlocking Demountable MSME Modules & Riparian Boardwalks (David Romaldo Sitepu / PUPR BIM 1st Place)",
+    "ideal_for": "Architectural Designers, BIM Coordinators & Tropical Community Infrastructure Architects",
+    "spread_aspect": "4:3 Studio Presentation Portfolio (Bound Book Mockup)",
+    "grid": "10-Column Multi-Scale Technical Grid (Site Plan + Detail + Render)",
+    "typography": {
+      "display": "Montserrat / Poppins (700 Bold)",
+      "body": "Inter (400 Regular)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Polycarbonate Cyan",
+        "hex": "#4A90E2",
+        "role": "Translucent Facade Panels"
+      },
+      {
+        "name": "Modular Steel Blue",
+        "hex": "#2C3E50",
+        "role": "Interlocking Pin-Joint Frames"
+      },
+      {
+        "name": "Riparian Timber Deck",
+        "hex": "#C4A47C",
+        "role": "Boardwalk Paving & Bamboo Blinds"
+      },
+      {
+        "name": "Night Lantern Amber",
+        "hex": "#F5A623",
+        "role": "Diurnal MSME Night Lighting"
+      }
+    ],
+    "key_proof_elements": "Non-Motorized Transport (NMT) parking matrices, demountable steel locking pin connection details, diurnal day/night elevation studies."
   }
 }
