@@ -1,0 +1,29 @@
+{
+  "name": "edit_spreads",
+  "description": "Edits existing spreads using text instructions (e.g. 'Add thermal break flashing callout', 'Shift floor plan to left 8 columns').",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "projectId": {
+        "type": "string",
+        "description": "Project ID."
+      },
+      "selectedSpreadIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "List of spread IDs to edit."
+      },
+      "prompt": {
+        "type": "string",
+        "description": "Editing instruction."
+      }
+    },
+    "required": [
+      "projectId",
+      "selectedSpreadIds",
+      "prompt"
+    ]
+  }
+}

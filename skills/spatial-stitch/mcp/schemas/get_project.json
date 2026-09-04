@@ -1,0 +1,16 @@
+{
+  "name": "get_project",
+  "description": "Retrieves project metadata, spread index, and passport configuration.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "projectId": {
+        "type": "string",
+        "description": "Target project ID."
+      }
+    },
+    "required": [
+      "projectId"
+    ]
+  }
+}

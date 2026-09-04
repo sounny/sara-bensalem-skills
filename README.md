@@ -134,15 +134,6 @@ The web application is deployed on Firebase Hosting:
 - **5-Act Interactive Visualizer**: Step through each spread of a master case study.
 - **MCP Client Snippet Generator**: 1-click copy for Claude Desktop and Cursor configurations.
 
----
-
-## 💰 Monetization Roadmap
-
-1. **Digital Templates ($59)**: Multi-page Figma and Adobe InDesign Swiss layout grids, 20% opacity numbering vectors, and project passport modules.
-2. **The Portfolio Architect Handbook ($29)**: 120-page field manual covering all 10 archetypes, drawing lineweight calibration guides, and cover letter formulas.
-3. **1-on-1 Loom Video Audits ($149)**: Sara Bensalem personally records a 15-minute screen critique auditing spreads against the 100-point rubric.
-4. **VIP Bespoke Overhaul ($499)**: Complete layout restructuring, typography redesign, and constructive proof plate curation.
-5. **B2B University Workshops ($1,200–$2,500)**: Half-day interactive masterclasses for graduating architecture and interior design cohorts.
 
 ---
 

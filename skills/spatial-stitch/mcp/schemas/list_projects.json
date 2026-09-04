@@ -1,0 +1,8 @@
+{
+  "name": "list_projects",
+  "description": "Lists all portfolio and monograph projects in the workspace.",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}

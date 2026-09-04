@@ -1,0 +1,47 @@
+{
+  "name": "generate_spread_from_text",
+  "description": "Generates a publication-grade vector architectural spread from a text description using Swiss modular grids, constructive detailing standards, and the 10 Archetypes.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "projectId": {
+        "type": "string",
+        "description": "Project ID to attach the spread to."
+      },
+      "prompt": {
+        "type": "string",
+        "description": "Prompt describing the architectural plate or narrative act (e.g. 'Act 4: 1:20 Wall Section with rainscreen cladding, lime-hemp insulation, and dimension strings')."
+      },
+      "archetype": {
+        "type": "string",
+        "enum": [
+          "THE_PASSPORT",
+          "THE_CONSTRUCTIVE_PROOF",
+          "THE_SPATIAL_ANATOMY",
+          "THE_CARTOGRAPHIC_CONTEXT",
+          "THE_ENVIRONMENTAL_ENGINE",
+          "THE_TECTONIC_TRIPTYCH",
+          "THE_PROCESS_MATRIX",
+          "THE_SCENOGRAPHIC_SPREAD",
+          "THE_URBAN_TERRITORY",
+          "THE_TYPOGRAPHIC_INDEX"
+        ],
+        "description": "Layout archetype to structure the spread."
+      },
+      "format": {
+        "type": "string",
+        "enum": [
+          "LANDSCAPE_16_9",
+          "DOUBLE_A3",
+          "PORTRAIT_A4",
+          "PRINT_MONOGRAPH"
+        ],
+        "description": "Target canvas format."
+      }
+    },
+    "required": [
+      "projectId",
+      "prompt"
+    ]
+  }
+}

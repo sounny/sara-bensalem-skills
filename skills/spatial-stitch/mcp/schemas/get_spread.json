@@ -1,0 +1,16 @@
+{
+  "name": "get_spread",
+  "description": "Fetches the full vector SVG and semantic HTML5 print markup for a spread.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "spreadId": {
+        "type": "string",
+        "description": "Target spread ID."
+      }
+    },
+    "required": [
+      "spreadId"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "generate_variants",
+  "description": "Generates design variants of an existing spread using REFINE (strict Swiss baseline alignment), EXPLORE (alternative complementary archetype), or REIMAGINE (radical editorial re-composition).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "projectId": {
+        "type": "string",
+        "description": "Project ID containing the spread."
+      },
+      "spreadId": {
+        "type": "string",
+        "description": "Target spread ID to generate variants for."
+      },
+      "creativeRange": {
+        "type": "string",
+        "enum": [
+          "REFINE",
+          "EXPLORE",
+          "REIMAGINE"
+        ],
+        "description": "Creative range: REFINE (subtle grid tuning), EXPLORE (different archetype), REIMAGINE (radical dark atelier/full-bleed re-composition)."
+      },
+      "variantCount": {
+        "type": "integer",
+        "description": "Number of variants to produce (1-4). Defaults to 3."
+      }
+    },
+    "required": [
+      "projectId",
+      "spreadId"
+    ]
+  }
+}

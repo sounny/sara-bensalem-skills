@@ -1,0 +1,16 @@
+{
+  "name": "audit_spread",
+  "description": "Evaluates an architectural spread or portfolio plate against the 100-Point Anti-Render-Trap Rubric, verifying 1:20 wall section proof, Swiss typographic discipline, and recruiter trust ergonomics (Bespoke Careers & GrowthGrid Africa standards).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "spreadId": {
+        "type": "string",
+        "description": "Target spread ID to audit."
+      }
+    },
+    "required": [
+      "spreadId"
+    ]
+  }
+}

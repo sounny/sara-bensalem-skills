@@ -1,0 +1,34 @@
+{
+  "name": "create_project",
+  "description": "Creates a new architectural monograph, portfolio dossier, or publication project with target canvas format and Project Passport metadata.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Project title (e.g. 'Breton Granite Long\u00e8re Adaptive Reuse')"
+      },
+      "description": {
+        "type": "string",
+        "description": "High-level architectural thesis or brief."
+      },
+      "format": {
+        "type": "string",
+        "enum": [
+          "LANDSCAPE_16_9",
+          "DOUBLE_A3",
+          "PORTRAIT_A4",
+          "PRINT_MONOGRAPH"
+        ],
+        "description": "Target canvas format. Defaults to LANDSCAPE_16_9."
+      },
+      "passport": {
+        "type": "object",
+        "description": "Standardized Project Passport metadata block (typology, location, work rights, role, software stack)."
+      }
+    },
+    "required": [
+      "name"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "spatial-stitch",
+  "version": "1.0.0",
+  "description": "Google Stitch style generative design engine for spatial portfolios, architectural monographs, and publication documents.",
+  "tools": [
+    "create_project",
+    "get_project",
+    "list_projects",
+    "generate_spread_from_text",
+    "edit_spreads",
+    "generate_variants",
+    "get_spread",
+    "audit_spread"
+  ],
+  "author": "Sara Bensalem Studio",
+  "entrypoint": "engine/server.py"
+}

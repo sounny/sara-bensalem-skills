@@ -1,0 +1,40 @@
+{
+  "proj_5c3dd73e": {
+    "id": "proj_5c3dd73e",
+    "name": "Test Atelier",
+    "description": "",
+    "canvas_format": "LANDSCAPE_16_9",
+    "design_system_id": "ds_swiss_standard",
+    "passport": {
+      "title": "Test Atelier",
+      "typology": "Civic & Cultural Architecture",
+      "location": "Paris, France",
+      "coordinates": "48\u00b051'24\"N 02\u00b021'07\"E",
+      "year": "2026",
+      "area": "3,200 m\u00b2",
+      "client": "Municipal Heritage Trust",
+      "stage": "RIBA Stage 4 / Construction Documentation",
+      "team_size": 4,
+      "candidate_role": "Lead Project Architect & Construction Detailing",
+      "line_item_contributions": [
+        "1:20 constructive wall section envelope detailing",
+        "Breton stone masonry stabilization schedule",
+        "Lime-hemp thermal insulation specifications",
+        "PMR accessibility corridor clearance compliance"
+      ],
+      "software_stack": [
+        "Revit 2026 (BIM)",
+        "Rhino 8 + Grasshopper",
+        "AutoCAD",
+        "InDesign"
+      ],
+      "work_rights_status": "Permanent EU Citizen / No Sponsorship Required",
+      "thesis_statement": "Reconciling historical vernacular granite fabric with contemporary low-carbon hygrothermal retrofits."
+    },
+    "spread_ids": [
+      "spread_3be217388d"
+    ],
+    "created_at": 1788538466.6387975,
+    "updated_at": 1788538466.6387975
+  }
+}
