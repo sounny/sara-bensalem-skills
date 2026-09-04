@@ -1,0 +1,142 @@
+[
+  {
+    "id": "01_swiss_editorial",
+    "name": "The Swiss Editorial Landscape",
+    "typology_focus": "European Contemporary Architectural Agency & Field Practice",
+    "page_budget": "24 Spreads (48 Booklet Pages)",
+    "aspect_ratio": "16:9 or A4 Landscape",
+    "target_firms": "High-profile European architectural agencies, international consultancies",
+    "key_elements": [
+      "Huge 20% opacity display numbers (01-06)",
+      "Double-spread panoramic balance",
+      "On-site construction supervision photos",
+      "Exploded axonometrics & tectonic assemblies"
+    ]
+  },
+  {
+    "id": "02_technical_office",
+    "name": "The Technical Office Working Set",
+    "typology_focus": "Tectonic Detailing, Working Sets & Execution Engineering",
+    "page_budget": "30-35 Pages",
+    "aspect_ratio": "A3 or A4 Landscape",
+    "target_firms": "General contractors, technical design offices (AECOM, Dar Al-Handasah, Bouygues)",
+    "key_elements": [
+      "90% technical working drawings",
+      "Parapet waterproofing details",
+      "Mechanical anchor brackets",
+      "Ramp slope and parking coordination"
+    ]
+  },
+  {
+    "id": "03_french_luxury_minimalist",
+    "name": "The French Luxury Minimalist Book",
+    "typology_focus": "Parisian Interior Architecture, Longère Renovation & Bespoke Scenography",
+    "page_budget": "28-32 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Parisian interior design ateliers, boutique residential agencies, luxury hospitality studios",
+    "key_elements": [
+      "Monogram branding",
+      "Warm greige minimalism",
+      "Heritage farmhouse and stone longère conversions",
+      "Custom bespoke furniture prototype fabrication"
+    ]
+  },
+  {
+    "id": "04_phenomenological_storyboard",
+    "name": "The Phenomenological Storyboard",
+    "typology_focus": "Cultural Memorials & Phenomenological Spatial Storytelling",
+    "page_budget": "26 Spreads (52 Pages)",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Cultural institutions, memorial design studios, narrative-led practices",
+    "key_elements": [
+      "6-panel graphic comic-strip storyboards",
+      "Sensory psychological user journey",
+      "Tactile physical study models",
+      "Acoustic reflection pools and courtyards"
+    ]
+  },
+  {
+    "id": "05_feminist_urbanist",
+    "name": "The Feminist Urbanist & Social Researcher",
+    "typology_focus": "Feminist Urbanism, Empirical Safety Audits & Therapeutic Master Planning",
+    "page_budget": "24-30 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Civic design foundations, progressive urban planning think-tanks, international master planning consultancies",
+    "key_elements": [
+      "Empirical transit corridor safety audit",
+      "12-factor inclusive urban design typology",
+      "Circular before/after comparative isometrics",
+      "Therapeutic radial community master plan"
+    ]
+  },
+  {
+    "id": "06_vernacular_monograph",
+    "name": "The Vernacular & Ecological Monograph",
+    "typology_focus": "Bioclimatic Vernacular Architecture & Architectural Publishing",
+    "page_budget": "30-36 Pages",
+    "aspect_ratio": "Square (1:1) or A4 Portrait",
+    "target_firms": "Bioclimatic practices, tropical design institutes, research foundations",
+    "key_elements": [
+      "Clay massing diagrams",
+      "Terracotta tile sun-traps",
+      "Graphite isometrics",
+      "Published architectural research monographs"
+    ]
+  },
+  {
+    "id": "07_regenerative_systems",
+    "name": "The Regenerative Environmental Systems",
+    "typology_focus": "Regenerative Climate Infrastructure, Agro-Industrial Hubs & Water Systems",
+    "page_budget": "50-60 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "International concept consultancies (BIG, Foster + Partners, Snøhetta, ZHA)",
+    "key_elements": [
+      "Aquatic floating remediation infrastructure",
+      "Vertical automated hydroponics & delta salinity remediation",
+      "International competition accolades",
+      "Tier-1 engineering consultancy validation"
+    ]
+  },
+  {
+    "id": "08_commercial_specifier",
+    "name": "The Commercial Interior Specifier",
+    "typology_focus": "Commercial Retail Showrooms, Hospitality & Lighting Execution",
+    "page_budget": "45-52 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Commercial retail agencies, corporate fitout consultancies, exhibition stand architects",
+    "key_elements": [
+      "Tender-ready specification sheets",
+      "Luminaire schedules (L1-L29)",
+      "Exact material pricing (€/m²)",
+      "High-end minimalist commercial pavilions"
+    ]
+  },
+  {
+    "id": "09_multiscale_infrastructure",
+    "name": "The Multi-Scale Infrastructure Architect",
+    "typology_focus": "Multi-Scale Infrastructure, Transit Terminals & Tectonic Joinery",
+    "page_budget": "18-22 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Large multidisciplinary consultancies, transit authorities, corporate design practices",
+    "key_elements": [
+      "LRT multi-modal transit terminal",
+      "Exploded structural skin axonometrics",
+      "Biophilic cultural pavilion",
+      "National public works contractor validation"
+    ]
+  },
+  {
+    "id": "10_industrial_housing_bim",
+    "name": "The Industrial Housing & Net-Zero BIM Specialist",
+    "typology_focus": "Net-Zero Multi-Family Housing, Prefabrication & Parametric BIM Façades",
+    "page_budget": "20-24 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Multi-family residential developers, sustainability consultancies, computational design studios",
+    "key_elements": [
+      "Modular workforce housing clusters",
+      "Solar Decathlon Net-Zero team leadership",
+      "Built residential commissions",
+      "Grasshopper parametric solar screen facades"
+    ]
+  }
+]

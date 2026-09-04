@@ -53,6 +53,8 @@
         <nav class="hidden lg:flex items-center gap-5 text-xs font-mono text-studio-textSecondary">
           <a href="#skills" class="hover:text-studio-textPrimary transition font-medium">Skills Suite</a>
           <a href="#explorer" class="hover:text-studio-textPrimary transition font-medium">1:20 Explorer</a>
+          <a href="#library" class="hover:text-studio-textPrimary transition font-medium">Design Library</a>
+          <a href="#languages" class="hover:text-studio-textPrimary transition font-medium">Tectonic Theory</a>
           <a href="#grill" class="hover:text-studio-textPrimary transition font-medium">Grill My Design</a>
           <a href="#install" class="hover:text-studio-textPrimary transition font-medium">Setup Config</a>
         </nav>
@@ -60,7 +62,7 @@
         <a href="sara-bensalem-skills.zip" download="sara-bensalem-skills.zip" class="text-xs font-mono font-bold text-white transition flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-studio-graphite hover:bg-black shadow-sm">
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           <span>Download All Skills</span>
-          <span class="text-[10px] opacity-75 font-normal px-1 rounded bg-white/20">88 KB</span>
+          <span class="text-[10px] opacity-75 font-normal px-1 rounded bg-white/20">144 KB</span>
         </a>
       </div>
     </div>
@@ -405,6 +407,329 @@
       </div>
     </section>
 
+    
+    
+    <!-- =========================================================================
+         PORTFOLIO DESIGN LIBRARY: LOOKS, FONTS & PALETTES
+         ========================================================================= -->
+    <section id="library" class="py-20 px-4 sm:px-6 border-b border-studio-border bg-studio-subtle/40">
+      <div class="max-w-6xl mx-auto space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-white text-studio-textSecondary text-[11px] font-mono font-semibold border border-studio-border shadow-2xs">
+            <i data-lucide="palette" class="w-3.5 h-3.5"></i>
+            <span>EMPIRICAL ARCHITECTURAL PORTFOLIO LIBRARY</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-studio-textPrimary">
+            Portfolio Design Library: Looks, Fonts & Colors
+          </h2>
+          <p class="text-xs sm:text-sm text-studio-textSecondary leading-relaxed">
+            Distilled from our empirical analysis of over a dozen premier international architectural and interior portfolios. Explore publication-grade typographic pairings, curated materiality swatches, and layout archetypes.
+          </p>
+        </div>
+
+        <!-- Filter / Archetype Quick Switcher -->
+        <div class="flex items-center justify-center gap-2 overflow-x-auto pb-2 text-xs font-mono">
+          <button class="look-tab active px-3.5 py-1.5 rounded-lg bg-studio-graphite text-white font-bold transition shadow-xs whitespace-nowrap" data-look="swiss_editorial">
+            01. Swiss Editorial
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="french_luxury">
+            02. French Luxury
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="technical_blueprints">
+            03. Technical Blueprints
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="brutalist_tectonics">
+            04. Brutalist Béton Brut
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="vernacular_bioclimatic">
+            05. Bioclimatic Vernacular
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="art_deco_moderne">
+            06. Art Deco
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="phenomenological_story">
+            07. Phenomenological
+          </button>
+          <button class="look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap" data-look="structural_expression">
+            08. Structural High-Tech
+          </button>
+        </div>
+
+        <!-- Dynamic Featured Look Showcase Card -->
+        <div id="look-showcase" class="p-6 sm:p-8 rounded-2xl bg-white border border-studio-border shadow-xl shadow-stone-900/5 space-y-6">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-studio-borderLight pb-6">
+            <div class="space-y-1.5">
+              <span id="look-archetype" class="text-[10px] font-mono uppercase tracking-wider text-studio-textMuted font-bold block">The Swiss International Style (Lars Müller / El Croquis)</span>
+              <h3 id="look-title" class="text-2xl sm:text-3xl font-display font-bold text-studio-textPrimary">01. The Swiss Editorial Monograph</h3>
+              <p id="look-ideal" class="text-xs text-studio-textSecondary max-w-2xl">Junior to Senior Architects targeting European Design Consultancies & Competitions</p>
+            </div>
+            
+            <button id="copy-look-btn" type="button" class="px-4 py-2 rounded-lg bg-studio-graphite hover:bg-black text-white font-mono font-bold text-xs transition flex items-center gap-2 self-start lg:self-auto shadow-xs whitespace-nowrap">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copy-look-label">Copy Design Palette</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Column 1: Curated Color Swatches -->
+            <div class="space-y-3 font-mono text-xs">
+              <span class="text-[10px] uppercase tracking-wider text-studio-textMuted font-bold block">Architectural Swatches:</span>
+              <div id="look-swatches" class="space-y-2">
+                <!-- Injected via app.js -->
+              </div>
+            </div>
+
+            <!-- Column 2: Typographic System -->
+            <div class="space-y-3 font-mono text-xs">
+              <span class="text-[10px] uppercase tracking-wider text-studio-textMuted font-bold block">Typographic Pairing Hierarchy:</span>
+              <div class="p-4 rounded-xl bg-studio-bone border border-studio-border space-y-3">
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Display Titles:</span>
+                  <div id="look-font-display" class="font-display font-bold text-sm text-studio-textPrimary mt-0.5">Space Grotesk (700)</div>
+                </div>
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Body Copy & Narrative:</span>
+                  <div id="look-font-body" class="font-sans font-normal text-xs text-studio-textSecondary mt-0.5">Inter / Plus Jakarta Sans (400, 500)</div>
+                </div>
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Technical Cotations & Scales:</span>
+                  <div id="look-font-tech" class="font-mono font-bold text-xs text-studio-textPrimary mt-0.5">JetBrains Mono (600)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: Grid & Proof Metrics -->
+            <div class="space-y-3 font-mono text-xs">
+              <span class="text-[10px] uppercase tracking-wider text-studio-textMuted font-bold block">Layout Blueprint & Proof:</span>
+              <div class="p-4 rounded-xl bg-studio-bone border border-studio-border space-y-2.5">
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Spread Aspect Ratio:</span>
+                  <span id="look-aspect" class="font-bold text-studio-textPrimary">16:9 Landscape / Double-A3</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Modular Grid System:</span>
+                  <span id="look-grid" class="font-bold text-studio-textPrimary">12-Column Modular Grid w/ 8pt Baseline Rhythm</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-studio-textMuted block">Anti-Render-Trap Proof:</span>
+                  <span id="look-proof" class="text-[11px] text-studio-textSecondary leading-relaxed block mt-0.5">Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ARCHITECTURAL DESIGN LANGUAGES & TECTONIC MOVEMENTS
+         ========================================================================= -->
+    <section id="languages" class="py-20 px-4 sm:px-6 border-b border-studio-border bg-white">
+      <div class="max-w-6xl mx-auto space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-studio-subtle text-studio-textSecondary text-[11px] font-mono font-semibold border border-studio-border">
+            <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+            <span>TECTONIC THEORY & DISCOURSE</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-studio-textPrimary">
+            Fluent in Architectural Theory & Movements
+          </h2>
+          <p class="text-xs sm:text-sm text-studio-textSecondary leading-relaxed">
+            Sara Bensalem Skills speaks like master architects—articulating portfolios through authentic spatial concepts, stereotomic massing, tectonic truth to materials, and phenomenological light.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Language 1: Brutalism & Béton Brut -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 01</span>
+              <span class="text-xs font-mono text-studio-textMuted">Reyner Banham, 1955</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Brutalism & Béton Brut</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Tectonic honesty, unadorned stereotomic massing, board-marked shuttering seams, and valuation of materials "as found" (Alison & Peter Smithson, Le Corbusier, Louis Kahn).
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Stereotomic Volumetric Weight</div>
+              <div>• Truth to Materials (As-Found)</div>
+              <div>• Board-Formed Shuttering Ties</div>
+            </div>
+          </div>
+
+          <!-- Language 2: Tectonic Rationalism -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 02</span>
+              <span class="text-xs font-mono text-studio-textMuted">Ticino School</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Tectonic Rationalism</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Geometric discipline, strict 12/16-column Swiss modular grids, and clear articulation of stereotomic base vs tectonic frame (Livio Vacchini, Luigi Snozzi, Mario Botta).
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Stereotomic Base vs Tectonic Frame</div>
+              <div>• Le Corbusier Modulor & Golden Ratio</div>
+              <div>• Calibrated Hairline Drafting (0.13mm)</div>
+            </div>
+          </div>
+
+          <!-- Language 3: Phenomenological Minimalism -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 03</span>
+              <span class="text-xs font-mono text-studio-textMuted">Peter Zumthor & Pallasmaa</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Phenomenological Minimalism</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Multi-sensory tactile engagement, spatial compression and release (*enfilade*), shadow reveals (*joint creux*), and raking chiaroscuro daylight.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Compression & Release (Thresholds)</div>
+              <div>• 1:5 Shadow Reveals (Joint Creux)</div>
+              <div>• Tactile Stone & Timber Triptychs</div>
+            </div>
+          </div>
+
+          <!-- Language 4: Critical Regionalism -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 04</span>
+              <span class="text-xs font-mono text-studio-textMuted">Kenneth Frampton</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Critical Regionalism</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Rejection of placeless global architecture in favor of local geological provenance, Breton granite ashlar, breathable lime-hemp biotamping, and site memory.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Geological Provenance (Local Quarries)</div>
+              <div>• Monolithic Breathable Bio-Composites</div>
+              <div>• Net-Negative Embodied Carbon (RE2020)</div>
+            </div>
+          </div>
+
+          <!-- Language 5: Structural Expressionism -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 05</span>
+              <span class="text-xs font-mono text-studio-textMuted">Piano, Rogers & Rice</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Structural Expressionism</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Absolute legibility of structural load transfers, exposed cast-steel nodes, tension tie-rods, and Louis Kahn's clear separation of Serviced vs Servant spaces.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Legibility of Structural Load Paths</div>
+              <div>• Kahnian Serviced vs Servant Hierarchy</div>
+              <div>• Cast Steel Nodes & Pin Connections</div>
+            </div>
+          </div>
+
+          <!-- Language 6: Swiss Editorial Neue Grafik -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 06</span>
+              <span class="text-xs font-mono text-studio-textMuted">Lars Müller & El Croquis</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Swiss Monograph Rigor</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              The gold standard of architectural monograph publishing. 8, 12, and 16-column modular layouts, archival bone paper (#F8F8F5), and uncropped technical plates.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• 8/12/16-Column Modular Layouts</div>
+              <div>• Baseline Grid Precision (8pt Ratios)</div>
+              <div>• Standardized Project Passports</div>
+            </div>
+          </div>
+
+          <!-- Language 7: Neoclassicism & Palladian Order -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 07</span>
+              <span class="text-xs font-mono text-studio-textMuted">Palladio & Schinkel</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Neoclassicism</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Axial symmetry, tripartite elevation hierarchy (rusticated base, piano nobile, attic), canonical Doric/Ionic orders, and Vitruvian proportional balance.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Vitruvian Triad (Firmitas, Utilitas, Venustas)</div>
+              <div>• Monumental Axial Porticos & Colonnades</div>
+              <div>• Stereotomic Rusticated Stone Base</div>
+            </div>
+          </div>
+
+          <!-- Language 8: Beaux-Arts & Monumental Hierarchy -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 08</span>
+              <span class="text-xs font-mono text-studio-textMuted">École des Beaux-Arts</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Beaux-Arts</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              The foundational *Parti Pris*, choreographed spatial *Marche* through monumental rotundas and grand ceremonial staircases, and expressive sectional poché.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• The Parti Pris (Founding Concept Diagram)</div>
+              <div>• The Marche (Choreographed Spatial Promenade)</div>
+              <div>• Monumental Rotundas & Ceremonial Axis</div>
+            </div>
+          </div>
+
+          <!-- Language 9: Art Nouveau & Biomorphic Iron -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 09</span>
+              <span class="text-xs font-mono text-studio-textMuted">Horta, Guimard & Gaudí</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Art Nouveau</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Whiplash curves (*coup de fouet*), biomorphic wrought-iron structural integration, asymmetric organic elevations, and total work of art (*Gesamtkunstwerk*).
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Whiplash Curve (Coup de Fouet) Tectonics</div>
+              <div>• Gesamtkunstwerk (Total Work of Art)</div>
+              <div>• Biomorphic Wrought Iron Structural Stems</div>
+            </div>
+          </div>
+
+          <!-- Language 10: Art Deco & Geometric Modernism -->
+          <div class="p-6 rounded-2xl bg-studio-bone border border-studio-border space-y-3.5 shadow-2xs hover:shadow-md transition">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-studio-textPrimary border border-studio-border font-bold">MOVEMENT 10</span>
+              <span class="text-xs font-mono text-studio-textMuted">1925 Paris Exposition</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-studio-textPrimary">Art Deco</h3>
+            <p class="text-xs text-studio-textSecondary leading-relaxed">
+              Stepped ziggurat skyscraper setbacks, chevron and sunburst metalwork, polished black marble, and streamlined verticality paired with exotic wood veneers.
+            </p>
+            <div class="pt-2 text-[11px] font-mono text-studio-textPrimary border-t border-studio-borderLight space-y-1">
+              <div class="text-studio-textMuted text-[10px]">CONCEPTS:</div>
+              <div>• Stepped Ziggurat Massing & Setbacks</div>
+              <div>• Geometric Chevrons & Sunburst Reliefs</div>
+              <div>• Luxurious Macassar Ebony & Satin Brass Inlays</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
     <!-- =========================================================================
          GRILL MY DESIGN: LIVE SOCRATIC JURY TRIBUNAL SANDBOX
          ========================================================================= -->
@@ -427,17 +752,23 @@
           
           <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
             <span class="text-studio-textMuted">Presets:</span>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="timber">
-              Timber Pavilion
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="brutalist">
+              Brutalist Archive
             </button>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="glass">
-              Glass High-Rise
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="artdeco">
+              Art Deco Tower
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="beauxarts">
+              Beaux-Arts Rotunda
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="artnouveau">
+              Art Nouveau Atelier
+            </button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="neoclassic">
+              Neoclassical Hall
             </button>
             <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="render">
-              3D Renders Only
-            </button>
-            <button type="button" class="preset-btn px-2.5 py-1 rounded bg-white hover:bg-studio-border text-studio-textPrimary border border-studio-border transition shadow-2xs font-medium" data-preset="pmr">
-              PMR Urban Library
+              3D Render Trap
             </button>
           </div>
         </div>

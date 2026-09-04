@@ -1,0 +1,10 @@
+{
+  "name": "spatial-anatomy",
+  "description": "Generates 1:100 architectural floor plans and audits PMR/ADA wheelchair clearances and egress.",
+  "tools": [
+    {
+      "name": "validate_pmr_and_egress",
+      "description": "Validates 1500mm PMR wheelchair turning zones and egress corridor clearances."
+    }
+  ]
+}

@@ -3,8 +3,10 @@ Core Socratic Architectural Critique & Cross-Examination Engine
 Sara Bensalem Studio • Strasbourg Atelier
 """
 import re
-from typing import List, Dict, Any
-from .models import JuryPersona, Severity, ScrutinyProbe, DimensionScore, GrillReport
+try:
+    from .models import JuryPersona, Severity, ScrutinyProbe, DimensionScore, GrillReport
+except ImportError:
+    from models import JuryPersona, Severity, ScrutinyProbe, DimensionScore, GrillReport
 
 class GrillEngine:
     def __init__(self):

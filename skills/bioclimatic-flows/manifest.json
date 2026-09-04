@@ -1,0 +1,10 @@
+{
+  "name": "bioclimatic-flows",
+  "description": "Computes passive solar geometry and natural stack cross-ventilation buoyancy loops.",
+  "tools": [
+    {
+      "name": "calculate_bioclimatic_flows",
+      "description": "Generates passive solar angles and natural stack airflow diagrams."
+    }
+  ]
+}

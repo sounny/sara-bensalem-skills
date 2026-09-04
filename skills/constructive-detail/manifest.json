@@ -1,0 +1,10 @@
+{
+  "name": "constructive-detail",
+  "description": "Draws 1:20 constructive wall sections and calculates hygrothermal performance.",
+  "tools": [
+    {
+      "name": "build_1_20_wall_section",
+      "description": "Generates buildable 1:20 wall sections with U-value calculation and dimension strings."
+    }
+  ]
+}

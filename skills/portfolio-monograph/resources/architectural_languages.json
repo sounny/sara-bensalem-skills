@@ -1,0 +1,106 @@
+{
+  "brutalist": {
+    "name": "Brutalist / B\u00e9ton Brut & Tectonic Honesty",
+    "lineage": "Alison & Peter Smithson (New Brutalism), Le Corbusier (La Tourette, Chandigarh), Louis Kahn (Salk Institute), Marcel Breuer",
+    "banham_criteria": [
+      "1. 1:1 Memorability of Image through stark volumetric geometry",
+      "2. Clear Exhibition of Structure and circulation infrastructure",
+      "3. Valuation of Materials 'as found' (b\u00e9ton brut, board-marked timber shuttering, raw steel, unplastered ashlar)"
+    ],
+    "spatial_concepts": [
+      "Stereotomic massing (heavy, earth-grounded, subtractive volumetric carving)",
+      "Honest joints (no decorative trim, visible tie-rod holes, expressed board shuttering seams)",
+      "Deep spatial reveals and monumental brise-soleil shadow play",
+      "Thermal mass inertia (diurnal heat storage in exposed concrete/stone)"
+    ],
+    "monograph_expression": "Raw heavyweight typography (JetBrains Mono / Space Grotesk in high contrast), uncropped constructive 1:20 sections showing rebar placement and formwork ties, zero photographic glamour rendering, pure tectonic drawing."
+  },
+  "tectonic_rationalist": {
+    "name": "Tectonic Rationalism / Swiss Ticino School",
+    "lineage": "Livio Vacchini, Luigi Snozzi, Mario Botta, Aldo Rossi, Karl Gerstner",
+    "spatial_concepts": [
+      "Hyper-calibrated geometric discipline and modular proportional rhythm",
+      "Clear articulation of the stereotomic base vs the tectonic frame",
+      "Mathematical Swiss grid alignment (8, 12, 16 columns) with strict baseline hierarchy",
+      "Tectonic joints as architectural poetry (calibrated hairlines 0.13mm to 0.50mm)"
+    ],
+    "monograph_expression": "Strict Swiss typography, baseline grid discipline, uncropped orthographic plans and sections, exact dimension strings, archival bone paper background."
+  },
+  "phenomenological_minimalist": {
+    "name": "Phenomenological Minimalism & Material Atmosphere",
+    "lineage": "Peter Zumthor (Vals, Kolumba), Juhani Pallasmaa (The Eyes of the Skin), Alberto Campo Baeza, Sverre Fehn",
+    "spatial_concepts": [
+      "Multi-sensory tactile engagement (temperature of stone, acoustic damping of mass timber)",
+      "Raking natural daylight revealing surface grain and micro-relief",
+      "Compression and release (the liminal threshold chamber before the monumental room)",
+      "Shadow reveals (joint creux) and silent transitions between floor, wall, and ceiling"
+    ],
+    "monograph_expression": "Generous 40%+ white space breathing room, tactile material triptychs, micro-detailed 1:5 joinery reveals, evocative chiaroscuro lighting vectors."
+  },
+  "critical_regionalist": {
+    "name": "Critical Regionalism & Bioclimatic Vernacular",
+    "lineage": "Kenneth Frampton (Six Points for an Architecture of Resistance), Geoffrey Bawa, Glenn Murcutt, Studio Mumbai",
+    "spatial_concepts": [
+      "Direct response to local microclimate, solar azimuth, and prevailing wind vectors",
+      "Authentic geological provenance (Breton granite, local lime-hemp biotamping)",
+      "Deep eaves and permeable tectonic screens protecting the envelope",
+      "Rejection of placeless corporate architecture in favor of tectonic site memory"
+    ],
+    "monograph_expression": "Solar vector diagrams, stack ventilation loops, material sourcing maps with quarry coordinates, environmental performance specs (U-value, carbon footprint)."
+  },
+  "structural_expressionist": {
+    "name": "High-Tech Structural Expressionism",
+    "lineage": "Renzo Piano, Richard Rogers, Norman Foster, Peter Rice",
+    "spatial_concepts": [
+      "Absolute legibility of structural forces (tension rods, compression struts, pin joints)",
+      "Kahnian articulation of Serviced vs Servant spaces (exposed MEP risers, separate circulation towers)",
+      "Prefabricated modular assembly and demountable dry joints",
+      "High-performance glazed envelopes with dynamic automated shading"
+    ],
+    "monograph_expression": "Exploded axonometrics, 1:10 cast-steel node details, engineering calculation tables, dynamic vector flow diagrams."
+  },
+  "neoclassical": {
+    "name": "Neoclassicism & Palladian Order",
+    "lineage": "Claude-Nicolas Ledoux, \u00c9tienne-Louis Boull\u00e9e, Karl Friedrich Schinkel, Andrea Palladio, Vitruvius",
+    "spatial_concepts": [
+      "Rigorous axial symmetry and hierarchical tripartite elevation (rusticated plinth base, piano nobile, attic)",
+      "Canonical classical orders (Doric, Ionic, Corinthian) and pedimented porticos",
+      "Monumental stereotomic massing with crisp stone entablatures and peristyles",
+      "Vitruvian triad: Firmitas (structural soundess), Utilitas (functional clarity), Venustas (proportional beauty)"
+    ],
+    "monograph_expression": "Centered monumental titles, symmetrical double-page spreads, hairline elevation engravings, stone ashlar joint lines, classical golden ratio modular division."
+  },
+  "beaux_arts": {
+    "name": "Beaux-Arts & Monumental Hierarchy",
+    "lineage": "\u00c9cole des Beaux-Arts Paris, Charles Garnier (Op\u00e9ra de Paris), Richard Morris Hunt, McKim, Mead & White",
+    "spatial_concepts": [
+      "Clear architectural Parti Pris (the singular founding concept sketch)",
+      "The Marche: experiential choreographed sequence through grand vestibules, monument stairs, and rotunda",
+      "Monumental axial enfilades with rich sculptural cartouches and rusticated stone ashlar",
+      "Clear hierarchy of primary ceremonial spaces versus secondary servant zones"
+    ],
+    "monograph_expression": "Lavish washed ink section cuts (poch\u00e9), grand transverse sectional perspectives, richly annotated circulation pathways, monumental roman serifs paired with technical mono."
+  },
+  "art_nouveau": {
+    "name": "Art Nouveau & Biomorphic Structural Tectonics",
+    "lineage": "Victor Horta (H\u00f4tel Tassel), Hector Guimard, Antoni Gaud\u00ed (Modernisme), Henry van de Velde",
+    "spatial_concepts": [
+      "Whiplash curves (coup de fouet) transforming structural iron into organic fluid stems",
+      "Total work of art (Gesamtkunstwerk) unifying structure, fenestration, lighting, and joinery",
+      "Exposed cast and wrought iron structural columns blooming into floral cantilever brackets",
+      "Dynamic biomorphic asymmetry and stained-glass daylight filtration"
+    ],
+    "monograph_expression": "Fluid curvilinear border accents, organic 1:5 structural ironwork details, botanical circulation diagrams, warm bone paper with subtle vegetative filigree hairlines."
+  },
+  "art_deco": {
+    "name": "Art Deco & Streamlined Geometric Modernism",
+    "lineage": "1925 Exposition Internationale Paris, Jacques-\u00c9mile Ruhlmann, William Van Alen (Chrysler), Raymond Hood",
+    "spatial_concepts": [
+      "Stepped ziggurat massing setbacks responding to urban daylight zoning",
+      "Geometric stylization: chevron, sunburst, zig-zag, and vertical speedline motifs",
+      "Luxurious material triptychs: polished black Belgian granite, brushed satin brass, exotic macassar ebony",
+      "Streamlined verticality with recessed vertical fenestration spandrel panels"
+    ],
+    "monograph_expression": "Stepped geometric framing borders, high-contrast graphite typography, metallic brass accent callouts, 1:5 millwork details of bespoke brass inlays and exotic veneer graining."
+  }
+}

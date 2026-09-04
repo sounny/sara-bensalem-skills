@@ -1,0 +1,10 @@
+{
+  "name": "interior-joinery",
+  "description": "Generates 1:5 custom cabinetry reveals and concealed hardware integration drawings.",
+  "tools": [
+    {
+      "name": "generate_1_5_joinery",
+      "description": "Draws 1:5 millwork reveals, shadow reveals (joint creux), and hinge tolerances."
+    }
+  ]
+}

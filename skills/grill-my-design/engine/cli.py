@@ -3,11 +3,20 @@ CLI Runner for Grill My Design
 Usage: python -m engine.cli "project description or portfolio text"
 """
 import sys
+import os
 import json
-from .critique_engine import GrillEngine
-from .models import JuryPersona
+
+try:
+    from .critique_engine import GrillEngine
+    from .models import JuryPersona
+except ImportError:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from critique_engine import GrillEngine
+    from models import JuryPersona
 
 def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
     if len(sys.argv) < 2:
         print("Usage: python -m engine.cli \"<design statement or portfolio text>\"")
         sys.exit(1)

@@ -238,10 +238,15 @@ function generateSpreadSVG(cols = 12) {
 
 // Preset submissions for Grill My Design
 const GRILL_PRESETS = {
-  timber: "A contemporary timber cultural pavilion featuring cantilevered oak glulam rafters, cross-laminated timber roof panels, full-height double-glazed fenestration, polished terrazzo floors, and an accessible garden terrace.",
-  glass: "A 24-story urban high-rise commercial tower with a frameless unitized glass curtain wall, core-driven egress stairs, concrete shear walls, and a multi-level atrium.",
-  render: "A luxury private villa in the hills documented through photorealistic Lumion and Midjourney renders, highlighting atmospheric sunset lighting, mood boards, and textured materiality.",
-  pmr: "A municipal urban library with a 1500mm entrance airlock, wide 1800mm bookstack corridors, dual panic-bar egress stairs, and an acoustic wood-slat atrium ceiling."
+  artdeco: "A 36-story Art Deco commercial tower featuring stepped ziggurat setbacks, vertical limestone piers, stylized satin brass chevron spandrels, and a 1:20 wall section detailing terrace waterproofing and structural thermal breaks.",
+  beauxarts: "A grand Beaux-Arts municipal library with a clear axial parti pris, an experiential marche leading to a monumental coffered rotunda, and symmetrical egress corridors flanking the main reading room.",
+  artnouveau: "An Art Nouveau artist atelier featuring organic whiplash curves (coup de fouet), structural wrought-iron columns with R60 intumescent fireproofing, biomorphic stained glass skylights, and custom cast brass ironmongery.",
+  neoclassic: "A Neoclassical justice hall defined by a monumental octastyle Corinthian portico, tripartite elevation hierarchy, rusticated granite plinth, and flush-grade PMR accessibility discreetly integrated into the base.",
+
+  brutalist: "A monumental Brutalist civic archive featuring in-situ board-marked concrete (béton brut), exposed tie-rod holes, stereotomic massing, deep shadow brise-soleil, and a 1:20 constructive wall section with structural thermal breaks.",
+  phenomenological: "A thermal bathhouse carved into alpine granite, featuring 1:5 shadow reveals (joint creux) between cleft stone and cedar, raking clerestory daylight, multi-sensory acoustic damping, and verified 1500mm PMR accessibility.",
+  timber: "A contemporary timber cultural pavilion governed by a 12-column Swiss grid, featuring cantilevered oak glulam rafters, lime-hemp biotamping walls, and RE2020 net-negative embodied carbon.",
+  render: "A luxury private villa in the hills documented through photorealistic Lumion and Midjourney renders, highlighting atmospheric sunset lighting, mood boards, and textured materiality."
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -643,7 +648,49 @@ document.addEventListener('DOMContentLoaded', () => {
         let remedy = "Detail a modular structural thermal break connector (e.g. Isokorb) with 120mm continuous exterior stone-wool wrapping.";
         let metrics = { constructive: 72, pmr: 88, bio: 68, recruiter: 80, swiss: 85 };
 
-        if (text.includes('lumion') || text.includes('midjourney') || text.includes('render') && !text.includes('wall section')) {
+        if (text.includes('art deco') || text.includes('artdeco') || text.includes('ziggurat') || text.includes('chevron')) {
+          verdict = "STREAMLINED GEOMETRIC CRAFT";
+          score = 92;
+          q = "Your stepped ziggurat setbacks and satin brass chevrons capture the 1925 Paris Moderne elegance. Detail your horizontal terrace tanking: how do you prevent water ingress at the setback transitions?";
+          vuln = "Horizontal setbacks create high-risk ponding water traps if flashing and slope falloffs (< 2%) are inadequately detailed.";
+          remedy = "Specify dual-layer elastomeric EPDM tanking with stainless steel clamping reglets and continuous insulated parapet caps.";
+          metrics = { constructive: 90, pmr: 88, bio: 86, recruiter: 95, swiss: 94 };
+        } else if (text.includes('beaux') || text.includes('rotunda') || text.includes('parti')) {
+          verdict = "MONUMENTAL HIERARCHY (BEAUX-ARTS)";
+          score = 94;
+          q = "Your Beaux-Arts parti pris and spatial marche from entrance vestibule to grand rotunda is compelling. Where are your secondary emergency egress paths, and do travel distances comply with IBC Chapter 10?";
+          vuln = "Grand ceremonial volumes frequently conceal long dead-end service corridors exceeding statutory 12m limits.";
+          remedy = "Incorporate direct-to-exterior pressurized egress stairs within the symmetrical secondary corner pavilions.";
+          metrics = { constructive: 92, pmr: 95, bio: 82, recruiter: 96, swiss: 95 };
+        } else if (text.includes('art nouveau') || text.includes('whiplash') || text.includes('biomorphic')) {
+          verdict = "BIOMORPHIC TECTONIC ELEGANCE";
+          score = 90;
+          q = "Your organic whiplash ironwork echoes Victor Horta. What is your fire-resistance rating (R60/R120) on the exposed slender biomorphic iron columns, and how are differential movements accommodated?";
+          vuln = "Exposed decorative iron columns without certified intumescent protection fail contemporary life-safety fire resistance.";
+          remedy = "Specify R60 certified thin-film intumescent coating with concealed Teflon expansion slip joints at floor slab anchors.";
+          metrics = { constructive: 88, pmr: 92, bio: 85, recruiter: 94, swiss: 92 };
+        } else if (text.includes('neoclassic') || text.includes('palladian') || text.includes('portico')) {
+          verdict = "CLASSICAL PROPORTIONAL DISCIPLINE";
+          score = 93;
+          q = "Your Palladian axial symmetry and tripartite elevation hierarchy honor Schinkel. How is universal PMR wheelchair access integrated into the monumental rusticated plinth without disrupting the axial portico?";
+          vuln = "Monumental exterior staircases often force humiliating secondary side ramps for wheelchair users.";
+          remedy = "Integrate a grade-level central accessible loggia beneath the portico podium directly linking to the main atrium elevator.";
+          metrics = { constructive: 94, pmr: 96, bio: 84, recruiter: 95, swiss: 96 };
+        } else if (text.includes('brutalist') || text.includes('béton brut') || text.includes('concrete')) {
+          verdict = "TECTONIC HONESTY (BRUTALIST)";
+          score = 91;
+          q = "Your stereotomic massing and board-marked béton brut shuttering embody Banham's 'truth to materials'. How do you detail the structural thermal break at your cantilevered concrete slab to prevent thermal bridging?";
+          vuln = "Cantilevered exposed concrete slabs create severe interstitial condensation risks if uninsulated.";
+          remedy = "Detail a structural thermal break module (e.g. Schöck Isokorb type K) with 120mm continuous interior/exterior stone-wool wrapping.";
+          metrics = { constructive: 94, pmr: 88, bio: 85, recruiter: 96, swiss: 92 };
+        } else if (text.includes('phenomenological') || text.includes('bathhouse') || text.includes('granite')) {
+          verdict = "ATMOSPHERIC MASTERY";
+          score = 93;
+          q = "Your spatial sequence and sensory material triptych recall Peter Zumthor's Vals. Show me your 1:5 shadow reveal (joint creux) between wet granite floor tiles and vertical wall panels.";
+          vuln = "Sub-millimeter shadow reveals in high-humidity zones require concealed stainless steel reglets with capillary drainage.";
+          remedy = "Incorporate a 5mm recessed anodized aluminum reglet with a continuous EPDM tanking membrane.";
+          metrics = { constructive: 92, pmr: 90, bio: 95, recruiter: 94, swiss: 95 };
+        } else if (text.includes('lumion') || text.includes('midjourney') || text.includes('render') && !text.includes('wall section')) {
           verdict = "RENDER TRAP ALERT";
           score = 38;
           q = "I have 15 seconds to review this portfolio: you showcase atmospheric 3D sunset renderings, but where is your 1:20 constructive proof? How does this wall envelope meet the ground plane?";
@@ -698,6 +745,376 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 450);
     });
   }
+
+  
+  // 5. PORTFOLIO DESIGN LIBRARY (LOOKS, FONTS & PALETTES)
+  const PORTFOLIO_LOOKS_DATA = {
+  "swiss_editorial": {
+    "id": "swiss_editorial",
+    "title": "01. The Swiss Editorial Monograph",
+    "archetype": "The Swiss International Style (Lars M\u00fcller / El Croquis)",
+    "ideal_for": "Junior to Senior Architects targeting European Design Consultancies & Competitions",
+    "spread_aspect": "16:9 Landscape / Double-A3",
+    "grid": "12-Column Modular Grid w/ 8pt Baseline Rhythm",
+    "typography": {
+      "display": "Space Grotesk (700)",
+      "body": "Inter / Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Archival Bone",
+        "hex": "#F8F8F5",
+        "role": "Spread Canvas Paper"
+      },
+      {
+        "name": "Deep Graphite",
+        "hex": "#111110",
+        "role": "Primary Ink & Cut Lines"
+      },
+      {
+        "name": "Muted Hairline",
+        "hex": "#DDD9D0",
+        "role": "Drafting Grid & Margins"
+      },
+      {
+        "name": "Subtle Wash",
+        "hex": "#F1F1EB",
+        "role": "Sectional Poch\u00e9 & Cards"
+      }
+    ],
+    "key_proof_elements": "Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports, zero cosmetic render fluff."
+  },
+  "french_luxury": {
+    "id": "french_luxury",
+    "title": "02. The French Luxury Atelier",
+    "archetype": "Haute D\u00e9coration & Heritage Long\u00e8re Conversion (MJM / Parisian Ateliers)",
+    "ideal_for": "Interior Architects, Spatial Scenographers & Luxury Boutique Studios",
+    "spread_aspect": "A4 Landscape (1:1.414)",
+    "grid": "Tripartite 6-Column Columnar Grid w/ 45%+ White Space",
+    "typography": {
+      "display": "Bodoni Moda / Playfair Display (600)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "IBM Plex Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Linen Greige",
+        "hex": "#F4F1EA",
+        "role": "Warm Ambient Background"
+      },
+      {
+        "name": "Noir Saint-Laurent",
+        "hex": "#1C1B1A",
+        "role": "Marble Tone & High Contrast"
+      },
+      {
+        "name": "French Raw Oak",
+        "hex": "#D4C5B9",
+        "role": "Joinery Woodgrain Tone"
+      },
+      {
+        "name": "Satin Brass",
+        "hex": "#B89F7D",
+        "role": "Hardware Inlay Accent"
+      }
+    ],
+    "key_proof_elements": "Tactile material triptychs, bespoke 1:5 millwork reveals (joint creux), luminaire schedules (L1-L29), verified on-site supervision photos."
+  },
+  "technical_blueprints": {
+    "id": "technical_blueprints",
+    "title": "03. The Technical Office Working Set",
+    "archetype": "High-Density Execution Blueprints (Salma Sameh / General Contractors)",
+    "ideal_for": "Technical Office Engineers, Site Architects & Permitting Specialists",
+    "spread_aspect": "A3 / A4 Landscape",
+    "grid": "High-Density 16-Column Engineering Grid",
+    "typography": {
+      "display": "Space Grotesk (700)",
+      "body": "Inter (400, 600)",
+      "technical": "JetBrains Mono (700 Heavy)"
+    },
+    "palette": [
+      {
+        "name": "Crisp Paper",
+        "hex": "#FFFFFF",
+        "role": "High-Contrast Blueprint Sheet"
+      },
+      {
+        "name": "Drafting Ink",
+        "hex": "#0F1115",
+        "role": "Primary Cut Profiles (0.50mm)"
+      },
+      {
+        "name": "Technical Slate",
+        "hex": "#55544E",
+        "role": "Secondary Assemblies (0.25mm)"
+      },
+      {
+        "name": "Hairline Grid",
+        "hex": "#E8E5DC",
+        "role": "Dimension Strings & Hatches"
+      }
+    ],
+    "key_proof_elements": "90% technical working drawings, 10% renders. Parapet waterproofing, mechanical anchor brackets, basement parking (68 stalls) coordination."
+  },
+  "brutalist_tectonics": {
+    "id": "brutalist_tectonics",
+    "title": "04. Brutalist B\u00e9ton Brut & Tectonic Honesty",
+    "archetype": "The New Brutalism (Banham / Alison & Peter Smithson / Louis Kahn)",
+    "ideal_for": "Civic Monumentalists, Mass Concrete & Mass Timber Architecture Practices",
+    "spread_aspect": "Square 1:1 or 16:9 Monolith",
+    "grid": "Monumental 8-Column Block Grid",
+    "typography": {
+      "display": "Space Grotesk / Heavy Display (800)",
+      "body": "JetBrains Mono (400)",
+      "technical": "JetBrains Mono (700)"
+    },
+    "palette": [
+      {
+        "name": "B\u00e9ton Brut",
+        "hex": "#E6E6E2",
+        "role": "Raw Board-Formed Shuttering"
+      },
+      {
+        "name": "Cast Charcoal",
+        "hex": "#161615",
+        "role": "Stereotomic Massing Cut"
+      },
+      {
+        "name": "Shuttering Grain",
+        "hex": "#D0CDC5",
+        "role": "Texture & Formwork Tone"
+      },
+      {
+        "name": "Weathered Steel",
+        "hex": "#7A4D3B",
+        "role": "Expressed Structural Flitch Plates"
+      }
+    ],
+    "key_proof_elements": "Stereotomic weight, exposed board-marked concrete shuttering ties, uncropped 1:20 rebar and thermal break drawings, zero decorative trim."
+  },
+  "vernacular_bioclimatic": {
+    "id": "vernacular_bioclimatic",
+    "title": "05. Vernacular Earth & Bioclimatic Clay",
+    "archetype": "Ecological Publishing & Tropical Vernacular (Alif Ahammed / Geoffrey Bawa)",
+    "ideal_for": "Bioclimatic Designers, Heritage Conservationists & Bamboo/Earth Architects",
+    "spread_aspect": "Square 1:1 Format (Editorial Monograph)",
+    "grid": "Organic Tripartite Grid w/ Deep Gutter Margins",
+    "typography": {
+      "display": "Space Grotesk (700)",
+      "body": "Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Terracotta Clay",
+        "hex": "#D97757",
+        "role": "Primary Tectonic Accent"
+      },
+      {
+        "name": "Rammed Earth",
+        "hex": "#4A3B32",
+        "role": "Loadbearing Wall Cut"
+      },
+      {
+        "name": "Sun-Dried Lime",
+        "hex": "#F7F4EE",
+        "role": "Natural Plaster Canvas"
+      },
+      {
+        "name": "Basalt Stone",
+        "hex": "#2B2A29",
+        "role": "Foundation Plinth"
+      }
+    ],
+    "key_proof_elements": "Solar altitude vector geometry (65\u00b0 vs 18\u00b0), natural stack airflow chimney loops, quarry provenance coordinates, RE2020 net-negative carbon."
+  },
+  "art_deco_moderne": {
+    "id": "art_deco_moderne",
+    "title": "06. Art Deco & Streamlined Geometric Moderne",
+    "archetype": "1925 Paris Exposition & Skyscraper Moderne (Van Alen / Ruhlmann)",
+    "ideal_for": "High-Rise Commercial Architects & Bespoke Furniture/Hospitality Designers",
+    "spread_aspect": "A4 Vertical & 16:9 Stepped Spread",
+    "grid": "Stepped Ziggurat 12-Column Grid",
+    "typography": {
+      "display": "Space Grotesk (800)",
+      "body": "Inter (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Belgian Black",
+        "hex": "#121212",
+        "role": "High-Gloss Granite Base"
+      },
+      {
+        "name": "Satin Brass",
+        "hex": "#D4AF37",
+        "role": "Chevron & Spandrel Accent"
+      },
+      {
+        "name": "Limestone Pier",
+        "hex": "#EFECE6",
+        "role": "Vertical Mullion Face"
+      },
+      {
+        "name": "Macassar Ebony",
+        "hex": "#2C221E",
+        "role": "1:5 Joinery Casework"
+      }
+    ],
+    "key_proof_elements": "Stepped massing setback diagrams, chevron spandrel details, 1:5 brass inlay millwork reveals, horizontal terrace waterproofing details."
+  },
+  "phenomenological_story": {
+    "id": "phenomenological_story",
+    "title": "07. The Phenomenological Storyboard",
+    "archetype": "Sensory User Journey & Memorials (Neha George / Peter Zumthor)",
+    "ideal_for": "Cultural Institutions, Memorial Competitions & Museum Scenographers",
+    "spread_aspect": "24-26 Double Spreads / A4 Landscape",
+    "grid": "6-Panel Sequential Storyboard Grid",
+    "typography": {
+      "display": "Space Grotesk (700)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Chiaroscuro Dark",
+        "hex": "#141414",
+        "role": "Deep Shadow Boundary"
+      },
+      {
+        "name": "Raking Daylight",
+        "hex": "#FFFDF8",
+        "role": "Luminous Light Well"
+      },
+      {
+        "name": "Acoustic Wood",
+        "hex": "#C7B299",
+        "role": "Slatted Ceiling Damping"
+      },
+      {
+        "name": "Cleft Alpine Stone",
+        "hex": "#8C8A84",
+        "role": "Textured Plinth"
+      }
+    ],
+    "key_proof_elements": "Sequential 6-panel graphic narrative, compression and release threshold chambers, acoustic reflection pools, physical clay and cast-plaster models."
+  },
+  "structural_expression": {
+    "id": "structural_expression",
+    "title": "08. High-Tech Structural Expressionism",
+    "archetype": "Legibility of Forces & Kinetic Assemblies (Piano, Rogers & Rice)",
+    "ideal_for": "Transit Infrastructure, Stadium & Large-Span Mass Timber Specialists",
+    "spread_aspect": "Panoramic 16:9 Double Spread",
+    "grid": "16-Column High-Precision Engineering Grid",
+    "typography": {
+      "display": "Space Grotesk (700)",
+      "body": "Inter (400, 600)",
+      "technical": "JetBrains Mono (700)"
+    },
+    "palette": [
+      {
+        "name": "Machine Silver",
+        "hex": "#E2E8F0",
+        "role": "Anodized Aluminum Shrouds"
+      },
+      {
+        "name": "Structural Steel",
+        "hex": "#1E293B",
+        "role": "Primary Compression Columns"
+      },
+      {
+        "name": "Tension Tie-Rod",
+        "hex": "#475569",
+        "role": "Pin-Jointed Cables"
+      },
+      {
+        "name": "Safety Signal",
+        "hex": "#334155",
+        "role": "Service Core Articulation"
+      }
+    ],
+    "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses."
+  }
+};
+
+  const lookTabs = document.querySelectorAll('.look-tab');
+  const lookTitle = document.getElementById('look-title');
+  const lookArchetype = document.getElementById('look-archetype');
+  const lookIdeal = document.getElementById('look-ideal');
+  const lookSwatches = document.getElementById('look-swatches');
+  const lookFontDisplay = document.getElementById('look-font-display');
+  const lookFontBody = document.getElementById('look-font-body');
+  const lookFontTech = document.getElementById('look-font-tech');
+  const lookAspect = document.getElementById('look-aspect');
+  const lookGrid = document.getElementById('look-grid');
+  const lookProof = document.getElementById('look-proof');
+  const copyLookBtn = document.getElementById('copy-look-btn');
+  const copyLookLabel = document.getElementById('copy-look-label');
+
+  let activeLookKey = 'swiss_editorial';
+
+  function renderLook(key) {
+    const l = PORTFOLIO_LOOKS_DATA[key] || PORTFOLIO_LOOKS_DATA.swiss_editorial;
+    activeLookKey = key;
+
+    if (lookTitle) lookTitle.textContent = l.title;
+    if (lookArchetype) lookArchetype.textContent = l.archetype;
+    if (lookIdeal) lookIdeal.textContent = l.ideal_for;
+    if (lookFontDisplay) lookFontDisplay.textContent = l.typography.display;
+    if (lookFontBody) lookFontBody.textContent = l.typography.body;
+    if (lookFontTech) lookFontTech.textContent = l.typography.technical;
+    if (lookAspect) lookAspect.textContent = l.spread_aspect;
+    if (lookGrid) lookGrid.textContent = l.grid;
+    if (lookProof) lookProof.textContent = l.key_proof_elements;
+
+    if (lookSwatches) {
+      lookSwatches.innerHTML = l.palette.map(p => `
+        <div class="flex items-center justify-between p-2 rounded-lg bg-studio-bone border border-studio-border">
+          <div class="flex items-center gap-2.5">
+            <span class="w-6 h-6 rounded border border-studio-border shadow-2xs" style="background-color: ${p.hex}"></span>
+            <div class="flex flex-col">
+              <span class="font-bold text-[11px] text-studio-textPrimary">${p.name}</span>
+              <span class="text-[10px] text-studio-textMuted">${p.role}</span>
+            </div>
+          </div>
+          <code class="text-[10px] font-bold text-studio-textPrimary px-1.5 py-0.5 rounded bg-white border border-studio-border cursor-pointer hover:bg-studio-subtle" onclick="navigator.clipboard.writeText('${p.hex}')" title="Click to copy hex">${p.hex}</code>
+        </div>
+      `).join('');
+    }
+  }
+
+  lookTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      lookTabs.forEach(t => {
+        t.className = "look-tab px-3.5 py-1.5 rounded-lg bg-white text-studio-textSecondary hover:text-studio-textPrimary border border-studio-border transition whitespace-nowrap";
+      });
+      tab.className = "look-tab active px-3.5 py-1.5 rounded-lg bg-studio-graphite text-white font-bold transition shadow-xs whitespace-nowrap";
+      renderLook(tab.getAttribute('data-look'));
+    });
+  });
+
+  if (copyLookBtn) {
+    copyLookBtn.addEventListener('click', () => {
+      const l = PORTFOLIO_LOOKS_DATA[activeLookKey];
+      const payload = {
+        look: l.title,
+        aspect_ratio: l.spread_aspect,
+        grid_system: l.grid,
+        typography: l.typography,
+        color_palette: l.palette
+      };
+      navigator.clipboard.writeText(JSON.stringify(payload, null, 2)).then(() => {
+        if (copyLookLabel) copyLookLabel.textContent = "Copied Config!";
+        setTimeout(() => {
+          if (copyLookLabel) copyLookLabel.textContent = "Copy Design Palette";
+        }, 2000);
+      });
+    });
+  }
+
+  renderLook('swiss_editorial');
 
   if (window.lucide) {
     lucide.createIcons();
