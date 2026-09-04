@@ -1,0 +1,54 @@
+{
+  "dimensions": [
+    {
+      "id": "constructive_proof",
+      "name": "Constructive Proof & 1:20 Detailing",
+      "weight": 25,
+      "probes": [
+        "Where is the thermal break at the parapet and slab edges?",
+        "What is the vapor barrier sequence and hygrothermal breathability?",
+        "How are dimensional tolerances and seasonal expansion accommodated?"
+      ]
+    },
+    {
+      "id": "spatial_anatomy",
+      "name": "Spatial Anatomy & PMR Ergonomics",
+      "weight": 20,
+      "probes": [
+        "Are PMR/ADA wheelchair turning circles (1500mm) respected throughout?",
+        "What is the maximum travel distance to the protected egress stair?",
+        "Where are MEP risers and structural transfer columns positioned?"
+      ]
+    },
+    {
+      "id": "environmental_rigor",
+      "name": "Bioclimatic & Environmental Vector Modeling",
+      "weight": 15,
+      "probes": [
+        "What is the Solar Heat Gain Coefficient (SHGC) on the primary facade?",
+        "Is natural cross-ventilation verified by stack and pressure differentials?",
+        "What is the structural soil depth for vegetated surfaces?"
+      ]
+    },
+    {
+      "id": "recruiter_trust",
+      "name": "Recruiter Trust & 15-Second Ergonomics",
+      "weight": 25,
+      "probes": [
+        "Can a reviewer verify your individual contribution in under 10 seconds?",
+        "Is there an uncropped 1:100 floor plan and 1:20 constructive wall section?",
+        "Are legal work authorization and contact coordinates immediately visible?"
+      ]
+    },
+    {
+      "id": "editorial_craft",
+      "name": "Swiss Typographic & Grid Precision",
+      "weight": 15,
+      "probes": [
+        "Does the layout snap strictly to an 8, 12, or 16-column modular grid?",
+        "Are all drawings accompanied by graphical bar scales?",
+        "Is there a consistent 4pt/8pt baseline grid driving typography?"
+      ]
+    }
+  ]
+}

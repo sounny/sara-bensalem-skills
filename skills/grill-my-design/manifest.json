@@ -1,0 +1,8 @@
+{
+  "name": "grill-my-design",
+  "version": "1.0.0",
+  "description": "Socratic architectural design review jury and portfolio cross-examiner. Grills architects and designers on buildability, 1:20 constructive detailing, thermal breaks, spatial circulation, egress, and recruiter trust before high-stakes reviews.",
+  "author": "Sara Bensalem Studio",
+  "location": "Strasbourg Atelier [48\u00b035'05\"N 07\u00b045'02\"E]",
+  "command": "/grill-my-design"
+}
