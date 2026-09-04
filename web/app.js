@@ -255,24 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. MISTRAL / ANTIGRAVITY ANIMATED DRAFTING CANVAS & CLICK-TO-DRAFT
   const canvas = document.getElementById('drafting-canvas');
-  const hud = document.getElementById('crosshair-hud');
-  const hudX = document.getElementById('hud-x');
-  const hudY = document.getElementById('hud-y');
-  const hudScale = document.getElementById('hud-scale');
-  let currentScale = '1:20';
-
-  // Scale toggles
-  const scaleBtns = document.querySelectorAll('.scale-toggle');
-  scaleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      scaleBtns.forEach(b => {
-        b.className = "scale-toggle px-1.5 py-0.5 rounded text-[10px] font-mono text-studio-textSecondary hover:text-studio-textPrimary";
-      });
-      btn.className = "scale-toggle px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-studio-graphite text-white";
-      currentScale = btn.getAttribute('data-scale');
-      if (hudScale) hudScale.textContent = `${currentScale} SNAP`;
-    });
-  });
 
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -316,21 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-
-      if (hud) {
-        hud.style.display = 'block';
-        hud.style.left = `${e.clientX}px`;
-        hud.style.top = `${e.clientY}px`;
-        const multiplier = currentScale === '1:20' ? 2.5 : (currentScale === '1:50' ? 6.25 : 12.5);
-        if (hudX) hudX.textContent = Math.round(mouseX * multiplier);
-        if (hudY) hudY.textContent = Math.round(mouseY * multiplier);
-      }
     });
 
     canvas.parentElement.addEventListener('mouseleave', () => {
       mouseX = -1000;
       mouseY = -1000;
-      if (hud) hud.style.display = 'none';
     });
 
     // 60FPS animation loop
@@ -364,14 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.setLineDash([4, 4]);
           ctx.stroke();
           ctx.setLineDash([]);
-
-          // Dimension text
-          const midX = (a0.x + a1.x) / 2;
-          const midY = (a0.y + a1.y) / 2;
-          const dist = Math.round(Math.hypot(a1.x - a0.x, a1.y - a0.y) * 2.5);
-          ctx.fillStyle = 'rgba(22, 22, 21, 0.8)';
-          ctx.font = '10px JetBrains Mono';
-          ctx.fillText(`${dist} MM`, midX + 6, midY - 6);
         }
       }
 
