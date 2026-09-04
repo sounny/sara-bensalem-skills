@@ -126,6 +126,28 @@ TOOLS = [
             },
             "required": ["title"]
         }
+    },
+    {
+        "name": "list_portfolio_looks",
+        "description": "Retrieves the 10 empirical publication-grade portfolio design looks, palettes, and typographic pairings.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "look_id": {"type": "string", "description": "Optional specific look ID (e.g. 'swiss_editorial', 'brutalist_tectonics', 'indic_spatial_systems', 'ephemeral_scenography')."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "get_architectural_movement",
+        "description": "Retrieves architectural theory, concepts, and critique rubrics for 12 canonical movements (Brutalism, Neoclassicism, Beaux-Arts, Art Nouveau, Art Deco, Ephemeral Scenography, Indic Spatial Systems, etc.).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "movement": {"type": "string", "description": "Movement ID or name (e.g. 'brutalist_concrete', 'neoclassicism', 'beaux_arts', 'art_nouveau', 'art_deco', 'sensory_scenography', 'indic_spatial_systems')."}
+            },
+            "required": ["movement"]
+        }
     }
 ]
 
@@ -229,6 +251,22 @@ def handle_call_tool(tool_name, arguments):
         return {"status": "success", "file": out, "title": title, "columns": cols}
     elif tool_name == "audit_portfolio":
         return {"status": "success", "score": 88, "rubric": "100-Point Sara Bensalem Rubric"}
+    elif tool_name == "list_portfolio_looks":
+        looks = load_json_resource("portfolio_looks_library.json", {})
+        look_id = arguments.get("look_id")
+        if look_id:
+            return looks.get(look_id, {"error": f"Look '{look_id}' not found.", "available": list(looks.keys())})
+        return {"total_looks": len(looks), "looks": looks}
+    elif tool_name == "get_architectural_movement":
+        langs = load_json_resource("architectural_languages.json", {})
+        m = arguments.get("movement", "").lower()
+        if m in langs:
+            return langs[m]
+        # Search by keyword
+        for k, v in langs.items():
+            if m in k or m in v.get("name", "").lower():
+                return v
+        return {"error": f"Movement '{m}' not found.", "available_movements": list(langs.keys())}
     else:
         return {"error": f"Tool '{tool_name}' not found."}
 

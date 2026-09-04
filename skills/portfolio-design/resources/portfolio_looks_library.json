@@ -286,5 +286,77 @@
       }
     ],
     "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses."
+  },
+  "indic_spatial_systems": {
+    "id": "indic_spatial_systems",
+    "title": "09. Indic Spatial Systems & Cognitive Continuum",
+    "archetype": "Sacred Geometry & Systems Architecture (Pearl Gupta / Balkrishna Doshi / Charles Correa)",
+    "ideal_for": "Institutional Masterplanners, Educational Campuses & Cultural Research Fellows",
+    "spread_aspect": "Square 1:1 or Double-A3 Landscape",
+    "grid": "Mandala 9-Square Modular Matrix w/ Concentric Margins",
+    "typography": {
+      "display": "Space Grotesk / Cinzel (700)",
+      "body": "Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Jaipur Sandstone",
+        "hex": "#D9825B",
+        "role": "Stereotomic Thermal Massing"
+      },
+      {
+        "name": "Saffron Ochre",
+        "hex": "#E59A38",
+        "role": "Sacred Threshold & Axis"
+      },
+      {
+        "name": "Deep Graphite Slate",
+        "hex": "#1F2328",
+        "role": "Precision Cut Profile"
+      },
+      {
+        "name": "Temple Lime Plaster",
+        "hex": "#F7F3EB",
+        "role": "Courtyard Wash & Light Canvas"
+      }
+    ],
+    "key_proof_elements": "V\u0101stu-Purusha mandala spatial grids, perception continuum charts, 100-year institutional lifecycle models, passive courtyard microclimates."
+  },
+  "ephemeral_scenography": {
+    "id": "ephemeral_scenography",
+    "title": "10. Ephemeral Scenography & Olfactory Monument",
+    "archetype": "Desert Scenography & Fragrance Architecture (Yasmine Chouchane / Atelier Adeline \u2014 Al-\u2019Ula)",
+    "ideal_for": "Luxury Scenographers, Exhibition Designers & Spatial Brand Directors",
+    "spread_aspect": "Cinematic 16:9 Landscape Monograph",
+    "grid": "Cinematic Asymmetric 12-Column Grid w/ 50%+ White Space",
+    "typography": {
+      "display": "Playfair Display / Bodoni Moda (600)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "IBM Plex Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Petrol Blue Textile",
+        "hex": "#103544",
+        "role": "Sensory Fabric & Sea Memory"
+      },
+      {
+        "name": "Al-\u2019Ula Sandstone",
+        "hex": "#C49A6C",
+        "role": "Canyon Wall & Mineral Mass"
+      },
+      {
+        "name": "Mirrored Stainless",
+        "hex": "#E2E8F0",
+        "role": "Specular Desert Reflection"
+      },
+      {
+        "name": "Desert Mist",
+        "hex": "#F4F6F8",
+        "role": "Atmospheric Diffusion & Muslin"
+      }
+    ],
+    "key_proof_elements": "Material contrast dialectics (raw stone vs flowing drapery vs mirror stainless), sensory chamber isolated mist details, zero-clutter negative space, French chandeliers in open desert air."
   }
 }

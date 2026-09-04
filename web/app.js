@@ -243,6 +243,8 @@ const GRILL_PRESETS = {
   artnouveau: "An Art Nouveau artist atelier featuring organic whiplash curves (coup de fouet), structural wrought-iron columns with R60 intumescent fireproofing, biomorphic stained glass skylights, and custom cast brass ironmongery.",
   neoclassic: "A Neoclassical justice hall defined by a monumental octastyle Corinthian portico, tripartite elevation hierarchy, rusticated granite plinth, and flush-grade PMR accessibility discreetly integrated into the base.",
 
+  alula: "The Memory of Air: A conceptual fragrance dinner experience within the desert canyons of Al-’Ula. A dialectic of contrasts: raw prehistoric rock vs deep petrol-blue draped chambers, mirror-polished stainless steel reflection banquet dissolving into the desert, atomized scent mist, and French crystal chandeliers in open night air.",
+  indic: "Aayojan 2047 Master of Education & Cognitive Space: A 100-year institutional knowledge ecosystem rooted in Indic spatial systems and the Vāstu-Purusha mandala. Featuring stereotomic Jaipur sandstone massing, deep shaded colonnades, passive courtyard microclimates, porous jali ventilation screens, and a multi-level perception continuum linking mind, space, and form.",
   brutalist: "A monumental Brutalist civic archive featuring in-situ board-marked concrete (béton brut), exposed tie-rod holes, stereotomic massing, deep shadow brise-soleil, and a 1:20 constructive wall section with structural thermal breaks.",
   phenomenological: "A thermal bathhouse carved into alpine granite, featuring 1:5 shadow reveals (joint creux) between cleft stone and cedar, raking clerestory daylight, multi-sensory acoustic damping, and verified 1500mm PMR accessibility.",
   timber: "A contemporary timber cultural pavilion governed by a 12-column Swiss grid, featuring cantilevered oak glulam rafters, lime-hemp biotamping walls, and RE2020 net-negative embodied carbon.",
@@ -1036,6 +1038,78 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses."
+  },
+  "indic_spatial_systems": {
+    "id": "indic_spatial_systems",
+    "title": "09. Indic Spatial Systems & Cognitive Continuum",
+    "archetype": "Sacred Geometry & Systems Architecture (Pearl Gupta / Balkrishna Doshi / Charles Correa)",
+    "ideal_for": "Institutional Masterplanners, Educational Campuses & Cultural Research Fellows",
+    "spread_aspect": "Square 1:1 or Double-A3 Landscape",
+    "grid": "Mandala 9-Square Modular Matrix w/ Concentric Margins",
+    "typography": {
+      "display": "Space Grotesk / Cinzel (700)",
+      "body": "Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Jaipur Sandstone",
+        "hex": "#D9825B",
+        "role": "Stereotomic Thermal Massing"
+      },
+      {
+        "name": "Saffron Ochre",
+        "hex": "#E59A38",
+        "role": "Sacred Threshold & Axis"
+      },
+      {
+        "name": "Deep Graphite Slate",
+        "hex": "#1F2328",
+        "role": "Precision Cut Profile"
+      },
+      {
+        "name": "Temple Lime Plaster",
+        "hex": "#F7F3EB",
+        "role": "Courtyard Wash & Light Canvas"
+      }
+    ],
+    "key_proof_elements": "V\u0101stu-Purusha mandala spatial grids, perception continuum charts, 100-year institutional lifecycle models, passive courtyard microclimates."
+  },
+  "ephemeral_scenography": {
+    "id": "ephemeral_scenography",
+    "title": "10. Ephemeral Scenography & Olfactory Monument",
+    "archetype": "Desert Scenography & Fragrance Architecture (Yasmine Chouchane / Atelier Adeline \u2014 Al-\u2019Ula)",
+    "ideal_for": "Luxury Scenographers, Exhibition Designers & Spatial Brand Directors",
+    "spread_aspect": "Cinematic 16:9 Landscape Monograph",
+    "grid": "Cinematic Asymmetric 12-Column Grid w/ 50%+ White Space",
+    "typography": {
+      "display": "Playfair Display / Bodoni Moda (600)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "IBM Plex Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Petrol Blue Textile",
+        "hex": "#103544",
+        "role": "Sensory Fabric & Sea Memory"
+      },
+      {
+        "name": "Al-\u2019Ula Sandstone",
+        "hex": "#C49A6C",
+        "role": "Canyon Wall & Mineral Mass"
+      },
+      {
+        "name": "Mirrored Stainless",
+        "hex": "#E2E8F0",
+        "role": "Specular Desert Reflection"
+      },
+      {
+        "name": "Desert Mist",
+        "hex": "#F4F6F8",
+        "role": "Atmospheric Diffusion & Muslin"
+      }
+    ],
+    "key_proof_elements": "Material contrast dialectics (raw stone vs flowing drapery vs mirror stainless), sensory chamber isolated mist details, zero-clutter negative space, French chandeliers in open desert air."
   }
 };
 

@@ -102,5 +102,37 @@
       "Streamlined verticality with recessed vertical fenestration spandrel panels"
     ],
     "monograph_expression": "Stepped geometric framing borders, high-contrast graphite typography, metallic brass accent callouts, 1:5 millwork details of bespoke brass inlays and exotic veneer graining."
+  },
+  "sensory_scenography": {
+    "name": "Ephemeral Scenography & Olfactory Architecture",
+    "hero_concept": "Designing for the invisible: air, memory, mist, and the dialectic between monumental landscape and temporary textile intervention.",
+    "historical_lineage": "Yasmine Chouchane (Atelier Adeline), Christo and Jeanne-Claude (The Gates, Running Fence), Robert Smithson (Spiral Jetty), Peter Zumthor (Swiss Sound Pavilion Expo 2000).",
+    "signature_features": [
+      "Raw stone vs soft fabric contrasts",
+      "Mirrored stainless steel dissolving into desert rocks",
+      "Draped sensory isolation chambers with atomized mist",
+      "Negative space restraint (knowing when to stop designing)"
+    ],
+    "critique_rubric": [
+      "Does the intervention justify its presence in the landscape?",
+      "Is the spatial choreography designed around an emotional sequence rather than decorative objects?",
+      "Does the reflection capture and honor the context rather than distracting from it?"
+    ]
+  },
+  "indic_spatial_systems": {
+    "name": "Indic Spatial Systems & V\u0101stu Tectonics",
+    "hero_concept": "Cosmic geometry, perceptual continuum, and climate-responsive courtyard morphology rooted in ancient treatises and modern collective intelligence.",
+    "historical_lineage": "Balkrishna Doshi (Sangath, Aranya), Charles Correa (Jawahar Kala Kendra, Gandhi Smarak Sangrahalaya), Raj Rewal (Asian Games Village, Parliament Library), Pearl Gupta (Aayojan).",
+    "signature_features": [
+      "9-square V\u0101stu-Purusha mandala matrix",
+      "Deep sandstone jali screens and shaded colonnades",
+      "Perceptual continuum between mind, space, and form",
+      "100-year aggregate institutional spatial frameworks"
+    ],
+    "critique_rubric": [
+      "Is the mandala geometry integrated tectonically or applied purely as a 2D diagram?",
+      "How does the courtyard typology perform under peak thermal solar gain?",
+      "Are the materials quarried regionally with authentic stereotomic joinery?"
+    ]
   }
 }
