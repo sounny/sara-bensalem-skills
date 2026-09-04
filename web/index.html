@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sara Bensalem Design Skills — Agentic AI Skills for Architecture & Design</title>
-  <meta name="description" content="Agentic AI Skills for Architecture & Design by Sara Bensalem. Model Context Protocol (MCP) server equipping coding assistants with spatial design, portfolio curation, and constructive proof tools.">
+  <title>Sara Bensalem Design Skills — Frontier Spatial AI & Architecture Platform</title>
+  <meta name="description" content="Frontier Spatial AI in your hands. Model Context Protocol (MCP) server equipping coding assistants and autonomous agents with domain-specialized skills for physical architecture, Swiss monographs, 1:20 construction details, and bioclimatic diagrams.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN with full configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -16,7 +16,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
             display: ['"Space Grotesk"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
@@ -40,14 +40,25 @@
               600: '#B5926B',
               700: '#94724E',
             },
+            mistral: {
+              bg: '#FBFBF8',
+              amber: '#FFAF01',
+              orange: '#FF7700',
+              border: '#E1E6EC',
+            },
+            antigravity: {
+              blue: '#3279F9',
+              slate: '#121317',
+              surface: '#F8F9FC',
+            },
             dark: {
-              950: '#080A0E',
-              900: '#0F1318',
-              850: '#161B22',
-              800: '#1E242E',
-              750: '#262D3A',
-              700: '#303947',
-              600: '#424E60',
+              950: '#090B0E',
+              900: '#10141B',
+              850: '#161C26',
+              800: '#1C2330',
+              750: '#262F40',
+              700: '#323E52',
+              600: '#465670',
             }
           }
         }
@@ -57,24 +68,24 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-dark-950 text-slate-100 antialiased selection:bg-bronze-500 selection:text-white min-h-screen flex flex-col font-sans">
+<body class="drafting-canvas-dark bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen flex flex-col font-sans transition-colors duration-200">
 
-  <!-- TOP RUNTIME BANNER -->
-  <div class="bg-dark-900/90 border-b border-white/5 py-2 px-4 text-xs font-mono text-slate-400">
+  <!-- TOP RUNTIME BANNER (Mistral & Google Antigravity Telemetry) -->
+  <div class="bg-dark-900/90 dark:bg-dark-900/90 bg-slate-100/95 border-b border-slate-200 dark:border-white/5 py-2 px-4 text-xs font-mono text-slate-600 dark:text-slate-400 z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-slate-300 font-medium">MCP SERVER RUNTIME: ACTIVE</span>
-        <span class="hidden sm:inline text-slate-600">|</span>
-        <span class="hidden sm:inline text-slate-400">stdio JSON-RPC v1.0</span>
-        <span class="hidden md:inline text-slate-600">|</span>
-        <span class="hidden md:inline text-bronze-400">48°51'24"N 02°21'07"E</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-slate-900 dark:text-slate-200 font-semibold tracking-tight">PARIS ATELIER [48°51'24"N 02°21'07"E]</span>
+        <span class="hidden sm:inline text-slate-400 dark:text-slate-600">|</span>
+        <span class="hidden sm:inline text-emerald-600 dark:text-emerald-400 font-medium">MCP SERVER RUNTIME: ACTIVE</span>
+        <span class="hidden md:inline text-slate-400 dark:text-slate-600">|</span>
+        <span class="hidden md:inline text-slate-600 dark:text-slate-400">stdio JSON-RPC v1.0</span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="#mcp-quick-install" class="text-bronze-400 hover:text-white transition flex items-center gap-1 font-semibold">
+        <a href="#mcp-quick-install" class="text-amber-600 dark:text-amber-400 hover:underline transition flex items-center gap-1 font-semibold">
           <span>Quick Install</span> &darr;
         </a>
-        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-white transition flex items-center gap-1">
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-slate-900 dark:hover:text-white transition flex items-center gap-1">
           <i data-lucide="github" class="w-3.5 h-3.5"></i>
           <span>GitHub</span>
         </a>
@@ -82,722 +93,868 @@
     </div>
   </div>
 
-  <!-- MAIN NAVIGATION -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-dark-950/85 border-b border-white/5">
+  <!-- FLOATING NAVIGATION BAR (Antigravity & Mistral Glass Header) -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 dark:bg-slate-950/85 bg-white/85 border-b border-slate-200 dark:border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- LOGO -->
       <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-bronze-400 to-brand-700 flex items-center justify-center font-display font-bold text-white shadow-lg shadow-bronze-500/20 group-hover:scale-105 transition-transform border border-white/10">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-bronze-500 to-brand-700 flex items-center justify-center font-display font-bold text-white shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform border border-white/10">
           SB
         </div>
         <div>
-          <div class="font-display font-bold tracking-tight text-lg text-white flex items-center gap-2">
+          <div class="font-display font-bold tracking-tight text-lg text-slate-900 dark:text-white flex items-center gap-2">
             Sara Bensalem
-            <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-bronze-500/10 text-bronze-300 border border-bronze-500/30">DESIGN SKILLS</span>
+            <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/30">DESIGN SKILLS</span>
           </div>
-          <p class="text-[11px] text-slate-400 font-mono tracking-tight">Spatial Architecture & Agentic AI Studio</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono tracking-tight">Frontier Spatial AI & Architecture Studio</p>
         </div>
       </a>
 
-      <!-- NAV LINKS -->
-      <nav class="hidden lg:flex items-center gap-7 text-xs font-medium uppercase tracking-wider text-slate-300">
-        <a href="#skills-portfolio" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="layers" class="w-3.5 h-3.5 text-bronze-400"></i> Skills Portfolio
+      <!-- MAIN NAVIGATION LINKS -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-medium uppercase tracking-wider text-slate-600 dark:text-slate-300">
+        <a href="#skills-portfolio" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-500"></i> Skills Portfolio
         </a>
-        <a href="#mcp-quick-install" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5 text-bronze-300 font-semibold">
-          <i data-lucide="terminal" class="w-3.5 h-3.5 text-bronze-400"></i> Quick Install
+        <a href="#ai-demos" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i> AI Demos & Lab
         </a>
-        <a href="#auditor" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="gauge" class="w-3.5 h-3.5 text-bronze-400"></i> 100-Pt Auditor
+        <a href="#mcp-quick-install" class="hover:text-amber-500 transition-colors flex items-center gap-1.5 text-amber-600 dark:text-amber-300 font-semibold">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-amber-500"></i> Quick Install
         </a>
-        <a href="#archetypes" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-bronze-400"></i> 10 Archetypes
+        <a href="#deliverables" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-amber-500"></i> Physical Products
         </a>
-        <a href="#framework" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="book-open" class="w-3.5 h-3.5 text-bronze-400"></i> 5-Act Method
+        <a href="#use-cases" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+          <i data-lucide="users" class="w-3.5 h-3.5 text-amber-500"></i> Use Cases
         </a>
-        <a href="#simulator" class="hover:text-bronze-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="play" class="w-3.5 h-3.5 text-bronze-400"></i> Live Simulator
+        <a href="#storefront" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+          <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-amber-500"></i> Atelier
         </a>
       </nav>
 
-      <!-- RIGHT ACTIONS -->
+      <!-- HEADER ACTIONS (Theme Toggle + Rocket Studio Launch) -->
       <div class="flex items-center gap-3">
-        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-2 rounded-lg bg-dark-900 hover:bg-dark-850 text-slate-300 border border-white/10 transition">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn" type="button" aria-label="Toggle Theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-dark-900 text-slate-700 dark:text-slate-300 hover:text-amber-500 hover:border-amber-500/40 transition">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-mono font-medium px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-dark-900 hover:bg-slate-200 dark:hover:bg-dark-850 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 transition">
           <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
           <span>v1.0.0</span>
         </a>
-        <a href="#auditor" class="text-xs font-semibold px-4 py-2.5 rounded-lg bg-gradient-to-r from-bronze-600 to-bronze-500 hover:from-bronze-500 hover:to-bronze-400 text-white shadow-lg shadow-bronze-600/25 transition">
-          Audit Portfolio
+
+        <a href="#mcp-quick-install" class="text-xs font-semibold px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-brand-600 hover:from-amber-400 hover:to-brand-500 text-white shadow-lg shadow-amber-500/25 transition flex items-center gap-1.5">
+          <span>🚀 Launch Studio</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION WITH UP-FRONT CLARITY & MCP INSTALL -->
-  <section class="relative pt-16 pb-24 overflow-hidden">
-    <!-- Subtle architectural background accents -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-bronze-500/10 via-dark-950 to-dark-950 -z-10"></div>
+  <!-- =========================================================================
+       HERO SECTION: Frontier Spatial Design. In your hands.
+       ========================================================================= -->
+  <section class="relative pt-16 pb-24 overflow-hidden border-b border-slate-200 dark:border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- HERO HEADER -->
+      <!-- HERO CONTENT -->
       <div class="text-center max-w-4xl mx-auto">
-        <!-- AGENTIC AI SKILLS BANNER -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-dark-900 border border-bronze-500/30 text-bronze-300 text-xs font-mono mb-8 shadow-inner">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span class="font-semibold tracking-wider uppercase text-[11px]">Agentic AI Skills for Architecture & Design</span>
+        <!-- AGENTIC AI SKILLS BANNER (Clear Identity Up Front) -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-100 dark:bg-dark-900 border border-amber-500/30 text-amber-600 dark:text-amber-300 text-xs font-mono mb-8 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+          <span class="font-bold tracking-wider uppercase text-[11px]">Agentic AI Skills for Architecture & Design</span>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-white leading-tight mb-6">
-          The Open Agentic Studio for <br>
-          <span class="text-bronze-gradient">
-            Spatial Architecture & Design Skills
-          </span>
+        <!-- MISTRAL & ANTIGRAVITY HERO HEADLINE -->
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.04] mb-8">
+          Frontier Spatial AI.<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-blue-600">In your hands.</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-          We equip AI pair programmers (Claude, Cursor, Antigravity) with specialized architectural skills to critique, structure, and generate <strong>physical and spatial design deliverables</strong>—from high-converting portfolio monographs to layered wall sections, bioclimatic massing, and bespoke millwork.
+        <p class="text-lg sm:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+          Experience liftoff with the next-generation spatial agent platform. Equip Claude, Cursor, Antigravity, and autonomous AI assistants to construct architectural monographs, 1:20 technical wall sections, bioclimatic diagrams, and eliminate 3D render traps.
         </p>
 
-        <!-- DELIVERABLE BADGES -->
-        <div class="flex flex-wrap items-center justify-center gap-2 mb-12 text-xs font-mono">
-          <span class="px-3 py-1 rounded-md bg-dark-900/80 border border-white/10 text-slate-300 flex items-center gap-1.5">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-bronze-400"></i> Portfolio Monographs
-          </span>
-          <span class="px-3 py-1 rounded-md bg-dark-900/80 border border-white/10 text-slate-300 flex items-center gap-1.5">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-bronze-400"></i> 1:20 Wall Sections
-          </span>
-          <span class="px-3 py-1 rounded-md bg-dark-900/80 border border-white/10 text-slate-300 flex items-center gap-1.5">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-bronze-400"></i> Bioclimatic Diagrams
-          </span>
-          <span class="px-3 py-1 rounded-md bg-dark-900/80 border border-white/10 text-slate-300 flex items-center gap-1.5">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-bronze-400"></i> Bespoke Millwork
-          </span>
-          <span class="px-3 py-1 rounded-md bg-dark-900/80 border border-white/10 text-slate-300 flex items-center gap-1.5">
-            <i data-lucide="x-circle" class="w-3.5 h-3.5 text-slate-500"></i> No Software Web UI
-          </span>
-        </div>
-      </div>
-
-      <!-- UP-FRONT MCP QUICK-INSTALL WIDGET (WOW ELEMENT) -->
-      <div id="mcp-quick-install" class="max-w-3xl mx-auto glass-panel-elevated rounded-2xl p-6 sm:p-8 technical-border architect-crosshair mb-16 relative">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
-          <div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="cpu" class="w-4 h-4 text-bronze-400"></i>
-              <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider">
-                Instant MCP Quick Install
-              </h3>
-            </div>
-            <p class="text-xs text-slate-400 mt-0.5">
-              Copy and paste directly into your AI assistant's configuration file:
-            </p>
-          </div>
-          
-          <!-- TAB SWITCHER -->
-          <div class="flex items-center bg-dark-900/90 rounded-lg p-1 border border-white/10 text-xs font-mono" id="mcp-tabs">
-            <button class="mcp-tab active px-3 py-1.5 rounded-md bg-bronze-600 text-white font-semibold transition" data-target="claude">
-              Claude Desktop
-            </button>
-            <button class="mcp-tab px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition" data-target="cursor">
-              Cursor
-            </button>
-            <button class="mcp-tab px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition" data-target="antigravity">
-              Antigravity
-            </button>
-            <button class="mcp-tab px-3 py-1.5 rounded-md text-slate-400 hover:text-white transition" data-target="cli">
-              CLI / uvx
-            </button>
-          </div>
-        </div>
-
-        <!-- CODE SNIPPET DISPLAY -->
-        <div class="relative mt-4 group">
-          <pre class="code-block p-4 rounded-xl text-xs text-slate-200 overflow-x-auto leading-relaxed border border-white/10 max-h-56"><code id="mcp-code-snippet"></code></pre>
-          
-          <button id="copy-mcp-btn" class="absolute top-3 right-3 px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-bronze-600 text-slate-200 hover:text-white border border-white/15 text-xs font-mono flex items-center gap-1.5 shadow-md transition">
-            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            <span id="copy-mcp-label">Copy Config</span>
-          </button>
-        </div>
-
-        <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-slate-400 pt-3 border-t border-white/5">
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span>Tools included: <code class="text-bronze-300">audit_portfolio</code>, <code class="text-bronze-300">recommend_archetype</code>, <code class="text-bronze-300">generate_5act_structure</code></span>
-          </div>
-          <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-white underline text-slate-400">
-            View on GitHub &rarr;
+        <!-- HERO BUTTONS -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+          <a href="#mcp-quick-install" class="px-6 py-3.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-sm hover:scale-105 transition-all shadow-xl flex items-center gap-2">
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+            <span>1-Click MCP Quick Install</span>
+          </a>
+          <a href="#auditor" class="px-6 py-3.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/30 font-semibold text-sm hover:bg-amber-500/20 transition flex items-center gap-2">
+            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            <span>Try 100-Point Auditor Demo</span>
+          </a>
+          <a href="#skills-portfolio" class="px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-dark-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 font-semibold text-sm hover:border-amber-500/40 transition flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Explore Skills Portfolio</span>
           </a>
         </div>
       </div>
 
-      <!-- KEY ARCHITECTURAL METRICS -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="p-5 rounded-xl bg-dark-900/70 border border-white/5 technical-border">
-          <div class="text-xs font-mono text-bronze-400 uppercase tracking-widest mb-1">Pillar 01</div>
-          <div class="text-2xl font-display font-bold text-white mb-1">15–30s</div>
-          <div class="text-xs text-slate-400">Review window at top international design practices</div>
+      <!-- =======================================================================
+           UP-FRONT MCP INSTALL WIDGET (Google Antigravity & Mistral Developer Card)
+           ======================================================================= -->
+      <div id="mcp-quick-install" class="scroll-mt-24 max-w-4xl mx-auto antigravity-card bg-dark-900 dark:bg-dark-900 bg-white border border-slate-200 dark:border-white/10 p-6 sm:p-8 rounded-2xl shadow-2xl relative">
+        <div class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-[10px] font-mono font-extrabold uppercase tracking-wider shadow">
+          Fast Agent Integration
         </div>
-        <div class="p-5 rounded-xl bg-dark-900/70 border border-white/5 technical-border">
-          <div class="text-xs font-mono text-amber-400 uppercase tracking-widest mb-1">The Trap</div>
-          <div class="text-2xl font-display font-bold text-amber-300 mb-1">75% Rejection</div>
-          <div class="text-xs text-slate-400">Due to the "Render Trap" (no wall sections or proof)</div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-white/10">
+          <div>
+            <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span>Model Context Protocol (MCP) Setup</span>
+              <span class="text-xs font-mono font-normal text-slate-500 dark:text-slate-400">stdio JSON-RPC v1.0</span>
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Copy and paste this configuration into your AI coding assistant in 5 seconds.</p>
+          </div>
+          <!-- 1-Click Copy Button with Animated Feedback -->
+          <button id="copy-mcp-btn" type="button" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono transition shadow-lg shadow-amber-500/20 active:scale-95">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="copy-mcp-label">Copy MCP Config</span>
+          </button>
         </div>
-        <div class="p-5 rounded-xl bg-dark-900/70 border border-white/5 technical-border">
-          <div class="text-xs font-mono text-bronze-400 uppercase tracking-widest mb-1">Taxonomy</div>
-          <div class="text-2xl font-display font-bold text-white mb-1">10 Archetypes</div>
-          <div class="text-xs text-slate-400">Curated layout archetypes across design disciplines</div>
+
+        <!-- CLIENT SELECTOR TABS -->
+        <div class="flex items-center gap-2 pt-6 pb-4 overflow-x-auto text-xs font-mono">
+          <button data-target="claude" class="mcp-tab px-4 py-2 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/40 font-bold transition flex items-center gap-1.5 active">
+            <span>Claude Desktop</span>
+          </button>
+          <button data-target="cursor" class="mcp-tab px-4 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-transparent transition flex items-center gap-1.5">
+            <span>Cursor</span>
+          </button>
+          <button data-target="antigravity" class="mcp-tab px-4 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-transparent transition flex items-center gap-1.5">
+            <span>Google Antigravity</span>
+          </button>
+          <button data-target="cli" class="mcp-tab px-4 py-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-transparent transition flex items-center gap-1.5">
+            <span>CLI / uvx</span>
+          </button>
         </div>
-        <div class="p-5 rounded-xl bg-dark-900/70 border border-white/5 technical-border">
-          <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-1">Rubric</div>
-          <div class="text-2xl font-display font-bold text-emerald-400 mb-1">100 Points</div>
-          <div class="text-xs text-slate-400">Multi-scale quantitative evaluation across 6 pillars</div>
+
+        <!-- CODE BLOCK CONTAINER -->
+        <div class="relative rounded-xl overflow-hidden antigravity-terminal p-4 sm:p-5 text-xs font-mono leading-relaxed border border-slate-200 dark:border-white/10">
+          <pre><code id="mcp-code-snippet" class="text-slate-200 block overflow-x-auto">// Loading MCP Configuration...</code></pre>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+          <span>Target File: <code class="text-slate-700 dark:text-slate-300">claude_desktop_config.json</code></span>
+          <span class="text-emerald-500 flex items-center gap-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            Auto-Discovered by Coding Agents
+          </span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- PORTFOLIO OF SKILLS SECTION (MODULAR EXPANSION) -->
-  <section id="skills-portfolio" class="py-24 bg-dark-900/40 border-t border-white/5 relative">
+  <!-- =========================================================================
+       SECTION 1: "DO IT ALL WITH DESIGN SKILLS" (Portfolio of Skills Family)
+       Inspired by Mistral ("Do it all with Mistral") & Antigravity Product Family
+       ========================================================================= -->
+  <section id="skills-portfolio" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50/50 dark:bg-dark-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
-          <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// MONOGRAPHIC SUITE</div>
-          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            The Portfolio of Spatial Design Skills
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono mb-4 border border-amber-500/30">
+            <span>PRODUCT FAMILY</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Do it all with Design Skills.
           </h2>
-          <p class="text-slate-400 text-sm max-w-2xl mt-2 leading-relaxed">
-            Sara Bensalem Design Skills is designed as a growing portfolio of physical design skills. Portfolio Design is the flagship skill live today, with specialized architectural and urban modules expanding the repertoire.
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            A modular suite of agentic skills for physical architecture, Swiss typography, historic stone masonry, and public realm safety.
           </p>
         </div>
-        <div class="flex items-center gap-2 font-mono text-xs text-slate-400">
-          <span class="px-2.5 py-1 rounded bg-dark-800 border border-white/10 text-slate-300">4 Skills Codified</span>
-          <span class="px-2.5 py-1 rounded bg-dark-800 border border-white/10 text-bronze-300">1 Live Now</span>
-        </div>
+        <button id="open-coarchitect-btn" type="button" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 dark:border-white/10 hover:border-amber-500 text-slate-700 dark:text-slate-200 text-xs font-mono font-semibold transition self-start md:self-auto bg-white dark:bg-dark-900">
+          <i data-lucide="plus-circle" class="w-4 h-4 text-amber-500"></i>
+          <span>Co-Architect a New Skill</span>
+        </button>
       </div>
 
-      <!-- SKILLS GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="skills-suite-container">
-        <!-- Dynamically rendered by app.js -->
+      <!-- 4-QUADRANT SKILLS CATALOG CONTAINER (Rendered via JS) -->
+      <div id="skills-suite-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dynamically populated from DESIGN_SKILLS_SUITE in app.js -->
       </div>
-
-      <!-- CO-ARCHITECT A SKILL BANNER -->
-      <div class="mt-10 p-6 rounded-2xl bg-dark-850/80 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-400">
-            <i data-lucide="plus-circle" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h4 class="font-display font-bold text-white text-base">Co-Architect a Spatial Design Skill</h4>
-            <p class="text-xs text-slate-400 mt-0.5">Are you an architecture practice, researcher, or faculty cohort with specialized tectonic or ecological workflows?</p>
-          </div>
-        </div>
-        <a href="mailto:sara@sarabensalem.com?subject=Co-Architect%20a%20Spatial%20Design%20Skill" class="px-5 py-2.5 rounded-xl bg-dark-800 hover:bg-dark-750 text-slate-200 border border-white/15 text-xs font-semibold whitespace-nowrap transition">
-          Propose a Skill &rarr;
-        </a>
-      </div>
-
     </div>
   </section>
 
-  <!-- SPATIAL DELIVERABLES SHOWCASE (PRODUCTS NOT WEB UI) -->
-  <section class="py-24 bg-dark-950 border-t border-white/5">
+  <!-- =========================================================================
+       SECTION 2: META AI DEMOS-INSPIRED "AI DEMOS & LAB"
+       Divided into Featured Experiments, Playful Ideas, and Technical Explorations
+       ========================================================================= -->
+  <section id="ai-demos" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-100/50 dark:bg-dark-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// PHYSICAL ARTIFACTS</div>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
-          Engineered for Genuine Spatial Design Products
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-mono mb-4 border border-blue-500/30">
+          <span>EXPERIMENTAL PLAYGROUND</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Explore Frontier Spatial Experiments.
         </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Our skills do not generate web UI or software interfaces. Even though algorithmic code powers the engine, the output is physical, spatial, and constructible architectural media.
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-3">
+          Interactive tools and demos where architectural rigor meets the edge of research, generative layout, and construction proof.
+        </p>
+      </div>
+
+      <!-- DEMO TIER 1: FEATURED EXPERIMENTS -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+              Featured Experiments
+            </h3>
+            <p class="text-xs font-mono text-slate-500">High-leverage tools powered by live agent capabilities</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- EXPERIMENT 1: 100-POINT AUDITOR -->
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">LIVE TOOL</span>
+                <span class="text-xs font-mono text-slate-400">Interactive Rubric</span>
+              </div>
+              <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">100-Point Portfolio Auditor</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Scan your architectural monograph against 20 rigorous criteria. Detect 3D render traps, verify 1:20 constructive proof, and benchmark against elite Paris and international hiring standards.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono text-amber-600 dark:text-amber-400">Presets: Junior (83) · Elite (95) · Trap (46)</span>
+              <a href="#auditor" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono transition">
+                Try it Now &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- EXPERIMENT 2: LIVE MCP TERMINAL SANDBOX -->
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30">JSON-RPC LAB</span>
+                <span class="text-xs font-mono text-slate-400">Terminal Shell</span>
+              </div>
+              <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">Live MCP Terminal Sandbox</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Test simulated stdio JSON-RPC tool invocations directly in browser. Execute <code>audit_portfolio</code>, <code>recommend_archetype</code>, and <code>generate_5act_structure</code> in sub-50ms latency.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono text-blue-600 dark:text-blue-400">4 Clickable Tool Calls</span>
+              <a href="#simulator" class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs font-mono transition">
+                Simulate CLI &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEMO TIER 2: PLAYFUL IDEAS & NARRATIVE EXPLORATIONS -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-xl font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+              Playful Ideas & Narrative Flow
+            </h3>
+            <p class="text-xs font-mono text-slate-500">Lightweight demos designed for architectural storytelling and rhythm</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- EXPERIMENT 3: 5-ACT VISUALIZER -->
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30">NARRATIVE ENGINE</span>
+                <span class="text-xs font-mono text-slate-400">Acts I–V</span>
+              </div>
+              <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">5-Act Spatial Narrative Visualizer</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Step through the 5-act editorial case study: Hook, Context, Anatomy, 1:20 Constructive Proof, and Atmospheric Climax. Watch live wireframes render each spread in real-time.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono text-purple-600 dark:text-purple-400">Interactive Stepper</span>
+              <a href="#framework" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs font-mono transition">
+                Walk the 5 Acts &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- EXPERIMENT 4: 10 LAYOUT ARCHETYPES -->
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">LAYOUT CATALOG</span>
+                <span class="text-xs font-mono text-slate-400">10 Typologies</span>
+              </div>
+              <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">10 Layout Archetypes Directory</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                Select your discipline (Architecture, Interior, Technical, Urban) and inspect calibrated layout wireframes, page budgets, aspect ratios, and common pitfall warnings.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono text-amber-600 dark:text-amber-400">Filterable by Discipline</span>
+              <a href="#archetypes" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono transition">
+                Browse Archetypes &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: PHYSICAL DELIVERABLES MATRIX ("NO WEB UI")
+       Pure Physical Architecture, Tectonics & Construction Drawings
+       ========================================================================= -->
+  <section id="deliverables" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-dark-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono mb-4 border border-emerald-500/30">
+          <span>DELIVERABLES MANIFESTO</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Physical Design Products.<br>
+          <span class="text-slate-400 dark:text-slate-500 font-medium">No Software Web UI.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
+          While these skills generate code and vector assets under the hood, their sole objective is producing <strong>physical architectural artifacts</strong>. We equip AI agents to design for the built environment.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- PRODUCT 1 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="book-marked" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Portfolio Monographs & Spreads</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Curated A4 & 16:9 panoramic spreads engineered with Swiss grid discipline, restrained typography, and scannable project passports.
-            </p>
+        <!-- Deliverable 1 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
           </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Scaled Print-Ready PDF / Typst Container
-          </div>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="layers" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Layered Construction Wall Sections</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              1:20 and 1:10 tectonic wall sections detailing parapet waterproofing, mechanical stone anchors, thermal breaks, and drainage channels.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Scaled Vector CAD & Cotation Working Set
-          </div>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="wind" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Volumetric Massing & Climatic Flows</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              4-step conceptual massing diagrams, solar radiation studies, prevailing wind corridors, and exploded structural axonometrics.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Analytical Vector Diagrams & Axonometrics
-          </div>
-        </div>
-
-        <!-- PRODUCT 4 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="sun" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Atmospheric Scenography & Light</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Natural daylighting studies (sawtooth north light, deep reveals) and tactile material triptychs with mineral greige palettes.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Tactile Material Boards & Daylight Sheets
-          </div>
-        </div>
-
-        <!-- PRODUCT 5 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="hammer" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Bespoke Millwork & Joinery Blueprints</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              1:5 bespoke interior joinery, reception counters, modular bleachers, custom table prototypes, and luminaire schedules (L1–L29).
-            </p>
-          </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Fabrication Detailing & Specification Blueprints
-          </div>
-        </div>
-
-        <!-- PRODUCT 6 -->
-        <div class="p-6 rounded-2xl bg-dark-900 border border-white/5 hover:border-bronze-500/40 transition flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 rounded-xl bg-bronze-500/10 border border-bronze-500/30 flex items-center justify-center text-bronze-300 mb-4">
-              <i data-lucide="shield-check" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-display font-bold text-base text-white mb-2">Empirical Public Realm Safety Audits</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-4">
-              Empirical safety mapping, 24/7 natural surveillance sightlines, bio-buffered pedestrian boulevards, and inclusive urban design typologies.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-white/5 text-[11px] font-mono text-bronze-300">
-            Deliverable: Civic Spatial Audit Maps & Policy Taxonomies
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INTERACTIVE 100-POINT AUDITOR (WOW COMPONENT) -->
-  <section id="auditor" class="py-24 bg-dark-900/50 border-t border-white/5 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// QUANTITATIVE CRITIQUE ENGINE</div>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
-          The 100-Point Spatial Portfolio Auditor
-        </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Every spatial portfolio is filtered in 15 to 30 seconds. Run this real-time self-audit across the 6 core pillars to detect fatal render traps, uncalibrated fonts, and missing constructive proof.
-        </p>
-
-        <!-- AUDIT PRESETS FOR INSTANT DEMO -->
-        <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
-          <span class="text-xs font-mono text-slate-400 mr-2">Try Sample Profile:</span>
-          <button class="preset-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-750 text-slate-200 border border-white/10 transition" data-preset="junior">
-            Junior Agency Architect (83 pts)
-          </button>
-          <button class="preset-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-750 text-emerald-300 border border-emerald-500/20 transition" data-preset="elite">
-            Elite Technical Specialist (95 pts)
-          </button>
-          <button class="preset-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-750 text-amber-300 border border-amber-500/20 transition" data-preset="rendertrap">
-            Render Trap Alert (46 pts)
-          </button>
-          <button class="preset-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-400 border border-white/5 transition" data-preset="reset">
-            Reset
-          </button>
-        </div>
-      </div>
-
-      <!-- AUDITOR INTERFACE -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- LEFT: INTERACTIVE RUBRIC CHECKLIST (8 COLS) -->
-        <div class="lg:col-span-8 space-y-6" id="rubric-container">
-          <!-- Populated by app.js -->
-        </div>
-
-        <!-- RIGHT: FLOATING LIVE SCOREBOARD (4 COLS) -->
-        <div class="lg:col-span-4 sticky top-28 space-y-6">
-          <div class="glass-panel rounded-2xl p-6 border border-white/10 space-y-6">
-            
-            <div class="flex items-center justify-between border-b border-white/10 pb-4">
-              <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Total Score</span>
-              <span id="grade-badge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-                Calculating...
-              </span>
-            </div>
-
-            <!-- CIRCULAR RADIAL SCORE DISPLAY -->
-            <div class="flex items-center justify-center py-2">
-              <div class="relative w-40 h-40 flex items-center justify-center">
-                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
-                  <circle cx="60" cy="60" r="50" class="text-dark-800" stroke-width="8" stroke="currentColor" fill="transparent" />
-                  <circle id="score-circle-svg" cx="60" cy="60" r="50" class="score-circle-meter text-bronze-400" stroke-width="8" stroke-dasharray="314.159" stroke-dashoffset="314.159" stroke-linecap="round" stroke="currentColor" fill="transparent" />
-                </svg>
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-                  <span id="score-display" class="font-display text-4xl font-extrabold text-white">0</span>
-                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">/ 100 PTS</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- DIAGNOSTIC ADVICE -->
-            <div id="score-advice" class="p-3.5 rounded-xl bg-dark-900 border border-white/5 text-xs text-slate-300 space-y-1 leading-relaxed font-sans">
-              <!-- Dynamically populated -->
-            </div>
-
-            <!-- CATEGORY BREAKDOWN -->
-            <div class="space-y-2 pt-2 border-t border-white/10 text-xs" id="category-breakdown">
-              <!-- Dynamically populated -->
-            </div>
-
-            <!-- EXPORT ACTION -->
-            <div class="pt-4 border-t border-white/10">
-              <button id="copy-audit-summary-btn" class="w-full py-2.5 px-4 rounded-xl bg-dark-800 hover:bg-bronze-600 text-slate-200 hover:text-white border border-white/10 text-xs font-semibold flex items-center justify-center gap-2 transition shadow">
-                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                <span id="copy-audit-label">Copy Audit Report Markdown</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 10 FIELD-TESTED LAYOUT ARCHETYPES -->
-  <section id="archetypes" class="py-24 bg-dark-950 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div>
-          <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// SPATIAL TYPOLOGIES</div>
-          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            The 10 Proven Layout Archetypes
-          </h2>
-          <p class="text-slate-400 text-sm max-w-2xl mt-2 leading-relaxed">
-            Every architectural and interior discipline demands a distinct page budget, aspect ratio, and tectonic balance. Match your monograph to one of these 10 field-tested archetypes:
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">Architectural Monographs</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Swiss grid-aligned A3 and 16:9 PDF spreads with calibrated typographic hierarchy, generous white space, and scannable project passports.
           </p>
         </div>
 
-        <!-- FILTERS -->
-        <div class="flex flex-wrap gap-2" id="archetype-filters">
-          <button class="filter-btn active text-xs font-mono px-3 py-1.5 rounded-lg bg-bronze-500 text-white transition" data-filter="all">
-            All (10)
+        <!-- Deliverable 2 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+            <i data-lucide="ruler" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">1:20 Constructive Wall Sections</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Layered tectonic assemblies showing flashing, vapor barriers, insulation thickness, structural anchors, and calibrated dimension chains.
+          </p>
+        </div>
+
+        <!-- Deliverable 3 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+            <i data-lucide="sun" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">Bioclimatic Flow Diagrams</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Vector solar radiation paths, diurnal prevailing wind ventilation loops, thermal mass heat transfer, and envelope shading angles.
+          </p>
+        </div>
+
+        <!-- Deliverable 4 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">Atmospheric Scenography</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Twilight luminance balance, surface light grazing, material reflection triptychs, and tactile micro-textures of wood, stone, and lime plaster.
+          </p>
+        </div>
+
+        <!-- Deliverable 5 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-4">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">Bespoke Millwork & Joinery</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Cabinetry reveal details, shadow gaps, concealed hinge clearances, edge banding, and shop drawing fabrication schedules.
+          </p>
+        </div>
+
+        <!-- Deliverable 6 -->
+        <div class="antigravity-card p-6 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">Urban Safety & Sightline Audits</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Nighttime pedestrian flânerie assessments, active ground-floor facade transparency, clear sightline corridors, and passive surveillance vectors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: THE INTERACTIVE 100-POINT AUDITOR (Flagship Interactive Lab)
+       ========================================================================= -->
+  <section id="auditor" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-100/40 dark:bg-dark-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono mb-4 border border-amber-500/30">
+            <span>DIAGNOSTIC AUDITING LAB</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+            100-Point Spatial Portfolio Auditor.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            Evaluate your portfolio against 20 criteria across Narrative, Constructive Proof, Swiss Grid, and Multi-Scale Fluency.
+          </p>
+        </div>
+
+        <!-- ONE-CLICK BENCHMARK PRESETS -->
+        <div class="flex flex-wrap items-center gap-2 self-start md:self-auto text-xs font-mono">
+          <span class="text-slate-500 font-semibold mr-1">Load Preset:</span>
+          <button id="preset-junior" type="button" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 hover:bg-slate-300 dark:hover:bg-dark-750 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-white/10 transition">
+            Junior (83)
           </button>
-          <button class="filter-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-300 transition" data-filter="architecture">
-            Architecture
+          <button id="preset-elite" type="button" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/20 font-bold transition">
+            Elite (95)
           </button>
-          <button class="filter-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-300 transition" data-filter="interior">
-            Interior
+          <button id="preset-traps" type="button" class="px-3 py-1.5 rounded-lg bg-red-500/10 text-red-600 dark:text-red-300 border border-red-500/30 hover:bg-red-500/20 font-bold transition">
+            Render Trap Alert (46)
           </button>
-          <button class="filter-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-300 transition" data-filter="technical">
-            Technical
-          </button>
-          <button class="filter-btn text-xs font-mono px-3 py-1.5 rounded-lg bg-dark-850 hover:bg-dark-800 text-slate-300 transition" data-filter="urban">
-            Urban & Systems
-          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- SCORE GAUGE & EXPORT CARD -->
+        <div class="lg:col-span-4 sticky top-28 space-y-6">
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 text-center relative overflow-hidden">
+            <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-6">Diagnostic Score Gauge</h3>
+            
+            <!-- CIRCULAR GAUGE SVG -->
+            <div class="relative w-48 h-48 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-full h-full -rotate-90" viewBox="0 0 160 160">
+                <circle cx="80" cy="80" r="68" stroke="currentColor" stroke-width="10" fill="transparent" class="text-slate-200 dark:text-dark-800"></circle>
+                <circle id="score-meter" cx="80" cy="80" r="68" stroke="#FFAF01" stroke-width="10" stroke-linecap="round" fill="transparent" stroke-dasharray="427.25" stroke-dashoffset="72.63" class="score-meter-circle"></circle>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span id="score-display" class="font-display text-5xl font-extrabold text-slate-900 dark:text-white">83</span>
+                <span class="text-xs font-mono text-slate-500">/ 100 PTS</span>
+              </div>
+            </div>
+
+            <!-- DIAGNOSTIC PILL -->
+            <div id="diagnostic-status" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-4 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              Passes 30s Review
+            </div>
+
+            <p id="diagnostic-summary" class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              Strong competitive candidate. Solid balance of constructive proof and visual presentation.
+            </p>
+
+            <!-- EXPORT AUDIT REPORT BUTTON -->
+            <button id="export-report-btn" type="button" class="w-full py-3 rounded-xl bg-slate-900 dark:bg-white hover:bg-amber-500 text-white dark:text-slate-900 hover:text-slate-950 font-mono font-bold text-xs transition flex items-center justify-center gap-2 shadow">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span id="export-label">Copy Audit Report Markdown</span>
+            </button>
+          </div>
+
+          <!-- CATEGORY PROGRESS BREAKDOWN -->
+          <div class="antigravity-card bg-white dark:bg-dark-900 p-6 rounded-2xl border border-slate-200 dark:border-white/10 space-y-4">
+            <h4 class="font-mono text-xs uppercase tracking-wider text-slate-500 font-bold">Category Breakdown</h4>
+            <div id="category-bars-container" class="space-y-3">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RUBRIC CHECKLIST ACCORDION (LG: COL-SPAN-8) -->
+        <div id="rubric-container" class="lg:col-span-8 space-y-6">
+          <!-- Dynamically populated from RUBRIC_DATA in app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: 10 LAYOUT ARCHETYPES EXPLORER
+       ========================================================================= -->
+  <section id="archetypes" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-dark-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-mono mb-4 border border-purple-500/30">
+            <span>EDITORIAL TYPOLOGIES</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+            10 Layout Archetypes Directory.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            Select the proven editorial format matched to your architectural practice, target firms, and project scale.
+          </p>
+        </div>
+
+        <!-- DISCIPLINE FILTER TABS -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+          <button data-filter="all" class="archetype-filter px-3.5 py-1.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold transition active">All (10)</button>
+          <button data-filter="architecture" class="archetype-filter px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 transition">Architecture</button>
+          <button data-filter="interior" class="archetype-filter px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 transition">Interior</button>
+          <button data-filter="technical" class="archetype-filter px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 transition">Technical</button>
+          <button data-filter="urban" class="archetype-filter px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 transition">Urban</button>
         </div>
       </div>
 
       <!-- ARCHETYPES GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="archetypes-grid">
-        <!-- Populated by app.js -->
+      <div id="archetypes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Dynamically rendered via app.js -->
       </div>
-
     </div>
   </section>
 
-  <!-- 5-ACT SPATIAL CASE STUDY METHODOLOGY (INTERACTIVE SPREAD SIMULATOR) -->
-  <section id="framework" class="py-24 bg-dark-900/40 border-t border-white/5">
+  <!-- =========================================================================
+       SECTION 6: THE 5-ACT SPATIAL NARRATIVE METHOD (Interactive Visualizer)
+       ========================================================================= -->
+  <section id="framework" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-100/40 dark:bg-dark-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// NARRATIVE PACING</div>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
-          The 5-Act Spatial Case Study Structure
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono mb-4 border border-amber-500/30">
+          <span>EDITORIAL PACING</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          The 5-Act Spatial Case Study Method.
         </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Never dump disconnected photos. Every featured project must unfold as an architectural persuasion narrative across 2 to 4 spreads:
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+          How world-class spatial monographs structure complex projects across 3–4 spreads to captivate partners and eliminate 3D render fatigue.
         </p>
       </div>
 
-      <!-- SPREAD SIMULATOR WIDGET -->
-      <div class="glass-panel rounded-2xl p-6 sm:p-10 technical-border mb-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- LEFT: SPREAD WIREFRAME VISUALIZER -->
-          <div class="lg:col-span-7 space-y-3">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 px-1">
-              <span>Spread Wireframe: <strong id="spread-act-tag" class="text-bronze-300">Act I — Project Passport</strong></span>
-              <span>16:9 Landscape / A4 Booklet</span>
+      <!-- 5-STEPPER BUTTONS -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-12">
+        <button data-act="0" class="act-nav-btn p-4 rounded-xl border border-amber-500 bg-amber-500/10 text-amber-600 dark:text-amber-300 text-left transition font-mono active">
+          <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Act I</div>
+          <div class="font-bold text-xs">The Hook</div>
+        </button>
+        <button data-act="1" class="act-nav-btn p-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-dark-900 text-slate-600 dark:text-slate-400 text-left transition font-mono hover:border-amber-500/40">
+          <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Act II</div>
+          <div class="font-bold text-xs">Context</div>
+        </button>
+        <button data-act="2" class="act-nav-btn p-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-dark-900 text-slate-600 dark:text-slate-400 text-left transition font-mono hover:border-amber-500/40">
+          <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Act III</div>
+          <div class="font-bold text-xs">Anatomy</div>
+        </button>
+        <button data-act="3" class="act-nav-btn p-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-dark-900 text-slate-600 dark:text-slate-400 text-left transition font-mono hover:border-amber-500/40">
+          <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Act IV</div>
+          <div class="font-bold text-xs">Proof (1:20)</div>
+        </button>
+        <button data-act="4" class="act-nav-btn p-4 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-dark-900 text-slate-600 dark:text-slate-400 text-left transition font-mono hover:border-amber-500/40">
+          <div class="text-[10px] uppercase tracking-wider text-slate-400 mb-1">Act V</div>
+          <div class="font-bold text-xs">Climax</div>
+        </button>
+      </div>
+
+      <!-- DYNAMIC SPREAD WIREFRAME CONTAINER -->
+      <div class="antigravity-card bg-white dark:bg-dark-900 p-8 rounded-2xl border border-slate-200 dark:border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- LEFT TEXT DESCRIPTION -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[11px] font-mono" id="act-tag">
+            ACT I · SPREAD 1
+          </div>
+          <h3 id="act-title" class="text-2xl sm:text-3xl font-display font-bold text-slate-900 dark:text-white">
+            The Hook & Architectural Thesis
+          </h3>
+          <p id="act-desc" class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Every project begins with immediate authority. Spread 1 features a project passport (typology, area, location, role) alongside a single decisive architectural photograph or section cut.
+          </p>
+          <div class="p-4 rounded-xl bg-slate-100 dark:bg-dark-850 border border-slate-200 dark:border-white/5 space-y-2">
+            <div class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">Mandatory Elements:</div>
+            <ul id="act-checklist" class="text-xs font-mono text-slate-600 dark:text-slate-400 space-y-1">
+              <li>&bull; Project Passport block (Year, Role, Location, Surface m²)</li>
+              <li>&bull; 2-Sentence Core Architectural Dilemma</li>
+              <li>&bull; Hero Atmospheric Framing (No generic lumion skies)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT SPREAD PREVIEW (16:9 Landscape Wireframe) -->
+        <div class="lg:col-span-7">
+          <div class="monograph-spread rounded-xl p-4 sm:p-6 flex flex-col justify-between shadow-2xl">
+            <div class="monograph-spine"></div>
+            <!-- Spread Top Header -->
+            <div class="flex items-center justify-between text-[9px] font-mono text-slate-500 uppercase tracking-wider border-b border-white/5 pb-2">
+              <span id="wireframe-left-header">SPREAD 01 // LEFT PAGE</span>
+              <span id="wireframe-right-header">SPREAD 01 // RIGHT PAGE</span>
             </div>
 
-            <!-- WIREFRAME CONTAINER -->
-            <div class="spread-wireframe rounded-xl p-4 flex gap-4 text-slate-400 font-mono text-[10px]">
-              <div class="spread-spine"></div>
-              
-              <!-- LEFT PAGE -->
-              <div class="flex-1 p-3 bg-dark-950/60 rounded-lg border border-white/5 flex flex-col justify-between" id="wireframe-left">
-                <!-- Dynamically updated -->
+            <!-- Spread Visual Wireframe Body -->
+            <div id="wireframe-body" class="grid grid-cols-2 gap-4 py-8 items-center h-48 sm:h-64">
+              <!-- Left Page -->
+              <div class="h-full border border-dashed border-amber-500/30 rounded-lg p-3 flex flex-col justify-between bg-white/5">
+                <div class="space-y-1">
+                  <div class="w-16 h-2 bg-amber-500/50 rounded"></div>
+                  <div class="w-24 h-1.5 bg-white/20 rounded"></div>
+                  <div class="w-20 h-1.5 bg-white/10 rounded"></div>
+                </div>
+                <div class="text-[10px] font-mono text-amber-400/80">PROJECT PASSPORT</div>
               </div>
-
-              <!-- RIGHT PAGE -->
-              <div class="flex-1 p-3 bg-dark-950/60 rounded-lg border border-white/5 flex flex-col justify-between" id="wireframe-right">
-                <!-- Dynamically updated -->
+              <!-- Right Page -->
+              <div class="h-full border border-dashed border-white/20 rounded-lg p-3 flex items-center justify-center bg-white/5">
+                <div class="text-[10px] font-mono text-slate-400">HERO ARCHITECTURAL HOOK</div>
               </div>
             </div>
-            
-            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 px-1">
-              <span>&larr; Left Page (Context & Strategy)</span>
-              <span>Right Page (Constructive Proof & Hero) &rarr;</span>
+
+            <!-- Spread Bottom Footer -->
+            <div class="flex items-center justify-between text-[9px] font-mono text-slate-500 border-t border-white/5 pt-2">
+              <span>SARA BENSALEM STUDIO // A3 PORTFOLIO MONOGRAPH</span>
+              <span id="wireframe-page-nums">04 &mdash; 05</span>
             </div>
           </div>
-
-          <!-- RIGHT: 5-ACT STEPPER SELECTOR -->
-          <div class="lg:col-span-5 space-y-3" id="act-steps-container">
-            <!-- Dynamically populated by app.js -->
-          </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- LIVE MCP TERMINAL SIMULATOR (INTERACTIVE PLAYGROUND) -->
-  <section id="simulator" class="py-24 bg-dark-950 border-t border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// INTERACTIVE TOOLKIT</div>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
-          Live Agentic MCP Terminal Sandbox
-        </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Test how coding assistants (Claude Desktop, Cursor, Antigravity) interact with Sara Bensalem's MCP tools via JSON-RPC. Click any tool below to execute a simulated live query:
-        </p>
+  <!-- =========================================================================
+       SECTION 7: LIVE MCP TERMINAL SANDBOX (Interactive JSON-RPC Console)
+       ========================================================================= -->
+  <section id="simulator" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-dark-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono mb-4 border border-emerald-500/30">
+            <span>TERMINAL RUNTIME</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Live MCP Terminal Sandbox.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            Simulate live JSON-RPC tool requests dispatched by Claude, Cursor, or Antigravity to the Sara Bensalem Design Skills engine.
+          </p>
+        </div>
+
+        <!-- SIMULATED TOOLS QUICK ACTIONS -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+          <button data-tool="list_skills" class="terminal-tool-btn px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 border border-transparent transition">
+            list_sara_skills
+          </button>
+          <button data-tool="audit_pdf" class="terminal-tool-btn px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 border border-transparent transition">
+            audit_portfolio
+          </button>
+          <button data-tool="recommend_archetype" class="terminal-tool-btn px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 border border-transparent transition">
+            recommend_archetype
+          </button>
+          <button data-tool="generate_5act" class="terminal-tool-btn px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-dark-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 border border-transparent transition">
+            generate_5act_structure
+          </button>
+        </div>
       </div>
 
       <!-- TERMINAL BOX -->
-      <div class="rounded-2xl bg-dark-900 border border-white/10 shadow-2xl overflow-hidden font-mono text-xs">
-        
-        <!-- TERMINAL TOP BAR -->
-        <div class="bg-dark-850 px-4 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
+      <div class="antigravity-terminal rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-white/10 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            <span class="text-slate-300 font-semibold ml-2">sara-bensalem-skills @ mcp-stdio</span>
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="ml-2 text-xs font-mono text-slate-400">sara-bensalem-skills --stdio</span>
           </div>
-
-          <!-- TOOL RUNNER BUTTONS -->
-          <div class="flex flex-wrap items-center gap-1.5">
-            <button class="terminal-tool-btn px-2.5 py-1 rounded bg-dark-800 hover:bg-bronze-600 text-slate-300 hover:text-white border border-white/10 transition" data-tool="list_skills">
-              list_sara_skills
-            </button>
-            <button class="terminal-tool-btn px-2.5 py-1 rounded bg-dark-800 hover:bg-bronze-600 text-slate-300 hover:text-white border border-white/10 transition" data-tool="audit_pdf">
-              audit_portfolio
-            </button>
-            <button class="terminal-tool-btn px-2.5 py-1 rounded bg-dark-800 hover:bg-bronze-600 text-slate-300 hover:text-white border border-white/10 transition" data-tool="recommend_archetype">
-              recommend_archetype
-            </button>
-            <button class="terminal-tool-btn px-2.5 py-1 rounded bg-dark-800 hover:bg-bronze-600 text-slate-300 hover:text-white border border-white/10 transition" data-tool="generate_5act">
-              generate_5act_structure
-            </button>
-          </div>
+          <span class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            LISTENING
+          </span>
         </div>
 
-        <!-- TERMINAL OUTPUT VIEW -->
-        <div class="p-6 bg-dark-950 overflow-x-auto min-h-[300px] text-slate-300 space-y-3" id="terminal-screen">
-          <div class="text-slate-500">// Welcome to Sara Bensalem Design Skills MCP Server CLI simulator.</div>
-          <div class="text-slate-500">// Select any tool button above to test real-time tool calls.</div>
-          <div class="text-emerald-400">&gt; server_status: ready. stdio transport listening...</div>
+        <div id="terminal-screen" class="text-xs font-mono leading-relaxed space-y-2 min-h-[220px]">
+          <div class="text-slate-500">// Select a tool above to execute an interactive simulated MCP JSON-RPC call...</div>
+          <div class="text-amber-400">&gt; tools/call {"name": "list_sara_skills"}</div>
+          <div class="text-slate-300">&lt; 200 OK (Response time: 38ms)</div>
+          <div class="text-emerald-400">{ "active_skills": ["portfolio-design", "heritage-adaptive-reuse", "interior-joinery-scenography"] }</div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- STOREFRONT & ATELIER REVIEWS -->
-  <section id="storefront" class="py-24 bg-dark-900/50 border-t border-white/5">
+  <!-- =========================================================================
+       SECTION 8: USE CASES (Built for Spatial Practitioners in Agent Era)
+       ========================================================================= -->
+  <section id="use-cases" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-100/30 dark:bg-dark-900/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="text-xs font-mono uppercase tracking-widest text-bronze-400 mb-2">// ADVISORY & ATELIER ASSETS</div>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
-          Templates, Handbooks & Personal Critiques
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-mono mb-4 border border-blue-500/30">
+          <span>SPATIAL PERSONAS</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Built for Architects in the Agent-First Era.
         </h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Accelerate your portfolio production with battle-tested InDesign grids or receive a 1-on-1 video audit from Sara Bensalem.
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2">
+          How emerging architects, competition directors, and luxury interior ateliers leverage Sara Bensalem Design Skills.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- PRODUCT 1 -->
-        <div class="p-8 rounded-2xl bg-dark-900 border border-white/5 flex flex-col justify-between hover:border-bronze-500/40 transition">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-dark-800 text-slate-300 border border-white/10">FIGMA / INDESIGN</span>
-              <span class="font-display font-bold text-2xl text-white">$59</span>
-            </div>
-            <h3 class="font-display font-bold text-xl text-white mb-2">Swiss Editorial Portfolio Grids</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Complete 48-page InDesign & Figma starter kits with 20% opacity display numbers, scannable project passport components, and calibrated architectural margins.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 10 Layout Archetype templates</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 16:9 & A4 Landscape spread layouts</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Typography hierarchy font pairings</li>
-            </ul>
-          </div>
-          <a href="mailto:sara@sarabensalem.com?subject=Inquiry:%20Swiss%20Editorial%20Portfolio%20Grids" class="w-full py-3 rounded-xl bg-dark-800 hover:bg-dark-750 text-slate-200 hover:text-white border border-white/15 text-center text-xs font-semibold transition">
-            Request Template Access
-          </a>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Use Case 1 -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <span class="text-xs font-mono font-semibold text-amber-500 uppercase tracking-wider mb-2 block">01 // GRADUATES & JUNIORS</span>
+          <h4 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Eliminate 3D Render Traps</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Stand out in competitive hiring pools by replacing repetitive 3D software renders with calibrated 1:20 wall sections, dimension chains, and clear Swiss layout balance.
+          </p>
+          <div class="text-xs font-mono text-slate-500">&rarr; 100-Pt Rubric Verification</div>
         </div>
 
-        <!-- PRODUCT 2 (FEATURED) -->
-        <div class="p-8 rounded-2xl bg-dark-850 border border-bronze-500/40 shadow-xl shadow-bronze-900/20 flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-bronze-500/10 rounded-full blur-2xl pointer-events-none"></div>
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-bronze-500/10 text-bronze-300 border border-bronze-500/30">PERSONAL CRITIQUE</span>
-              <span class="font-display font-bold text-2xl text-white">$149</span>
-            </div>
-            <h3 class="font-display font-bold text-xl text-white mb-2">1-on-1 Loom Video Audit</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Sara Bensalem personally audits your portfolio spread-by-spread in a private 15-minute video. Identifies render traps, fixes font scaling, and re-sequences project flow.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Full 100-point scored diagnostic</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Redline markup PDF annotations</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Turnaround in 72 business hours</li>
-            </ul>
-          </div>
-          <a href="mailto:sara@sarabensalem.com?subject=Book%201-on-1%20Portfolio%20Video%20Audit" class="w-full py-3 rounded-xl bg-gradient-to-r from-bronze-600 to-bronze-500 hover:from-bronze-500 hover:to-bronze-400 text-white font-semibold text-center text-xs shadow-md transition">
-            Book Video Audit ($149)
-          </a>
+        <!-- Use Case 2 -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <span class="text-xs font-mono font-semibold text-blue-500 uppercase tracking-wider mb-2 block">02 // COMPETITION TEAMS</span>
+          <h4 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">Automate 16:9 Presentation Pacing</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Generate publication-grade landscape competition monographs with seamless 5-act project narrative framing and environmental flow diagrams in minutes.
+          </p>
+          <div class="text-xs font-mono text-slate-500">&rarr; 5-Act Narrative Engine</div>
         </div>
 
-        <!-- PRODUCT 3 -->
-        <div class="p-8 rounded-2xl bg-dark-900 border border-white/5 flex flex-col justify-between hover:border-bronze-500/40 transition">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-dark-800 text-slate-300 border border-white/10">VIP ATELIER</span>
-              <span class="font-display font-bold text-2xl text-white">$499</span>
-            </div>
-            <h3 class="font-display font-bold text-xl text-white mb-2">Full Monograph Overhaul</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Complete restructuring of your monograph. Sara Bensalem reorganizes your drawings, typesets your narrative into a Swiss grid, and formats your case studies.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Complete InDesign file delivery</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 1-on-1 strategy kickoff call</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Cover letter & application advisory</li>
-            </ul>
-          </div>
-          <a href="mailto:sara@sarabensalem.com?subject=Inquiry:%20VIP%20Full%20Monograph%20Overhaul" class="w-full py-3 rounded-xl bg-dark-800 hover:bg-dark-750 text-slate-200 hover:text-white border border-white/15 text-center text-xs font-semibold transition">
-            Apply for VIP Overhaul
-          </a>
+        <!-- Use Case 3 -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10">
+          <span class="text-xs font-mono font-semibold text-purple-500 uppercase tracking-wider mb-2 block">03 // INTERIOR & HERITAGE PRACTICES</span>
+          <h4 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-3">From Concept to 1:20 Tectonic Proof</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Translate atmospheric design sketches into fabrication-grade millwork details, joinery tolerances, and historical French stone masonry restoration specs.
+          </p>
+          <div class="text-xs font-mono text-slate-500">&rarr; Constructive Detail Blueprints</div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- FOOTER & MANIFESTO COLOPHON -->
-  <footer class="bg-dark-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
+  <!-- =========================================================================
+       SECTION 9: ATELIER STOREFRONT & BESPOKE CRITIQUE
+       ========================================================================= -->
+  <section id="storefront" class="py-24 border-b border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-dark-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-        <div class="md:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-bronze-600 flex items-center justify-center font-display font-bold text-white text-sm">
-              SB
-            </div>
-            <span class="font-display font-bold text-base text-white">Sara Bensalem Design Skills</span>
-          </div>
-          <p class="text-slate-400 max-w-md leading-relaxed">
-            "A great spatial portfolio is not an art catalog or a rendering showcase. It is an architectural instrument of persuasion—proving your capacity to think in systems, resolve structural reality, and curate sensory space with uncompromising restraint."
-          </p>
-          <div class="text-[11px] font-mono text-bronze-400">
-            &copy; 2026 Sara Bensalem. Hosted on Firebase • Open MCP Server on GitHub.
-          </div>
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono mb-4 border border-amber-500/30">
+          <span>STUDIO ADVISORY</span>
         </div>
-
-        <div>
-          <h4 class="font-mono font-bold text-white uppercase tracking-wider mb-3">Skills & Tools</h4>
-          <ul class="space-y-2">
-            <li><a href="#skills-portfolio" class="hover:text-white transition">Portfolio Design Skill</a></li>
-            <li><a href="#mcp-quick-install" class="hover:text-white transition">MCP Server Installation</a></li>
-            <li><a href="#auditor" class="hover:text-white transition">100-Point Audit Engine</a></li>
-            <li><a href="#archetypes" class="hover:text-white transition">10 Layout Archetypes</a></li>
-            <li><a href="#framework" class="hover:text-white transition">5-Act Case Study Method</a></li>
-            <li><a href="#simulator" class="hover:text-white transition">Live Terminal Sandbox</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-mono font-bold text-white uppercase tracking-wider mb-3">Provenance & Contact</h4>
-          <ul class="space-y-2">
-            <li><a href="mailto:sara@sarabensalem.com" class="hover:text-white transition">sara@sarabensalem.com</a></li>
-            <li><a href="https://skills.sarabensalem.com" class="hover:text-white transition">skills.sarabensalem.com</a></li>
-            <li><a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-white transition">GitHub: sara-bensalem-skills</a></li>
-            <li><span class="text-slate-500">Firebase: sarabensalem-skills</span></li>
-          </ul>
-        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Atelier Templates & 1-on-1 Review.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mt-2">
+          Direct advisory and calibrated InDesign templates from Sara Bensalem's Paris studio.
+        </p>
       </div>
 
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Tier 1 -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-2">DIGITAL ASSETS</span>
+            <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">InDesign Master Spreads</h4>
+            <div class="text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-4">$59 <span class="text-xs font-mono text-slate-500 font-normal">one-time</span></div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              10 complete InDesign CC template files matched 1:1 to the 10 layout archetypes with calibrated Swiss baseline grids, master styles, and export presets.
+            </p>
+          </div>
+          <a href="mailto:sara@sarabensalem.com?subject=InDesign%20Archetype%20Templates" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-750 text-slate-900 dark:text-white font-mono font-bold text-xs transition text-center block">
+            Order Templates
+          </a>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border-2 border-amber-500 relative flex flex-col justify-between shadow-2xl shadow-amber-500/10">
+          <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-[10px] font-mono font-extrabold uppercase tracking-wider">
+            Most Popular
+          </div>
+          <div>
+            <span class="text-xs font-mono text-amber-500 uppercase tracking-wider block mb-2">INDIVIDUAL AUDIT</span>
+            <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">1-on-1 Loom Video Review</h4>
+            <div class="text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-4">$149 <span class="text-xs font-mono text-slate-500 font-normal">per portfolio</span></div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              A 20-minute private video teardown of your PDF by Sara Bensalem. Line-by-line Swiss grid redlines, constructive proof check, and layout recommendations.
+            </p>
+          </div>
+          <a href="mailto:sara@sarabensalem.com?subject=Request%20Loom%20Portfolio%20Review" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs transition text-center block shadow-lg shadow-amber-500/25">
+            Book Video Review
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="antigravity-card p-8 bg-white dark:bg-dark-900 rounded-2xl border border-slate-200 dark:border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-2">FULL ATELIER SERVICE</span>
+            <h4 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-2">VIP Monograph Overhaul</h4>
+            <div class="text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-4">$499 <span class="text-xs font-mono text-slate-500 font-normal">complete redesign</span></div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              Complete re-curation of your portfolio into a bespoke 32-page monograph. We rebuild your layouts, typeset your project passports, and export print-ready PDFs.
+            </p>
+          </div>
+          <a href="mailto:sara@sarabensalem.com?subject=VIP%20Monograph%20Overhaul%20Inquiry" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-750 text-slate-900 dark:text-white font-mono font-bold text-xs transition text-center block">
+            Inquire for Availability
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DRAWER: CO-ARCHITECT A SKILL MODAL
+       ========================================================================= -->
+  <div id="coarchitect-drawer" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="antigravity-card bg-white dark:bg-dark-900 max-w-xl w-full p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl relative">
+      <button id="close-drawer-btn" type="button" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 dark:hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="mb-6">
+        <div class="text-xs font-mono text-amber-500 uppercase tracking-wider mb-1">Open Architectural Collaboration</div>
+        <h3 class="text-2xl font-display font-bold text-slate-900 dark:text-white">Co-Architect a Spatial Skill</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Pitch a new domain-specialized skill for the open MCP ecosystem.</p>
+      </div>
+      <form id="coarchitect-form" class="space-y-4 text-xs font-mono">
+        <div>
+          <label class="block text-slate-700 dark:text-slate-300 mb-1">Proposed Skill Name & Typology</label>
+          <input type="text" required placeholder="e.g., mass-timber-hybrid-detailing" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-dark-850 text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label class="block text-slate-700 dark:text-slate-300 mb-1">Key Spatial & Constructive Deliverables</label>
+          <textarea rows="3" required placeholder="Describe the physical architectural deliverables (drawings, details, codes)..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-dark-850 text-slate-900 dark:text-white focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+        <div>
+          <label class="block text-slate-700 dark:text-slate-300 mb-1">Your Email / Studio Contact</label>
+          <input type="email" required placeholder="architect@studio.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-dark-850 text-slate-900 dark:text-white focus:outline-none focus:border-amber-500">
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-mono transition shadow-lg shadow-amber-500/20">
+          Submit Proposal to Paris Atelier
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER (Mistral & Antigravity Minimalist Legal & Architectural Attribution)
+       ========================================================================= -->
+  <footer class="py-16 border-t border-slate-200 dark:border-white/5 bg-slate-100 dark:bg-dark-950 text-xs font-mono text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
+          SB
+        </div>
+        <div>
+          <span class="text-slate-900 dark:text-white font-semibold">Sara Bensalem Design Skills</span> &copy; 2026.
+          <span class="text-slate-400">Paris, France.</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="https://skills.sarabensalem.com" class="hover:text-amber-500 transition">skills.sarabensalem.com</a>
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-amber-500 transition">GitHub Repo</a>
+        <a href="mailto:sara@sarabensalem.com" class="hover:text-amber-500 transition">sara@sarabensalem.com</a>
+      </div>
     </div>
   </footer>
 
+  <!-- APPLICATION SCRIPTS -->
   <script src="app.js"></script>
 </body>
 </html>

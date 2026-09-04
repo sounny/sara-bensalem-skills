@@ -381,17 +381,67 @@ const ACTS_DATA = [
 
 // INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initMcpTabs();
   initSkillsSuite();
   initAuditor();
   initArchetypes();
   initSpreadSimulator();
   initTerminalSimulator();
+  initCoArchitectDrawer();
   
   if (window.lucide) {
     lucide.createIcons();
   }
 });
+
+// 0. THEME TOGGLE (Google Labs / Mistral Light & Antigravity Dark)
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (!btn) return;
+
+  const savedTheme = localStorage.getItem('sara_theme');
+  if (savedTheme === 'light') {
+    document.documentElement.classList.add('light');
+  }
+
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light');
+    const isLight = document.documentElement.classList.contains('light');
+    localStorage.setItem('sara_theme', isLight ? 'light' : 'dark');
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  });
+}
+
+// 0.1 CO-ARCHITECT DRAWER MODAL
+function initCoArchitectDrawer() {
+  const openBtn = document.getElementById('open-coarchitect-btn');
+  const drawer = document.getElementById('coarchitect-drawer');
+  const closeBtn = document.getElementById('close-drawer-btn');
+  const form = document.getElementById('coarchitect-form');
+  if (!drawer) return;
+
+  if (openBtn) {
+    openBtn.addEventListener('click', () => drawer.classList.remove('hidden'));
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => drawer.classList.add('hidden'));
+  }
+  drawer.addEventListener('click', (e) => {
+    if (e.target === drawer) drawer.classList.add('hidden');
+  });
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! Your proposed spatial skill has been submitted to the Paris atelier.');
+      drawer.classList.add('hidden');
+      form.reset();
+    });
+  }
+}
+
 
 // 1. MCP TABS & QUICK INSTALL
 function initMcpTabs() {

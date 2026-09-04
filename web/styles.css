@@ -1,18 +1,69 @@
-/* Custom Architectural Styles for Sara Bensalem Design Skills */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* ==========================================================================
+   Sara Bensalem Design Skills — Master Design System
+   Synthesizing Google Labs, Google Antigravity, and Mistral AI Design DNA
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  
-  --color-obsidian: #080A0E;
-  --color-slate-dark: #0F1318;
-  --color-slate-card: #161B22;
-  --color-slate-border: rgba(255, 255, 255, 0.08);
-  --color-bronze-primary: #C8A882;
-  --color-bronze-light: #E2D1BE;
-  --color-amber-accent: #D97706;
+
+  /* Google Labs Signature Palette */
+  --gl-surface: #F3EFEA;
+  --gl-surface-dark: #14161A;
+  --gl-border: #E8DFD5;
+  --gl-accent-soft: #DDD3C7;
+  --gl-pill: 9999px;
+  --gl-radius: 1.5rem;
+
+  /* Google Antigravity Palette */
+  --palette-grey-0: #ffffff;
+  --palette-grey-10: #f8f9fc;
+  --palette-grey-20: #eff2f7;
+  --palette-grey-50: #e6eaf0;
+  --palette-grey-100: #e1e6ec;
+  --palette-grey-200: #cdd4dc;
+  --palette-grey-800: #45474d;
+  --palette-grey-1000: #212226;
+  --palette-grey-1200: #121317;
+  --palette-blue-600: #3279f9;
+
+  /* Mistral & Google Labs Warm Amber / Orange Accents */
+  --accent-amber: #FFAF01;
+  --accent-orange: #FF7700;
+  --accent-bronze: #C8A882;
+  --accent-terracotta: #A47D68;
+  --accent-emerald: #10B981;
+
+  /* Default Dark Titanium / Labs Night Surface */
+  --bg-canvas: #090B0E;
+  --bg-surface: #10141B;
+  --bg-surface-elevated: #161C26;
+  --bg-surface-subtle: #1C2330;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(200, 168, 130, 0.4);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --card-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Google Labs Warm Parchment / Mistral Luminous Canvas (Light Mode) */
+html.light {
+  --bg-canvas: #FBFBF8;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F3EFEA;
+  --bg-surface-subtle: #E8DFD5;
+  --border-subtle: #E1E6EC;
+  --border-strong: #CDD4DC;
+  --border-accent: rgba(164, 125, 104, 0.45);
+  --text-primary: #121317;
+  --text-secondary: #45474D;
+  --text-muted: #64748B;
+  --card-shadow: 0 8px 30px -4px rgba(18, 19, 23, 0.06);
 }
 
 html {
@@ -21,136 +72,120 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-obsidian);
-  color: #F1F5F9;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+}
+
+/* Subtle Architectural Grid Canvas */
+.drafting-canvas-dark {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(200, 168, 130, 0.06) 0%, transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    radial-gradient(circle at 50% 0%, rgba(200, 168, 130, 0.08) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 100% 100%, 48px 48px, 48px 48px;
   background-position: 0 0, -1px -1px, -1px -1px;
 }
 
-/* Custom scrollbars */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #080A0E;
-}
-::-webkit-scrollbar-thumb {
-  background: #232934;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3A4456;
+html.light .drafting-canvas-dark {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 175, 1, 0.06) 0%, transparent 50%),
+    linear-gradient(rgba(18, 19, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 19, 23, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
 }
 
-/* Glassmorphism & Architectural Panels */
-.glass-panel {
-  background: rgba(18, 22, 29, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-elevated {
-  background: rgba(22, 27, 35, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(200, 168, 130, 0.2);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-}
-
-/* Drafting Crosshair Decorations */
-.architect-crosshair {
-  position: relative;
-}
-.architect-crosshair::before,
-.architect-crosshair::after {
-  content: '+';
-  position: absolute;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(200, 168, 130, 0.4);
-  pointer-events: none;
-}
-.architect-crosshair::before {
-  top: -8px;
-  left: -8px;
-}
-.architect-crosshair::after {
-  bottom: -8px;
-  right: -8px;
-}
-
-/* Technical Accent Lines */
-.technical-border {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background-clip: padding-box;
-}
-
-.technical-border:hover {
-  border-color: rgba(200, 168, 130, 0.3);
-}
-
-/* Bronze Metallic Gradient Text */
-.text-bronze-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E8DCD4 40%, #C8A882 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gold-shimmer {
-  background: linear-gradient(90deg, #C8A882 0%, #F5EFEB 50%, #C8A882 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 4s linear infinite;
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* Pulse indicator */
-@keyframes softPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.96); }
-}
-.pulse-indicator {
-  animation: softPulse 2.5s ease-in-out infinite;
-}
-
-/* Code box styling */
-.code-block {
-  font-family: var(--font-mono);
-  background: #0B0E14;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Spread Simulation Box */
-.spread-wireframe {
-  aspect-ratio: 16 / 9;
-  background: #11151C;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Google Labs Card & Pill Aesthetics */
+.labs-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--gl-radius);
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
-.spread-spine {
+
+.labs-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+.labs-pill {
+  border-radius: var(--gl-pill);
+  transition: all 0.15s ease-in-out;
+}
+
+/* Terminal & Code Blocks */
+.antigravity-terminal {
+  font-family: var(--font-mono);
+  background: #080A0E;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+}
+
+html.light .antigravity-terminal {
+  background: #121317;
+  border: 1px solid #212226;
+  color: #F1F5F9;
+}
+
+/* Animated Shimmer Text */
+.text-shimmer-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2D1BE 35%, #FFAF01 70%, #C8A882 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .text-shimmer-gradient {
+  background: linear-gradient(135deg, #121317 0%, #A47D68 40%, #FF7700 75%, #121317 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Monograph Wireframe */
+.monograph-spread {
+  aspect-ratio: 16 / 9;
+  background: #0D1117;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+html.light .monograph-spread {
+  background: #F1F3F7;
+  border: 1px solid #D4DAE2;
+}
+
+.monograph-spine {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(200, 168, 130, 0.4);
   transform: translateX(-50%);
 }
 
-/* Circular Score Gauge Animation */
-.score-circle-meter {
-  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+/* Score Gauge Animation */
+.score-meter-circle {
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.4s ease;
+}
+
+/* Custom Minimalist Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
