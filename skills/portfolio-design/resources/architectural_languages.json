@@ -134,5 +134,53 @@
       "How does the courtyard typology perform under peak thermal solar gain?",
       "Are the materials quarried regionally with authentic stereotomic joinery?"
     ]
+  },
+  "deconstructivism": {
+    "name": "Deconstructivism & Non-Euclidean Geometry",
+    "hero_concept": "Fractured planes, non-rectilinear volumes, skewed axes, and kinetic tension that challenges conventional Cartesian spatial assumptions.",
+    "historical_lineage": "Zaha Hadid (Vitra Fire Station), Daniel Libeskind (Jewish Museum Berlin), Peter Eisenman (Wexner Center), Bernard Tschumi (Parc de la Villette).",
+    "signature_features": [
+      "Non-rectilinear fragmented geometries and cantilevers",
+      "Skewed structural axes and non-Euclidean folding",
+      "Titanium, zinc, and structural steel moment frames",
+      "Defiance of traditional floor-wall-ceiling demarcations"
+    ],
+    "critique_rubric": [
+      "Are the expressive cantilevers structurally verified through moment connection details?",
+      "Does the geometric complexity serve a clear spatial program or devolve into arbitrary sculptural form?",
+      "How are thermal bridges avoided at acute angular envelope junctions?"
+    ]
+  },
+  "japandi_wabi_sabi": {
+    "name": "Japandi Hybrid & Wabi-Sabi Tectonics",
+    "hero_concept": "The beauty of imperfection, acoustic stillness, and the harmonious synthesis of Scandinavian functionalism with traditional Japanese joinery.",
+    "historical_lineage": "Kengo Kuma (Asakusa Culture Tourist Center), Tadao Ando (Church of the Light), Axel Vervoordt (Kanaal, Triennale di Venezia).",
+    "signature_features": [
+      "Muted organic palette and hand-troweled lime plasters",
+      "Charred timber (shou sugi ban) and hinoki cypress joinery",
+      "Acoustic damping through washi paper and woven rushes",
+      "Negative space (Ma) celebrated as a primary spatial element"
+    ],
+    "critique_rubric": [
+      "Does the project demonstrate genuine material craft or superficial aesthetic staging?",
+      "How does natural daylight interact with textured matte surfaces across diurnal cycles?",
+      "Are millwork reveals and hidden hardware engineered with precise tolerance gaps?"
+    ]
+  },
+  "haussmannian_classicism": {
+    "name": "Haussmannian Classicism & French Boiserie",
+    "hero_concept": "Rigorous urban facade rhythm, high-ceiling piano nobile proportions, chevron parquet, and bespoke integrated boiserie millwork.",
+    "historical_lineage": "Baron Haussmann (Paris Urban Renovation 1853\u20131870), Henri Labrouste (Biblioth\u00e8que Sainte-Genevi\u00e8ve), Pierre Yovanovitch, Christian Liaigre.",
+    "signature_features": [
+      "Point de Hongrie (chevron) solid French oak parquet",
+      "Carved marble mantels (chemin\u00e9e trumeau) and molded plaster cornices",
+      "Concealed flush pivot doors and full-height boiserie cabinetry",
+      "High-contrast tactile triptychs (black Saint-Laurent marble, linen, oak)"
+    ],
+    "critique_rubric": [
+      "Are historical architectural mouldings aligned with contemporary structural interventions?",
+      "Does the spatial layout respect classic enfilade sightlines while accommodating modern egress?",
+      "Are bespoke joinery details specified at 1:5 scale with verified hardware clearances?"
+    ]
   }
 }

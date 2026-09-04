@@ -245,6 +245,8 @@ const GRILL_PRESETS = {
 
   alula: "The Memory of Air: A conceptual fragrance dinner experience within the desert canyons of Al-’Ula. A dialectic of contrasts: raw prehistoric rock vs deep petrol-blue draped chambers, mirror-polished stainless steel reflection banquet dissolving into the desert, atomized scent mist, and French crystal chandeliers in open night air.",
   indic: "Aayojan 2047 Master of Education & Cognitive Space: A 100-year institutional knowledge ecosystem rooted in Indic spatial systems and the Vāstu-Purusha mandala. Featuring stereotomic Jaipur sandstone massing, deep shaded colonnades, passive courtyard microclimates, porous jali ventilation screens, and a multi-level perception continuum linking mind, space, and form.",
+  deconstruct: "A contemporary performing arts pavilion featuring non-rectilinear fractured titanium roof planes, an expressive 18-meter cantilevered observation deck with structural steel moment frames, non-Euclidean glazed fissures, and zero visible intermediate columns.",
+  wabisabi: "A minimalist meditation tea pavilion set in a moss courtyard, featuring charred shou sugi ban cedar cladding, hand-troweled acoustic washi lime plaster walls, 5mm negative shadow reveals (joint creux) at the plinth, and concealed mortise-and-tenon oak framing.", 
   brutalist: "A monumental Brutalist civic archive featuring in-situ board-marked concrete (béton brut), exposed tie-rod holes, stereotomic massing, deep shadow brise-soleil, and a 1:20 constructive wall section with structural thermal breaks.",
   phenomenological: "A thermal bathhouse carved into alpine granite, featuring 1:5 shadow reveals (joint creux) between cleft stone and cedar, raking clerestory daylight, multi-sensory acoustic damping, and verified 1500mm PMR accessibility.",
   timber: "A contemporary timber cultural pavilion governed by a 12-column Swiss grid, featuring cantilevered oak glulam rafters, lime-hemp biotamping walls, and RE2020 net-negative embodied carbon.",
@@ -749,7 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Sectional Poch\u00e9 & Cards"
       }
     ],
-    "key_proof_elements": "Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports, zero cosmetic render fluff."
+    "key_proof_elements": "Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports, zero cosmetic render fluff.",
+    "category": "architecture"
   },
   "french_luxury": {
     "id": "french_luxury",
@@ -785,7 +788,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Hardware Inlay Accent"
       }
     ],
-    "key_proof_elements": "Tactile material triptychs, bespoke 1:5 millwork reveals (joint creux), luminaire schedules (L1-L29), verified on-site supervision photos."
+    "key_proof_elements": "Tactile material triptychs, bespoke 1:5 millwork reveals (joint creux), luminaire schedules (L1-L29), verified on-site supervision photos.",
+    "category": "interior"
   },
   "technical_blueprints": {
     "id": "technical_blueprints",
@@ -821,7 +825,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Dimension Strings & Hatches"
       }
     ],
-    "key_proof_elements": "90% technical working drawings, 10% renders. Parapet waterproofing, mechanical anchor brackets, basement parking (68 stalls) coordination."
+    "key_proof_elements": "90% technical working drawings, 10% renders. Parapet waterproofing, mechanical anchor brackets, basement parking (68 stalls) coordination.",
+    "category": "architecture"
   },
   "brutalist_tectonics": {
     "id": "brutalist_tectonics",
@@ -857,7 +862,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Expressed Structural Flitch Plates"
       }
     ],
-    "key_proof_elements": "Stereotomic weight, exposed board-marked concrete shuttering ties, uncropped 1:20 rebar and thermal break drawings, zero decorative trim."
+    "key_proof_elements": "Stereotomic weight, exposed board-marked concrete shuttering ties, uncropped 1:20 rebar and thermal break drawings, zero decorative trim.",
+    "category": "architecture"
   },
   "vernacular_bioclimatic": {
     "id": "vernacular_bioclimatic",
@@ -893,7 +899,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Foundation Plinth"
       }
     ],
-    "key_proof_elements": "Solar altitude vector geometry (65\u00b0 vs 18\u00b0), natural stack airflow chimney loops, quarry provenance coordinates, RE2020 net-negative carbon."
+    "key_proof_elements": "Solar altitude vector geometry (65\u00b0 vs 18\u00b0), natural stack airflow chimney loops, quarry provenance coordinates, RE2020 net-negative carbon.",
+    "category": "architecture"
   },
   "art_deco_moderne": {
     "id": "art_deco_moderne",
@@ -929,7 +936,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "1:5 Joinery Casework"
       }
     ],
-    "key_proof_elements": "Stepped massing setback diagrams, chevron spandrel details, 1:5 brass inlay millwork reveals, horizontal terrace waterproofing details."
+    "key_proof_elements": "Stepped massing setback diagrams, chevron spandrel details, 1:5 brass inlay millwork reveals, horizontal terrace waterproofing details.",
+    "category": "interior"
   },
   "phenomenological_story": {
     "id": "phenomenological_story",
@@ -965,7 +973,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Textured Plinth"
       }
     ],
-    "key_proof_elements": "Sequential 6-panel graphic narrative, compression and release threshold chambers, acoustic reflection pools, physical clay and cast-plaster models."
+    "key_proof_elements": "Sequential 6-panel graphic narrative, compression and release threshold chambers, acoustic reflection pools, physical clay and cast-plaster models.",
+    "category": "architecture"
   },
   "structural_expression": {
     "id": "structural_expression",
@@ -1001,7 +1010,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Service Core Articulation"
       }
     ],
-    "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses."
+    "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses.",
+    "category": "architecture"
   },
   "indic_spatial_systems": {
     "id": "indic_spatial_systems",
@@ -1037,7 +1047,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Courtyard Wash & Light Canvas"
       }
     ],
-    "key_proof_elements": "V\u0101stu-Purusha mandala spatial grids, perception continuum charts, 100-year institutional lifecycle models, passive courtyard microclimates."
+    "key_proof_elements": "V\u0101stu-Purusha mandala spatial grids, perception continuum charts, 100-year institutional lifecycle models, passive courtyard microclimates.",
+    "category": "architecture"
   },
   "ephemeral_scenography": {
     "id": "ephemeral_scenography",
@@ -1073,7 +1084,82 @@ document.addEventListener('DOMContentLoaded', () => {
         "role": "Atmospheric Diffusion & Muslin"
       }
     ],
-    "key_proof_elements": "Material contrast dialectics (raw stone vs flowing drapery vs mirror stainless), sensory chamber isolated mist details, zero-clutter negative space, French chandeliers in open desert air."
+    "key_proof_elements": "Material contrast dialectics (raw stone vs flowing drapery vs mirror stainless), sensory chamber isolated mist details, zero-clutter negative space, French chandeliers in open desert air.",
+    "category": "scenography"
+  },
+  "japandi_wabi_sabi": {
+    "id": "japandi_wabi_sabi",
+    "category": "interior",
+    "title": "11. Japandi Hybrid & Wabi-Sabi Tectonics",
+    "archetype": "Muted Organic Asymmetry & Scandinavian Joinery (Kengo Kuma / Axel Vervoordt)",
+    "ideal_for": "Boutique Residential Architects, Tea Pavilions & Meditative Wellness Designers",
+    "spread_aspect": "Square 1:1 or A4 Landscape",
+    "grid": "Asymmetric 9-Column Japanese Grid w/ Generous Ma (Negative Space)",
+    "typography": {
+      "display": "Space Grotesk / Cormorant Garamond (500)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "JetBrains Mono (400)"
+    },
+    "palette": [
+      {
+        "name": "Hinoki Cypress",
+        "hex": "#E8DCB8",
+        "role": "Joinery Substrate & Screening"
+      },
+      {
+        "name": "Shou Sugi Ban",
+        "hex": "#1B1B19",
+        "role": "Charred Timber Massing"
+      },
+      {
+        "name": "Washi Lime Plaster",
+        "hex": "#F6F5F0",
+        "role": "Tactile Textured Canvas"
+      },
+      {
+        "name": "Raw Iron Patina",
+        "hex": "#5A554C",
+        "role": "Concealed Hardware Accents"
+      }
+    ],
+    "key_proof_elements": "Concealed mortise-and-tenon joints, acoustic washi paper screens, raking light on hand-troweled lime, zero synthetic gloss."
+  },
+  "alpine_bivouac": {
+    "id": "alpine_bivouac",
+    "category": "architecture",
+    "title": "12. Alpine Bivouac & Extreme Climate Shelter",
+    "archetype": "Prefabricated Lightweight Monocoque & Extreme Terrain (Thibault Chr\u00e9tien / Charlotte Perriand)",
+    "ideal_for": "High-Altitude Expedition Architects, Modular Prefab & Disaster-Resilience Specialists",
+    "spread_aspect": "Panoramic 16:9 Landscape Monograph",
+    "grid": "16-Column High-Precision Aeronautical Grid",
+    "typography": {
+      "display": "Space Grotesk (800 Bold)",
+      "body": "Inter (500, 600)",
+      "technical": "JetBrains Mono (700 Bold)"
+    },
+    "palette": [
+      {
+        "name": "Anodized Titanium",
+        "hex": "#8E9399",
+        "role": "Aerodynamic Exterior Cladding"
+      },
+      {
+        "name": "Glacier White",
+        "hex": "#FFFFFF",
+        "role": "Reflective Thermal Insulation"
+      },
+      {
+        "name": "Alpine Basalt",
+        "hex": "#222326",
+        "role": "Pin-Foundation Anchorage"
+      },
+      {
+        "name": "Rescue Signal",
+        "hex": "#E04E39",
+        "role": "Aeronautical Contrast Accent"
+      }
+    ],
+    "key_proof_elements": "Thermal bridge-free envelope details, 250 km/h wind deflection aerodynamic profiles, helicopter-drop assembly sequencing diagrams."
   }
 };
 
