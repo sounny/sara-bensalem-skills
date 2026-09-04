@@ -141,7 +141,7 @@ const SAMPLE_SPREAD_SVG = `<svg viewBox="0 0 1920 1080" width="100%" height="100
 
   <!-- Folio Footer -->
   <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
-  <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">LEAD ARCHITECT: SARA BENSALEM • 48°51'24"N 02°21'07"E</text>
+  <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">LEAD ARCHITECT: SARA BENSALEM • 48°35'05"N 07°45'02"E</text>
   <text x="960" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470" text-anchor="middle">WORK RIGHTS: EU CITIZEN // ZERO VISA SPONSORSHIP REQUIRED</text>
   <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 04</text>
 </svg>`;

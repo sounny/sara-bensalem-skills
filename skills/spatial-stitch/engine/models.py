@@ -46,7 +46,7 @@ class VariantAspect(str, Enum):
 class ProjectPassport(BaseModel):
     title: str = "Project Monograph"
     typology: str = "Civic & Cultural Architecture"
-    location: str = "Paris, France"
+    location: str = "Strasbourg, France"
     coordinates: str = "48°51'24\"N 02°21'07\"E"
     year: str = "2026"
     area: str = "3,200 m²"
