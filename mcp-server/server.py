@@ -11,6 +11,7 @@ Website: https://skills.sarabensalem.com
 import sys
 import json
 import os
+import contextlib
 
 # Ensure UTF-8 output
 if hasattr(sys.stdout, 'reconfigure'):
@@ -151,6 +152,15 @@ TOOLS = [
     }
 ]
 
+@contextlib.contextmanager
+def capture_stdout():
+    old_stdout = sys.stdout
+    sys.stdout = sys.stderr
+    try:
+        yield
+    finally:
+        sys.stdout = old_stdout
+
 def handle_list_skills():
     return {
         "studio": 'Sara Bensalem Studio • Strasbourg Atelier [48°35\'05"N 07°45\'02"E]',
@@ -170,9 +180,9 @@ def handle_grill(submission_text, persona="full"):
         from critique_engine import GrillEngine
         from models import JuryPersona
         p_enum = JuryPersona.FULL_TRIBUNAL
-        if persona == "technical": p_enum = JuryPersona.TECHNICAL_PARTNER
-        elif persona == "recruiter": p_enum = JuryPersona.RECRUITER_15S
-        elif persona == "spatial": p_enum = JuryPersona.CRIT_CHAIR
+        if persona == "technical": p_enum = JuryPersona.CONSTRUCTIVE_LEAD
+        elif persona == "recruiter": p_enum = JuryPersona.HIRING_DIRECTOR
+        elif persona == "spatial": p_enum = JuryPersona.SPATIAL_CHAIR
         elif persona == "environmental": p_enum = JuryPersona.ENVIRONMENTAL_AUDITOR
         
         engine = GrillEngine()
@@ -295,7 +305,8 @@ def main():
                 params = req.get("params", {})
                 t_name = params.get("name")
                 args = params.get("arguments", {})
-                result_data = handle_call_tool(t_name, args)
+                with capture_stdout():
+                    result_data = handle_call_tool(t_name, args)
                 res = {
                     "jsonrpc": "2.0",
                     "id": msg_id,

@@ -22,8 +22,7 @@ def calculate_solar_altitude(latitude=48.58):
     equinox_alt = 90 - latitude
     return round(summer_alt, 1), round(winter_alt, 1), round(equinox_alt, 1)
 
-def generate_bioclimatic_svg(output_path="bioclimatic_flow_plate.svg"):
-    lat = 48.58  # Strasbourg latitude
+def generate_bioclimatic_svg(output_path="bioclimatic_flow_plate.svg", lat=48.58, chimney_height=12.0):
     summer_alt, winter_alt, eq_alt = calculate_solar_altitude(lat)
 
     width = 1200
@@ -112,5 +111,35 @@ def generate_bioclimatic_svg(output_path="bioclimatic_flow_plate.svg"):
         f.write(svg)
     print(f"Bioclimatic diagram written to: {output_path}")
 
+def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    parser = argparse.ArgumentParser(description="Bioclimatic Solar & Stack Ventilation Calculator")
+    parser.add_argument("--lat", type=float, default=48.58, help="Site latitude in decimal degrees")
+    parser.add_argument("--height", type=float, default=12.0, help="Stack chimney height in meters")
+    parser.add_argument("--area", type=float, default=2.5, help="Exhaust chimney opening area in m²")
+    parser.add_argument("--delta-t", type=float, default=8.0, help="Temperature differential ΔT in K")
+    parser.add_argument("--out", default="bioclimatic_flow_plate.svg", help="Output SVG filepath")
+    args = parser.parse_args()
+
+    summer_alt = round(90.0 - args.lat + 23.45, 1)
+    winter_alt = round(90.0 - args.lat - 23.45, 1)
+    g = 9.81
+    T_in = 295.15
+    Q = round(0.65 * args.area * math.sqrt(2 * g * args.height * (args.delta_t / T_in)), 2)
+
+    print("=" * 60)
+    print(" ☀️ BIOCLIMATIC FLOWS — SOLAR & STACK SIMULATION")
+    print("=" * 60)
+    print(f"Latitude:              {args.lat}°N")
+    print(f"Summer Solstice Noon:  {summer_alt}° altitude")
+    print(f"Winter Solstice Noon:  {winter_alt}° altitude")
+    print(f"Stack Chimney Height:  {args.height} m (Effective Draft)")
+    print(f"Calculated Airflow Q:  {Q} m³/s ({round(Q * 3600, 1)} m³/h natural displacement)")
+    print("-" * 60)
+
+    generate_bioclimatic_svg(output_path=args.out, lat=args.lat, chimney_height=args.height)
+
 if __name__ == "__main__":
-    generate_bioclimatic_svg()
+    main()
+

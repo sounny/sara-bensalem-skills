@@ -93,5 +93,32 @@ def generate_plan_svg(output_path="plan_1_100_accessible.svg"):
         f.write(svg)
     print(f"Spatial anatomy plan written to: {output_path}")
 
+def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    parser = argparse.ArgumentParser(description="Spatial Anatomy & PMR Compliance Auditor")
+    parser.add_argument("--door", type=float, default=900, help="Clear door passage width in mm (min 830mm)")
+    parser.add_argument("--vestibule", type=float, default=1500, help="Turning circle diameter in airlock in mm (min 1500mm)")
+    parser.add_argument("--corridor", type=float, default=1800, help="Corridor passage width in mm (min 1400mm)")
+    parser.add_argument("--out", default="plan_1_100_accessible.svg", help="Output SVG filepath")
+    args = parser.parse_args()
+
+    door_pass = args.door >= 830
+    vest_pass = args.vestibule >= 1500
+    corr_pass = args.corridor >= 1400
+    is_compliant = door_pass and vest_pass and corr_pass
+
+    print("=" * 60)
+    print(" ♿ SPATIAL ANATOMY — PMR & EGRESS AUDIT")
+    print("=" * 60)
+    print(f"VERDICT: {'COMPLIANT' if is_compliant else 'NON-COMPLIANT'}")
+    print(f"  • Door Passage:     {args.door} mm {'[PASS]' if door_pass else '[FAIL - min 830mm]'}")
+    print(f"  • Airlock Turning:  Ø {args.vestibule} mm {'[PASS]' if vest_pass else '[FAIL - min 1500mm]'}")
+    print(f"  • Corridor Width:   {args.corridor} mm {'[PASS]' if corr_pass else '[FAIL - min 1400mm]'}")
+    print("-" * 60)
+
+    generate_plan_svg(output_path=args.out)
+
 if __name__ == "__main__":
-    generate_plan_svg()
+    main()
+

@@ -9,8 +9,9 @@ Strasbourg Atelier [48°35'05"N 07°45'02"E]
 
 import sys
 import os
+import argparse
 
-def generate_joinery_svg(output_path="joinery_1_5_detail.svg"):
+def generate_joinery_svg(output_path="joinery_1_5_detail.svg", shadow_reveal_mm=5.0, carcase_mm=19.0):
     width = 1200
     height = 900
 
@@ -119,5 +120,25 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg"):
         f.write(svg)
     print(f"Interior joinery detail written to: {output_path}")
 
+def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    parser = argparse.ArgumentParser(description="1:5 Interior Joinery & Shadow Reveal Detailer")
+    parser.add_argument("--reveal", type=float, default=5.0, help="Negative shadow reveal gap in mm")
+    parser.add_argument("--carcase", type=float, default=19.0, help="Carcase panel thickness in mm")
+    parser.add_argument("--out", default="joinery_1_5_detail.svg", help="Output SVG filepath")
+    args = parser.parse_args()
+
+    print("=" * 60)
+    print(" 📐 INTERIOR JOINERY — 1:5 SHADOW REVEAL DETAILER")
+    print("=" * 60)
+    print(f"Shadow Reveal (Joint Creux): {args.reveal} mm")
+    print(f"Carcase Thickness:           {args.carcase} mm")
+    print(f"Concealed Hinge Pocket:      Blum Clip Top 110° Integrated")
+    print("-" * 60)
+
+    generate_joinery_svg(output_path=args.out, shadow_reveal_mm=args.reveal)
+
 if __name__ == "__main__":
-    generate_joinery_svg()
+    main()
+

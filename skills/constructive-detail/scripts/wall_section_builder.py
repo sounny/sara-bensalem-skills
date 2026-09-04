@@ -178,5 +178,16 @@ def generate_wall_section_svg(output_path="wall_section_1_20.svg"):
         f.write(svg)
     print(f"Wall section SVG written to {output_path} (U-value: {u_val} W/m²K)")
 
+def main():
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    parser = argparse.ArgumentParser(description="Generate 1:20 Constructive Wall Section SVG")
+    parser.add_argument("--assembly", choices=["granite-hemp", "timber-composite"], default="granite-hemp", help="Tectonic envelope assembly")
+    parser.add_argument("--out", default="wall_section_1_20.svg", help="Output SVG filepath")
+    args = parser.parse_args()
+
+    generate_wall_section_svg(output_path=args.out)
+
 if __name__ == "__main__":
-    generate_wall_section_svg()
+    main()
+
