@@ -389,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpreadSimulator();
   initTerminalSimulator();
   initCoArchitectDrawer();
+  initPortfolioStitchStudio();
   
   if (window.lucide) {
     lucide.createIcons();
@@ -992,4 +993,534 @@ function initTerminalSimulator() {
       `;
     });
   });
+}
+
+// =========================================================================
+// 7. PORTFOLIO STITCH STUDIO (Google Stitch for Spatial Portfolios)
+// =========================================================================
+
+const STITCH_SPREADS = {
+  THE_CONSTRUCTIVE_PROOF: {
+    title: "Plate IV: 1:20 Constructive Wall Section & Envelope Detailing",
+    prompt: "Act 4: 1:20 Wall Section showing Breton granite masonry, lime-hemp biotamping, triple-glazed thermal breaks, and PMR clearances.",
+    score: 100,
+    rank: "ELITE HIRE",
+    svg: `<svg viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#FBFBF8; font-family:Inter, sans-serif;">
+      <!-- Grid Layer Overlay (Toggled via JS) -->
+      <g id="stitch-grid-cols" class="stitch-grid-layer" opacity="0.35">
+        <rect x="64" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="212" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="360" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="508" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="656" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="804" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="952" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1100" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1248" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1396" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1544" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1692" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+      </g>
+      <g id="stitch-grid-margins" class="stitch-grid-layer">
+        <rect x="64" y="64" width="1792" height="952" fill="none" stroke="#FFAF01" stroke-width="1" stroke-opacity="0.4" />
+        <!-- Crosshairs -->
+        <circle cx="64" cy="64" r="3" fill="#FFAF01" />
+        <circle cx="1856" cy="64" r="3" fill="#FFAF01" />
+        <circle cx="64" cy="1016" r="3" fill="#FFAF01" />
+        <circle cx="1856" cy="1016" r="3" fill="#FFAF01" />
+      </g>
+
+      <!-- Folio Header -->
+      <text x="64" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470" letter-spacing="1">PROJECT MONOGRAPH: MAISON BRETONNE ADAPTIVE REUSE</text>
+      <text x="1856" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#FFAF01" font-weight="700" text-anchor="end">ACT 4 // CONSTRUCTIVE PROOF (1:20)</text>
+      <line x1="64" y1="64" x2="1856" y2="64" stroke="#E6E2DA" stroke-width="1" />
+
+      <!-- Left Technical Column: Material Callout Schedule (Cols 1-4) -->
+      <g transform="translate(64, 120)">
+        <text x="0" y="28" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#090B0E">1:20 Wall Section Detail</text>
+        <text x="0" y="52" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">SCALE 1:20 @ A3 // DIMENSIONS IN MM // PMR CLEARANCES</text>
+
+        <g transform="translate(0, 84)">
+          <rect x="0" y="0" width="24" height="24" fill="#FFAF01" />
+          <text x="12" y="16" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold" fill="#FBFBF8" text-anchor="middle">01</text>
+          <text x="36" y="12" font-size="13" font-weight="700" fill="#090B0E">Breton Granite Ashlar (180mm)</text>
+          <text x="36" y="28" font-size="11" fill="#5C6470">Consolidated lime mortar joints, exterior breathability</text>
+        </g>
+
+        <g transform="translate(0, 144)">
+          <rect x="0" y="0" width="24" height="24" fill="#090B0E" />
+          <text x="12" y="16" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold" fill="#FBFBF8" text-anchor="middle">02</text>
+          <text x="36" y="12" font-size="13" font-weight="700" fill="#090B0E">Lime-Hemp Biotamping (140mm)</text>
+          <text x="36" y="28" font-size="11" fill="#5C6470">Hygrothermal monolithic insulation, λ = 0.076 W/m·K</text>
+        </g>
+
+        <g transform="translate(0, 204)">
+          <rect x="0" y="0" width="24" height="24" fill="#002B49" />
+          <text x="12" y="16" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold" fill="#FBFBF8" text-anchor="middle">03</text>
+          <text x="36" y="12" font-size="13" font-weight="700" fill="#090B0E">Thermal Break & EPDM Flashing</text>
+          <text x="36" y="28" font-size="11" fill="#5C6470">Continuous capillary moisture seal at plinth threshold</text>
+        </g>
+
+        <g transform="translate(0, 264)">
+          <rect x="0" y="0" width="24" height="24" fill="#090B0E" />
+          <text x="12" y="16" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold" fill="#FBFBF8" text-anchor="middle">04</text>
+          <text x="36" y="12" font-size="13" font-weight="700" fill="#090B0E">Oak Glulam Post & Beam (160x280)</text>
+          <text x="36" y="28" font-size="11" fill="#5C6470">Concealed steel plate flitch connector w/ dowels</text>
+        </g>
+
+        <!-- Guarantee Stamp -->
+        <g transform="translate(0, 680)">
+          <rect x="0" y="0" width="560" height="120" fill="#E6E2DA" fill-opacity="0.35" stroke="#E6E2DA" />
+          <text x="16" y="28" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="bold" fill="#FFAF01">CONSTRUCTIVE PROOF GUARANTEE</text>
+          <text x="16" y="48" font-size="12" fill="#090B0E">Individual Line-Item Work: Envelope detailing &</text>
+          <text x="16" y="66" font-size="12" fill="#090B0E">construction administration documentation.</text>
+          <text x="16" y="94" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#5C6470">ANTI-RENDER-TRAP COMPLIANT • 100% BUILDABLE</text>
+        </g>
+      </g>
+
+      <!-- Right Technical Canvas: 1:20 Construction Detailing Plate (Cols 5-12) -->
+      <g transform="translate(680, 120)">
+        <rect x="0" y="0" width="1176" height="820" fill="#FFFFFF" stroke="#E6E2DA" stroke-width="1" />
+        <!-- Floor Slab cut (Reinforced Concrete) -->
+        <rect x="180" y="520" width="860" height="130" fill="#EAE6DF" stroke="#090B0E" stroke-width="2.5" />
+        <line x1="190" y1="560" x2="1030" y2="560" stroke="#5C6470" stroke-width="1" stroke-dasharray="8 6" />
+        <line x1="190" y1="620" x2="1030" y2="620" stroke="#5C6470" stroke-width="1" stroke-dasharray="8 6" />
+
+        <!-- Vertical Exterior Masonry Wall -->
+        <rect x="180" y="40" width="180" height="480" fill="#DFD9D0" stroke="#090B0E" stroke-width="2.5" />
+        <line x1="180" y1="120" x2="360" y2="120" stroke="#090B0E" stroke-width="1" />
+        <line x1="180" y1="200" x2="360" y2="200" stroke="#090B0E" stroke-width="1" />
+        <line x1="180" y1="280" x2="360" y2="280" stroke="#090B0E" stroke-width="1" />
+        <line x1="180" y1="360" x2="360" y2="360" stroke="#090B0E" stroke-width="1" />
+        <line x1="180" y1="440" x2="360" y2="440" stroke="#090B0E" stroke-width="1" />
+
+        <!-- Internal Lime-Hemp Insulation -->
+        <rect x="360" y="40" width="120" height="480" fill="#F4EFE6" stroke="#090B0E" stroke-width="1.5" stroke-dasharray="4 2" />
+        <!-- Plaster Finish -->
+        <rect x="480" y="40" width="20" height="480" fill="#FBFBF8" stroke="#090B0E" stroke-width="1" />
+
+        <!-- Triple Glazed Curtain Wall Profile -->
+        <rect x="500" y="160" width="540" height="260" fill="#E8F1F5" fill-opacity="0.4" stroke="#002B49" stroke-width="2" />
+        <line x1="500" y1="290" x2="1040" y2="290" stroke="#002B49" stroke-width="2" />
+        <text x="770" y="278" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#002B49" text-anchor="middle">TRIPLE GLAZED TIMBER-ALU ENVELOPE // Uw = 0.78 W/m²K</text>
+
+        <!-- Dimension Strings in Mistral Amber -->
+        <g stroke="#FFAF01" stroke-width="1.5">
+          <line x1="120" y1="40" x2="120" y2="520" />
+          <line x1="108" y1="40" x2="132" y2="40" />
+          <line x1="108" y1="520" x2="132" y2="520" />
+          <line x1="112" y1="44" x2="128" y2="36" stroke-width="2.5" />
+          <line x1="112" y1="524" x2="128" y2="516" stroke-width="2.5" />
+        </g>
+        <text x="100" y="290" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="bold" fill="#FFAF01" text-anchor="middle" transform="rotate(-90 100 290)">4800 MM CLEARANCE</text>
+
+        <!-- Horizontal thickness string -->
+        <g stroke="#FFAF01" stroke-width="1.5">
+          <line x1="180" y1="18" x2="500" y2="18" />
+          <line x1="180" y1="8" x2="180" y2="28" />
+          <line x1="500" y1="8" x2="500" y2="28" />
+          <line x1="176" y1="22" x2="184" y2="14" stroke-width="2.5" />
+          <line x1="496" y1="22" x2="504" y2="14" stroke-width="2.5" />
+        </g>
+        <text x="340" y="12" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#FFAF01" text-anchor="middle">320 MM COMPOSITE ENVELOPE</text>
+      </g>
+
+      <!-- Folio Footer -->
+      <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
+      <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">LEAD ARCHITECT: SARA BENSALEM • 48°51'24"N 02°21'07"E</text>
+      <text x="960" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470" text-anchor="middle">WORK RIGHTS: EU CITIZEN // ZERO VISA SPONSORSHIP REQUIRED</text>
+      <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 04</text>
+    </svg>`
+  },
+  THE_PASSPORT: {
+    title: "Plate I: The Project Passport & Individual Attribution",
+    prompt: "Act 1: Standardized Project Passport with uncropped site section, line-item attribution, and work rights status.",
+    score: 96,
+    rank: "ELITE HIRE",
+    svg: `<svg viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#FBFBF8; font-family:Inter, sans-serif;">
+      <!-- Grid Layer Overlay -->
+      <g id="stitch-grid-cols" class="stitch-grid-layer" opacity="0.35">
+        <rect x="64" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="212" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="360" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="508" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="656" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="804" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="952" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1100" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1248" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1396" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1544" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+        <rect x="1692" y="64" width="124" height="952" fill="#E6E2DA" fill-opacity="0.25" stroke="#E6E2DA" stroke-dasharray="2 4" />
+      </g>
+      <g id="stitch-grid-margins" class="stitch-grid-layer">
+        <rect x="64" y="64" width="1792" height="952" fill="none" stroke="#FFAF01" stroke-width="1" stroke-opacity="0.4" />
+      </g>
+      <text x="64" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">PROJECT PASSPORT DOSSIER // VOL. 01</text>
+      <text x="1856" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#FFAF01" font-weight="700" text-anchor="end">ACT 1 // THE HOOK & PASSPORT</text>
+      <line x1="64" y1="64" x2="1856" y2="64" stroke="#E6E2DA" stroke-width="1" />
+
+      <!-- Left Column: Passport Metadata (Cols 1-5) -->
+      <g transform="translate(64, 120)">
+        <text x="0" y="32" font-family="Inter, sans-serif" font-size="36" font-weight="800" fill="#090B0E">Maison Bretonne</text>
+        <text x="0" y="64" font-size="15" fill="#5C6470">Vernacular stone longère adaptive reuse w/ bioclimatic pavilion.</text>
+        
+        <g transform="translate(0, 110)">
+          <text x="0" y="0" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#5C6470">TYPOLOGY</text>
+          <text x="0" y="18" font-size="13" font-weight="700" fill="#090B0E">Heritage Adaptive Reuse & Contemporary Extension</text>
+          <line x1="0" y1="28" x2="680" y2="28" stroke="#E6E2DA" stroke-width="1" />
+        </g>
+        <g transform="translate(0, 164)">
+          <text x="0" y="0" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#5C6470">LOCATION & COORDINATES</text>
+          <text x="0" y="18" font-size="13" font-weight="700" fill="#090B0E">Finistère, Brittany, France (48°14'12"N 04°08'44"W)</text>
+          <line x1="0" y1="28" x2="680" y2="28" stroke="#E6E2DA" stroke-width="1" />
+        </g>
+        <g transform="translate(0, 218)">
+          <text x="0" y="0" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#5C6470">STAGE & DELIVERY</text>
+          <text x="0" y="18" font-size="13" font-weight="700" fill="#090B0E">RIBA Stage 4 / Permis de Construire Obtenu</text>
+          <line x1="0" y1="28" x2="680" y2="28" stroke="#E6E2DA" stroke-width="1" />
+        </g>
+        <g transform="translate(0, 272)">
+          <text x="0" y="0" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#5C6470">TEAM SCALE & INDIVIDUAL ROLE</text>
+          <text x="0" y="18" font-size="13" font-weight="700" fill="#090B0E">4 Architects • Lead Project Architect & Envelope Detailing</text>
+          <line x1="0" y1="28" x2="680" y2="28" stroke="#E6E2DA" stroke-width="1" />
+        </g>
+        <g transform="translate(0, 326)">
+          <text x="0" y="0" font-family="'IBM Plex Mono', monospace" font-size="10" font-weight="600" fill="#5C6470">WORK RIGHTS STATUS</text>
+          <text x="0" y="18" font-size="13" font-weight="700" fill="#059669">Permanent EU Citizen // Zero Visa Sponsorship Required</text>
+          <line x1="0" y1="28" x2="680" y2="28" stroke="#E6E2DA" stroke-width="1" />
+        </g>
+      </g>
+
+      <!-- Right Column: Site Section Diagram (Cols 6-12) -->
+      <g transform="translate(804, 120)">
+        <rect x="0" y="0" width="1052" height="820" fill="#FFFFFF" stroke="#E6E2DA" />
+        <!-- Topo Curves -->
+        <path d="M 0,380 Q 300,320 600,420 T 1052,360" fill="none" stroke="#E6E2DA" stroke-width="2" />
+        <rect x="180" y="240" width="480" height="300" fill="#F4F1EB" stroke="#090B0E" stroke-width="2.5" />
+        <polygon points="180,240 420,120 660,240" fill="#E4DEC8" stroke="#090B0E" stroke-width="2.5" />
+        <rect x="660" y="290" width="280" height="250" fill="#E8F1F5" fill-opacity="0.5" stroke="#002B49" stroke-width="2" />
+        <text x="210" y="320" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="bold" fill="#FFAF01">CONSOLIDATED GRANITE</text>
+        <text x="680" y="340" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#002B49">GLAZED PAVILION</text>
+      </g>
+      <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
+      <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">SWISS 12-COLUMN MODULAR SYSTEM</text>
+      <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 01</text>
+    </svg>`
+  },
+  THE_SPATIAL_ANATOMY: {
+    title: "Plate III: 1:100 Ground Floor Spatial Anatomy",
+    prompt: "Act 3: Scaled 1:100 Ground Floor Plan with structural columns, PMR corridor clearances, and programmatic fills.",
+    score: 94,
+    rank: "ELITE HIRE",
+    svg: `<svg viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#FBFBF8; font-family:Inter, sans-serif;">
+      <text x="64" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">PROJECT: MAISON BRETONNE // SCALE 1:100 @ A3</text>
+      <text x="1856" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#FFAF01" font-weight="700" text-anchor="end">ACT 3 // SPATIAL ANATOMY</text>
+      <line x1="64" y1="64" x2="1856" y2="64" stroke="#E6E2DA" stroke-width="1" />
+
+      <rect x="64" y="100" width="1792" height="840" fill="#FFFFFF" stroke="#E6E2DA" />
+      <rect x="220" y="240" width="1480" height="560" fill="none" stroke="#090B0E" stroke-width="2.5" />
+      <line x1="680" y1="240" x2="680" y2="800" stroke="#090B0E" stroke-width="2.5" />
+      <line x1="1220" y1="240" x2="1220" y2="800" stroke="#090B0E" stroke-width="2.5" />
+
+      <text x="450" y="520" font-size="18" font-weight="800" fill="#090B0E" text-anchor="middle">ATELIER PUBLIC / CAFE</text>
+      <text x="450" y="546" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#5C6470" text-anchor="middle">140 m² • 1500MM PMR CIRCULATION</text>
+
+      <text x="950" y="520" font-size="18" font-weight="800" fill="#090B0E" text-anchor="middle">CENTRAL GLAZED CLOISTER</text>
+      <text x="950" y="546" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#FFAF01" font-weight="bold" text-anchor="middle">BIO-MICROCLIMATE CORE</text>
+
+      <text x="1460" y="520" font-size="18" font-weight="800" fill="#090B0E" text-anchor="middle">VERNACULAR RESIDENCE</text>
+      <text x="1460" y="546" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#5C6470" text-anchor="middle">180 m² • RESTORED TIMBER FRAME</text>
+
+      <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
+      <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">SCALE BAR 1:100 // ACCESSIBILITY COMPLIANT</text>
+      <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 03</text>
+    </svg>`
+  },
+  THE_ENVIRONMENTAL_ENGINE: {
+    title: "Plate II: Bioclimatic Microclimate Modeling",
+    prompt: "Act 2: Environmental flow modeling with vector sun path arc, prevailing wind vectors, and thermal stack discharge.",
+    score: 95,
+    rank: "ELITE HIRE",
+    svg: `<svg viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#FBFBF8; font-family:Inter, sans-serif;">
+      <text x="64" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">MICROCLIMATE FLOW MODELING // VOL. 01</text>
+      <text x="1856" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#FFAF01" font-weight="700" text-anchor="end">ACT 2 // ENVIRONMENTAL ENGINE</text>
+      <line x1="64" y1="64" x2="1856" y2="64" stroke="#E6E2DA" stroke-width="1" />
+
+      <rect x="64" y="100" width="1792" height="840" fill="#FFFFFF" stroke="#E6E2DA" />
+      <path d="M 160,720 Q 960,80 1760,720" fill="none" stroke="#FFAF01" stroke-width="3" stroke-dasharray="8 4" />
+      <circle cx="680" cy="240" r="32" fill="#FFAF01" />
+      <text x="680" y="246" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#FBFBF8" text-anchor="middle">SUMMER +68°</text>
+
+      <polygon points="500,720 500,440 960,300 1420,440 1420,720" fill="#F0EDE6" stroke="#090B0E" stroke-width="2.5" />
+      <path d="M 200,600 Q 400,580 580,560 T 960,380" fill="none" stroke="#002B49" stroke-width="3.5" />
+      <text x="320" y="570" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#002B49">PREVAILING S-W BREEZE (4.2 m/s)</text>
+      <text x="960" y="360" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#002B49">THERMAL STACK EFFECT</text>
+
+      <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
+      <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">PASSIVE SOLAR REDUCTION: 34% HEATING DEMAND SAVINGS</text>
+      <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 02</text>
+    </svg>`
+  },
+  THE_TECTONIC_TRIPTYCH: {
+    title: "Plate V: 1:5 Bespoke Joinery Details & Material Triptych",
+    prompt: "Act 5: 1:5 joinery fabrication details, shadow reveal tolerances, bush-hammered granite plinth, and marine zinc cladding.",
+    score: 98,
+    rank: "ELITE HIRE",
+    svg: `<svg viewBox="0 0 1920 1080" width="100%" height="100%" style="background:#FBFBF8; font-family:Inter, sans-serif;">
+      <text x="64" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">TECTONIC FABRICATION // VOL. 01</text>
+      <text x="1856" y="48" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#FFAF01" font-weight="700" text-anchor="end">ACT 5 // 1:5 JOINERY & MATERIAL TRIPTYCH</text>
+      <line x1="64" y1="64" x2="1856" y2="64" stroke="#E6E2DA" stroke-width="1" />
+
+      <!-- Panel 1 -->
+      <g transform="translate(64, 120)">
+        <rect x="0" y="0" width="560" height="820" fill="#FFFFFF" stroke="#E6E2DA" />
+        <rect x="40" y="40" width="480" height="420" fill="#D7C4A5" stroke="#090B0E" stroke-width="2" />
+        <rect x="440" y="140" width="12" height="180" fill="#090B0E" />
+        <text x="40" y="520" font-size="18" font-weight="bold" fill="#090B0E">01. 8mm Shadow Reveal</text>
+        <text x="40" y="550" font-size="13" fill="#5C6470">Solid French Oak Joinery w/ Blum Clip-Top tolerances</text>
+      </g>
+      <!-- Panel 2 -->
+      <g transform="translate(680, 120)">
+        <rect x="0" y="0" width="560" height="820" fill="#FFFFFF" stroke="#E6E2DA" />
+        <rect x="40" y="40" width="480" height="420" fill="#C2BBB0" stroke="#090B0E" stroke-width="2" />
+        <circle cx="160" cy="180" r="2.5" fill="#5C6470" />
+        <circle cx="260" cy="240" r="3" fill="#5C6470" />
+        <circle cx="360" cy="160" r="2.5" fill="#5C6470" />
+        <text x="40" y="520" font-size="18" font-weight="bold" fill="#090B0E">02. Bush-Hammered Granite</text>
+        <text x="40" y="550" font-size="13" fill="#5C6470">Tactile rusticated plinth resisting water splash-back</text>
+      </g>
+      <!-- Panel 3 -->
+      <g transform="translate(1296, 120)">
+        <rect x="0" y="0" width="560" height="820" fill="#FFFFFF" stroke="#E6E2DA" />
+        <rect x="40" y="40" width="480" height="420" fill="#9DA7B2" stroke="#090B0E" stroke-width="2" />
+        <line x1="120" y1="40" x2="120" y2="460" stroke="#090B0E" stroke-width="2.5" />
+        <line x1="240" y1="40" x2="240" y2="460" stroke="#090B0E" stroke-width="2.5" />
+        <line x1="360" y1="40" x2="360" y2="460" stroke="#090B0E" stroke-width="2.5" />
+        <text x="40" y="520" font-size="18" font-weight="bold" fill="#090B0E">03. Pre-Weathered Zinc</text>
+        <text x="40" y="550" font-size="13" fill="#5C6470">Standing seam roof cladding w/ ventilated air gap</text>
+      </g>
+
+      <line x1="64" y1="1008" x2="1856" y2="1008" stroke="#E6E2DA" stroke-width="1" />
+      <text x="64" y="1034" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#5C6470">MATERIALITY & TACTILE CRAFT DOSSIER</text>
+      <text x="1856" y="1034" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="bold" fill="#090B0E" text-anchor="end">SPREAD 05</text>
+    </svg>`
+  }
+};
+
+function initPortfolioStitchStudio() {
+  const viewport = document.getElementById('stitch-canvas-viewport');
+  const promptInput = document.getElementById('stitch-prompt-input');
+  const generateBtn = document.getElementById('stitch-generate-btn');
+  const auditScoreEl = document.getElementById('stitch-audit-score');
+  const variantsContainer = document.getElementById('stitch-variants-container');
+  const archetypeTabs = document.querySelectorAll('.stitch-archetype-tab');
+  const chipBtns = document.querySelectorAll('.stitch-chip-btn');
+  const rangeBtns = document.querySelectorAll('.stitch-range-btn');
+  
+  const toggleCols = document.getElementById('stitch-toggle-cols');
+  const toggleMargins = document.getElementById('stitch-toggle-margins');
+  const exportSvgBtn = document.getElementById('stitch-export-svg-btn');
+  const openPrintBtn = document.getElementById('stitch-open-print-btn');
+
+  if (!viewport) return;
+
+  let currentArch = "THE_CONSTRUCTIVE_PROOF";
+  let currentRange = "REFINE";
+  let showCols = true;
+  let showMargins = true;
+
+  function renderSpread(archKey) {
+    const spread = STITCH_SPREADS[archKey] || STITCH_SPREADS.THE_CONSTRUCTIVE_PROOF;
+    currentArch = archKey;
+    viewport.innerHTML = spread.svg;
+
+    if (auditScoreEl) {
+      auditScoreEl.textContent = `${spread.score} / 100 PTS (${spread.rank})`;
+    }
+
+    // Apply overlay visibility
+    updateOverlays();
+
+    // Render variants for current archetype
+    renderVariants(spread);
+  }
+
+  function updateOverlays() {
+    const cols = viewport.querySelector('#stitch-grid-cols');
+    const margins = viewport.querySelector('#stitch-grid-margins');
+    if (cols) cols.style.display = showCols ? 'block' : 'none';
+    if (margins) margins.style.display = showMargins ? 'block' : 'none';
+  }
+
+  function renderVariants(baseSpread) {
+    if (!variantsContainer) return;
+    const variants = [
+      { id: "var-1", name: "Variant 1: Swiss Refine", desc: "Tighter 16-col baseline snap & 4pt micro-typography", score: 100, arch: currentArch },
+      { id: "var-2", name: "Variant 2: Plan Exploration", desc: "Dual spatial anatomy & 1:100 circulation overlay", score: 95, arch: "THE_SPATIAL_ANATOMY" },
+      { id: "var-3", name: "Variant 3: Dark Atelier", desc: "High-contrast dark titanium tectonic presentation", score: 98, arch: "THE_TECTONIC_TRIPTYCH" }
+    ];
+
+    variantsContainer.innerHTML = variants.map((v, i) => `
+      <div class="stitch-variant-card p-3 rounded-xl bg-dark-950 border ${i === 0 ? 'active border-amber-500/80 bg-dark-850' : 'border-white/5'} transition flex items-center justify-between" data-arch="${v.arch}">
+        <div>
+          <span class="text-[10px] font-mono font-bold text-amber-400 block">${v.name}</span>
+          <span class="text-[11px] text-slate-400 leading-tight block mt-0.5">${v.desc}</span>
+        </div>
+        <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold">${v.score}</span>
+      </div>
+    `).join('');
+
+    variantsContainer.querySelectorAll('.stitch-variant-card').forEach(card => {
+      card.addEventListener('click', () => {
+        variantsContainer.querySelectorAll('.stitch-variant-card').forEach(c => {
+          c.classList.remove('active', 'border-amber-500/80', 'bg-dark-850');
+          c.classList.add('border-white/5');
+        });
+        card.classList.add('active', 'border-amber-500/80', 'bg-dark-850');
+        card.classList.remove('border-white/5');
+
+        const targetArch = card.getAttribute('data-arch');
+        renderSpread(targetArch);
+      });
+    });
+  }
+
+  // Archetype tab switching
+  archetypeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      archetypeTabs.forEach(t => {
+        t.classList.remove('active', 'bg-amber-500', 'text-slate-950', 'font-bold');
+        t.classList.add('bg-dark-900', 'text-slate-300');
+      });
+      tab.classList.add('active', 'bg-amber-500', 'text-slate-950', 'font-bold');
+      tab.classList.remove('bg-dark-900', 'text-slate-300');
+
+      const arch = tab.getAttribute('data-arch');
+      if (promptInput && STITCH_SPREADS[arch]) {
+        promptInput.value = STITCH_SPREADS[arch].prompt;
+      }
+      renderSpread(arch);
+    });
+  });
+
+  // Quick preset chips
+  chipBtns.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const p = chip.getAttribute('data-preset');
+      if (p === 'wall_section') {
+        renderSpread('THE_CONSTRUCTIVE_PROOF');
+        if (promptInput) promptInput.value = STITCH_SPREADS.THE_CONSTRUCTIVE_PROOF.prompt;
+      } else if (p === 'passport') {
+        renderSpread('THE_PASSPORT');
+        if (promptInput) promptInput.value = STITCH_SPREADS.THE_PASSPORT.prompt;
+      } else if (p === 'plan') {
+        renderSpread('THE_SPATIAL_ANATOMY');
+        if (promptInput) promptInput.value = STITCH_SPREADS.THE_SPATIAL_ANATOMY.prompt;
+      } else if (p === 'bioclimatic') {
+        renderSpread('THE_ENVIRONMENTAL_ENGINE');
+        if (promptInput) promptInput.value = STITCH_SPREADS.THE_ENVIRONMENTAL_ENGINE.prompt;
+      }
+    });
+  });
+
+  // Range buttons
+  rangeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      rangeBtns.forEach(b => {
+        b.classList.remove('active', 'bg-amber-500', 'text-slate-950', 'font-bold');
+        b.classList.add('text-slate-400');
+      });
+      btn.classList.add('active', 'bg-amber-500', 'text-slate-950', 'font-bold');
+      btn.classList.remove('text-slate-400');
+      currentRange = btn.getAttribute('data-range');
+      renderVariants(STITCH_SPREADS[currentArch]);
+    });
+  });
+
+  // Toggle Grid Overlays
+  if (toggleCols) {
+    toggleCols.addEventListener('click', () => {
+      showCols = !showCols;
+      toggleCols.className = showCols
+        ? "px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold transition"
+        : "px-2.5 py-1 rounded bg-dark-800 text-slate-400 border border-white/5 font-semibold transition";
+      updateOverlays();
+    });
+  }
+
+  if (toggleMargins) {
+    toggleMargins.addEventListener('click', () => {
+      showMargins = !showMargins;
+      toggleMargins.className = showMargins
+        ? "px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold transition"
+        : "px-2.5 py-1 rounded bg-dark-800 text-slate-400 border border-white/5 font-semibold transition";
+      updateOverlays();
+    });
+  }
+
+  // Generate Button Animation
+  if (generateBtn) {
+    generateBtn.addEventListener('click', () => {
+      const originalText = generateBtn.innerHTML;
+      generateBtn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i><span>Synthesizing Vector Spread...</span>`;
+      generateBtn.disabled = true;
+
+      setTimeout(() => {
+        renderSpread(currentArch);
+        generateBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Spread Generated!</span>`;
+        if (window.lucide) lucide.createIcons();
+
+        setTimeout(() => {
+          generateBtn.innerHTML = originalText;
+          generateBtn.disabled = false;
+          if (window.lucide) lucide.createIcons();
+        }, 1500);
+      }, 700);
+    });
+  }
+
+  // Export SVG
+  if (exportSvgBtn) {
+    exportSvgBtn.addEventListener('click', () => {
+      const svgData = viewport.innerHTML;
+      const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `sara_bensalem_monograph_${currentArch.toLowerCase()}.svg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  // Open Print View
+  if (openPrintBtn) {
+    openPrintBtn.addEventListener('click', () => {
+      const svgData = viewport.innerHTML;
+      const printWin = window.open('', '_blank');
+      printWin.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <title>Sara Bensalem Monograph Spread — 16:9 Landscape</title>
+  <style>
+    @page { size: landscape; margin: 0; }
+    body { margin: 0; padding: 0; background: #EAEAEA; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .print-canvas { width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    svg { width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <div class="print-canvas">${svgData}</div>
+  <script>window.onload = function() { window.print(); };</script>
+</body>
+</html>`);
+      printWin.document.close();
+    });
+  }
+
+  // Initial render
+  renderSpread("THE_CONSTRUCTIVE_PROOF");
 }
