@@ -1,7 +1,7 @@
 # Sara Bensalem Design Skills (`skills.sarabensalem.com`)
 
 [![Author: Sara Bensalem](https://img.shields.io/badge/Author-Sara%20Bensalem-8E6753.svg)](mailto:sara@sarabensalem.com)
-[![Web Studio](https://img.shields.io/badge/Web%20Studio-skills.sarabensalem.com-0B0D10.svg)](https://sara-bensalem-skills.web.app)
+[![Web Studio](https://img.shields.io/badge/Web%20Studio-skills.sarabensalem.com-0B0D10.svg)](https://sarabensalem-skills.web.app)
 [![MCP Server](https://img.shields.io/badge/MCP%20Server-stdio%20JSON--RPC-blue.svg)](mcp-server/)
 [![Antigravity Skill](https://img.shields.io/badge/Antigravity-Agentic%20Skill-emerald.svg)](skills/portfolio-design/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-slate.svg)](LICENSE)
@@ -125,7 +125,7 @@ Add to your project's `.antigravity/mcp.json` or `.cursor/mcp.json`:
 ## 💻 Web Studio & Interactive Auditor
 
 The web application is deployed on Firebase Hosting:
-- **Live URL**: [https://sara-bensalem-skills.web.app](https://sara-bensalem-skills.web.app)
+- **Live URL**: [https://sarabensalem-skills.web.app](https://sarabensalem-skills.web.app)
 - **Target Subdomain**: `skills.sarabensalem.com`
 
 **Web Features**:

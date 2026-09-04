@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "sara-bensalem-skills",
+    "site": "sarabensalem-skills",
     "public": ".",
     "ignore": [
       "firebase.json",
