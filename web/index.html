@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Bensalem Design Skills — Spatial, Architectural & Portfolio Systems</title>
+  <meta name="description" content="Master spatial portfolio design, Swiss grid curation, and architectural critique system by Sara Bensalem. Eliminate the render trap and land elite architecture & interior design roles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#FAF8F5',
+              100: '#F5EFEB',
+              200: '#E8DCD4',
+              300: '#D5BEB1',
+              400: '#BD9B8A',
+              500: '#A47D68',
+              600: '#8E6753',
+              700: '#755241',
+              800: '#5C3F32',
+              900: '#3D281F',
+            },
+            dark: {
+              950: '#0B0D10',
+              900: '#111418',
+              850: '#171B21',
+              800: '#1E232B',
+              700: '#2A313C',
+              600: '#3E4756',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col font-sans">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-brand-900/60 via-dark-850 to-brand-900/60 border-b border-brand-500/20 py-2 px-4 text-center text-xs text-brand-200">
+    <span class="inline-flex items-center gap-1.5 font-medium">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Model Context Protocol (MCP) Server & Antigravity Skill v1.0 Live</span>
+      <a href="#mcp-section" class="underline hover:text-white ml-2">Connect Agent &rarr;</a>
+    </span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-dark-950/80 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center font-display font-bold text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          SB
+        </div>
+        <div>
+          <div class="font-display font-bold tracking-tight text-lg text-white flex items-center gap-1.5">
+            Sara Bensalem <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 font-sans font-medium">DESIGN SKILLS</span>
+          </div>
+          <p class="text-xs text-slate-400">Spatial, Architectural & Interior Systems Studio</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#skills-suite" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="layers" class="w-4 h-4 text-brand-400"></i> Design Skills
+        </a>
+        <a href="#auditor" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="gauge" class="w-4 h-4 text-brand-400"></i> Auditor
+        </a>
+        <a href="#archetypes" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i> 10 Archetypes
+        </a>
+        <a href="#framework" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-4 h-4 text-brand-400"></i> 5-Act Method
+        </a>
+        <a href="#storefront" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-brand-400"></i> Templates & Reviews
+        </a>
+        <a href="#mcp-section" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="cpu" class="w-4 h-4 text-brand-400"></i> MCP Server
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-200 border border-slate-700 transition">
+          <i data-lucide="github" class="w-4 h-4"></i> GitHub
+        </a>
+        <a href="#auditor" class="text-xs font-semibold px-4 py-2 rounded-lg bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white shadow-md shadow-brand-600/30 transition">
+          Audit My Portfolio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-20 pb-28 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/25 via-dark-950 to-dark-950 -z-10"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-6">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <span>Codified from Empirical Study of 12+ Elite Global Portfolios</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-white leading-tight sm:leading-none mb-6">
+        The Architectural System for <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-brand-200 to-amber-200">
+          High-Converting Spatial Portfolios
+        </span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+        Reviewers spend <strong>15 to 30 seconds</strong> scanning your work. Stop falling into the fatal <em class="text-amber-300">"Render Trap"</em>. Master Swiss grid discipline, layered constructive proof, and the 5-act spatial narrative to land premier agency roles.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#auditor" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white font-semibold text-sm shadow-xl shadow-brand-600/25 flex items-center justify-center gap-2 transition">
+          <i data-lucide="gauge" class="w-4 h-4"></i> Run 100-Point Audit
+        </a>
+        <a href="#archetypes" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-dark-850 hover:bg-dark-800 text-slate-200 font-semibold text-sm border border-slate-700/80 flex items-center justify-center gap-2 transition">
+          <i data-lucide="layout" class="w-4 h-4"></i> Explore 10 Archetypes
+        </a>
+        <a href="#mcp-section" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-dark-850/50 hover:bg-dark-800 text-brand-300 font-semibold text-sm border border-brand-500/30 flex items-center justify-center gap-2 transition">
+          <i data-lucide="terminal" class="w-4 h-4"></i> Install MCP Skill
+        </a>
+      </div>
+
+      <!-- KEY METRICS BANNER -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-slate-800/80">
+        <div class="p-4 rounded-xl bg-dark-900/60 border border-slate-800 text-left">
+          <div class="text-2xl font-display font-bold text-white mb-1">15–30s</div>
+          <div class="text-xs text-slate-400">Average hiring partner review window</div>
+        </div>
+        <div class="p-4 rounded-xl bg-dark-900/60 border border-slate-800 text-left">
+          <div class="text-2xl font-display font-bold text-brand-300 mb-1">75%</div>
+          <div class="text-xs text-slate-400">Rejected due to the "Render Trap" (no wall sections)</div>
+        </div>
+        <div class="p-4 rounded-xl bg-dark-900/60 border border-slate-800 text-left">
+          <div class="text-2xl font-display font-bold text-white mb-1">10 Types</div>
+          <div class="text-xs text-slate-400">Curated layout archetypes from empirical field audits</div>
+        </div>
+        <div class="p-4 rounded-xl bg-dark-900/60 border border-slate-800 text-left">
+          <div class="text-2xl font-display font-bold text-emerald-400 mb-1">100 Pts</div>
+          <div class="text-xs text-slate-400">Comprehensive multi-scale scoring rubric</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DESIGN SKILLS SUITE SECTION -->
+  <section id="skills-suite" class="py-20 bg-dark-950 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Modular Architectural Architecture</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          The Sara Bensalem Design Skills Suite
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          A growing modular collection of spatial, architectural, and interior design skills authored by Sara Bensalem—engineered for human architects, interior studios, and agentic AI pair programmers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="skills-suite-container">
+        <!-- Dynamically rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PRODUCTS & DELIVERABLES SHOWCASE -->
+  <section class="py-20 bg-dark-900/60 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Core Outputs</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          Engineered for Spatial Design Products
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          This platform is not for web or software design. While intelligent code drives the generation, our systems produce genuine architectural and physical design deliverables.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- PRODUCT 1 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="book-marked" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Portfolios & Monographs</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Curated multi-spread PDF portfolios and monographs engineered with Swiss grid discipline, restrained typography, and 30-second hiring impact.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> A4 / 16:9 panoramic spreads</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 20% opacity chapter numbering</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Scannable project passports</li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Architectural Working Sets</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Constructive drawings that prove real-world buildability—eliminating the fatal render trap through layered tectonic details.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Scaled floor plans (1:50, 1:100)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Layered wall sections (1:10, 1:20)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Waterproofing & anchor details</li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="shapes" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Concept Diagrams & Figures</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Analytical spatial diagrams that communicate the architectural thesis and environmental response with surgical clarity.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 4-step volumetric massing evolutions</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Bioclimatic sun/wind flow diagrams</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Exploded isometric assemblies</li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="sun-medium" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Atmospheric Renders & Scenography</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Balanced visual atmosphere that respects material physics, natural daylight filtration, and nocturnal mood rather than fake saturation.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Tactile material sample triptychs</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Daylight vs artificial lighting studies</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Warm mineral & greige palettes</li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="ruler" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Bespoke Millwork & Detail Sheets</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Interior execution sheets specifying custom cabinetry, wood joinery, stone cladding transitions, and luminaire schedules.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 1:5 & 1:10 joinery details</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Coded luminaire schedules</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Hardware & finish specifications</li>
+          </ul>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 hover:border-brand-500/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-300 mb-5">
+            <i data-lucide="map-pin" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Civic & Public Realm Figures</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Gender-equitable urban maps, natural surveillance sightline diagrams, and pedestrian safety audit sheets.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Empirical safety audit routes</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 24/7 eyes on the street sightlines</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Bio-buffered street sections</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE AUDITOR SECTION -->
+  <section id="auditor" class="py-20 bg-dark-900 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Self-Diagnostic Tool</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          The 100-Point Spatial Portfolio Auditor
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Evaluate your portfolio across the 6 Core Pillars established by Sara Bensalem. Check the boxes that reflect your current spreads to reveal your hiring readiness score.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <!-- AUDIT CHECKLIST (COLUMNS 1 & 2) -->
+        <div class="lg:col-span-2 space-y-6" id="rubric-container">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- SCORE SUMMARY CARD (COLUMN 3) -->
+        <div class="sticky top-28 p-6 rounded-2xl bg-dark-850 border border-slate-700/80 shadow-2xl space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <h3 class="font-display font-bold text-lg text-white">Scorecard</h3>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300" id="grade-badge">Unrated</span>
+          </div>
+
+          <!-- GAUGE METER -->
+          <div class="text-center py-4">
+            <div class="text-5xl font-display font-extrabold text-white mb-2" id="score-display">0</div>
+            <div class="text-xs uppercase tracking-widest text-slate-400">Out of 100 Points</div>
+            <div class="w-full bg-slate-800 rounded-full h-3 mt-4 overflow-hidden">
+              <div id="score-progress" class="h-full bg-gradient-to-r from-red-500 via-amber-400 to-emerald-500 transition-all duration-500" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- DIAGNOSTIC BREAKDOWN -->
+          <div class="space-y-3 text-xs border-t border-slate-800 pt-4" id="category-breakdown">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- RECOMMENDATION CALLOUT -->
+          <div class="p-4 rounded-xl bg-dark-900 border border-slate-800 text-xs text-slate-300 space-y-1" id="score-advice">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-brand-400"></i> Diagnostic Advice
+            </div>
+            <p>Complete the self-audit on the left to uncover potential redline warnings and trap hazards.</p>
+          </div>
+
+          <a href="#storefront" class="block w-full py-3 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white font-semibold text-center text-xs shadow-lg shadow-brand-600/30 transition">
+            Order 1-on-1 Video Redline by Sara
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10 ARCHETYPES SECTION -->
+  <section id="archetypes" class="py-20 bg-dark-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Curated Design Systems</div>
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-3">
+            The 10 Layout Archetypes
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+            Never start with a blank page. Select the field-tested layout blueprint calibrated to your architectural discipline and target employer tier.
+          </p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="archetype-filters">
+          <button class="filter-btn active text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-500 text-white transition" data-filter="all">All (10)</button>
+          <button class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-300 transition" data-filter="Architecture">Architecture</button>
+          <button class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-300 transition" data-filter="Interior">Interior</button>
+          <button class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-300 transition" data-filter="Urban">Urban</button>
+          <button class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-300 transition" data-filter="Technical">Technical</button>
+        </div>
+      </div>
+
+      <!-- ARCHETYPE CARDS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="archetypes-grid">
+        <!-- Populated dynamically by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5-ACT NARRATIVE FRAMEWORK -->
+  <section id="framework" class="py-20 bg-dark-900 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Narrative Dramaturgy</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          The 5-Act Spatial Case Study Structure
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          How to sequence any project across 2 to 4 spreads so hiring directors understand the concept, trust your constructability, and feel the atmosphere.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 flex flex-col justify-between hover:border-brand-500/40 transition">
+          <div>
+            <div class="text-3xl font-display font-extrabold text-brand-400 mb-2">01</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Spread 1 (Left)</div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">The Passport Hook</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Title, location, typology, role, and tools. Concise 2-sentence executive statement explaining the core spatial challenge.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-brand-300 font-medium">
+            Avoid generic artist statements
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 flex flex-col justify-between hover:border-brand-500/40 transition">
+          <div>
+            <div class="text-3xl font-display font-extrabold text-brand-400 mb-2">02</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Spread 1 (Right)</div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Contextual Conflict</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Topography, solar/wind paths, historical constraints, or socio-economic issues. Frames why the project was necessary.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-brand-300 font-medium">
+            Climatic & site diagramming
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 flex flex-col justify-between hover:border-brand-500/40 transition">
+          <div>
+            <div class="text-3xl font-display font-extrabold text-brand-400 mb-2">03</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Spread 2 (Left)</div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Spatial Strategy</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              3-to-4-step massing diagrams or exploded programmatic axonometrics demonstrating internal circulation and volume carving.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-brand-300 font-medium">
+            Show the thinking process
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border-2 border-brand-500/40 bg-brand-950/20 flex flex-col justify-between shadow-lg shadow-brand-500/10">
+          <div>
+            <div class="text-3xl font-display font-extrabold text-amber-300 mb-2">04</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-1">Spread 2 (Right)</div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Constructive Proof</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>The Anti-Trap:</strong> Scaled floor plans (1:50/1:100), layered wall sections (1:20), insulation/waterproofing cotations, and PMR circles.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-500/30 text-[11px] text-amber-300 font-bold">
+            Mandatory for hiring approval
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-dark-850 border border-slate-800 flex flex-col justify-between hover:border-brand-500/40 transition">
+          <div>
+            <div class="text-3xl font-display font-extrabold text-brand-400 mb-2">05</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Spread 3</div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Atmosphere & Outcome</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Tactile material triptych, day vs. night lighting scenography, physical study model photos, and verified socioeconomic metrics.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-brand-300 font-medium">
+            Emotional & sensory landing
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STOREFRONT & MONETIZATION SECTION -->
+  <section id="storefront" class="py-20 bg-dark-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Bensalem Studio Products</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          Upgrade Your Portfolio & Land Your Next Role
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          From production-ready InDesign and Figma templates to personalized 1-on-1 video reviews by Sara Bensalem.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- CARD 1 -->
+        <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 inline-block mb-3">Digital Book</div>
+            <h3 class="font-display font-bold text-xl text-white mb-1">The Bensalem Method</h3>
+            <p class="text-xs text-slate-400 mb-4">65-page master handbook with full 100-point rubric breakdown and case study formulas.</p>
+            <div class="text-2xl font-display font-extrabold text-white mb-6">$29 <span class="text-xs font-normal text-slate-400">one-time</span></div>
+            <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Full 100-point audit scorecard</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 10 Layout Archetype cheat-sheets</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Hiring Director interview prep</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-white font-semibold text-xs border border-slate-700 transition">
+            Get Handbook
+          </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="p-6 rounded-2xl bg-dark-900 border-2 border-brand-500/50 bg-gradient-to-b from-brand-950/20 to-dark-900 flex flex-col justify-between shadow-xl shadow-brand-500/10">
+          <div>
+            <div class="text-xs font-semibold px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30 inline-block mb-3">Bestseller</div>
+            <h3 class="font-display font-bold text-xl text-white mb-1">Figma & InDesign Pack</h3>
+            <p class="text-xs text-slate-400 mb-4">Complete 24-spread Swiss grid master layouts with pre-formatted typography scales.</p>
+            <div class="text-2xl font-display font-extrabold text-brand-300 mb-6">$59 <span class="text-xs font-normal text-slate-400">instant download</span></div>
+            <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> 24-Spread Landscape Master files</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Calibrated baseline & column grids</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Wall section & callout vector library</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Curated greige & mineral palettes</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white font-semibold text-xs shadow-md shadow-brand-600/30 transition">
+            Download Templates
+          </button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 inline-block mb-3">Personalized</div>
+            <h3 class="font-display font-bold text-xl text-white mb-1">1-on-1 Video Redline</h3>
+            <p class="text-xs text-slate-400 mb-4">Comprehensive 25-minute Loom video audit by Sara Bensalem reviewing every single page.</p>
+            <div class="text-2xl font-display font-extrabold text-white mb-6">$149 <span class="text-xs font-normal text-slate-400">per portfolio</span></div>
+            <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 25-minute page-by-page video redlines</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Specific CAD lineweight & type fixes</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Direct firm targeting recommendations</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 48-hour delivery guarantee</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-white font-semibold text-xs border border-slate-700 transition">
+            Book Video Review
+          </button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="text-xs font-semibold px-2 py-0.5 rounded bg-purple-950/60 text-purple-300 border border-purple-800/50 inline-block mb-3">VIP Sprint</div>
+            <h3 class="font-display font-bold text-xl text-white mb-1">Complete Overhaul</h3>
+            <p class="text-xs text-slate-400 mb-4">End-to-end editorial redesign of your top 2 flagship projects + live strategy call.</p>
+            <div class="text-2xl font-display font-extrabold text-white mb-6">$499 <span class="text-xs font-normal text-slate-400">limited spots</span></div>
+            <ul class="space-y-2.5 text-xs text-slate-300 border-t border-slate-800 pt-4">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> 60-minute 1-on-1 strategy session</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Complete layout overhaul of 2 projects</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> Custom InDesign package delivered</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> CV & Cover Letter alignment</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded-xl bg-dark-800 hover:bg-dark-700 text-white font-semibold text-xs border border-slate-700 transition">
+            Apply for Sprint
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MCP & AGENT INTEGRATION SECTION -->
+  <section id="mcp-section" class="py-20 bg-dark-900 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-xs font-bold uppercase tracking-wider text-brand-400 mb-2">Developer & AI Agent Suite</div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight mb-4">
+          Connect Sara's Engine to Claude, Cursor & Antigravity
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Equip your autonomous AI coding agents with the <strong>Sara Bensalem Skills MCP Server</strong> to perform automated audits and generate spatial case studies directly from your IDE.
+        </p>
+      </div>
+
+      <div class="rounded-2xl bg-dark-950 border border-slate-800 p-6 sm:p-8 space-y-6">
+        
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-brand-500/20 text-brand-400">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="font-display font-bold text-white text-sm">Claude Desktop / Cursor MCP Configuration</div>
+              <div class="text-xs text-slate-400">Add to your <code>claude_desktop_config.json</code></div>
+            </div>
+          </div>
+          <button class="copy-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 text-slate-300 transition flex items-center gap-1.5" data-copy="mcp-config-code">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Config
+          </button>
+        </div>
+
+        <pre class="bg-dark-900 p-4 rounded-xl text-xs font-mono text-emerald-400 overflow-x-auto border border-slate-800/80"><code id="mcp-config-code">{
+  "mcpServers": {
+    "sara-bensalem-skills": {
+      "command": "python",
+      "args": [
+        "path/to/sara-bensalem-skills/mcp-server/server.py"
+      ]
+    }
+  }
+}</code></pre>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-slate-800 text-xs">
+          <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+            <div class="font-bold text-white mb-1">audit_portfolio</div>
+            <div class="text-slate-400">Scans any PDF geometry, calculates text-to-image ratios, and flags missing sections.</div>
+          </div>
+          <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+            <div class="font-bold text-white mb-1">recommend_archetype</div>
+            <div class="text-slate-400">Matches candidate discipline with optimal spread budgets and layout grids.</div>
+          </div>
+          <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+            <div class="font-bold text-white mb-1">generate_5act_structure</div>
+            <div class="text-slate-400">Formulates a dramaturgical spatial narrative for any project brief.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto bg-dark-950 border-t border-slate-800/80 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600/30 flex items-center justify-center font-display font-bold text-brand-300">
+          SB
+        </div>
+        <div>
+          <div class="font-bold text-slate-300">Sara Bensalem Skills</div>
+          <div>Spatial Design Research & Architecture AI Studio</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://skills.sarabensalem.com" class="hover:text-slate-300 transition">skills.sarabensalem.com</a>
+        <a href="mailto:sara@sarabensalem.com" class="hover:text-slate-300 transition">sara@sarabensalem.com</a>
+        <a href="https://github.com/sounny/sara-bensalem-skills" target="_blank" class="hover:text-slate-300 transition flex items-center gap-1">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub Repo
+        </a>
+      </div>
+
+      <div>
+        &copy; 2026 Sara Bensalem. Built with Antigravity & Firebase.
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

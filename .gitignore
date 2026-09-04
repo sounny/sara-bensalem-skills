@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Firebase
+.firebase/
+firebase-debug.log*
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,155 @@
+{
+  "title": "Sara Bensalem 100-Point Spatial Portfolio Audit Rubric",
+  "author": "Sara Bensalem <sara@sarabensalem.com>",
+  "website": "https://skills.sarabensalem.com",
+  "total_points": 100,
+  "categories": [
+    {
+      "id": "narrative_curation",
+      "name": "Narrative & Strategic Curation",
+      "max_points": 20,
+      "criteria": [
+        {
+          "id": "passport_clarity",
+          "points": 5,
+          "desc": "Project passport clarity (role, tools, client/studio, year)"
+        },
+        {
+          "id": "problem_resolution",
+          "points": 5,
+          "desc": "Problem-solution clarity and spatial concept definition"
+        },
+        {
+          "id": "scannable_hierarchy",
+          "points": 5,
+          "desc": "Scannable typography and concise metadata blocks"
+        },
+        {
+          "id": "pacing_hook",
+          "points": 5,
+          "desc": "First-spread visual hook and editorial rhythm"
+        }
+      ]
+    },
+    {
+      "id": "constructive_rigor",
+      "name": "Constructive Rigor & Technical Proof (The Anti-Trap)",
+      "max_points": 25,
+      "criteria": [
+        {
+          "id": "scaled_plans",
+          "points": 10,
+          "desc": "Scaled architectural plans (1:20 to 1:100) with proper lineweights"
+        },
+        {
+          "id": "layered_wall_sections",
+          "points": 5,
+          "desc": "Wall sections with layered constructive callouts (waterproofing, insulation, anchors)"
+        },
+        {
+          "id": "dimension_chains",
+          "points": 5,
+          "desc": "Legible dimension chains, floor levels (NGF/TN), and graphic scale bars"
+        },
+        {
+          "id": "code_accessibility",
+          "points": 5,
+          "desc": "Demonstrated knowledge of building codes, PMR/ADA accessibility, and MEP coordination"
+        }
+      ]
+    },
+    {
+      "id": "swiss_grid_layout",
+      "name": "Layout, Typography & Swiss Grid Discipline",
+      "max_points": 20,
+      "criteria": [
+        {
+          "id": "grid_consistency",
+          "points": 5,
+          "desc": "Consistent multi-column margin and baseline grid across all spreads"
+        },
+        {
+          "id": "type_hierarchy",
+          "points": 5,
+          "desc": "Disciplined type hierarchy (max 2 font families, 3 weight variations)"
+        },
+        {
+          "id": "white_space_breathing",
+          "points": 5,
+          "desc": "Generous white space (at least 30-35% negative space) avoiding claustrophobic clutter"
+        },
+        {
+          "id": "visual_rhythm",
+          "points": 5,
+          "desc": "Alternating rhythm between full-bleed hero spreads and dense technical sets"
+        }
+      ]
+    },
+    {
+      "id": "multi_scale_fluency",
+      "name": "Multi-Scale Spatial Fluency",
+      "max_points": 15,
+      "criteria": [
+        {
+          "id": "macro_urban_context",
+          "points": 5,
+          "desc": "Macro urban context, site plan, topography contours, or transit networks"
+        },
+        {
+          "id": "meso_building_scale",
+          "points": 5,
+          "desc": "Meso architectural building volumes, massing diagrams, and internal circulation"
+        },
+        {
+          "id": "micro_joinery_detail",
+          "points": 5,
+          "desc": "Micro interior joinery, bespoke furniture prototype, or tectonic joint detail"
+        }
+      ]
+    },
+    {
+      "id": "materiality_scenography",
+      "name": "Materiality, Light & Sensory Quality",
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "material_triptych",
+          "points": 3,
+          "desc": "Tactile material triptych, texture swatches, and physical sample boards"
+        },
+        {
+          "id": "lighting_scenography",
+          "points": 3,
+          "desc": "Deliberate lighting scenography (day/night comparison, natural filtration, artificial fixtures)"
+        },
+        {
+          "id": "color_restraint",
+          "points": 4,
+          "desc": "Sophisticated, grounded color palette (warm greiges, muted earth tones, noble stone minerals)"
+        }
+      ]
+    },
+    {
+      "id": "professional_delivery",
+      "name": "Professional Validation & Delivery",
+      "max_points": 10,
+      "criteria": [
+        {
+          "id": "file_optimization",
+          "points": 3,
+          "desc": "Optimized binary PDF (< 50 MB) with clean vector linework and sharp text layers"
+        },
+        {
+          "id": "real_world_proof",
+          "points": 4,
+          "desc": "Real-world validation (on-site construction supervision, built client commissions, competition laurels)"
+        },
+        {
+          "id": "clean_colophon_cv",
+          "points": 3,
+          "desc": "Professional CV, toolchain matrix, and clean contact colophon"
+        }
+      ]
+    }
+  ]
+}

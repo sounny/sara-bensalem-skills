@@ -1,0 +1,141 @@
+[
+  {
+    "id": "01_swiss_editorial",
+    "name": "The Swiss Editorial Landscape",
+    "benchmark": "Thibault Chrétien (MJM Graphic Design Rennes / Agence VM)",
+    "page_budget": "24 Spreads (48 Booklet Pages)",
+    "aspect_ratio": "16:9 or A4 Landscape",
+    "target_firms": "High-profile European architectural agencies, international consultancies",
+    "key_elements": [
+      "Huge 20% opacity display numbers (01-06)",
+      "Double-spread panoramic balance",
+      "Photos de Chantier on-site proof",
+      "Exploded axonometrics"
+    ]
+  },
+  {
+    "id": "02_technical_office",
+    "name": "The Technical Office Working Set",
+    "benchmark": "Salma Sameh Mahdy (Helwan Univ Fine Arts)",
+    "page_budget": "30-35 Pages",
+    "aspect_ratio": "A3 or A4 Landscape",
+    "target_firms": "General contractors, technical design offices (AECOM, Dar Al-Handasah, Hassan Allam)",
+    "key_elements": [
+      "90% technical working drawings",
+      "Parapet waterproofing details",
+      "Mechanical anchor brackets",
+      "Ramp slope and parking coordination"
+    ]
+  },
+  {
+    "id": "03_french_luxury_minimalist",
+    "name": "The French Luxury Minimalist Book",
+    "benchmark": "Orlane Bizeray (byobstudio / MJM Rennes)",
+    "page_budget": "28-32 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Parisian interior design ateliers, boutique residential agencies, luxury hospitality studios",
+    "key_elements": [
+      "Monogram branding (OB)",
+      "Warm greige minimalism",
+      "Heritage Breton farmhouse/longère conversions",
+      "STRIA lamp prototype"
+    ]
+  },
+  {
+    "id": "04_phenomenological_storyboard",
+    "name": "The Phenomenological Storyboard",
+    "benchmark": "Neha George Mampilly (Marian College of Architecture, Kerala)",
+    "page_budget": "26 Spreads (52 Pages)",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Cultural institutions, memorial design studios, narrative-led practices",
+    "key_elements": [
+      "6-panel graphic comic-strip storyboards",
+      "Sensory psychological user journey",
+      "Tactile physical study models",
+      "Acoustic reflection pools"
+    ]
+  },
+  {
+    "id": "05_feminist_urbanist",
+    "name": "The Feminist Urbanist & Social Researcher",
+    "benchmark": "Aishwarya Bagwe (MS Arch, IIT Chicago)",
+    "page_budget": "24-30 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Civic design foundations, progressive urban planning think-tanks, international master planning consultancies",
+    "key_elements": [
+      "Nirbhaya bus corridor empirical safety audit",
+      "12-factor inclusive urban design typology",
+      "Circular before/after comparative isometrics",
+      "Rethinking Rehab therapeutic radial master plan"
+    ]
+  },
+  {
+    "id": "06_vernacular_monograph",
+    "name": "The Vernacular & Ecological Monograph",
+    "benchmark": "Alif Ahammed (MCAP Kerala)",
+    "page_budget": "30-36 Pages",
+    "aspect_ratio": "Square (1:1) or A4 Portrait",
+    "target_firms": "Bioclimatic practices (Biome Environmental Solutions), tropical institutes, research foundations",
+    "key_elements": [
+      "Clay massing diagrams",
+      "Terracotta tile sun-traps",
+      "Graphite isometrics",
+      "Published monographs as Chief Editor"
+    ]
+  },
+  {
+    "id": "07_regenerative_systems",
+    "name": "The Regenerative Environmental Systems",
+    "benchmark": "Nayera Sabet (Cairo Univ / Dar Al-Handasah)",
+    "page_budget": "50-60 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "International concept consultancies (BIG, Foster + Partners, Snøhetta, ZHA)",
+    "key_elements": [
+      "Lake Manzala water hyacinth floating infrastructure",
+      "International competition awards (Volume Zero, Kaira Looro)",
+      "Tier-1 consultant verification"
+    ]
+  },
+  {
+    "id": "08_commercial_specifier",
+    "name": "The Commercial Interior Specifier",
+    "benchmark": "Loan Lubrano di Sbaraglione (MJM Marseille)",
+    "page_budget": "45-52 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Commercial retail agencies, corporate fitout consultancies, exhibition stand architects",
+    "key_elements": [
+      "Tender-ready specification sheets",
+      "Luminaire schedules (L1-L29)",
+      "Exact material pricing (€/m²)",
+      "Tadao Ando-inspired STOSA showroom"
+    ]
+  },
+  {
+    "id": "09_multiscale_infrastructure",
+    "name": "The Multi-Scale Infrastructure Architect",
+    "benchmark": "Raden Ontoseno Haryoputra (Diponegoro Univ, GPA 3.74)",
+    "page_budget": "18-22 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Large multidisciplinary consultancies, transit authorities, corporate design practices",
+    "key_elements": [
+      "LRT transit terminal",
+      "Exploded structural skin axonometrics",
+      "Bamboo cultural center",
+      "State contractor internship at PT Adhi Karya"
+    ]
+  },
+  {
+    "id": "10_industrial_housing_bim",
+    "name": "The Industrial Housing & Net-Zero BIM Specialist",
+    "benchmark": "Sarfaraz Shaik (SPA JNAFAU Hyderabad)",
+    "page_budget": "20-24 Pages",
+    "aspect_ratio": "A4 Landscape",
+    "target_firms": "Multi-family residential developers, sustainability consultancies, computational design studios",
+    "key_elements": [
+      "Orvakal Drone Manufacturing Hub workforce housing",
+      "Solar Decathlon India Net-Zero team leadership",
+      "Built freelance duplex in Hyderabad",
+      "Grasshopper parametric stone facades"
+    ]
+  }
+]
