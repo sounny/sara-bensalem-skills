@@ -42,8 +42,8 @@ class TestMonographCompiler(unittest.TestCase):
         self.looks = LOOKS
 
     def test_looks_count(self):
-        """Verify that at least 19 empirical looks are registered."""
-        self.assertGreaterEqual(len(self.looks), 19)
+        """Verify that at least 20 empirical looks are registered."""
+        self.assertGreaterEqual(len(self.looks), 20)
         expected_looks = [
             "swiss_editorial", "french_luxury", "technical_blueprints",
             "brutalist_tectonics", "vernacular_bioclimatic", "art_deco_moderne",
@@ -51,7 +51,7 @@ class TestMonographCompiler(unittest.TestCase):
             "ephemeral_scenography", "japandi_wabi_sabi", "alpine_bivouac",
             "landscape_ecology", "urban_morphology", "tropical_resilience",
             "speculative_critical", "trauma_informed_commons", "environmental_simulation",
-            "commercial_courtyard"
+            "commercial_courtyard", "crimson_chronograph"
         ]
         for look_id in expected_looks:
             self.assertIn(look_id, self.looks, f"Expected look '{look_id}' not found in LOOKS.")
