@@ -553,5 +553,153 @@
       }
     ],
     "key_proof_elements": "Non-Motorized Transport (NMT) parking matrices, demountable steel locking pin connection details, diurnal day/night elevation studies."
+  },
+  "speculative_critical": {
+    "id": "speculative_critical",
+    "category": "architecture",
+    "title": "16. Speculative Critical Fiction & Low-Gravity Habitats",
+    "archetype": "Speculative Architecture & Planetary Adaptation (Hana Moharram / Aswan Retreat)",
+    "ideal_for": "Speculative Architects, Critical Futurists, Aerospace & Extreme Environment Spatial Designers",
+    "spread_aspect": "A4 Landscape (1:1.414)",
+    "grid": "8-Column Chronological Narrative Grid w/ Cosmic Timeline Margin",
+    "typography": {
+      "display": "Space Grotesk / Syne (800 ExtraBold)",
+      "body": "Inter / Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Nubian Ochre",
+        "hex": "#C2884A",
+        "role": "Rocky Nilotic Terrain & Ramps"
+      },
+      {
+        "name": "Celestial Obsidian",
+        "hex": "#1A1A1D",
+        "role": "Deep Contrast Cut Lines & Headers"
+      },
+      {
+        "name": "Micro-Gravity Slate",
+        "hex": "#6C7A89",
+        "role": "Planetary Trajectory & Ramps"
+      },
+      {
+        "name": "Alabaster Ground",
+        "hex": "#F8F8F6",
+        "role": "Spread Canvas Paper"
+      }
+    ],
+    "key_proof_elements": "Planetary gravitational decay timelines (G = 0.7 - 0.6), low-gravity body bounding trajectory diagrams, Nubian stone stereotomy ramp details."
+  },
+  "trauma_informed_commons": {
+    "id": "trauma_informed_commons",
+    "category": "architecture",
+    "title": "17. Trauma-Informed Civic Commons & Liminal Thresholds",
+    "archetype": "Spatial Hesitation & Dignity-Centered Civic Infrastructure (Krithika Srivastva / Shared Thresholds)",
+    "ideal_for": "Social Impact Architects, Healthcare & Sanctuary Designers, Civic Commons Specialists",
+    "spread_aspect": "3:2 Studio Monograph Spread (840 x 560 mm)",
+    "grid": "6-Column Asymmetrical Editorial Grid w/ Concept Sketch Overlay",
+    "typography": {
+      "display": "Helvetica Neue / Neue Haas Grotesk (700 Bold)",
+      "body": "Inter (400 Light, 500 Medium)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Crimson Sanctuary",
+        "hex": "#8B263E",
+        "role": "Sanctuary Threshold Accent"
+      },
+      {
+        "name": "Graphite Charcoal",
+        "hex": "#1E1E1E",
+        "role": "Hand-Drawn Concept Linework"
+      },
+      {
+        "name": "Parchment White",
+        "hex": "#FAFAF9",
+        "role": "Civic Commons Background"
+      },
+      {
+        "name": "Muted Pumice",
+        "hex": "#DCD7D0",
+        "role": "Transitional Buffer Zones"
+      }
+    ],
+    "key_proof_elements": "Gradual civic-to-sanctuary gradient sections, spatial hesitation buffer diagrams, raw graphite concept overlays, sensory acoustic separation details."
+  },
+  "environmental_simulation": {
+    "id": "environmental_simulation",
+    "category": "architecture",
+    "title": "18. Climate-Simulated Cultural Vernacular & Craft Bazaars",
+    "archetype": "Environmental Simulation & Regional Craft Infrastructure (Sneha Goel / SPA Bhopal)",
+    "ideal_for": "Sustainable Architecture Graduates, Environmental Simulation Analysts (Ladybug/Honeybee)",
+    "spread_aspect": "A4 Portrait & Landscape Working Set",
+    "grid": "12-Column Technical Grid w/ Environmental Metric Sidebar",
+    "typography": {
+      "display": "Plus Jakarta Sans (700 Bold)",
+      "body": "Inter (400)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Zari Terracotta",
+        "hex": "#BF4E30",
+        "role": "Bazaar Vaults & Shading Screens"
+      },
+      {
+        "name": "Thermal Comfort Sage",
+        "hex": "#5A7D7C",
+        "role": "Ladybug Microclimate Heatmaps"
+      },
+      {
+        "name": "Kutch Sand",
+        "hex": "#E3DAC9",
+        "role": "Courtyard Flooring & Plinth"
+      },
+      {
+        "name": "Deep Graphite",
+        "hex": "#1B1B1E",
+        "role": "Structural Frame & Lintels"
+      }
+    ],
+    "key_proof_elements": "Ladybug/Honeybee solar radiation maps, natural evaporative cooling courtyard sections, jali screen perforation acoustic specs."
+  },
+  "commercial_courtyard": {
+    "id": "commercial_courtyard",
+    "category": "architecture",
+    "title": "19. Contemporary Commercial Courtyard & Shaded Public Realm",
+    "archetype": "Thermal Comfort Massing & Mixed-Use Commercial Ateliers (Yassin Saber / Avora Mall)",
+    "ideal_for": "Commercial Architects, Retail & Hospitality Masterplanners, Mixed-Use Developers",
+    "spread_aspect": "16:9 Panoramic Landscape Monograph",
+    "grid": "12-Column Commercial Circulation Grid",
+    "typography": {
+      "display": "Space Grotesk / Montserrat (800 Bold)",
+      "body": "Inter (400, 500)",
+      "technical": "IBM Plex Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Avora Mediterranean Blue",
+        "hex": "#2B4C7E",
+        "role": "Hero Display Headers & Water Plazas"
+      },
+      {
+        "name": "Travertine Limestone",
+        "hex": "#E6DFD5",
+        "role": "Building Facade & Shaded Porticos"
+      },
+      {
+        "name": "Charcoal Glazing",
+        "hex": "#1C1D21",
+        "role": "Mullion Hairlines & Cut Sections"
+      },
+      {
+        "name": "Canopy Palm Green",
+        "hex": "#4A6B53",
+        "role": "Central Courtyard Landscaping"
+      }
+    ],
+    "key_proof_elements": "Self-shading facade stepped massing, natural wind funneling courtyard sections, multi-level retail pedestrian circulation diagrams."
   }
 }
