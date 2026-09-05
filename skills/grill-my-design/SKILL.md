@@ -13,9 +13,9 @@ Instead of polite, superficial praise, `grill-my-design` cross-examines your des
 
 ---
 
-## 🎭 The 4 Jury Personas
+## 🎭 The 5 Jury Personas
 
-When running `/grill-my-design`, you can request a specific persona or let the engine synthesize all four:
+When running `/grill-my-design`, you can request a specific persona or let the engine synthesize all five:
 
 1. **The Technical Partner / Constructive Lead (The "Detail Nazi")**:
    - Focus: 1:20 wall sections, water ingress, thermal bridging, expansion joints, hidden flitch plates, MEP plenum drops, and material junctions.
@@ -32,6 +32,10 @@ When running `/grill-my-design`, you can request a specific persona or let the e
 4. **The Environmental & Bioclimatic Auditor**:
    - Focus: Passive solar heat gain coefficient (SHGC), natural stack cross-ventilation, embodied carbon, lifecycle durability.
    - Core question: *"You drew green trees on the roof—what is the soil structural load, and what is your solar heat gain in July?"*
+
+5. **The Visual Curator & Swiss Typographer (The "Swiss Eye")**:
+   - Focus: 8/12/16 modular grids, 2:1 and 16:9 panoramic spread pacing, negative space breathing room (35%+), typographic hierarchy, multi-scalar drawing integration without visual vibration.
+   - Core question: *"Is this an unreadable cacophony of competing drawings, or an elegant editorial monograph with clear visual breathing room?"*
 
 ---
 
@@ -72,7 +76,10 @@ Run the command in your chat followed by your project description, image, PDF, o
 ### Modes:
 - `/grill-my-design --partner`: Run a hyper-focused technical construction interrogation.
 - `/grill-my-design --recruiter`: Run a brutal 15-second portfolio hiring filter review.
-- `/grill-my-design --full`: Run the full 4-round Socratic tribunal with scorecard.
+- `/grill-my-design --spatial`: Run a spatial sequence and universal PMR accessibility interrogation.
+- `/grill-my-design --environmental`: Run a bioclimatic and thermodynamic performance interrogation.
+- `/grill-my-design --visual`: Run a visual curation, Swiss grid, and typography hierarchy review.
+- `/grill-my-design --full`: Run the full 5-member Socratic tribunal with scorecard.
 
 ---
 

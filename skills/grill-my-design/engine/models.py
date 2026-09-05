@@ -1,5 +1,5 @@
 """
-Domain models for Grill My Design Socratic Critique Engine
+Domain models for Grill My Design Socratic Critique Engine (2026 Enhanced Edition)
 Sara Bensalem Studio • Strasbourg Atelier [48°35'05"N 07°45'02"E]
 """
 from enum import Enum
@@ -11,7 +11,8 @@ class JuryPersona(str, Enum):
     HIRING_DIRECTOR = "hiring_director"        # The 15-second recruiter filter
     SPATIAL_CHAIR = "spatial_chair"            # The crit chair (program, circulation, PMR)
     ENVIRONMENTAL_AUDITOR = "environmental"    # Bioclimatic, solar, ventilation, carbon
-    FULL_TRIBUNAL = "full_tribunal"            # Synthesis of all 4 personas
+    VISUAL_CURATOR = "visual_curator"          # Swiss grid, typography hierarchy, negative space, scalar flow
+    FULL_TRIBUNAL = "full_tribunal"            # Synthesis of all 5 personas
 
 class Severity(str, Enum):
     FATAL = "FATAL"         # Immediate disqualification / build failure

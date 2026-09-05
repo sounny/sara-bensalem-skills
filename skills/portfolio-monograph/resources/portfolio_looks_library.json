@@ -33,7 +33,8 @@
         "role": "Sectional Poch\u00e9 & Cards"
       }
     ],
-    "key_proof_elements": "Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports, zero cosmetic render fluff."
+    "key_proof_elements": "Uncropped 1:20 constructive sections, 20% opacity folio numbering ('01'-'06'), Project Passports, zero cosmetic render fluff.",
+    "category": "architecture"
   },
   "french_luxury": {
     "id": "french_luxury",
@@ -69,7 +70,8 @@
         "role": "Hardware Inlay Accent"
       }
     ],
-    "key_proof_elements": "Tactile material triptychs, bespoke 1:5 millwork reveals (joint creux), luminaire schedules (L1-L29), verified on-site supervision photos."
+    "key_proof_elements": "Tactile material triptychs, bespoke 1:5 millwork reveals (joint creux), luminaire schedules (L1-L29), verified on-site supervision photos.",
+    "category": "interior"
   },
   "technical_blueprints": {
     "id": "technical_blueprints",
@@ -105,7 +107,8 @@
         "role": "Dimension Strings & Hatches"
       }
     ],
-    "key_proof_elements": "90% technical working drawings, 10% renders. Parapet waterproofing, mechanical anchor brackets, basement parking (68 stalls) coordination."
+    "key_proof_elements": "90% technical working drawings, 10% renders. Parapet waterproofing, mechanical anchor brackets, basement parking (68 stalls) coordination.",
+    "category": "architecture"
   },
   "brutalist_tectonics": {
     "id": "brutalist_tectonics",
@@ -141,7 +144,8 @@
         "role": "Expressed Structural Flitch Plates"
       }
     ],
-    "key_proof_elements": "Stereotomic weight, exposed board-marked concrete shuttering ties, uncropped 1:20 rebar and thermal break drawings, zero decorative trim."
+    "key_proof_elements": "Stereotomic weight, exposed board-marked concrete shuttering ties, uncropped 1:20 rebar and thermal break drawings, zero decorative trim.",
+    "category": "architecture"
   },
   "vernacular_bioclimatic": {
     "id": "vernacular_bioclimatic",
@@ -177,7 +181,8 @@
         "role": "Foundation Plinth"
       }
     ],
-    "key_proof_elements": "Solar altitude vector geometry (65\u00b0 vs 18\u00b0), natural stack airflow chimney loops, quarry provenance coordinates, RE2020 net-negative carbon."
+    "key_proof_elements": "Solar altitude vector geometry (65\u00b0 vs 18\u00b0), natural stack airflow chimney loops, quarry provenance coordinates, RE2020 net-negative carbon.",
+    "category": "architecture"
   },
   "art_deco_moderne": {
     "id": "art_deco_moderne",
@@ -213,7 +218,8 @@
         "role": "1:5 Joinery Casework"
       }
     ],
-    "key_proof_elements": "Stepped massing setback diagrams, chevron spandrel details, 1:5 brass inlay millwork reveals, horizontal terrace waterproofing details."
+    "key_proof_elements": "Stepped massing setback diagrams, chevron spandrel details, 1:5 brass inlay millwork reveals, horizontal terrace waterproofing details.",
+    "category": "interior"
   },
   "phenomenological_story": {
     "id": "phenomenological_story",
@@ -249,7 +255,8 @@
         "role": "Textured Plinth"
       }
     ],
-    "key_proof_elements": "Sequential 6-panel graphic narrative, compression and release threshold chambers, acoustic reflection pools, physical clay and cast-plaster models."
+    "key_proof_elements": "Sequential 6-panel graphic narrative, compression and release threshold chambers, acoustic reflection pools, physical clay and cast-plaster models.",
+    "category": "architecture"
   },
   "structural_expression": {
     "id": "structural_expression",
@@ -285,6 +292,414 @@
         "role": "Service Core Articulation"
       }
     ],
-    "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses."
+    "key_proof_elements": "Cast steel node details at 1:10, tension cable calculations, Louis Kahn serviced vs servant spaces, Vierendeel transfer trusses.",
+    "category": "architecture"
+  },
+  "indic_spatial_systems": {
+    "id": "indic_spatial_systems",
+    "title": "09. Indic Spatial Systems & Cognitive Continuum",
+    "archetype": "Sacred Geometry & Systems Architecture (Pearl Gupta / Balkrishna Doshi / Charles Correa)",
+    "ideal_for": "Institutional Masterplanners, Educational Campuses & Cultural Research Fellows",
+    "spread_aspect": "Square 1:1 or Double-A3 Landscape",
+    "grid": "Mandala 9-Square Modular Matrix w/ Concentric Margins",
+    "typography": {
+      "display": "Space Grotesk / Cinzel (700)",
+      "body": "Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Jaipur Sandstone",
+        "hex": "#D9825B",
+        "role": "Stereotomic Thermal Massing"
+      },
+      {
+        "name": "Saffron Ochre",
+        "hex": "#E59A38",
+        "role": "Sacred Threshold & Axis"
+      },
+      {
+        "name": "Deep Graphite Slate",
+        "hex": "#1F2328",
+        "role": "Precision Cut Profile"
+      },
+      {
+        "name": "Temple Lime Plaster",
+        "hex": "#F7F3EB",
+        "role": "Courtyard Wash & Light Canvas"
+      }
+    ],
+    "key_proof_elements": "V\u0101stu-Purusha mandala spatial grids, perception continuum charts, 100-year institutional lifecycle models, passive courtyard microclimates.",
+    "category": "architecture"
+  },
+  "ephemeral_scenography": {
+    "id": "ephemeral_scenography",
+    "title": "10. Ephemeral Scenography & Olfactory Monument",
+    "archetype": "Desert Scenography & Fragrance Architecture (Yasmine Chouchane / Atelier Adeline \u2014 Al-\u2019Ula)",
+    "ideal_for": "Luxury Scenographers, Exhibition Designers & Spatial Brand Directors",
+    "spread_aspect": "Cinematic 16:9 Landscape Monograph",
+    "grid": "Cinematic Asymmetric 12-Column Grid w/ 50%+ White Space",
+    "typography": {
+      "display": "Playfair Display / Bodoni Moda (600)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "IBM Plex Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Petrol Blue Textile",
+        "hex": "#103544",
+        "role": "Sensory Fabric & Sea Memory"
+      },
+      {
+        "name": "Al-\u2019Ula Sandstone",
+        "hex": "#C49A6C",
+        "role": "Canyon Wall & Mineral Mass"
+      },
+      {
+        "name": "Mirrored Stainless",
+        "hex": "#E2E8F0",
+        "role": "Specular Desert Reflection"
+      },
+      {
+        "name": "Desert Mist",
+        "hex": "#F4F6F8",
+        "role": "Atmospheric Diffusion & Muslin"
+      }
+    ],
+    "key_proof_elements": "Material contrast dialectics (raw stone vs flowing drapery vs mirror stainless), sensory chamber isolated mist details, zero-clutter negative space, French chandeliers in open desert air.",
+    "category": "scenography"
+  },
+  "japandi_wabi_sabi": {
+    "id": "japandi_wabi_sabi",
+    "category": "interior",
+    "title": "11. Japandi Hybrid & Wabi-Sabi Tectonics",
+    "archetype": "Muted Organic Asymmetry & Scandinavian Joinery (Kengo Kuma / Axel Vervoordt)",
+    "ideal_for": "Boutique Residential Architects, Tea Pavilions & Meditative Wellness Designers",
+    "spread_aspect": "Square 1:1 or A4 Landscape",
+    "grid": "Asymmetric 9-Column Japanese Grid w/ Generous Ma (Negative Space)",
+    "typography": {
+      "display": "Space Grotesk / Cormorant Garamond (500)",
+      "body": "Plus Jakarta Sans (300, 400)",
+      "technical": "JetBrains Mono (400)"
+    },
+    "palette": [
+      {
+        "name": "Hinoki Cypress",
+        "hex": "#E8DCB8",
+        "role": "Joinery Substrate & Screening"
+      },
+      {
+        "name": "Shou Sugi Ban",
+        "hex": "#1B1B19",
+        "role": "Charred Timber Massing"
+      },
+      {
+        "name": "Washi Lime Plaster",
+        "hex": "#F6F5F0",
+        "role": "Tactile Textured Canvas"
+      },
+      {
+        "name": "Raw Iron Patina",
+        "hex": "#5A554C",
+        "role": "Concealed Hardware Accents"
+      }
+    ],
+    "key_proof_elements": "Concealed mortise-and-tenon joints, acoustic washi paper screens, raking light on hand-troweled lime, zero synthetic gloss."
+  },
+  "alpine_bivouac": {
+    "id": "alpine_bivouac",
+    "category": "architecture",
+    "title": "12. Alpine Bivouac & Extreme Climate Shelter",
+    "archetype": "Prefabricated Lightweight Monocoque & Extreme Terrain (Thibault Chr\u00e9tien / Charlotte Perriand)",
+    "ideal_for": "High-Altitude Expedition Architects, Modular Prefab & Disaster-Resilience Specialists",
+    "spread_aspect": "Panoramic 16:9 Landscape Monograph",
+    "grid": "16-Column High-Precision Aeronautical Grid",
+    "typography": {
+      "display": "Space Grotesk (800 Bold)",
+      "body": "Inter (500, 600)",
+      "technical": "JetBrains Mono (700 Bold)"
+    },
+    "palette": [
+      {
+        "name": "Anodized Titanium",
+        "hex": "#8E9399",
+        "role": "Aerodynamic Exterior Cladding"
+      },
+      {
+        "name": "Glacier White",
+        "hex": "#FFFFFF",
+        "role": "Reflective Thermal Insulation"
+      },
+      {
+        "name": "Alpine Basalt",
+        "hex": "#222326",
+        "role": "Pin-Foundation Anchorage"
+      },
+      {
+        "name": "Rescue Signal",
+        "hex": "#E04E39",
+        "role": "Aeronautical Contrast Accent"
+      }
+    ],
+    "key_proof_elements": "Thermal bridge-free envelope details, 250 km/h wind deflection aerodynamic profiles, helicopter-drop assembly sequencing diagrams."
+  },
+  "landscape_ecology": {
+    "id": "landscape_ecology",
+    "category": "landscape",
+    "title": "13. The Landscape Ecology & Topographical Monograph",
+    "archetype": "Biophilic Landscape Systems & Heritage Mapping (Anu Kottummel Joy / Politecnico di Milano & OMGEVING)",
+    "ideal_for": "Landscape Architects, Ecological Urbanists, Botanical & Environmental Heritage Designers",
+    "spread_aspect": "Double-Page Hardcover Monograph (1:1.414)",
+    "grid": "8-Column Asymmetrical Grid w/ Topographical Stippling Margin",
+    "typography": {
+      "display": "Inter Display / Light (300)",
+      "body": "Neue Haas Grotesk / Inter (400)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Soft Sage Leaf",
+        "hex": "#B7C4B2",
+        "role": "Canopy Density & Shrub Layer"
+      },
+      {
+        "name": "Chalk Paper Ground",
+        "hex": "#FAFAF8",
+        "role": "Monograph Spread Canvas"
+      },
+      {
+        "name": "Topographical Charcoal",
+        "hex": "#2D2E2B",
+        "role": "Vector Contours & Text Stippling"
+      },
+      {
+        "name": "Wetland Ochre",
+        "hex": "#D8CEBC",
+        "role": "Riparian Hydrology & Soil Swales"
+      }
+    ],
+    "key_proof_elements": "QGIS topographical contour stippling, botanical planting density matrices, water runoff swales, Milan street tree microclimate study data."
+  },
+  "urban_morphology": {
+    "id": "urban_morphology",
+    "category": "architecture",
+    "title": "14. The Urban Morphology & Public Space Continuum",
+    "archetype": "Morphological Public Space Analysis & Block Typology (Palak Bhattad / CEPT University MUD)",
+    "ideal_for": "Master of Urban Design Candidates, City Planners & Civic Public Space Specialists",
+    "spread_aspect": "2:1 Panoramic Double-Square Spread (1190 x 595 mm)",
+    "grid": "12-Column Urban Morphology Grid w/ 50% Left Text Breathing Zone",
+    "typography": {
+      "display": "League Spartan / Oswald (700 Condensed Bold)",
+      "body": "Inter / Helvetica Neue (400, 500)",
+      "technical": "Space Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Krak\u00f3w Terracotta Roof",
+        "hex": "#C8523D",
+        "role": "Building Rooftops & Accent Grids"
+      },
+      {
+        "name": "Rynek Plaza Sand",
+        "hex": "#E8D8C8",
+        "role": "Pedestrian Cobblestone Ground Plane"
+      },
+      {
+        "name": "Planty Park Forest",
+        "hex": "#3D6B5E",
+        "role": "Green Belt Loop & Market Stalls"
+      },
+      {
+        "name": "Urban Ink Black",
+        "hex": "#1E1E1E",
+        "role": "Medieval Burgage Lot Line Work"
+      }
+    ],
+    "key_proof_elements": "Full-spread isometric market square axonometrics, medieval burgage lot subdivision plans, Planty green belt pedestrian loop flow diagrams."
+  },
+  "tropical_resilience": {
+    "id": "tropical_resilience",
+    "category": "architecture",
+    "title": "15. Tropical Resilience & Modular Public Infrastructure",
+    "archetype": "Interlocking Demountable MSME Modules & Riparian Boardwalks (David Romaldo Sitepu / PUPR BIM 1st Place)",
+    "ideal_for": "Architectural Designers, BIM Coordinators & Tropical Community Infrastructure Architects",
+    "spread_aspect": "4:3 Studio Presentation Portfolio (Bound Book Mockup)",
+    "grid": "10-Column Multi-Scale Technical Grid (Site Plan + Detail + Render)",
+    "typography": {
+      "display": "Montserrat / Poppins (700 Bold)",
+      "body": "Inter (400 Regular)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Polycarbonate Cyan",
+        "hex": "#4A90E2",
+        "role": "Translucent Facade Panels"
+      },
+      {
+        "name": "Modular Steel Blue",
+        "hex": "#2C3E50",
+        "role": "Interlocking Pin-Joint Frames"
+      },
+      {
+        "name": "Riparian Timber Deck",
+        "hex": "#C4A47C",
+        "role": "Boardwalk Paving & Bamboo Blinds"
+      },
+      {
+        "name": "Night Lantern Amber",
+        "hex": "#F5A623",
+        "role": "Diurnal MSME Night Lighting"
+      }
+    ],
+    "key_proof_elements": "Non-Motorized Transport (NMT) parking matrices, demountable steel locking pin connection details, diurnal day/night elevation studies."
+  },
+  "speculative_critical": {
+    "id": "speculative_critical",
+    "category": "architecture",
+    "title": "16. Speculative Critical Fiction & Low-Gravity Habitats",
+    "archetype": "Speculative Architecture & Planetary Adaptation (Hana Moharram / Aswan Retreat)",
+    "ideal_for": "Speculative Architects, Critical Futurists, Aerospace & Extreme Environment Spatial Designers",
+    "spread_aspect": "A4 Landscape (1:1.414)",
+    "grid": "8-Column Chronological Narrative Grid w/ Cosmic Timeline Margin",
+    "typography": {
+      "display": "Space Grotesk / Syne (800 ExtraBold)",
+      "body": "Inter / Plus Jakarta Sans (400, 500)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Nubian Ochre",
+        "hex": "#C2884A",
+        "role": "Rocky Nilotic Terrain & Ramps"
+      },
+      {
+        "name": "Celestial Obsidian",
+        "hex": "#1A1A1D",
+        "role": "Deep Contrast Cut Lines & Headers"
+      },
+      {
+        "name": "Micro-Gravity Slate",
+        "hex": "#6C7A89",
+        "role": "Planetary Trajectory & Ramps"
+      },
+      {
+        "name": "Alabaster Ground",
+        "hex": "#F8F8F6",
+        "role": "Spread Canvas Paper"
+      }
+    ],
+    "key_proof_elements": "Planetary gravitational decay timelines (G = 0.7 - 0.6), low-gravity body bounding trajectory diagrams, Nubian stone stereotomy ramp details."
+  },
+  "trauma_informed_commons": {
+    "id": "trauma_informed_commons",
+    "category": "architecture",
+    "title": "17. Trauma-Informed Civic Commons & Liminal Thresholds",
+    "archetype": "Spatial Hesitation & Dignity-Centered Civic Infrastructure (Krithika Srivastva / Shared Thresholds)",
+    "ideal_for": "Social Impact Architects, Healthcare & Sanctuary Designers, Civic Commons Specialists",
+    "spread_aspect": "3:2 Studio Monograph Spread (840 x 560 mm)",
+    "grid": "6-Column Asymmetrical Editorial Grid w/ Concept Sketch Overlay",
+    "typography": {
+      "display": "Helvetica Neue / Neue Haas Grotesk (700 Bold)",
+      "body": "Inter (400 Light, 500 Medium)",
+      "technical": "JetBrains Mono (500)"
+    },
+    "palette": [
+      {
+        "name": "Crimson Sanctuary",
+        "hex": "#8B263E",
+        "role": "Sanctuary Threshold Accent"
+      },
+      {
+        "name": "Graphite Charcoal",
+        "hex": "#1E1E1E",
+        "role": "Hand-Drawn Concept Linework"
+      },
+      {
+        "name": "Parchment White",
+        "hex": "#FAFAF9",
+        "role": "Civic Commons Background"
+      },
+      {
+        "name": "Muted Pumice",
+        "hex": "#DCD7D0",
+        "role": "Transitional Buffer Zones"
+      }
+    ],
+    "key_proof_elements": "Gradual civic-to-sanctuary gradient sections, spatial hesitation buffer diagrams, raw graphite concept overlays, sensory acoustic separation details."
+  },
+  "environmental_simulation": {
+    "id": "environmental_simulation",
+    "category": "architecture",
+    "title": "18. Climate-Simulated Cultural Vernacular & Craft Bazaars",
+    "archetype": "Environmental Simulation & Regional Craft Infrastructure (Sneha Goel / SPA Bhopal)",
+    "ideal_for": "Sustainable Architecture Graduates, Environmental Simulation Analysts (Ladybug/Honeybee)",
+    "spread_aspect": "A4 Portrait & Landscape Working Set",
+    "grid": "12-Column Technical Grid w/ Environmental Metric Sidebar",
+    "typography": {
+      "display": "Plus Jakarta Sans (700 Bold)",
+      "body": "Inter (400)",
+      "technical": "JetBrains Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Zari Terracotta",
+        "hex": "#BF4E30",
+        "role": "Bazaar Vaults & Shading Screens"
+      },
+      {
+        "name": "Thermal Comfort Sage",
+        "hex": "#5A7D7C",
+        "role": "Ladybug Microclimate Heatmaps"
+      },
+      {
+        "name": "Kutch Sand",
+        "hex": "#E3DAC9",
+        "role": "Courtyard Flooring & Plinth"
+      },
+      {
+        "name": "Deep Graphite",
+        "hex": "#1B1B1E",
+        "role": "Structural Frame & Lintels"
+      }
+    ],
+    "key_proof_elements": "Ladybug/Honeybee solar radiation maps, natural evaporative cooling courtyard sections, jali screen perforation acoustic specs."
+  },
+  "commercial_courtyard": {
+    "id": "commercial_courtyard",
+    "category": "architecture",
+    "title": "19. Contemporary Commercial Courtyard & Shaded Public Realm",
+    "archetype": "Thermal Comfort Massing & Mixed-Use Commercial Ateliers (Yassin Saber / Avora Mall)",
+    "ideal_for": "Commercial Architects, Retail & Hospitality Masterplanners, Mixed-Use Developers",
+    "spread_aspect": "16:9 Panoramic Landscape Monograph",
+    "grid": "12-Column Commercial Circulation Grid",
+    "typography": {
+      "display": "Space Grotesk / Montserrat (800 Bold)",
+      "body": "Inter (400, 500)",
+      "technical": "IBM Plex Mono (600)"
+    },
+    "palette": [
+      {
+        "name": "Avora Mediterranean Blue",
+        "hex": "#2B4C7E",
+        "role": "Hero Display Headers & Water Plazas"
+      },
+      {
+        "name": "Travertine Limestone",
+        "hex": "#E6DFD5",
+        "role": "Building Facade & Shaded Porticos"
+      },
+      {
+        "name": "Charcoal Glazing",
+        "hex": "#1C1D21",
+        "role": "Mullion Hairlines & Cut Sections"
+      },
+      {
+        "name": "Canopy Palm Green",
+        "hex": "#4A6B53",
+        "role": "Central Courtyard Landscaping"
+      }
+    ],
+    "key_proof_elements": "Self-shading facade stepped massing, natural wind funneling courtyard sections, multi-level retail pedestrian circulation diagrams."
   }
 }

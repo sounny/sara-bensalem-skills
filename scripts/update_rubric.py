@@ -1,4 +1,6 @@
-{
+import json
+
+rubric = {
   "title": "Sara Bensalem 100-Point Spatial Portfolio Audit Rubric (2026 Enhanced Edition)",
   "author": "Sara Bensalem <sara@sarabensalem.com>",
   "website": "https://skills.sarabensalem.com",
@@ -153,3 +155,11 @@
     }
   ]
 }
+
+for path in [
+    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\rubric_100pt.json',
+    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-design\resources\rubric_100pt.json'
+]:
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(rubric, f, indent=2)
+    print(f'Wrote {path}')
