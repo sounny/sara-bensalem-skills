@@ -1,0 +1,272 @@
+/* ==============================================================================
+   EDITORIAL-STUDIO: W3C CSS PAGED MEDIA MASTER STYLESHEET
+   Target: Paged.js Web-to-Print / Headless Chromium Compilation
+   Standards: A4 Landscape (297mm x 210mm), Swiss 12-Col Grid, Baseline Snapping
+   ============================================================================== */
+
+@page {
+  size: 297mm 210mm;
+  marks: crop cross;
+  bleed: 3.0mm;
+}
+
+/* Verso (Left-Hand Spread Page) */
+@page :left {
+  margin-left: 15.0mm;  /* Outer trim margin */
+  margin-right: 25.0mm; /* Inner spine gutter */
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+  @bottom-left {
+    content: counter(page);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+  }
+  @top-left {
+    content: "SARA BENSALEM MONOGRAPH";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+  }
+  @bottom-right {
+    content: "ACT 4: TECTONIC PROOF";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: #666666;
+  }
+}
+
+/* Recto (Right-Hand Spread Page) */
+@page :right {
+  margin-left: 25.0mm;  /* Inner spine gutter */
+  margin-right: 15.0mm; /* Outer trim margin */
+  margin-top: 20mm;
+  margin-bottom: 20mm;
+  @bottom-right {
+    content: counter(page);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+  }
+  @top-right {
+    content: "ACT 4: TECTONIC PROOF";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+  }
+  @bottom-left {
+    content: "ISO 128 COMPLIANT TECHNICAL PLATE";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: #666666;
+  }
+}
+
+/* First Page Overrides (Cover Spread / Title) */
+@page :first {
+  marks: none;
+  bleed: 0mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+/* Base Typographic Hierarchy & Baseline Locking */
+:root {
+  --baseline-step: 6pt;
+  --line-pitch: 12pt;
+  --font-display: "Space Grotesk", "Bahnschrift", "Neue Haas Grotesk Text Pro", sans-serif;
+  --font-body: "Garamond", "Georgia", "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+  --cmyk-black: #000000;
+  --cmyk-deep: #111418;
+  --cmyk-dim: #555555;
+  --paper-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paper-bg);
+  color: var(--cmyk-black);
+  font-family: var(--font-display);
+  font-size: 9pt;
+  line-height: var(--line-pitch);
+  text-rendering: optimizeLegibility;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Swiss 12-Column Modular Grid */
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 4mm;
+  row-gap: 12pt;
+  width: 100%;
+}
+
+/* Page Break Controls */
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+.recto-break {
+  break-before: right;
+  page-break-before: right;
+}
+
+.verso-break {
+  break-before: left;
+  page-break-before: left;
+}
+
+/* Typography Elements */
+h1.act-title {
+  font-family: var(--font-display);
+  font-size: 18pt;
+  line-height: 24pt; /* 4 * 6pt baseline units */
+  margin: 0 0 12pt 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  line-height: 18pt; /* 3 * 6pt baseline units */
+  margin: 12pt 0 6pt 0;
+  font-weight: 600;
+}
+
+p.body-text {
+  font-family: var(--font-body);
+  font-size: 9pt;
+  line-height: 12pt;
+  margin: 0 0 12pt 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Component: Project Passport Card */
+.passport-card {
+  grid-column: span 4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  line-height: 12pt;
+  background-color: #f8f9fa;
+  border-left: 2.5pt solid #000000;
+  padding: 8pt 10pt;
+  border-top: 0.5pt solid #e0e0e0;
+  border-right: 0.5pt solid #e0e0e0;
+  border-bottom: 0.5pt solid #e0e0e0;
+}
+
+.passport-card h3 {
+  font-size: 8pt;
+  font-weight: 700;
+  margin: 0 0 6pt 0;
+  letter-spacing: 0.05em;
+  border-bottom: 0.5pt solid #cccccc;
+  padding-bottom: 3pt;
+}
+
+.passport-card dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 3pt;
+  column-gap: 6pt;
+}
+
+.passport-card dt {
+  font-weight: 600;
+  color: #333333;
+}
+
+.passport-card dd {
+  margin: 0;
+  color: #111111;
+}
+
+/* Component: Vector Plate Container */
+.vector-plate {
+  grid-column: span 8;
+  background-color: #f5f6f8;
+  border: 0.50mm solid #000000; /* Calibrated ISO 128 Cut Stroke */
+  padding: 8pt;
+  min-height: 200pt;
+  display: flex;
+  flex-direction: column;
+}
+
+.vector-plate-header {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6pt;
+  font-weight: 600;
+  border-bottom: 0.25mm solid #000000;
+  padding-bottom: 4pt;
+}
+
+.vector-plate-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vector-plate-content svg {
+  width: 100%;
+  height: auto;
+  max-height: 180pt;
+}
+
+/* Component: Glaser Hygrothermal Analysis Box */
+.glaser-box {
+  grid-column: span 4;
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  line-height: 10pt;
+  border: 0.25mm solid #333333;
+  background-color: #fcfcfc;
+  padding: 6pt;
+  margin-top: 8pt;
+}
+
+.glaser-box table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 6.5pt;
+}
+
+.glaser-box th, .glaser-box td {
+  border-bottom: 0.13mm solid #cccccc;
+  padding: 2pt 3pt;
+  text-align: left;
+}
+
+/* Column Span Utilities */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Calibrated ISO 128 SVG Stroke Weights */
+.iso-stroke-cut { stroke-width: 0.50mm; stroke: #000000; fill: none; }
+.iso-stroke-heavy { stroke-width: 0.70mm; stroke: #000000; fill: none; }
+.iso-stroke-partition { stroke-width: 0.35mm; stroke: #000000; fill: none; }
+.iso-stroke-projection { stroke-width: 0.25mm; stroke: #333333; fill: none; }
+.iso-stroke-hatch { stroke-width: 0.13mm; stroke: #666666; fill: none; }

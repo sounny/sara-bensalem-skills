@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-09-05T11:19:27.022010+00:00",
+  "tier_requested": "all",
+  "status": "PASS",
+  "exit_code": 0,
+  "total": 147,
+  "passed": 147,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 32.701,
+  "tier_summary": {
+    "tier1": {
+      "tier": "tier1",
+      "total": 56,
+      "passed": 56,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_s": 1.659,
+      "failures_details": []
+    },
+    "tier2": {
+      "tier": "tier2",
+      "total": 59,
+      "passed": 59,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_s": 1.003,
+      "failures_details": []
+    },
+    "tier3": {
+      "tier": "tier3",
+      "total": 18,
+      "passed": 18,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_s": 0.289,
+      "failures_details": []
+    },
+    "tier4": {
+      "tier": "tier4",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_s": 1.7,
+      "failures_details": []
+    }
+  },
+  "failures": []
+}

@@ -1,0 +1,346 @@
+/* ==============================================================================
+   EDITORIAL-STUDIO: W3C CSS PAGED MEDIA MONOGRAPH STYLESHEET
+   Publication: SARA BENSALEM: THE TECTONIC RESCUE (10-Page Monograph)
+   Standard: A4 Landscape (297mm x 210mm), 3mm Bleeds, Swiss 12-Col Modular Grid
+   ============================================================================== */
+
+@page {
+  size: 297mm 210mm;
+  marks: crop cross;
+  bleed: 3.0mm;
+}
+
+/* Verso (Left-Hand Spread Page: Even Pages 2, 4, 6, 8, 10) */
+@page :left {
+  margin-left: 15.0mm;  /* Outer trim edge */
+  margin-right: 25.0mm; /* Inner spine gutter */
+  margin-top: 20.0mm;
+  margin-bottom: 20.0mm;
+  @top-left {
+    content: "SARA BENSALEM: THE TECTONIC RESCUE";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #444444;
+  }
+  @top-right {
+    content: "MONOGRAPH & CASE STUDY";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #444444;
+  }
+  @bottom-left {
+    content: counter(page);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 8.0pt;
+    font-weight: bold;
+    color: #111111;
+  }
+  @bottom-right {
+    content: "ANTIGRAVITY PUBLISHING ARCHITECTURE";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.0pt;
+    color: #666666;
+  }
+}
+
+/* Recto (Right-Hand Spread Page: Odd Pages 3, 5, 7, 9) */
+@page :right {
+  margin-left: 25.0mm;  /* Inner spine gutter */
+  margin-right: 15.0mm; /* Outer trim edge */
+  margin-top: 20.0mm;
+  margin-bottom: 20.0mm;
+  @top-left {
+    content: "PROJECT: ATLAS TERRACE CULTURAL PAVILION";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #444444;
+  }
+  @top-right {
+    content: "TECTONIC PROOF & EXECUTION";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #444444;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 8.0pt;
+    font-weight: bold;
+    color: #111111;
+  }
+  @bottom-left {
+    content: "ISO 128 TECHNICAL DRAFTING LIBRARY";
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 7.0pt;
+    color: #666666;
+  }
+}
+
+/* Page 1 Cover Spread Overrides */
+@page :first {
+  marks: none;
+  bleed: 0mm;
+  margin-left: 20.0mm;
+  margin-right: 20.0mm;
+  margin-top: 20.0mm;
+  margin-bottom: 20.0mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+/* Design Tokens & Tripartite Typography */
+:root {
+  --baseline-step: 6.0pt;
+  --line-pitch: 12.0pt;
+  --font-display: 'Arial', 'Helvetica', sans-serif;
+  --font-body: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+  --cmyk-black: #0b0f17;
+  --cmyk-dark: #1e293b;
+  --cmyk-dim: #475569;
+  --cmyk-subtle: #64748b;
+  --cmyk-border: #cbd5e1;
+  --cmyk-fill: #f8fafc;
+  --cmyk-card: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: var(--cmyk-black);
+  font-family: var(--font-display);
+  font-size: 8.5pt;
+  line-height: var(--line-pitch);
+  text-rendering: optimizeLegibility;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Page Break Container (Exactly 1 Page per Section) */
+.page {
+  page-break-after: always;
+  break-after: page;
+  width: 100%;
+  height: 100%;
+}
+
+/* Swiss 12-Column Modular Grid System */
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 4.0mm;
+  row-gap: 12.0pt;
+  width: 100%;
+}
+
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+/* Typographic Headings & Baseline Locking */
+h1.act-title {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  line-height: 20pt;
+  margin: 0 0 10pt 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cmyk-black);
+  border-bottom: 1.0pt solid var(--cmyk-black);
+  padding-bottom: 4pt;
+}
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: 10pt;
+  line-height: 14pt;
+  margin: 0 0 4pt 0;
+  font-weight: 600;
+  color: var(--cmyk-dark);
+}
+
+p.body-text {
+  font-family: var(--font-body);
+  font-size: 8.5pt;
+  line-height: 12pt;
+  margin: 0 0 8pt 0;
+  text-align: justify;
+  color: var(--cmyk-black);
+}
+
+ul.spec-list {
+  font-family: var(--font-mono);
+  font-size: 7.0pt;
+  line-height: 11.5pt;
+  padding-left: 10pt;
+  margin: 0 0 8pt 0;
+  color: var(--cmyk-dark);
+}
+
+/* Component: Project Passport Card */
+.passport-card {
+  font-family: var(--font-mono);
+  font-size: 7.0pt;
+  line-height: 11.0pt;
+  background-color: var(--cmyk-card);
+  border-left: 2.5pt solid var(--cmyk-black);
+  border-top: 0.5pt solid var(--cmyk-border);
+  border-right: 0.5pt solid var(--cmyk-border);
+  border-bottom: 0.5pt solid var(--cmyk-border);
+  padding: 8pt 10pt;
+}
+
+.passport-card h3 {
+  font-family: var(--font-display);
+  font-size: 8.5pt;
+  line-height: 11.0pt;
+  margin: 0 0 5pt 0;
+  font-weight: 700;
+  color: var(--cmyk-black);
+  border-bottom: 0.5pt solid var(--cmyk-border);
+  padding-bottom: 2pt;
+}
+
+.passport-card dl {
+  display: grid;
+  grid-template-columns: 85pt 1fr;
+  row-gap: 2.5pt;
+  margin: 0;
+}
+
+.passport-card dt {
+  font-weight: bold;
+  color: var(--cmyk-dark);
+}
+
+.passport-card dd {
+  margin: 0;
+  color: var(--cmyk-black);
+}
+
+/* Component: Glaser Hygrothermal Analysis Box */
+.glaser-box {
+  margin-top: 6pt;
+  padding: 6pt 8pt;
+  background-color: var(--cmyk-fill);
+  border: 0.5pt solid var(--cmyk-border);
+  font-family: var(--font-mono);
+  font-size: 6.8pt;
+  line-height: 10.0pt;
+}
+
+.glaser-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4pt;
+}
+
+.glaser-box th {
+  border-bottom: 1pt solid var(--cmyk-black);
+  text-align: left;
+  padding: 2pt 4pt;
+  font-size: 6.5pt;
+}
+
+.glaser-box td {
+  border-bottom: 0.25pt solid var(--cmyk-border);
+  padding: 2pt 4pt;
+  font-size: 6.5pt;
+}
+
+/* Component: Vector Technical Drafting Plate */
+.vector-plate {
+  border: 0.5pt solid var(--cmyk-black);
+  background-color: var(--cmyk-fill);
+  padding: 6pt;
+  width: 100%;
+}
+
+.vector-plate-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 7.0pt;
+  color: var(--cmyk-dim);
+  border-bottom: 0.5pt solid var(--cmyk-border);
+  padding-bottom: 3pt;
+  margin-bottom: 6pt;
+}
+
+.vector-plate-header strong {
+  color: var(--cmyk-black);
+  font-size: 7.5pt;
+}
+
+.vector-plate-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.vector-plate-content svg {
+  width: 100%;
+  height: auto;
+  max-height: 195pt;
+}
+
+/* Cover Page Layout */
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 160mm;
+}
+
+.cover-header {
+  border-top: 3.0pt solid var(--cmyk-black);
+  padding-top: 15pt;
+}
+
+.cover-kicker {
+  font-family: var(--font-mono);
+  font-size: 8.5pt;
+  letter-spacing: 0.15em;
+  color: var(--cmyk-dim);
+  text-transform: uppercase;
+  margin-bottom: 8pt;
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 26pt;
+  line-height: 30pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 10pt 0;
+}
+
+.cover-subtitle {
+  font-family: var(--font-body);
+  font-size: 12pt;
+  line-height: 16pt;
+  color: var(--cmyk-dark);
+  max-width: 550pt;
+}
+
+.cover-footer {
+  border-bottom: 1.0pt solid var(--cmyk-black);
+  padding-bottom: 15pt;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  line-height: 11.5pt;
+}

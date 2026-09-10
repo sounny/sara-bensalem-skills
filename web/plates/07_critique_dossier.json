@@ -1,0 +1,74 @@
+{
+  "overall_score": 79,
+  "composite_score": 79,
+  "verdict": "CONDITIONAL PASS / ADDRESS WEAK SPOTS",
+  "recruiter_takeaway": "Promising spatial concepts but vulnerable on technical constructibility, multi-scalar proof, and 1:20 detailing.",
+  "next_crit_prompt": "You have impressive 3D perspectives, but where is your 1:20 constructive proof? How does the facade envelope meet the ground plane?",
+  "dimension_scores": [
+    {
+      "dimension_id": "constructive",
+      "name": "Constructive Proof & 1:20 Detailing",
+      "score": 60,
+      "critique": "Requires explicit constructive drawings with membrane sequencing and thermal breaks."
+    },
+    {
+      "dimension_id": "spatial",
+      "name": "Spatial Anatomy & Circulation",
+      "score": 100,
+      "critique": "Well-articulated spatial hierarchy and circulation logic."
+    },
+    {
+      "dimension_id": "environmental",
+      "name": "Bioclimatic & Environmental Rigor",
+      "score": 70,
+      "critique": "Rigorous solar and natural airflow logic demonstrated."
+    },
+    {
+      "dimension_id": "recruiter",
+      "name": "Recruiter Trust & 15-Second Ergonomics",
+      "score": 80,
+      "critique": "Clean, transparent attribution and outcome-forward passport."
+    },
+    {
+      "dimension_id": "visual",
+      "name": "Visual Communication & Swiss Grid",
+      "score": 85,
+      "critique": "Excellent layout discipline, negative space breathing room, and typographic hierarchy."
+    }
+  ],
+  "probes_count": 3,
+  "probes": [
+    {
+      "persona": "constructive_lead",
+      "dimension": "Constructive Detailing",
+      "interrogation_question": "You have impressive 3D perspectives, but where is your 1:20 constructive proof? How does the facade envelope meet the ground plane?",
+      "vulnerability_detected": "Absence of buildable 1:20 drawing leaves technical competence unverified.",
+      "redline_fix": "Include a dedicated 1:20 wall section spread with material callouts, EPDM flashing, and dimension chains.",
+      "severity": "CRITICAL",
+      "remediation_command": "python \"C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py\" --output wall_section_1_20.svg"
+    },
+    {
+      "persona": "environmental",
+      "dimension": "Environmental Performance",
+      "interrogation_question": "You have expansive glazing on the western facade. What is your calculated Solar Heat Gain Coefficient (SHGC), and how do you mitigate late-afternoon solar heat gain?",
+      "vulnerability_detected": "Unprotected large-span glazing risks extreme summer solar overheating.",
+      "redline_fix": "Integrate deep vertical exterior louvers or dynamic solar shading with calculated overhang depth D = H / tan(altitude).",
+      "severity": "MODERATE",
+      "remediation_command": "python \"C:\\Users\\sounn\\.gemini\\config\\skills\\bioclimatic-flows\\scripts\\bioclimatic_calculator.py\" --zone temperate_strasbourg --output bioclimatic_plate.svg"
+    },
+    {
+      "persona": "visual_curator",
+      "dimension": "Visual Communication & Grid",
+      "interrogation_question": "Your page layout appears chaotic and ungrounded. What modular grid system (8, 12, or 16 columns) governs your margins, baselines, and image viewports?",
+      "vulnerability_detected": "Lack of columnar grid discipline creates cognitive friction and visual vibration.",
+      "redline_fix": "Snap all drawing viewports, captions, and Project Passports to a strict 12-column modular Swiss grid with 16px gutters.",
+      "severity": "MODERATE",
+      "remediation_command": "python \"C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py\" generate --archetype THE_CONSTRUCTIVE_PROOF --output swiss_grid_spread.svg"
+    }
+  ],
+  "defense_remedies": [
+    "Include a dedicated 1:20 wall section spread with material callouts, EPDM flashing, and dimension chains.",
+    "Integrate deep vertical exterior louvers or dynamic solar shading with calculated overhang depth D = H / tan(altitude).",
+    "Snap all drawing viewports, captions, and Project Passports to a strict 12-column modular Swiss grid with 16px gutters."
+  ]
+}

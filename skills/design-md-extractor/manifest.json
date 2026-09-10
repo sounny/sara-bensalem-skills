@@ -1,0 +1,10 @@
+{
+  "name": "design-md-extractor",
+  "version": "1.0.0",
+  "description": "Extracts publication-grade DESIGN.md files and Stitch design systems from live websites (via headless browser / Playwright) and PDF documents (monographs, portfolios, brand guidelines via PyMuPDF).",
+  "author": "Antigravity Visual Engineering",
+  "commands": [
+    "/extract-design-web",
+    "/extract-design-pdf"
+  ]
+}

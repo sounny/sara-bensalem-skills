@@ -1,0 +1,188 @@
+<svg viewBox="0 0 1440 1000" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF; font-family:'Plus Jakarta Sans', sans-serif;">
+  <defs>
+    <style>
+      .cut-line { stroke: #111110; stroke-width: 2.2; fill: none; }
+      .sub-line { stroke: #55544E; stroke-width: 1.2; fill: none; }
+      .hairline { stroke: #84827A; stroke-width: 0.8; stroke-dasharray: 4 2; }
+      .dim-line { stroke: #111110; stroke-width: 1.2; }
+      .mono-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; fill: #111110; }
+      .mono-body { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #55544E; }
+      .mono-bold { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; fill: #111110; }
+      .glaser-sat { stroke: #2563EB; stroke-width: 2; fill: none; }
+      .glaser-act { stroke: #DC2626; stroke-width: 2; stroke-dasharray: 6 3; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Header Bar -->
+  <text x="60" y="50" class="mono-title">1:20 Constructive Wall Section &amp; Hygrothermal Glaser Analysis</text>
+  <text x="60" y="74" class="mono-body">SCALE 1:20 @ A3 // STRASBOURG ATELIER // BRETON GRANITE &amp; LIME-HEMP BIOTAMPING ASSEMBLY</text>
+  <line x1="60" y1="90" x2="1380" y2="90" stroke="#DDD9D0" stroke-width="1" />
+
+  <!-- Left: Analytical Passport Panel -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="310" height="260" fill="#F8F8F5" stroke="#DDD9D0" />
+    <rect x="0" y="0" width="6" height="260" fill="#C8523D" />
+    <text x="16" y="26" class="mono-bold">HYGROTHERMAL PERFORMANCE</text>
+    <text x="16" y="50" class="mono-body">Calculated U-Value: 0.241 W/m²K</text>
+    <text x="16" y="72" class="mono-body">Total Thickness: 555.0 mm</text>
+    <text x="16" y="94" class="mono-body">Thermal Resistance R: 4.155 m²K/W</text>
+    <text x="16" y="116" class="mono-body">Diffusion Resistance Sd: 43.51 m</text>
+    <text x="16" y="138" class="mono-bold" fill="#C8523D">Compliance: CONDENSATION RISK: DETECTED</text>
+    <text x="16" y="160" class="mono-body">Interstitial Dew Point: FAIL - Re-specify</text>
+    <text x="16" y="182" class="mono-body">Thermal Break: Continuous EPDM 20mm</text>
+    <text x="16" y="204" class="mono-body">Acoustic Index: Rw ~ 52 dB</text>
+    <text x="16" y="226" class="mono-body">Provenance: Maison Bretonne / European Heritage Re...</text>
+    <text x="16" y="248" class="mono-bold">ISO 128 Lineweights &amp; Eurocode 5</text>
+  </g>
+
+  <!-- Left Lower: Material Schedule Callouts -->
+  <g transform="translate(60, 390)">
+    <text x="0" y="0" class="mono-bold" letter-spacing="1">TECTONIC LAYER SCHEDULE (EXT -> INT)</text>
+    <g transform="translate(0, 16)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="22" height="22" fill="#EAEAE5" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">01</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">Breton Granite Ashlar (180mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 2.1 W/m·K • μ = 50</text>
+      </g>
+      <g transform="translate(0, 36)">
+        <rect x="0" y="0" width="22" height="22" fill="#FFFFFF" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">02</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">Ventilated Air Cavity (40mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 0.25 W/m·K • μ = 1</text>
+      </g>
+      <g transform="translate(0, 72)">
+        <rect x="0" y="0" width="22" height="22" fill="#F8F8F5" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">03</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">Lime-Hemp Biotamping (140mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 0.076 W/m·K • μ = 8</text>
+      </g>
+      <g transform="translate(0, 108)">
+        <rect x="0" y="0" width="22" height="22" fill="#DDD9D0" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">04</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">EPDM Thermal Break &amp; Flashing (20mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 0.031 W/m·K • μ = 1500</text>
+      </g>
+      <g transform="translate(0, 144)">
+        <rect x="0" y="0" width="22" height="22" fill="#F3F0E8" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">05</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">French Oak Glulam Post (160x280) (160mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 0.13 W/m·K • μ = 20</text>
+      </g>
+      <g transform="translate(0, 180)">
+        <rect x="0" y="0" width="22" height="22" fill="#FAFAF8" stroke="#111110" stroke-width="1.2" />
+        <text x="11" y="15" class="mono-bold" fill="#111110" text-anchor="middle">06</text>
+        <text x="32" y="12" font-size="11px" font-weight="700" fill="#111110">Interior Breathable Lime Plaster (15mm)</text>
+        <text x="32" y="25" class="mono-body">λ = 0.7 W/m·K • μ = 10</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Middle: Scaled 1:20 Wall Section Plate -->
+  <g transform="translate(400, 110)">
+    <rect x="0" y="0" width="580" height="740" fill="#FFFFFF" stroke="#DDD9D0" />
+    <text x="20" y="30" class="mono-bold">1:20 TECTONIC ASSEMBLY VIEW</text>
+    
+    <!-- Foundation Slab & Ground Beam -->
+    <rect x="80" y="520" width="460" height="170" fill="#F4F4F0" stroke="#111110" stroke-width="2.5" />
+    <line x1="90" y1="560" x2="530" y2="560" stroke="#84827A" stroke-width="1" stroke-dasharray="8 6" />
+    <line x1="90" y1="620" x2="530" y2="620" stroke="#84827A" stroke-width="1" stroke-dasharray="8 6" />
+    <text x="310" y="650" class="mono-body" text-anchor="middle">REINFORCED CONCRETE GROUND SLAB // FFL +0.000</text>
+
+    <!-- Layers rendered proportionally -->
+    <rect x="80" y="80" width="123" height="440" fill="#EAEAE5" stroke="#111110" stroke-width="1.8" />
+    <text x="141.5" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 141.5 300)">01. BRETON GRANITE ASHLAR</text>
+    <rect x="203" y="80" width="27" height="440" fill="#FFFFFF" stroke="#111110" stroke-width="1.8" />
+    <text x="216.5" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 216.5 300)">02. VENTILATED AIR CAVITY</text>
+    <rect x="230" y="80" width="95" height="440" fill="#F8F8F5" stroke="#111110" stroke-width="1.8" />
+    <text x="277.5" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 277.5 300)">03. LIME-HEMP BIOTAMPING</text>
+    <rect x="325" y="80" width="18" height="440" fill="#DDD9D0" stroke="#111110" stroke-width="1.8" />
+    <text x="334.0" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 334.0 300)">04. EPDM THERMAL BREAK &AM</text>
+    <rect x="343" y="80" width="109" height="440" fill="#F3F0E8" stroke="#111110" stroke-width="1.8" />
+    <text x="397.5" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 397.5 300)">05. FRENCH OAK GLULAM POST</text>
+    <rect x="452" y="80" width="18" height="440" fill="#FAFAF8" stroke="#111110" stroke-width="1.8" />
+    <text x="461.0" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 461.0 300)">06. INTERIOR BREATHABLE LI</text>
+
+    <!-- Continuous Thermal Break -->
+    <line x1="80" y1="520" x2="470" y2="520" stroke="#111110" stroke-width="4" />
+    <text x="275.0" y="512" class="mono-bold" font-size="10px" text-anchor="middle">EPDM STRUCTURAL THERMAL BREAK</text>
+
+    <!-- Dimension Chains -->
+    <g stroke="#111110" stroke-width="1.2">
+      <line x1="45" y1="80" x2="45" y2="520" />
+      <line x1="38" y1="80" x2="52" y2="80" />
+      <line x1="38" y1="520" x2="52" y2="520" />
+    </g>
+    <text x="30" y="300" class="mono-bold" text-anchor="middle" transform="rotate(-90 30 300)">4400 MM WALL HEIGHT</text>
+
+    <g stroke="#111110" stroke-width="1.2">
+      <line x1="80" y1="55" x2="470" y2="55" />
+      <line x1="80" y1="48" x2="80" y2="62" />
+      <line x1="470" y1="48" x2="470" y2="62" />
+    </g>
+    <text x="275.0" y="44" class="mono-bold" text-anchor="middle">555 MM THICKNESS</text>
+  </g>
+
+  <!-- Right: Glaser Dew-Point Diagram Panel -->
+  <g transform="translate(1005, 110)">
+    <rect x="0" y="0" width="375" height="740" fill="#FFFFFF" stroke="#DDD9D0" />
+    <text x="20" y="30" class="mono-bold">GLASER HYGROTHERMAL DIAGRAM</text>
+    <text x="20" y="50" class="mono-body">DIN 4108-3 / EN ISO 13788 CONDENSATION AUDIT</text>
+    
+    <!-- Glaser Chart Box -->
+    <g transform="translate(45, 80)">
+      <rect x="0" y="0" width="300" height="340" fill="#F8F8F5" stroke="#DDD9D0" />
+      
+      <!-- Grid lines -->
+      <line x1="0" y1="85" x2="300" y2="85" stroke="#DDD9D0" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="0" y1="170" x2="300" y2="170" stroke="#DDD9D0" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="0" y1="255" x2="300" y2="255" stroke="#DDD9D0" stroke-width="0.8" stroke-dasharray="3 3" />
+      
+      <!-- Axis Labels -->
+      <text x="-10" y="10" class="mono-body" text-anchor="end">2500 Pa</text>
+      <text x="-10" y="175" class="mono-body" text-anchor="end">1250 Pa</text>
+      <text x="-10" y="340" class="mono-body" text-anchor="end">0 Pa</text>
+      <text x="0" y="360" class="mono-body">EXT</text>
+      <text x="300" y="360" class="mono-body" text-anchor="end">INT</text>
+
+      <!-- Saturation Curve Psat (Blue) -->
+      <polyline points="0.0,284.3 50.0,281.8 100.0,276.9 150.0,196.1 200.0,153.3 250.0,39.6 300.0,37.2" class="glaser-sat" />
+      <!-- Actual Vapor Pressure Pact (Red Dashed) -->
+      <polyline points="0.0,293.6 50.0,270.3 100.0,270.2 150.0,267.3 200.0,189.7 250.0,181.5 300.0,181.1" class="glaser-act" />
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(45, 470)">
+      <line x1="0" y1="0" x2="25" y2="0" class="glaser-sat" />
+      <text x="35" y="4" class="mono-body">P_sat (Saturation Vapor Curve)</text>
+
+      <line x1="0" y1="20" x2="25" y2="20" class="glaser-act" />
+      <text x="35" y="24" class="mono-body">P_act (Partial Vapor Pressure)</text>
+
+      <text x="0" y="55" class="mono-bold" fill="#C8523D">
+        STATUS: DANGER: CONDENSATION OCCURS
+      </text>
+      <text x="0" y="75" class="mono-body" font-size="10px">
+        Criterion: P_act must remain strictly below P_sat.
+      </text>
+      <text x="0" y="95" class="mono-body" font-size="10px">
+        Boundary conditions: T_ext = -5°C (85% RH) // T_int = 20°C (50% RH)
+      </text>
+    </g>
+
+    <!-- Temperature Profile Table -->
+    <g transform="translate(20, 600)">
+      <rect x="0" y="0" width="335" height="120" fill="#F8F8F5" stroke="#DDD9D0" />
+      <text x="12" y="22" class="mono-bold" font-size="10px">INTERFACE THERMAL GRADIENT</text>
+      <text x="12" y="42" class="mono-body" font-size="9px">Ext Surface: -4.8°C (Psat: 410Pa)</text>
+      <text x="12" y="60" class="mono-body" font-size="9px">Int 1/2: Breton Gran: -4.2°C (Psat: 428Pa)</text>
+      <text x="12" y="78" class="mono-body" font-size="9px">Int 2/3: Ventilated : -3.3°C (Psat: 464Pa)</text>
+      <text x="12" y="96" class="mono-body" font-size="9px">Int 3/4: Lime-Hemp B: 7.8°C (Psat: 1058Pa)</text>
+    </g>
+  </g>
+
+  <!-- Folio Footer -->
+  <line x1="60" y1="920" x2="1380" y2="920" stroke="#DDD9D0" stroke-width="1" />
+  <text x="60" y="945" class="mono-body">SARA BENSALEM STUDIO • 1:20 CONSTRUCTIVE DETAILING ENGINE • RE2020 / EUROCODE 5 COMPLIANT</text>
+  <text x="1380" y="945" class="mono-bold" text-anchor="end">ASSEMBLY: GRANITE_HEMP // PLATE 01</text>
+</svg>

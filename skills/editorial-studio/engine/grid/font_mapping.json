@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "system": "editorial-studio",
+  "module": "engine.grid",
+  "version": "1.0.0",
+  "description": "Tripartite font mapping architecture with optical metrics for Swiss typography and architectural publishing",
+  "display": {
+    "role": "Structural Grotesque",
+    "description": "High-contrast structural display, titles, section headings, and act signposts",
+    "primary": "Bahnschrift",
+    "families": [
+      "Bahnschrift",
+      "Space Grotesk",
+      "Neue Haas Grotesk",
+      "Neue Haas Grotesk Text Pro",
+      "Inter",
+      "Univers"
+    ],
+    "fallbacks": [
+      "Segoe UI",
+      "Arial",
+      "Helvetica",
+      "sans-serif"
+    ],
+    "weights": [
+      600,
+      700
+    ],
+    "tracking_display_em": -0.02,
+    "tracking_caps_em": 0.08,
+    "letter_spacing_em": -0.02,
+    "line_height_ratio": 1.25,
+    "optical_metrics": {
+      "tracking_display_em": -0.02,
+      "tracking_caps_em": 0.08,
+      "letter_spacing_display_em": -0.02,
+      "letter_spacing_caps_em": 0.08,
+      "line_height_display_ratio": 1.15,
+      "line_height_subhead_ratio": 1.25
+    }
+  },
+  "body": {
+    "role": "Rationalist Serif",
+    "description": "Curatorial essays, architectural critiques, and continuous narrative body copy",
+    "primary": "Garamond",
+    "families": [
+      "Garamond",
+      "Adobe Garamond Pro",
+      "Source Serif 4",
+      "EB Garamond",
+      "Minion Pro"
+    ],
+    "fallbacks": [
+      "Georgia",
+      "Cambria",
+      "Times New Roman",
+      "serif"
+    ],
+    "weights": [
+      400,
+      500
+    ],
+    "tracking_em": 0.00,
+    "letter_spacing_em": 0.00,
+    "line_height_ratio": 1.4737,
+    "measure_cpl": [
+      45,
+      65
+    ],
+    "optical_sizes": [
+      "Caption",
+      "Regular",
+      "Subhead"
+    ],
+    "optical_metrics": {
+      "tracking_body_em": 0.00,
+      "letter_spacing_body_em": 0.00,
+      "line_height_body_ratio": 1.4737,
+      "optimal_reading_measure_cpl": [
+        45,
+        65
+      ],
+      "hanging_punctuation_enabled": true
+    }
+  },
+  "mono": {
+    "role": "Technical Monospace",
+    "description": "Technical metadata, project passports, scale bars, dimension annotations, and drawing indices",
+    "primary": "Consolas",
+    "families": [
+      "Consolas",
+      "JetBrains Mono",
+      "IBM Plex Mono",
+      "DM Mono",
+      "Fira Code"
+    ],
+    "fallbacks": [
+      "Courier New",
+      "Lucida Console",
+      "monospace"
+    ],
+    "weights": [
+      500,
+      600
+    ],
+    "tracking_em": 0.04,
+    "letter_spacing_em": 0.04,
+    "line_height_ratio": 1.3333,
+    "tabular_figures": true,
+    "optical_metrics": {
+      "tracking_mono_em": 0.04,
+      "letter_spacing_mono_em": 0.04,
+      "line_height_mono_ratio": 1.3333,
+      "tabular_nums_enforced": true
+    }
+  }
+}

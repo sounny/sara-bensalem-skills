@@ -1,0 +1,93 @@
+<svg viewBox="0 0 1200 1000" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF; font-family:'Plus Jakarta Sans', sans-serif;">
+  <defs>
+    <style>
+      .building-shell { fill: #F8F8F5; stroke: #111110; stroke-width: 2.5; }
+      .glazing-cut { stroke: #111110; stroke-width: 3; }
+      .solar-summer { stroke: #C8523D; stroke-width: 2.2; stroke-dasharray: 6 3; marker-end: url(#arrow-red); }
+      .solar-winter { stroke: #2B4C7E; stroke-width: 2.2; stroke-dasharray: 4 2; marker-end: url(#arrow-blue); }
+      .airflow-cool { stroke: #5A7D7C; stroke-width: 2.5; fill: none; stroke-linecap: round; marker-end: url(#arrow-green); }
+      .airflow-warm { stroke: #C8523D; stroke-width: 2.8; fill: none; stroke-linecap: round; marker-end: url(#arrow-red); }
+      .mono-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; fill: #111110; }
+      .mono-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #55544E; }
+      .mono-bold { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; fill: #111110; }
+    </style>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C8523D" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2B4C7E" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5A7D7C" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text x="60" y="50" class="mono-title">Bioclimatic Vectors &amp; Thermodynamic Airflow Dynamics</text>
+  <text x="60" y="74" class="mono-label">ZONE: TEMPERATE CONTINENTAL (STRASBOURG / PARIS) // LAT: 48.58° N // PASSIVE SOLAR GEOMETRY</text>
+  <line x1="60" y1="90" x2="1140" y2="90" stroke="#DDD9D0" stroke-width="1" />
+
+  <!-- Data Panel (Ladybug-Style Scientific Breakdown) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="340" height="280" fill="#F8F8F5" stroke="#DDD9D0" />
+    <rect x="0" y="0" width="6" height="280" fill="#111110" />
+    <text x="16" y="24" class="mono-bold">SOLAR &amp; THERMODYNAMIC METRICS</text>
+    <text x="16" y="48" class="mono-label">Latitude: 48.58° N (Temperate)</text>
+    <text x="16" y="70" class="mono-bold">Summer Solstice Noon: 64.9° Alt (Shaded)</text>
+    <text x="16" y="92" class="mono-bold">Winter Solstice Noon: 18.0° Alt (Penetrating)</text>
+    <text x="16" y="114" class="mono-label">Equinox Noon Altitude: 41.4° Alt</text>
+    <text x="16" y="136" class="mono-bold">Optimal Brise-Soleil Overhang: 1.12 m</text>
+    <text x="16" y="158" class="mono-label">Stack Flue Height: 12.0 m (ΔT: 6.8 K)</text>
+    <text x="16" y="180" class="mono-bold">Stack Velocity: 1.37 m/s (Q: 2.06 m³/s)</text>
+    <text x="16" y="202" class="mono-bold">Thermal Mass Diurnal Lag: 18.0 Hours</text>
+    <text x="16" y="224" class="mono-label">Summer Design Temp: 32.0°C</text>
+    <text x="16" y="246" font-size="10px" fill="#55544E">Passive solar heating in winter; night pur...</text>
+  </g>
+
+  <!-- Building Cross Section Viewport -->
+  <g transform="translate(440, 110)">
+    <rect x="0" y="0" width="700" height="740" fill="#FFFFFF" stroke="#DDD9D0" />
+
+    <!-- Ground Line -->
+    <line x1="40" y1="580" x2="660" y2="580" stroke="#111110" stroke-width="3" />
+    <text x="50" y="605" class="mono-label">NATURAL GRADE LEVEL // GROUND PLANE</text>
+    
+    <!-- Building Mass Section -->
+    <polygon points="120,580 120,240 320,160 320,80 380,80 380,160 560,160 560,580" class="building-shell" />
+    
+    <!-- Overhang Brise-Soleil at Glazing Edge -->
+    <rect x="85" y="240" width="35" height="12" fill="#111110" />
+    <text x="80" y="232" class="mono-bold" text-anchor="end">D = 1.12M OVERHANG</text>
+
+    <!-- South Glazing Opening -->
+    <line x1="120" y1="280" x2="120" y2="540" class="glazing-cut" />
+    
+    <!-- North High-Level Clerestory / Ventilation Louvers -->
+    <line x1="560" y1="200" x2="560" y2="280" class="glazing-cut" />
+    
+    <!-- Solar Vector: Summer Solstice (High Angle - Cut by Overhang) -->
+    <line x1="20.0" y1="101.2" x2="120.0" y2="314.7" class="solar-summer" />
+    <text x="42.5" y="162.6" class="mono-bold" fill="#C8523D">SUMMER 64.9° (BLOCKED)</text>
+
+    <!-- Solar Vector: Winter Solstice (Low Angle - Enters Deep Interior) -->
+    <line x1="20.0" y1="307.5" x2="500.0" y2="570.0" class="solar-winter" />
+    <text x="220.0" y="423.8" class="mono-bold" fill="#2B4C7E">WINTER 18.0° (PASSIVE HEATING)</text>
+
+    <!-- Airflow Dynamics: Low Intake Cool Air -->
+    <path d="M 60,560 C 140,560 180,520 240,500" class="airflow-cool" />
+    <text x="180" y="525" class="mono-bold" fill="#5A7D7C">COOL INTAKE AIR</text>
+
+    <!-- Airflow Dynamics: Buoyant Warm Air Rising up Thermal Stack -->
+    <path d="M 280,460 C 350,380 350,220 350,95" class="airflow-warm" />
+    <text x="365" y="130" class="mono-bold" fill="#C8523D">NATURAL STACK EXHAUST (1.37 M/S)</text>
+
+    <!-- High Thermal Mass Slab Callout -->
+    <rect x="180" y="570" width="320" height="18" fill="#DDD9D0" stroke="#111110" stroke-width="1.2" />
+    <text x="340" y="584" class="mono-bold" text-anchor="middle">THERMAL MASS SLAB // 18.0H DIURNAL LAG</text>
+  </g>
+
+  <!-- Folio Footer -->
+  <line x1="60" y1="920" x2="1140" y2="920" stroke="#DDD9D0" stroke-width="1" />
+  <text x="60" y="945" class="mono-label">SARA BENSALEM STUDIO • BIOCLIMATIC THERMODYNAMICS &amp; SOLAR SIMULATION ENGINE</text>
+  <text x="1140" y="945" class="mono-bold" text-anchor="end">ZONE: TEMPERATE_STRASBOURG // PLATE 01</text>
+</svg>

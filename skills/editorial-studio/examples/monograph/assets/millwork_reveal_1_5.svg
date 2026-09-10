@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Wood grain hatching: 0.13mm (0.37pt) fine lines -->
+    <pattern id="woodgrain-hatch" width="8" height="8" patternTransform="rotate(15 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#84827A" stroke-width="0.37" stroke-dasharray="4,1" />
+    </pattern>
+    <pattern id="plywood-core" width="12" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="3" x2="12" y2="3" stroke="#84827A" stroke-width="0.37" />
+      <line x1="0" y1="9" x2="12" y2="9" stroke="#84827A" stroke-width="0.37" />
+    </pattern>
+  </defs>
+
+  <!-- Sheet Background -->
+  <rect width="100%" height="100%" fill="#FBFBFA" />
+
+  <!-- Header Block -->
+  <g id="header-block" transform="translate(40, 40)">
+    <text x="0" y="0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="bold" fill="#111110">PLATE 05 — 1:5 BESPOKE MILLWORK &amp; JOINERY REVEAL</text>
+    <text x="0" y="18" font-family="'JetBrains Mono', monospace" font-size="8" fill="#55544E">DETAIL: 3.0MM SHADOW GAP (JOINT CREUX) + BLUM CLIP TOP BLUMOTION CONCEALED HINGE</text>
+  </g>
+
+  <!-- Joinery Detail Assembly at Scale 1:5 -->
+  <g id="joinery-assembly" transform="translate(100, 110)">
+    <!-- Primary Carcase (18mm Birch Plywood): Cut plane 0.50mm (1.42pt) -->
+    <rect x="120" y="60" width="180" height="340" fill="#F4F3EF" stroke="#111110" stroke-width="1.42" />
+    <rect x="120" y="60" width="180" height="340" fill="url(#plywood-core)" />
+
+    <!-- Cabinet Door (19mm Substrate + 0.6mm Veneer): Cut plane 0.50mm (1.42pt) -->
+    <!-- Door is offset from carcase by shadow_gap_mm and 2mm front reveal -->
+    <g id="cabinet-door" transform="translate(320, 60)">
+      <!-- 19mm Substrate Body -->
+      <rect x="0" y="0" width="190" height="340" fill="#EAE8E1" stroke="#111110" stroke-width="1.42" />
+      <rect x="0" y="0" width="190" height="340" fill="url(#woodgrain-hatch)" />
+
+      <!-- Quartersawn Oak Veneer Layer: 0.25mm (0.71pt) -->
+      <rect x="0" y="0" width="6" height="340" fill="#D5CBB9" stroke="#55544E" stroke-width="0.71" />
+      <rect x="184" y="0" width="6" height="340" fill="#D5CBB9" stroke="#55544E" stroke-width="0.71" />
+
+      <!-- Blum Concealed Cup Pocket Routing: Ø35mm x 12.8mm depth -->
+      <!-- Pocket cut into door back edge: depth = 12.8mm, diameter = 70px (35mm equivalent) -->
+      <rect x="0" y="100" width="64" height="140" fill="#DFDDD5" stroke="#33322E" stroke-width="1.00" />
+      <text x="14" y="174" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#55544E" transform="rotate(-90 14 174)">ROUTING DEPTH: 12.8mm</text>
+    </g>
+
+    <!-- Blum Hinge Mechanism Body: 0.35mm (1.00pt) -->
+    <path d="M 280,180 L 320,180 L 340,160 L 340,200 L 320,200 Z" fill="#D0CCC0" stroke="#33322E" stroke-width="1.00" />
+    <circle cx="300" cy="190" r="4" fill="#55544E" />
+
+    <!-- 3mm Negative Shadow Reveal (Joint Creux): 0.25mm (0.71pt) -->
+    <rect x="300" y="40" width="20" height="380" fill="#E0DDD5" fill-opacity="0.3" stroke="#84827A" stroke-width="0.71" stroke-dasharray="2,2" />
+
+    <!-- Dimension Chains: 0.13mm (0.37pt) with tick marks -->
+    <g id="dimension-chains" stroke="#84827A" stroke-width="0.37">
+      <!-- Shadow gap dimension -->
+      <line x1="300" y1="420" x2="320" y2="420" />
+      <line x1="300" y1="415" x2="300" y2="425" stroke-width="0.71" />
+      <line x1="320" y1="415" x2="320" y2="425" stroke-width="0.71" />
+      <text x="302" y="435" font-family="'JetBrains Mono', monospace" font-size="7" fill="#111110">3 mm</text>
+
+      <!-- Door substrate thickness dimension -->
+      <line x1="320" y1="420" x2="510" y2="420" />
+      <line x1="510" y1="415" x2="510" y2="425" stroke-width="0.71" />
+      <text x="400" y="435" font-family="'JetBrains Mono', monospace" font-size="7" fill="#111110">19 mm</text>
+
+      <!-- Cup diameter dimension -->
+      <line x1="530" y1="160" x2="530" y2="230" />
+      <line x1="525" y1="160" x2="535" y2="160" stroke-width="0.71" />
+      <line x1="525" y1="230" x2="535" y2="230" stroke-width="0.71" />
+      <text x="542" y="198" font-family="'JetBrains Mono', monospace" font-size="7" fill="#111110">Ø35 mm</text>
+    </g>
+
+    <!-- Technical Specification Callouts -->
+    <g id="callouts" stroke="#55544E" stroke-width="0.71">
+      <polyline points="310,50 310,20 220,20" fill="none" />
+      <text x="215" y="16" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#111110" stroke="none">3mm Shadow Gap (Joint Creux) — Absorbs Hygroscopic Expansion (2-3mm/m)</text>
+
+      <polyline points="350,170 380,140 450,140" fill="none" />
+      <text x="455" y="136" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#111110" stroke="none">Blum Clip Top BLUMOTION 110° Cup (Ø35mm x 12.8mm pocket)</text>
+
+      <polyline points="420,280 460,310 520,310" fill="none" />
+      <text x="525" y="306" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#111110" stroke="none">European Oak Quartersawn Veneer (0.6mm) on 19mm MR-MDF</text>
+
+      <polyline points="200,300 160,330 80,330" fill="none" />
+      <text x="75" y="326" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#111110" stroke="none">18mm Birch Plywood Carcase Structure</text>
+    </g>
+  </g>
+</svg>

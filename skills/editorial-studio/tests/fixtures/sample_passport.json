@@ -1,0 +1,22 @@
+{
+  "title": "Maison Bretonne Adaptive Reuse",
+  "typology": "Heritage Renovation & Timber Pavilion",
+  "location": "Finistère, France",
+  "coordinates": "48°15'12\"N 04°08'45\"W",
+  "year": "2026",
+  "area_m2": 3200,
+  "budget_eur": 4850000,
+  "client": "Municipal Heritage Trust",
+  "stage": "RIBA Stage 4 / AIA Construction Documents (CD)",
+  "team_size": 4,
+  "candidate_role": "Lead Project Architect & Construction Detailing",
+  "line_item_contributions": [
+    "1:20 constructive wall section envelope detailing",
+    "Breton granite stone ashlar stabilization schedule",
+    "Lime-hemp thermal insulation specifications (RE2020 net-negative)",
+    "PMR universal accessibility compliance & corridor clearances"
+  ],
+  "software_stack": ["Revit 2026", "Rhino 8", "AutoCAD", "InDesign"],
+  "work_authorization": "Permanent EU Citizen / No Sponsorship Required",
+  "executive_premise": "Reconciling historical granite masonry with contemporary bio-composite hygrothermal retrofits, achieving Passivhaus EnerPHit standards without interior synthetic vapor barriers."
+}

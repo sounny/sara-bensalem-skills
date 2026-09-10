@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- 0.13mm Insulation Hatch Pattern -->
+    <pattern id="insulation-hatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#84827A" stroke-width="0.37" />
+    </pattern>
+    <!-- Concrete Aggregate Pattern -->
+    <pattern id="concrete-hatch" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1" fill="#84827A" />
+      <circle cx="15" cy="12" r="1.5" fill="#84827A" />
+      <polygon points="8,15 11,18 7,19" fill="#84827A" />
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#FBFBFA" />
+
+  <!-- Title & Metadata: 0.25mm border, 0.13mm grid -->
+  <g id="header-block" transform="translate(40, 40)">
+    <text x="0" y="0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="bold" fill="#111110">PLATE 04 — 1:20 CONSTRUCTIVE WALL SECTION</text>
+    <text x="0" y="18" font-family="'JetBrains Mono', monospace" font-size="8" fill="#55544E">SYSTEM: GRANITE ASHLAR + RE2020 LIME-HEMP INSULATION | U-VALUE: 0.142 W/m²K</text>
+  </g>
+
+  <!-- Section Drawing Assembly -->
+  <g id="section-assembly" transform="translate(100, 100)">
+    <!-- Ground / Foundation Cut: 0.70mm (2.00pt) -->
+    <line x1="0" y1="420" x2="600" y2="420" stroke="#111110" stroke-width="2.00" stroke-linecap="square" />
+    
+    <!-- Reinforced Concrete Foundation / Plinth: Cut plane 0.50mm (1.42pt) -->
+    <rect x="150" y="320" width="300" height="100" fill="#EEEEEC" stroke="#111110" stroke-width="1.42" />
+    <rect x="150" y="320" width="300" height="100" fill="url(#concrete-hatch)" />
+
+    <!-- Thermal Break Plinth (Schöck Isokorb): 0.35mm (1.00pt) -->
+    <rect x="230" y="300" width="140" height="20" fill="#E4DDD0" stroke="#33322E" stroke-width="1.00" />
+    <text x="240" y="314" font-family="'JetBrains Mono', monospace" font-size="7" fill="#111110">EPDM THERMAL BREAK</text>
+
+    <!-- Structural Masonry Wall: 0.50mm cut (1.42pt) -->
+    <rect x="150" y="80" width="120" height="220" fill="#F4F3EF" stroke="#111110" stroke-width="1.42" />
+    
+    <!-- Monolithic Insulation Core (PIR / Hemp): 0.13mm (0.37pt) hatch -->
+    <rect x="270" y="80" width="100" height="220" fill="url(#insulation-hatch)" stroke="#55544E" stroke-width="0.71" />
+
+    <!-- Ventilated Rainscreen Cladding: 0.35mm (1.00pt) -->
+    <rect x="370" y="70" width="40" height="240" fill="#EAE8E1" stroke="#33322E" stroke-width="1.00" />
+    
+    <!-- Cavity Weep Holes / Air Gap: 0.25mm (0.71pt) -->
+    <line x1="370" y1="70" x2="370" y2="310" stroke="#55544E" stroke-width="0.71" stroke-dasharray="4,2" />
+
+    <!-- Continuous EPDM Waterproofing Membrane: 0.25mm Dash (0.71pt) -->
+    <path d="M 140,320 L 230,320 L 230,300 L 380,300 L 420,330" fill="none" stroke="#111110" stroke-width="0.71" stroke-dasharray="3,1" />
+
+    <!-- Dimension Chains: 0.13mm (0.37pt) with tick marks -->
+    <g id="dimension-string" stroke="#84827A" stroke-width="0.37">
+      <line x1="120" y1="80" x2="120" y2="300" />
+      <line x1="115" y1="80" x2="125" y2="80" stroke-width="0.71" />
+      <line x1="115" y1="300" x2="125" y2="300" stroke-width="0.71" />
+      <text x="75" y="195" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#55544E" transform="rotate(-90 75 195)">2200 mm</text>
+
+      <line x1="150" y1="440" x2="410" y2="440" />
+      <line x1="150" y1="435" x2="150" y2="445" stroke-width="0.71" />
+      <line x1="270" y1="435" x2="270" y2="445" stroke-width="0.71" />
+      <line x1="370" y1="435" x2="370" y2="445" stroke-width="0.71" />
+      <line x1="410" y1="435" x2="410" y2="445" stroke-width="0.71" />
+      <text x="195" y="455" font-family="'JetBrains Mono', monospace" font-size="7" fill="#55544E">120</text>
+      <text x="305" y="455" font-family="'JetBrains Mono', monospace" font-size="7" fill="#55544E">100</text>
+      <text x="385" y="455" font-family="'JetBrains Mono', monospace" font-size="7" fill="#55544E">40</text>
+    </g>
+  </g>
+</svg>

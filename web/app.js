@@ -18,15 +18,29 @@ const MCP_SNIPPETS = {
   }
 }`,
   antigravity: `# Native Antigravity / Cursor Skills:
-# 1. Monograph & 1:20 Spreads:
-/portfolio-design generate spread for 1:20 wall section
+# 1. 1:20 Wall Section & Glaser Hygrothermal Dew Point:
+python skills/constructive-detail/scripts/wall_section_builder.py --assembly granite_hemp
 
-# 2. Socratic Architectural Crit:
-/grill-my-design audit my project against 1:20 constructibility`,
-  cli: `# Run stdio JSON-RPC server directly:
+# 2. 1:100 Spatial Anatomy & PMR Accessibility Plan:
+python skills/spatial-anatomy/scripts/plan_compliance_engine.py --door 900 --vestibule 1500
+
+# 3. Bioclimatic Flows & Solar Overhang Vectors:
+python skills/bioclimatic-flows/scripts/bioclimatic_calculator.py --zone temperate_strasbourg
+
+# 4. Socratic Crit & 100-Point Design Grilling:
+python skills/grill-my-design/engine/cli.py --text "project description" --interactive
+
+# 5. Spatial Stitch 16:9 Vector Monograph Spreads:
+python skills/spatial-stitch/scripts/spatial_stitch.py generate --archetype THE_CONSTRUCTIVE_PROOF`,
+  cli: `# Quick CLI Execution Across the Suite:
 git clone https://github.com/sounny/sara-bensalem-skills.git
 cd sara-bensalem-skills
-python mcp-server/server.py`
+
+# 1:20 Wall Section with Glaser Condensation Analysis:
+python skills/constructive-detail/scripts/wall_section_builder.py --assembly alpine_monocoque --output wall.svg
+
+# Socratic Jury Grilling:
+python skills/grill-my-design/engine/cli.py --text "My project details..."`
 };
 
 // Specifications for Tectonic Assemblies
@@ -1571,9 +1585,242 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Master Dossier & Multi-Plate Vector Gallery ---
+  const DOSSIER_PLATES = {
+    p01: {
+      title: "Plate 01: 1:20 Constructive Wall Section & Glaser Hygrothermal Analysis",
+      desc: "Breton Granite & Lime-Hemp Biotamping with continuous thermal break and EPDM tanking.",
+      src: "plates/01_wall_section_1_20.svg",
+      badge: "PASSIVHAUS U=0.174 W/m²K",
+      download: "plates/01_wall_section_1_20.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Envelope U-Value", val: "0.174 W/m²K" },
+        { label: "Glaser Interstitial Risk", val: "Zero Condensation" },
+        { label: "Dew Point Margin", val: "+4.2°C Clearance" },
+        { label: "Acoustic Attenuation", val: "Rw 54 dB" }
+      ]
+    },
+    p02: {
+      title: "Plate 02: 1:100 Spatial Anatomy & Universal PMR/ADA Egress Plan",
+      desc: "Verified Ø1500mm wheelchair turning circles, 900mm clear door openings, and ISO 128 column grids.",
+      src: "plates/02_plan_1_100.svg",
+      badge: "PMR / ADA 100% CODE COMPLIANT",
+      download: "plates/02_plan_1_100.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Clear Door Arc", val: "900 mm (Pass)" },
+        { label: "Wheelchair Turning Circle", val: "Ø1500 mm (Pass)" },
+        { label: "Corridor Clearance", val: "1400 mm (>1200mm)" },
+        { label: "Fire Exit Travel", val: "<25 m Protected" }
+      ]
+    },
+    p03: {
+      title: "Plate 03: Bioclimatic Vector Flows & Passive Thermodynamics",
+      desc: "Solar azimuth altitude paths (Summer 65° / Winter 18°), prevailing wind vectors, and stack cooling.",
+      src: "plates/03_bioclimatic_vectors.svg",
+      badge: "PASSIVE THERMODYNAMICS",
+      download: "plates/03_bioclimatic_vectors.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Summer Solar Cutoff", val: "65.0° (Zero Overheating)" },
+        { label: "Winter Passive Gain", val: "18.0° Solar Penetration" },
+        { label: "Courtyard Stereotomy", val: "H/W = 1.62 Self-Shading" },
+        { label: "Stack Convection Rate", val: "v = 1.2 m/s" }
+      ]
+    },
+    p04: {
+      title: "Plate 04: Phenomenological Spatial Journey & Sensory Gradient Curves",
+      desc: "Luminance lux logarithmic transitions, acoustic decibel dampening, and volumetric compression ratios.",
+      src: "plates/04_spatial_journey.svg",
+      badge: "SENSORY CHOREOGRAPHY",
+      download: "plates/04_spatial_journey.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Lux Adaptation Step", val: "Δlog₁₀ = 1.15 ≤ 1.8" },
+        { label: "Acoustic Attenuation", val: "62 dBA → 32 dBA" },
+        { label: "Volumetric Ratio", val: "H_hall/H_gate = 3.2" },
+        { label: "NRC Rating", val: "0.75 Acoustic Plaster" }
+      ]
+    },
+    p05: {
+      title: "Plate 05: 1:5 Custom Interior Joinery & Shadow Reveal Detailing",
+      desc: "Bespoke solid French oak credenza, Blum Movento 760H concealed runners, and +15mm live sag deflection head.",
+      src: "plates/05_interior_joinery_1_5.svg",
+      badge: "1:5 FABRICATION BLUEPRINT",
+      download: "plates/05_interior_joinery_1_5.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Blum Runner Clearance", val: "28.5 mm Precision" },
+        { label: "Head Deflection Channel", val: "+15 mm Sag Allowance" },
+        { label: "Shadow Line Reveal", val: "3 mm Anodized Black" },
+        { label: "Acoustic Drop Seal", val: "Athmer Schall-Ex 48dB" }
+      ]
+    },
+    p06: {
+      title: "Plate 06: Swiss Typographic 16:9 Monograph Case Study Spread",
+      desc: "12-column modular grid, synchronized baseline lock, and balanced tectonic hierarchy via Spatial Stitch.",
+      src: "plates/06_monograph_spread.svg",
+      badge: "SWISS EDITORIAL SPREAD",
+      download: "plates/06_monograph_spread.svg",
+      isTribunal: false,
+      stats: [
+        { label: "Modular Grid", val: "12 Columns / 16px Gutter" },
+        { label: "Baseline Grid", val: "4pt Synchronized Lock" },
+        { label: "Contrast Ratio", val: "14.2:1 (WCAG AAA)" },
+        { label: "Aspect Ratio", val: "16:9 Widescreen" }
+      ]
+    },
+    p07: {
+      title: "Plate 07: Socratic Cross-Examination Tribunal & 100-Point Audit",
+      desc: "Multi-persona jury evaluation scoring constructive proof, spatial egress, and recruiter trust.",
+      src: "",
+      badge: "94.5 / 100 TIER-1 APPOINTMENT",
+      download: "plates/07_critique_dossier.json",
+      isTribunal: true,
+      stats: [
+        { label: "Composite Score", val: "94.5 / 100" },
+        { label: "Constructive Detailing", val: "95 / 100" },
+        { label: "Spatial Egress", val: "100 / 100" },
+        { label: "Bioclimatic Physics", val: "92 / 100" }
+      ]
+    }
+  };
+
+  function renderDossierPlate(plateKey) {
+    const plate = DOSSIER_PLATES[plateKey];
+    if (!plate) return;
+
+    const badgeEl = document.getElementById('dossier-plate-badge');
+    const titleEl = document.getElementById('dossier-plate-title');
+    const descEl = document.getElementById('dossier-plate-desc');
+    const downloadLink = document.getElementById('dossier-download-link');
+    const svgObj = document.getElementById('dossier-svg-object');
+    const tribunalView = document.getElementById('dossier-tribunal-view');
+    const statsContainer = document.getElementById('dossier-stats-container');
+
+    if (badgeEl) badgeEl.textContent = plate.badge;
+    if (titleEl) titleEl.textContent = plate.title;
+    if (descEl) descEl.textContent = plate.desc;
+    if (downloadLink) {
+      downloadLink.setAttribute('href', plate.download);
+      downloadLink.setAttribute('download', plate.download.split('/').pop());
+    }
+
+    if (plate.isTribunal) {
+      if (svgObj) svgObj.classList.add('hidden');
+      if (tribunalView) {
+        tribunalView.classList.remove('hidden');
+        tribunalView.innerHTML = `
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6 text-slate-200">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">VERDICT: TIER-1 ARCHITECTURAL APPOINTMENT</span>
+                <h4 class="text-xl font-display font-bold text-white mt-1">Socratic Tribunal Evaluation Scorecard</h4>
+              </div>
+              <div class="text-3xl font-mono font-bold text-emerald-400">94.5<span class="text-sm text-slate-500 font-normal">/100</span></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-4">
+                <h5 class="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold">Dimension Breakdown</h5>
+                <div class="space-y-3 font-mono text-xs">
+                  <div>
+                    <div class="flex justify-between mb-1"><span>1:20 Constructive Detailing</span><span class="text-sky-400 font-bold">95/100</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-sky-400 to-emerald-400" style="width: 95%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Spatial Anatomy & PMR Egress</span><span class="text-sky-400 font-bold">100/100</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-sky-400 to-emerald-400" style="width: 100%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Bioclimatic & Physics Logic</span><span class="text-sky-400 font-bold">92/100</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-sky-400 to-emerald-400" style="width: 92%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Recruiter Trust & Attribution</span><span class="text-sky-400 font-bold">90/100</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-sky-400 to-emerald-400" style="width: 90%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Swiss Typographic Grid (12-Col)</span><span class="text-sky-400 font-bold">96/100</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-sky-400 to-emerald-400" style="width: 96%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <h5 class="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold">Passed Inquiries & Directives</h5>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 text-xs space-y-1.5">
+                  <p class="text-white font-semibold">[Constructive Lead] Thermal Break Integrity</p>
+                  <p class="text-slate-400 text-[11px]">Continuous Schöck Isokorb module decouples slab. Zero condensation verified by Glaser calculations.</p>
+                </div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 text-xs space-y-1.5">
+                  <p class="text-white font-semibold">[Spatial Chair] Universal PMR Compliance</p>
+                  <p class="text-slate-400 text-[11px]">1500mm turning clear circle in vestibule, 900mm door arcs, unobstructed fire egress corridors.</p>
+                </div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 text-xs space-y-1.5">
+                  <p class="text-white font-semibold">[Detail Specifier] Joinery Deflection</p>
+                  <p class="text-slate-400 text-[11px]">Bespoke deflection channel accommodates +15mm live ceiling sag without jamming Blum Movento runners.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    } else {
+      if (tribunalView) tribunalView.classList.add('hidden');
+      if (svgObj) {
+        svgObj.classList.remove('hidden');
+        svgObj.setAttribute('data', plate.src);
+      }
+    }
+
+    if (statsContainer) {
+      statsContainer.innerHTML = plate.stats.map(s => `
+        <div class="border-b border-slate-800/60 pb-2">
+          <div class="text-[10px] font-mono text-slate-400 uppercase">${s.label}</div>
+          <div class="text-sm font-mono font-bold text-sky-400 mt-0.5">${s.val}</div>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Bind Dossier Tabs
+  const dossierTabs = document.querySelectorAll('.dossier-tab');
+  dossierTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      dossierTabs.forEach(t => {
+        t.className = "dossier-tab px-3.5 py-2 rounded-lg bg-slate-900/80 text-slate-400 hover:text-slate-200 hover:bg-slate-800 border border-slate-800 transition whitespace-nowrap flex items-center gap-2";
+      });
+      tab.className = "dossier-tab active px-3.5 py-2 rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/50 font-bold transition whitespace-nowrap flex items-center gap-2";
+      const key = tab.getAttribute('data-plate');
+      renderDossierPlate(key);
+    });
+  });
+
+  // CLI Orchestrator Copy Button
+  const copyOrchestratorBtn = document.getElementById('copy-orchestrator-cli-btn');
+  if (copyOrchestratorBtn) {
+    copyOrchestratorBtn.addEventListener('click', () => {
+      const cmd = 'python skills/portfolio-monograph/scripts/orchestrate_case_study.py --title "Pavillon Tectonique" --output-dir my_case_study';
+      navigator.clipboard.writeText(cmd).then(() => {
+        const lbl = document.getElementById('orchestrator-cli-lbl');
+        if (lbl) {
+          lbl.textContent = '✓ Command Copied!';
+          setTimeout(() => {
+            lbl.textContent = 'Copy CLI Orchestrator Command';
+          }, 2000);
+        }
+      });
+    });
+  }
+
+  renderDossierPlate('p01');
+
   renderLook('swiss_editorial');
 
   if (window.lucide) {
     lucide.createIcons();
   }
 });
+

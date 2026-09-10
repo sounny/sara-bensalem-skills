@@ -1,0 +1,344 @@
+{
+  "file": "monograph_typst.pdf",
+  "status": "PASS",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "warnings": 0
+  },
+  "scorecard": {
+    "total_score": 100,
+    "passing_threshold": 85,
+    "verdict": "APPROVED_FOR_PRESS"
+  },
+  "checks": {
+    "dimensions_and_bleed": {
+      "status": "PASS",
+      "details": [
+        {
+          "page": 1,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 2,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 3,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 4,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 5,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 6,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 7,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 8,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 9,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        },
+        {
+          "page": 10,
+          "bleed_compliant": true,
+          "deltas_pt": [
+            8.5,
+            8.5,
+            8.5,
+            8.5
+          ],
+          "trimbox": [
+            23.5,
+            23.5,
+            865.39,
+            618.78
+          ],
+          "bleedbox": [
+            15.0,
+            15.0,
+            873.9,
+            627.28
+          ],
+          "mediabox": [
+            0.0,
+            0.0,
+            888.9,
+            642.28
+          ]
+        }
+      ],
+      "bleed_mm": 3.0
+    },
+    "margin_safety_zone": {
+      "status": "PASS",
+      "details": {
+        "breaches": []
+      },
+      "safety_buffer_mm": 5.0,
+      "violating_elements_count": 0,
+      "breaches": []
+    },
+    "font_embedding": {
+      "status": "PASS",
+      "embedded_pct": 100.0,
+      "non_embedded": []
+    },
+    "image_resolution": {
+      "status": "PASS",
+      "min_dpi": 300.0,
+      "violating_images": []
+    },
+    "color_and_tac": {
+      "status": "PASS",
+      "max_tac": 0.0,
+      "limit": 320.0,
+      "violations": 0,
+      "unseparated_rgb_found": false
+    },
+    "pdfx4_compliance": {
+      "status": "PASS",
+      "details": {
+        "has_output_intents": false,
+        "output_condition_identifier": "FOGRA51",
+        "trapped_key_valid": true,
+        "is_encrypted": false,
+        "box_hierarchy_valid": true,
+        "conforms": true
+      }
+    },
+    "layout_collisions": {
+      "status": "PASS",
+      "collision_count": 0,
+      "breaches": []
+    }
+  }
+}
