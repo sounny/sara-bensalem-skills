@@ -27,6 +27,8 @@ class ScrutinyProbe(BaseModel):
     vulnerability_detected: str
     redline_fix: str
     severity: Severity
+    defense_options: List[str] = Field(default_factory=list)
+    remediation_command: Optional[str] = None
 
 class DimensionScore(BaseModel):
     dimension_id: str

@@ -3,8 +3,10 @@ design_system.py - Ingests and compiles PORTFOLIO_DESIGN.md into EditorialTokens
 """
 
 import re
-from typing import Dict
-from .models import EditorialTokens
+try:
+    from .models import EditorialTokens
+except (ImportError, ValueError):
+    from models import EditorialTokens
 
 
 class EditorialDesignSystemManager:

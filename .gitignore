@@ -26,9 +26,20 @@ Thumbs.db
 *.jpeg
 *.webp
 *.tiff
-*case_study*
-*CASE_STUDY*
 extracted_content*
 pages/
 scratch/
 .temp/
+.agents/
+.venv/
+
+# Whitelist public web branding & favicons
+!web/*.png
+!web/*.jpg
+!web/*.svg
+!web/*.ico
+
+# Whitelist orchestrator and case study dossier viewer
+!**/orchestrate_case_study.py
+!**/case_study_dossier.html
+

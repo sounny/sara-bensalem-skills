@@ -1,0 +1,14 @@
+{
+  "name": "spatial-choreography",
+  "description": "Designs experiential spatial journeys, emotional thresholds, luminance lux choreography, acoustic sanctuary gradients, and subtractive courtyard stereotomy in architectural and interior design.",
+  "tools": [
+    {
+      "name": "model_spatial_journey",
+      "description": "Models phenomenological spatial trajectories across luminance lux levels, acoustic dBA, volumetric compression ratios, and evocative naming."
+    },
+    {
+      "name": "audit_courtyard_shading",
+      "description": "Calculates subtractive courtyard aspect ratios (H/W) and verifies self-shading microclimates."
+    }
+  ]
+}

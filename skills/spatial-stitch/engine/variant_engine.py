@@ -3,14 +3,25 @@ variant_engine.py - Generates REFINE, EXPLORE, and REIMAGINE variants of Spreads
 """
 
 from typing import List
-from .models import (
-    SpreadInstance,
-    CreativeRange,
-    LayoutArchetype,
-    EditorialTokens,
-    ProjectPassport
-)
-from .spread_generator import SpreadGenerator
+
+try:
+    from .models import (
+        SpreadInstance,
+        CreativeRange,
+        LayoutArchetype,
+        EditorialTokens,
+        ProjectPassport
+    )
+    from .spread_generator import SpreadGenerator
+except (ImportError, ValueError):
+    from models import (
+        SpreadInstance,
+        CreativeRange,
+        LayoutArchetype,
+        EditorialTokens,
+        ProjectPassport
+    )
+    from spread_generator import SpreadGenerator
 
 
 class VariantEngine:

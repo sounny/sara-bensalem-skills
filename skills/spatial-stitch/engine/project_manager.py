@@ -4,8 +4,10 @@ project_manager.py - Manages Project Lifecycle & Local Spread Persistence
 
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
-from .models import PortfolioProject, SpreadInstance, CanvasFormat, ProjectPassport
+try:
+    from .models import PortfolioProject, SpreadInstance, CanvasFormat, ProjectPassport
+except (ImportError, ValueError):
+    from models import PortfolioProject, SpreadInstance, CanvasFormat, ProjectPassport
 
 
 class ProjectManager:

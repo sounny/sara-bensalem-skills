@@ -5,13 +5,20 @@ Exposes the 12 Stitch-compatible spatial design tools to Antigravity, Claude Des
 
 import sys
 import json
-from typing import Dict, Any, List, Optional
-from .models import CanvasFormat, LayoutArchetype, CreativeRange, ProjectPassport
-from .project_manager import ProjectManager
-from .spread_generator import SpreadGenerator
-from .variant_engine import VariantEngine
-from .auditor import PortfolioAuditor
-from .design_system import EditorialDesignSystemManager
+try:
+    from .models import CanvasFormat, LayoutArchetype, CreativeRange, ProjectPassport
+    from .project_manager import ProjectManager
+    from .spread_generator import SpreadGenerator
+    from .variant_engine import VariantEngine
+    from .auditor import PortfolioAuditor
+    from .design_system import EditorialDesignSystemManager
+except (ImportError, ValueError):
+    from models import CanvasFormat, LayoutArchetype, CreativeRange, ProjectPassport
+    from project_manager import ProjectManager
+    from spread_generator import SpreadGenerator
+    from variant_engine import VariantEngine
+    from auditor import PortfolioAuditor
+    from design_system import EditorialDesignSystemManager
 
 
 class SpatialStitchEngine:

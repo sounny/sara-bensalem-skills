@@ -3,13 +3,22 @@ auditor.py - 100-Point Anti-Render-Trap & Recruiter Trust Interface Evaluator
 Incorporates Bespoke Careers 6 Rules and GrowthGrid Africa 10-Second Orientation Principles.
 """
 
-from .models import (
-    SpreadInstance,
-    AuditReport,
-    AuditCategoryScore,
-    LayoutArchetype,
-    ProjectPassport
-)
+try:
+    from .models import (
+        SpreadInstance,
+        AuditReport,
+        AuditCategoryScore,
+        LayoutArchetype,
+        ProjectPassport
+    )
+except (ImportError, ValueError):
+    from models import (
+        SpreadInstance,
+        AuditReport,
+        AuditCategoryScore,
+        LayoutArchetype,
+        ProjectPassport
+    )
 
 
 class PortfolioAuditor:

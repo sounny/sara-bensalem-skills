@@ -3,14 +3,25 @@ spread_generator.py - Generates Complete Publication-Ready Vector Spreads (SVG &
 """
 
 import html
-from .models import (
-    SpreadInstance,
-    LayoutArchetype,
-    CanvasFormat,
-    EditorialTokens,
-    ProjectPassport
-)
-from .grid_system import SwissGridCalculator
+
+try:
+    from .models import (
+        SpreadInstance,
+        LayoutArchetype,
+        CanvasFormat,
+        EditorialTokens,
+        ProjectPassport
+    )
+    from .grid_system import SwissGridCalculator
+except (ImportError, ValueError):
+    from models import (
+        SpreadInstance,
+        LayoutArchetype,
+        CanvasFormat,
+        EditorialTokens,
+        ProjectPassport
+    )
+    from grid_system import SwissGridCalculator
 
 
 class SpreadGenerator:

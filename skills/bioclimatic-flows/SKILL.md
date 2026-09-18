@@ -33,9 +33,21 @@ Where:
 - $h$ = Height distance between lower intake and upper chimney exhaust [$\\text{m}$]
 - $T_{in}, T_{out}$ = Absolute indoor/outdoor temperatures [$\\text{K}$]
 
-### 2. Thermal Mass Phase Shift (Time Lag $\\phi$):
-$$\\phi = \\frac{d}{2} \\cdot \\sqrt{\\frac{24}{\\pi \\cdot \\alpha}} \\quad [\\text{hours}]$$
-Where $d$ is thickness in meters and $\\alpha$ is thermal diffusivity ($k / \\rho c_p$).
+### 2. Thermal Mass Phase Shift (Time Lag $\phi$):
+$$\phi = \frac{d}{2} \cdot \sqrt{\frac{24}{\pi \cdot \alpha}} \quad [\text{hours}]$$
+Where $d$ is thickness in meters and $\alpha$ is thermal diffusivity ($k / \rho c_p$).
+
+### 3. Kinetic Hybrid Microgrid Sizing (The Solaura Formulation):
+For kinetic building-integrated photovoltaics (BIPV) and micro-wind harvesting modules:
+$$E_{\text{daily, solar}} = A_{\text{pv}} \cdot I_{\text{daily}} \cdot \eta_{\text{pv}} \quad [\text{kWh/day}]$$
+$$P_{\text{wind, module}} = \frac{1}{2} \cdot \rho_{\text{air}} \cdot A_{\text{frontal}} \cdot v_{\text{wind}}^3 \cdot \eta_{\text{turbine}} \quad [\text{W}]$$
+$$E_{\text{daily, wind}} = P_{\text{wind, module}} \cdot 24\,\text{h} \cdot N_{\text{modules}} \cdot 10^{-3} \quad [\text{kWh/day}]$$
+Where $\rho_{\text{air}} = 1.225\,\text{kg/m}^3$, $\eta_{\text{turbine}} \le 0.593$ (Betz limit, typically $0.25\text{--}0.35$), and $I_{\text{daily}}$ is regional solar insolation [$\text{kWh/m}^2/\text{day}$].
+
+### 4. Hydrological Root-Zone Rain Garden Stratification:
+Stratifying bioswales and retention gardens into distinct hygrothermal and moisture-tolerance layers:
+- **Upper Aerobic Tier ($15\text{--}30\text{cm}$ depth)**: Drought-tolerant native shrubs and flowering species with deep root penetration for soil stabilization.
+- **Lower Saturated Hydric Basin ($30\text{--}45\text{cm}$ depth)**: Flooding-resilient wetland macrophytes (*Colocasia*, *Carex*, *Ipomoea pes-caprae*) designed for anaerobic water retention and bio-filtration of storm runoff ($10,000\,\text{L/day}$).
 
 ---
 

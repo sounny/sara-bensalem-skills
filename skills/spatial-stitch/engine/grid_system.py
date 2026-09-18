@@ -3,7 +3,11 @@ grid_system.py - Swiss Modular Grid & Coordinate Calculator for Spatial Stitch
 """
 
 from typing import Dict
-from .models import CanvasFormat, EditorialTokens
+
+try:
+    from .models import CanvasFormat, EditorialTokens
+except (ImportError, ValueError):
+    from models import CanvasFormat, EditorialTokens
 
 
 class SwissGridCalculator:
