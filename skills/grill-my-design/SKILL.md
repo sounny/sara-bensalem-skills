@@ -49,17 +49,17 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
 ### Phase 2: The Socratic Cross-Examination (MANDATORY `ask_question`)
 > [!IMPORTANT]
 > **DO NOT** output the final verdict or complete score report in Phase 1!
-> The agent **MUST call the `ask_question` tool** with 2 to 4 targeted cross-examination questions corresponding to the top vulnerabilities detected.
-> Each question must confront the designer with a specific buildability, spatial, or recruiter challenge and provide 3–4 realistic architectural defense options.
+> Just like Antigravity's native `/grill-me` command, **you MUST halt execution and call the `ask_question` tool** with 2 to 4 targeted cross-examination questions corresponding to the top vulnerabilities detected.
+> Each question must confront the designer with a specific buildability, spatial, or recruiter challenge and provide 3–4 realistic architectural defense options formatted as candidate first-person responses, with the most rigorous architectural solution prefixed with `(Recommended)`.
 
-#### Example `ask_question` Call Schema:
+#### Example `ask_question` Call Schema (`/grill-me` Parity):
 ```json
 {
   "questions": [
     {
       "question": "[Constructive Lead] Where is your continuous thermal break at the cantilevered concrete terrace slab to prevent interior condensation and mold?",
       "options": [
-        "We specified a structural thermal break module (Schöck Isokorb) with 80mm EPS core at the slab junction.",
+        "(Recommended) We specified a structural thermal break module (Schöck Isokorb) with 80mm EPS core at the slab junction.",
         "The exterior envelope is fully wrapped with 120mm continuous mineral wool outside the concrete structure.",
         "We designed a thermally decoupled self-supporting exterior steel chassis with pin connections.",
         "This was an early conceptual competition scheme where tectonic detailing was deferred to Stage 3."
@@ -69,7 +69,7 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
     {
       "question": "[Spatial Chair] Can a wheelchair user complete a statutory 1500mm turning maneuver in your entrance vestibule and primary sanitary core?",
       "options": [
-        "All entrance vestibules and primary sanitary facilities maintain verified 1500mm turning diameter circles.",
+        "(Recommended) All entrance vestibules and primary sanitary facilities maintain verified 1500mm turning diameter circles.",
         "Door openings are minimum 930mm clear width with zero-threshold flush sills.",
         "Accessible routes are integrated into the main public sequence rather than segregated.",
         "PMR clearances were not explicitly drafted on this schematic plan."
@@ -79,7 +79,7 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
     {
       "question": "[Hiring Director] In this 4-person competition team, what was your exact individual line-item contribution?",
       "options": [
-        "I was the Lead Technical Detailer responsible for 1:20 envelope sections and BIM coordination.",
+        "(Recommended) I was the Lead Technical Detailer responsible for 1:20 envelope sections and BIM coordination.",
         "I led the schematic design and spatial massing in a 3-person competition team.",
         "I was an architectural intern handling 3D visualization, physical modeling, and diagramming.",
         "This was an individual academic thesis project conceived and drafted entirely by me."
@@ -89,6 +89,10 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
   ]
 }
 ```
+
+> [!NOTE]
+> The engine can generate this payload automatically via `python -m engine.cli --text "<submission copy>" --ask-questions`.
+
 
 ### Phase 3: Post-Defense Deliberation & Dossier
 After the user submits their defense via `ask_question`:

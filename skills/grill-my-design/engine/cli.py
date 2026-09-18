@@ -23,6 +23,8 @@ def main():
     parser.add_argument("--text", type=str, default=None, help="Design statement or portfolio text")
     parser.add_argument("--persona", choices=["full", "technical", "recruiter", "spatial", "environmental"], default="full", help="Jury persona")
     parser.add_argument("--interactive", "-i", action="store_true", help="Launch interactive Socratic cross-examination loop")
+    parser.add_argument("--ask-questions", action="store_true", help="Output JSON payload formatted for the ask_question tool (/grill-me parity)")
+    parser.add_argument("--json", action="store_true", help="Output full JSON report")
     parser.add_argument("rest", nargs="*", help="Positional text tokens if --text is omitted")
     args = parser.parse_args()
 
@@ -31,7 +33,7 @@ def main():
     elif args.rest:
         text = " ".join(args.rest)
     else:
-        print("Usage: python -m engine.cli --text \"<design statement>\" [--persona full|technical|recruiter|spatial|environmental] [--interactive]")
+        print("Usage: python -m engine.cli --text \"<design statement>\" [--persona full|technical|recruiter|spatial|environmental] [--interactive] [--ask-questions]")
         sys.exit(1)
 
     p_enum = JuryPersona.FULL_TRIBUNAL
@@ -43,7 +45,18 @@ def main():
     engine = GrillEngine()
     report = engine.grill(text, persona=p_enum)
 
-    if args.interactive and report.top_vulnerabilities:
+    if args.ask_questions:
+        payload = engine.get_ask_question_payload(report)
+        print(json.dumps(payload, indent=2))
+        return
+
+    if args.json:
+        dump_fn = getattr(report, "model_dump", getattr(report, "dict", None))
+        print(json.dumps(dump_fn() if dump_fn else report.__dict__, indent=2))
+        return
+
+    is_interactive = args.interactive or (sys.stdin.isatty() and not args.json and not args.ask_questions)
+    if is_interactive and report.top_vulnerabilities:
         print("=" * 72)
         print(" PHASE 1: JURY VULNERABILITY AUDIT COMPLETE")
         print(f" INITIAL PRE-DEFENSE VERDICT: {report.verdict} ({report.overall_score}/100)")

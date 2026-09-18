@@ -87,6 +87,16 @@ def p_sat(temp_c):
     else:
         return 610.5 * math.exp((21.875 * temp_c) / (temp_c + 265.5))
 
+def calculate_u_value(layers):
+    """Calculates assembly U-value (W/m²K) and total thickness (mm)."""
+    R_si = 0.13
+    R_se = 0.04
+    R_layers = [l["thick"] / 1000.0 / l["lambda"] for l in layers]
+    R_tot = R_si + sum(R_layers) + R_se
+    u_val = 1.0 / R_tot
+    total_thick = sum(l["thick"] for l in layers)
+    return round(u_val, 3), total_thick
+
 def glaser_analysis(layers, t_int=20.0, rh_int=0.50, t_ext=-5.0, rh_ext=0.85):
     """
     Executes standard Glaser calculation across assembly interfaces.
@@ -274,9 +284,9 @@ def generate_wall_section_svg(output_path="wall_section_1_20.svg", assembly_key=
     scale_factor = min(1.2, 380.0 / max(1.0, total_thick))
     for idx, lyr in enumerate(layers):
         layer_w = max(18, int(lyr["thick"] * scale_factor))
-        esc_lyr_name = xml_escape(lyr['name'])
+        esc_lyr_name = xml_escape(lyr['name'][:22])
         svg += f"""    <rect x="{cur_x}" y="80" width="{layer_w}" height="440" fill="{lyr.get('color', '#EAEAE5')}" stroke="#111110" stroke-width="1.8" />
-    <text x="{cur_x + layer_w/2:.1f}" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 {cur_x + layer_w/2:.1f} 300)">{idx+1:02d}. {esc_lyr_name.upper()[:22]}</text>
+    <text x="{cur_x + layer_w/2:.1f}" y="300" class="mono-bold" text-anchor="middle" font-size="10px" transform="rotate(-90 {cur_x + layer_w/2:.1f} 300)">{idx+1:02d}. {esc_lyr_name.upper()}</text>
 """
         cur_x += layer_w
 
@@ -372,7 +382,8 @@ def generate_wall_section_svg(output_path="wall_section_1_20.svg", assembly_key=
 """
     for i, iface in enumerate(analysis["interfaces"][:4]):
         ty = 42 + i * 18
-        svg += f"""      <text x="12" y="{ty}" class="mono-body" font-size="9px">{iface['label'][:20]}: {iface['temp']:.1f}°C (Psat: {iface['p_sat']:.0f}Pa)</text>\n"""
+        esc_label = xml_escape(iface['label'][:20])
+        svg += f"""      <text x="12" y="{ty}" class="mono-body" font-size="9px">{esc_label}: {iface['temp']:.1f}°C (Psat: {iface['p_sat']:.0f}Pa)</text>\n"""
 
     svg += f"""    </g>
   </g>

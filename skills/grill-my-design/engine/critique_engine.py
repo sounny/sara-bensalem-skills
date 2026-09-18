@@ -259,6 +259,31 @@ class GrillEngine:
             recruiter_15s_takeaway=takeaway
         )
 
+    def get_ask_question_payload(self, report: GrillReport, max_questions: int = 3) -> dict:
+        """
+        Generates an exact payload formatted for the `ask_question` tool.
+        Directly matches Antigravity /grill-me multi-choice interrogation modal schema:
+          {"questions": [{"question": "...", "options": [...], "is_multi_select": false}]}
+        """
+        questions = []
+        for v in report.top_vulnerabilities[:max_questions]:
+            persona_label = v.persona.value.replace("_", " ").title() if hasattr(v.persona, "value") else str(v.persona)
+            opts = [opt.strip() for opt in v.defense_options if opt and opt.strip()]
+            if len(opts) < 2:
+                opts = [
+                    "(Recommended) We resolved this detailing in our Stage 3 technical tender package.",
+                    "This was an early conceptual competition scheme where detailing was deferred to execution phase."
+                ]
+            cleaned_opts = [re.sub(r"^(\d+[\.\)]|\([a-z0-9]+\))\s*", "", o) for o in opts]
+            if cleaned_opts and not cleaned_opts[0].startswith("(Recommended)"):
+                cleaned_opts[0] = f"(Recommended) {cleaned_opts[0]}"
+            questions.append({
+                "question": f"[{persona_label}] {v.interrogation_question}",
+                "options": cleaned_opts[:4],
+                "is_multi_select": False
+            })
+        return {"questions": questions}
+
     def evaluate_defense(self, base_report: GrillReport, user_answers: dict) -> GrillReport:
         """
         Re-scores a design based on the user's interactive defense responses.
