@@ -1,6 +1,8 @@
 import json
+import os
 
-p = r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\architectural_languages.json'
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+p = os.path.join(ROOT_DIR, 'skills', 'portfolio-monograph', 'resources', 'architectural_languages.json')
 with open(p, 'r', encoding='utf-8') as f:
     langs = json.load(f)
 
@@ -131,10 +133,8 @@ new_langs = {
 langs.update(new_langs)
 print(f'Total architectural languages now: {len(langs)}')
 
-for out_p in [
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\architectural_languages.json',
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-design\resources\architectural_languages.json'
-]:
-    with open(out_p, 'w', encoding='utf-8') as f:
-        json.dump(langs, f, indent=2)
-    print(f'Wrote {out_p}')
+target_p = os.path.join(ROOT_DIR, 'skills', 'portfolio-monograph', 'resources', 'architectural_languages.json')
+with open(target_p, 'w', encoding='utf-8') as f:
+    json.dump(langs, f, indent=2)
+print(f'Wrote {target_p}')
+

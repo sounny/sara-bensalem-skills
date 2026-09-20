@@ -98,7 +98,8 @@ def xml_escape(val):
     return str(val).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabinetry_reveal",
-                         custom_gap=None, custom_carcase=None, custom_door=None, custom_hardware=None, custom_title=None):
+                         custom_gap=None, custom_carcase=None, custom_door=None, custom_hardware=None,
+                         custom_title=None, custom_deflection=None):
     preset = JOINERY_PRESETS.get(detail_key, JOINERY_PRESETS["cabinetry_reveal"])
     gap = custom_gap if custom_gap is not None else preset["shadow_reveal_mm"]
     carcase = custom_carcase if custom_carcase is not None else preset["carcase_mm"]
@@ -106,6 +107,7 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
     hw = custom_hardware if custom_hardware is not None else preset["hardware"]
     title = custom_title if custom_title is not None else preset["name"]
     swatches = preset.get("swatches", [])
+    deflection_mm = custom_deflection if custom_deflection is not None else 15.0
 
     width = 1200
     height = 1000
@@ -176,8 +178,25 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
 
   <!-- Drawing Viewport (1:5 Large Scale Visual Detailing) -->
   <g transform="translate(440, 110)">
-    <rect x="0" y="0" width="700" height="740" fill="#FFFFFF" stroke="#DDD9D0" />
-    
+    <!-- Top Junction: Structural R.C. Soffit & +15mm Live Slab Sag Deflection Head Channel -->
+    <g id="deflection-head-channel">
+      <!-- Structural R.C. Soffit -->
+      <rect x="80" y="14" width="540" height="20" class="cut-stone" fill="#EAEAE5" stroke="#111110" stroke-width="2.0" />
+      <text x="350" y="28" class="mono-bold" font-size="9px" text-anchor="middle">R.C. CEILING SLAB SOFFIT // LIVE LOAD DEFLECTION PLANE</text>
+
+      <!-- Extruded Aluminum Deflection Channel (+15mm Live Sag Relief) -->
+      <rect x="180" y="34" width="360" height="32" fill="#DDD9D0" stroke="#111110" stroke-width="1.8" />
+      <line x1="180" y1="50" x2="540" y2="50" stroke="#111110" stroke-width="1.2" stroke-dasharray="4 2" />
+      <text x="360" y="47" class="mono-bold" font-size="9px" text-anchor="middle">+{deflection_mm:.0f}MM LIVE SLAB SAG DEFLECTION CHANNEL</text>
+      <text x="360" y="60" class="mono-body" font-size="8px" text-anchor="middle">Extruded Aluminum Reglet Profile (Acoustic Athmer Schall-Ex Seal)</text>
+
+      <!-- Deflection Dimension Callout on Right -->
+      <line x1="550" y1="34" x2="550" y2="66" stroke="#111110" stroke-width="1.2" />
+      <line x1="545" y1="34" x2="555" y2="34" stroke="#111110" stroke-width="1.2" />
+      <line x1="545" y1="66" x2="555" y2="66" stroke="#111110" stroke-width="1.2" />
+      <text x="562" y="53" class="mono-bold" font-size="9px" fill="#111110">+{deflection_mm:.0f}mm sag</text>
+    </g>
+
     <!-- Base Plinth Tile / Sub-Structure (A) -->
     <rect x="80" y="540" width="540" height="120" class="cut-stone" />
     <text x="350" y="610" class="mono-bold" text-anchor="middle">PLINTH SUBSTRATE // FFL +0.000</text>
@@ -212,15 +231,17 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
     </g>
     <text x="585" y="300" class="mono-bold" text-anchor="middle" transform="rotate(90 585 300)">720 MM CABINET CARCASE HEIGHT</text>
 
+    <!-- Horizontal Width Dimension Chains -->
     <g stroke="#111110" stroke-width="1.2">
-      <line x1="180" y1="50" x2="540" y2="50" />
-      <line x1="180" y1="40" x2="180" y2="60" />
-      <line x1="340" y1="40" x2="340" y2="60" />
-      <line x1="360" y1="40" x2="360" y2="60" />
-      <line x1="540" y1="40" x2="540" y2="60" />
+      <line x1="180" y1="675" x2="540" y2="675" />
+      <line x1="180" y1="665" x2="180" y2="685" />
+      <line x1="340" y1="665" x2="340" y2="685" />
+      <line x1="360" y1="665" x2="360" y2="685" />
+      <line x1="540" y1="665" x2="540" y2="685" />
     </g>
-    <text x="260" y="38" class="mono-body" text-anchor="middle">{carcase:.0f} MM</text>
-    <text x="450" y="38" class="mono-body" text-anchor="middle">{door:.0f} MM</text>
+    <text x="260" y="695" class="mono-body" text-anchor="middle">{carcase:.0f} MM CARCASE</text>
+    <text x="450" y="695" class="mono-body" text-anchor="middle">{door:.0f} MM LEAF</text>
+
   </g>
 
   <!-- Folio Footer -->
@@ -241,6 +262,7 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
         "shadow_reveal_mm": gap,
         "carcase_mm": carcase,
         "door_leaf_mm": door,
+        "slab_deflection_mm": deflection_mm,
         "hardware": hw,
         "swatches": swatches,
         "output_svg": output_path
@@ -253,6 +275,7 @@ def main():
     parser.add_argument("--gap", type=float, default=None, help="Custom shadow reveal in mm (e.g. 3.0, 5.0, 8.0)")
     parser.add_argument("--carcase", type=float, default=None, help="Custom carcase thickness in mm (e.g. 18.0, 19.0, 22.0)")
     parser.add_argument("--door", type=float, default=None, help="Custom door leaf thickness in mm (e.g. 20.0, 22.0, 25.0)")
+    parser.add_argument("--deflection", type=float, default=None, help="Custom live slab sag deflection channel headroom in mm (default: 15.0)")
     parser.add_argument("--hardware", type=str, default=None, help="Custom hardware specification string")
     parser.add_argument("--title", type=str, default=None, help="Custom detail title")
     parser.add_argument("--output", "-o", default="joinery_1_5_detail.svg", help="Output SVG Path")
@@ -266,7 +289,8 @@ def main():
         custom_carcase=args.carcase,
         custom_door=args.door,
         custom_hardware=args.hardware,
-        custom_title=args.title
+        custom_title=args.title,
+        custom_deflection=args.deflection
     )
 
     if args.json:

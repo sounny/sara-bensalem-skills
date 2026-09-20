@@ -126,7 +126,7 @@ When an agent is asked to create or audit a portfolio:
 ### Step 1: Run Pre-Flight Inspection
 Check the candidate's PDF or project folder using the bundled script:
 ```bash
-python "C:/Users/sounn/.gemini/config/skills/portfolio-design/scripts/audit_portfolio.py" --pdf "<path_to_portfolio.pdf>"
+python "skills/portfolio-monograph/scripts/audit_portfolio.py" --pdf "<path_to_portfolio.pdf>"
 ```
 
 ### Step 2: Determine the Optimal Archetype

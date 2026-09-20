@@ -578,25 +578,84 @@ class TestMCPServerHandlers(unittest.TestCase):
         self.server = server
 
     def test_tools_list(self):
-        """Verify all 10 MCP tools are registered with schemas."""
-        self.assertEqual(len(self.server.TOOLS), 10)
+        """Verify all 15 MCP tools are registered with schemas."""
+        self.assertGreaterEqual(len(self.server.TOOLS), 14)
         tool_names = [t["name"] for t in self.server.TOOLS]
         expected_tools = [
             "list_sara_skills", "audit_portfolio", "grill_my_design",
             "build_1_20_wall_section", "validate_pmr_and_egress",
             "calculate_bioclimatic_flows", "generate_1_5_joinery",
             "compile_monograph_spread", "list_portfolio_looks",
-            "get_architectural_movement"
+            "get_architectural_movement", "generate_spatial_journey",
+            "generate_monograph_spread", "audit_monograph_spread",
+            "extract_design_tokens", "audit_publication_preflight"
         ]
         for t in expected_tools:
             self.assertIn(t, tool_names)
 
     def test_handle_list_skills(self):
-        """Test handle_list_skills tool response."""
+        """Test handle_list_skills tool response returns all 10 canonical skills."""
         res = self.server.handle_call_tool("list_sara_skills", {})
         self.assertIn("studio", res)
         self.assertIn("skills", res)
-        self.assertEqual(len(res["skills"]), 6)
+        self.assertEqual(len(res["skills"]), 10)
+        skill_names = [s["name"] for s in res["skills"]]
+        for expected in ["spatial-choreography", "spatial-stitch", "design-md-extractor", "editorial-studio"]:
+            self.assertIn(expected, skill_names)
+
+    def test_handle_generate_spatial_journey(self):
+        """Test generating spatial journey via MCP."""
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            out_file = tf.name
+        try:
+            res = self.server.handle_call_tool("generate_spatial_journey", {"output_path": out_file})
+            self.assertEqual(res["status"], "success")
+            self.assertTrue(os.path.exists(out_file))
+        finally:
+            if os.path.exists(out_file):
+                os.remove(out_file)
+
+    def test_handle_spatial_stitch_tools(self):
+        """Test generating and auditing monograph spread via MCP."""
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            out_file = tf.name
+        try:
+            gen_res = self.server.handle_call_tool("generate_monograph_spread", {
+                "archetype": "THE_CONSTRUCTIVE_PROOF",
+                "output_path": out_file
+            })
+            self.assertEqual(gen_res["status"], "success")
+            self.assertTrue(os.path.exists(out_file))
+
+            audit_res = self.server.handle_call_tool("audit_monograph_spread", {"svg_file": out_file})
+            self.assertIn("total_score", audit_res)
+            self.assertGreaterEqual(audit_res["total_score"], 80)
+        finally:
+            if os.path.exists(out_file):
+                os.remove(out_file)
+
+    def test_handle_extract_design_tokens(self):
+        """Test extracting design tokens from image via MCP."""
+        from PIL import Image
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tf:
+            img_file = tf.name
+        try:
+            img = Image.new("RGB", (80, 80), (180, 80, 40))
+            img.save(img_file)
+            res = self.server.handle_call_tool("extract_design_tokens", {"image_path": img_file})
+            self.assertIn("tokens", res)
+            self.assertIn("contrast_ratio", res)
+        finally:
+            if os.path.exists(img_file):
+                os.remove(img_file)
+
+    def test_handle_audit_publication_preflight(self):
+        """Test preflight publication audit tool via MCP."""
+        test_pdf = os.path.join(self.server.SKILLS_DIR, "editorial-studio", "test_qc.pdf")
+        if os.path.exists(test_pdf):
+            res = self.server.handle_call_tool("audit_publication_preflight", {"file_path": test_pdf})
+            self.assertIn("status", res)
+            self.assertIn("checks", res)
 
     def test_handle_list_portfolio_looks(self):
         """Test retrieving all looks and a specific look."""

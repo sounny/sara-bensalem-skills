@@ -167,6 +167,44 @@ def glaser_analysis(layers, t_int=20.0, rh_int=0.50, t_ext=-5.0, rh_ext=0.85):
             "sd": cur_sd
         })
 
+    # DIN 4108-3 Interstitial Condensate Mass Calculation (Winter 60-day cycle: delta_t = 5.184e6 s)
+    condensate_mass_g = 0.0
+    din_limit_g = 500.0  # DIN 4108-3 maximum 500 g/m2 for permeable/insulation interfaces
+    din_pass = True
+
+    if has_condensation:
+        delta_seconds = 60 * 24 * 3600  # 5,184,000 seconds (60 days)
+        delta_0 = 2.0e-10  # vapor permeability of still air in kg/(m*s*Pa)
+        # Find the primary condensation plane with maximum saturation deficit
+        worst_idx = max(range(len(interfaces)), key=lambda i: (interfaces[i]["p_act"] - interfaces[i]["p_sat"]) if interfaces[i]["condenses"] else -9999)
+        c_int = interfaces[worst_idx]
+        sd_ext_to_c = max(0.01, c_int["sd"])
+        sd_c_to_int = max(0.01, sd_tot - c_int["sd"])
+
+        # Determine DIN 4108-3 limit: 1000 g/m² if adjacent layer is wood/timber, else 500 g/m² for non-absorbent
+        layer_indices = []
+        if worst_idx > 0 and worst_idx - 1 < len(layers):
+            layer_indices.append(worst_idx - 1)
+        if worst_idx < len(layers):
+            layer_indices.append(worst_idx)
+
+        is_wood = False
+        wood_keywords = ["wood", "timber", "glulam", "clt", "oak", "spruce", "meranti", "pine", "plywood", "hemp", "cork"]
+        for li in layer_indices:
+            lname = layers[li].get("name", "").lower()
+            if any(k in lname for k in wood_keywords):
+                is_wood = True
+                break
+
+        din_limit_g = 1000.0 if is_wood else 500.0
+
+        # Diffusion flux into plane minus flux out of plane
+        g_in = ((p_int - c_int["p_sat"]) / sd_c_to_int) * delta_0
+        g_out = ((c_int["p_sat"] - p_ext) / sd_ext_to_c) * delta_0
+        g_diff = max(0.0, g_in - g_out)
+        condensate_mass_g = round(g_diff * delta_seconds * 1000.0, 1)
+        din_pass = condensate_mass_g <= din_limit_g
+
     return {
         "u_val": round(u_val, 3),
         "total_thick_mm": total_thick,
@@ -174,13 +212,18 @@ def glaser_analysis(layers, t_int=20.0, rh_int=0.50, t_ext=-5.0, rh_ext=0.85):
         "sd_tot": round(sd_tot, 2),
         "has_condensation": has_condensation,
         "max_risk_pa": round(max_condense_risk, 1),
+        "condensate_mass_g_m2": condensate_mass_g,
+        "din_4108_limit_g_m2": din_limit_g,
+        "din_4108_pass": din_pass,
         "interfaces": interfaces
     }
 
 def xml_escape(val):
     if val is None:
         return ""
-    return str(val).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+    s = str(val)
+    s = s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"')
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 def generate_wall_section_svg(output_path="wall_section_1_20.svg", assembly_key="granite_hemp", custom_layers=None, custom_name=None):
     if custom_layers:
@@ -206,8 +249,18 @@ def generate_wall_section_svg(output_path="wall_section_1_20.svg", assembly_key=
     prov_sub = (provenance_str[:38] + "...") if len(provenance_str) > 38 else provenance_str
     esc_prov = xml_escape(prov_sub)
 
-    status_color = "#C8523D" if has_cond else "#111110"
-    compliance_text = "CONDENSATION RISK: DETECTED" if has_cond else "PASS (RE2020 / Passivhaus / DIN 4108)"
+    din_pass = analysis.get("din_4108_pass", True)
+    mc_val = analysis.get("condensate_mass_g_m2", 0.0)
+    din_limit = int(analysis.get("din_4108_limit_g_m2", 500.0))
+    status_color = "#111110" if (not has_cond or din_pass) else "#C8523D"
+    if not has_cond:
+        compliance_text = "PASS (RE2020 / Passivhaus / DIN 4108-3: Zero Condensation)"
+    elif din_pass:
+        compliance_text = f"DIN 4108-3 PASS: Mc={mc_val} g/m² &lt;= {din_limit} g/m² (Evaporable)"
+    else:
+        compliance_text = f"DIN 4108-3 FAIL: Mc={mc_val} g/m² &gt; {din_limit} g/m² (Moisture Risk)"
+
+    esc_compliance = xml_escape(compliance_text)
 
     svg = f"""<svg viewBox="0 0 {width} {height}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF; font-family:'Plus Jakarta Sans', sans-serif;">
   <defs>
@@ -238,7 +291,7 @@ def generate_wall_section_svg(output_path="wall_section_1_20.svg", assembly_key=
     <text x="16" y="72" class="mono-body">Total Thickness: {total_thick:.1f} mm</text>
     <text x="16" y="94" class="mono-body">Thermal Resistance R: {analysis['r_tot']} m²K/W</text>
     <text x="16" y="116" class="mono-body">Diffusion Resistance Sd: {analysis['sd_tot']} m</text>
-    <text x="16" y="138" class="mono-bold" fill="{status_color}">Compliance: {compliance_text}</text>
+    <text x="16" y="138" class="mono-bold" fill="{status_color}">Compliance: {xml_escape(compliance_text)}</text>
     <text x="16" y="160" class="mono-body">Interstitial Dew Point: {'FAIL - Re-specify' if has_cond else 'ZERO Interstitial Dew'}</text>
     <text x="16" y="182" class="mono-body">Thermal Break: Continuous EPDM 20mm</text>
     <text x="16" y="204" class="mono-body">Acoustic Index: Rw ~ 52 dB</text>

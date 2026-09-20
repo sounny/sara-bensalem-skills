@@ -1,0 +1,21 @@
+{
+  "name": "editorial-studio",
+  "version": "1.0.0",
+  "description": "Production-grade Antigravity publishing and visual product design system for books, magazines, architectural monographs, and portfolios. Enforces Swiss typographic discipline, multi-spread narrative pacing, ISO 128 vector drafting, dual-engine compilation (Typst + Paged.js), and automated preflight print compliance.",
+  "author": "Antigravity Editorial Engineering",
+  "tools": [
+    {
+      "name": "compile",
+      "description": "Unified dual-engine publication compiler supporting Typst and Paged.js with bleed, pagination, and ICC color profile controls."
+    },
+    {
+      "name": "preflight_audit",
+      "description": "Automated prepress compliance auditor verifying PDF/X-4 conformance, FOGRA51/52 CMYK, Total Area Coverage (TAC <= 320%), 3mm bleeds, font subsetting, and AABB collision linting."
+    }
+  ],
+  "commands": [
+    "python skills/editorial-studio/engine/compile.py",
+    "python skills/editorial-studio/preflight/audit_publication.py"
+  ],
+  "entrypoint": "engine/compile.py"
+}

@@ -1,6 +1,8 @@
 import json
+import os
 
-existing_p = r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\archetypes.json'
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+existing_p = os.path.join(ROOT_DIR, 'skills', 'portfolio-monograph', 'resources', 'archetypes.json')
 with open(existing_p, 'r', encoding='utf-8') as f:
     archetypes = json.load(f)
 
@@ -167,10 +169,8 @@ for a in new_archetypes:
         archetypes.append(a)
 
 print(f'Total archetypes now: {len(archetypes)}')
-for path in [
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\archetypes.json',
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-design\resources\archetypes.json'
-]:
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(archetypes, f, indent=2)
-    print(f'Wrote {path}')
+target_path = os.path.join(ROOT_DIR, 'skills', 'portfolio-monograph', 'resources', 'archetypes.json')
+with open(target_path, 'w', encoding='utf-8') as f:
+    json.dump(archetypes, f, indent=2)
+print(f'Wrote {target_path}')
+

@@ -197,5 +197,11 @@ def main():
     print(f'   "{report.next_crit_prompt}"')
     print("=" * 76)
 
+    # Standardized Exit Code: 0 = PASS (>=70 and no unaddressed fatal traps), 1 = REWORK / CODE INFRACTION
+    has_unaddressed_fatal = any(v.severity.value == "FATAL" for v in report.top_vulnerabilities) and not ("ACCEPTED" in report.verdict)
+    if report.overall_score < 70 or has_unaddressed_fatal:
+        sys.exit(1)
+    sys.exit(0)
+
 if __name__ == "__main__":
     main()

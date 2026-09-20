@@ -1,4 +1,7 @@
 import json
+import os
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 rubric = {
   "title": "Sara Bensalem 100-Point Spatial Portfolio Audit Rubric (2026 Enhanced Edition)",
@@ -156,10 +159,8 @@ rubric = {
   ]
 }
 
-for path in [
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-monograph\resources\rubric_100pt.json',
-    r'g:\My Drive\Projects\sara-bensalem-skills\skills\portfolio-design\resources\rubric_100pt.json'
-]:
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(rubric, f, indent=2)
-    print(f'Wrote {path}')
+target_path = os.path.join(ROOT_DIR, 'skills', 'portfolio-monograph', 'resources', 'rubric_100pt.json')
+with open(target_path, 'w', encoding='utf-8') as f:
+    json.dump(rubric, f, indent=2)
+print(f'Wrote {target_path}')
+

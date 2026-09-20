@@ -11,5 +11,373 @@
         "path": "G:\\My Drive\\Projects\\sara-bensalem-skills\\docs\\deep_research_comprehensive_taxonomy_of__report_1788549776.md"
       }
     ]
+  },
+  {
+    "skill_id": "portfolio-monograph",
+    "artifact_type": "architectural_skill",
+    "name": "portfolio-monograph",
+    "display_name": "Spatial Portfolio Monograph & Curatorial Critique",
+    "alias": "sara-bensalem-portfolio-design",
+    "version": "1.0.0",
+    "scale_continuum": "1:1 / 1:2 / 16:9 Swiss Publication Monograph & Portfolio Audit",
+    "path": "skills/portfolio-monograph",
+    "description": "Master spatial portfolio design, curation, and architectural critique system created by Sara Bensalem. Provides Swiss typography rules, 10 layout archetypes, the 5-act spatial case study narrative, and a 100-point audit rubric to eliminate render traps and build high-converting architecture, interior architecture, and urban design portfolios.",
+    "author": "Sara Bensalem <sara@sarabensalem.com>",
+    "mcp_tools": [
+      {
+        "name": "compile_monograph_spread",
+        "description": "Compiles 16:9, 2:1, 1:1, 4:3, and A4 landscape Swiss editorial spreads across 20 empirical looks with modular grids and Project Passports."
+      },
+      {
+        "name": "audit_portfolio",
+        "description": "Quantitative 100-point structural portfolio audit engine evaluating page budgets, aspect ratios, word counts, and anti-render-trap redline alerts."
+      },
+      {
+        "name": "list_portfolio_looks",
+        "description": "Lists all 20 calibrated empirical aesthetic and typographical looks with color palettes and font pairings."
+      },
+      {
+        "name": "get_architectural_movement",
+        "description": "Retrieves comprehensive movement taxonomy data including tectonic attributes, detailing rules, and spatial philosophy."
+      },
+      {
+        "name": "orchestrate_case_study",
+        "description": "Synthesizes multi-scale architectural plates into an integrated HTML5 technical dossier and publication case study."
+      },
+      {
+        "name": "portfolio_forensic_linter",
+        "description": "Forensic PDF linter detecting Antipatterns #18 (flattened rasters), #19 (metadata copy-paste), #20 (consumer metadata stamps), and inverted technical sheets."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/portfolio-monograph/scripts/monograph_compiler.py",
+        "description": "Compiles Swiss architectural spreads with modular grids, Passports, and 20 looks"
+      },
+      {
+        "command": "python skills/portfolio-monograph/scripts/audit_portfolio.py",
+        "description": "100-point structural portfolio audit engine evaluating aspect ratios, text density, and redline alerts"
+      },
+      {
+        "command": "python skills/portfolio-monograph/scripts/orchestrate_case_study.py",
+        "description": "Synthesizes multi-scale architectural plates into an HTML5 Technical Dossier"
+      },
+      {
+        "command": "python skills/portfolio-monograph/scripts/portfolio_forensic_linter.py",
+        "description": "Forensic PDF linter detecting Antipatterns #18, #19, #20, and inverted drawings"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/portfolio-monograph/SKILL.md"},
+      {"type": "manifest", "path": "skills/portfolio-monograph/manifest.json"},
+      {"type": "python", "path": "skills/portfolio-monograph/scripts/monograph_compiler.py"},
+      {"type": "python", "path": "skills/portfolio-monograph/scripts/audit_portfolio.py"},
+      {"type": "python", "path": "skills/portfolio-monograph/scripts/orchestrate_case_study.py"},
+      {"type": "python", "path": "skills/portfolio-monograph/scripts/portfolio_forensic_linter.py"}
+    ]
+  },
+  {
+    "skill_id": "constructive-detail",
+    "artifact_type": "architectural_skill",
+    "name": "constructive-detail",
+    "display_name": "Constructive Detailing & 1:20 Tectonic Envelopes",
+    "version": "1.0.0",
+    "scale_continuum": "1:20 Tectonic Wall Sections & Hygrothermal Glaser Calculations",
+    "path": "skills/constructive-detail",
+    "description": "Draws publication-grade 1:20 constructive wall sections with calibrated lineweights, continuous thermal breaks, EPDM flashings, and hygrothermal calculations (U-value, condensation dew points) to establish undeniable constructive competence and eliminate the 3D render trap.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "build_1_20_wall_section",
+        "description": "Generates buildable 1:20 wall sections with Glaser interstitial condensation calculations (DIN 4108-3), thermal break validation, and ISO 128 stroke hierarchies."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/constructive-detail/scripts/wall_section_builder.py",
+        "description": "Generates 1:20 constructive wall sections with Glaser hygrothermal analysis across 6 empirical presets"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/constructive-detail/SKILL.md"},
+      {"type": "manifest", "path": "skills/constructive-detail/manifest.json"},
+      {"type": "python", "path": "skills/constructive-detail/scripts/wall_section_builder.py"}
+    ]
+  },
+  {
+    "skill_id": "spatial-anatomy",
+    "artifact_type": "architectural_skill",
+    "name": "spatial-anatomy",
+    "display_name": "Spatial Anatomy & Statutory Code Compliance",
+    "version": "1.0.0",
+    "scale_continuum": "1:100 Statutory Floor Plans & PMR/ADA Egress Compliance",
+    "path": "skills/spatial-anatomy",
+    "description": "Generates verified 1:100 architectural plans and validates universal accessibility (PMR/ADA) and emergency code egress compliance, checking 1500mm wheelchair turning circles, 900mm door clearances, and travel distance corridors.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "validate_pmr_and_egress",
+        "description": "Validates 1500mm PMR wheelchair turning zones, 900mm door clearances, and egress corridor travel distances."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/spatial-anatomy/scripts/plan_compliance_engine.py",
+        "description": "Validates French PMR & US ADA wheelchair accessibility, 900mm doors, and emergency egress"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/spatial-anatomy/SKILL.md"},
+      {"type": "manifest", "path": "skills/spatial-anatomy/manifest.json"},
+      {"type": "python", "path": "skills/spatial-anatomy/scripts/plan_compliance_engine.py"}
+    ]
+  },
+  {
+    "skill_id": "bioclimatic-flows",
+    "artifact_type": "architectural_skill",
+    "name": "bioclimatic-flows",
+    "display_name": "Bioclimatic Flows & Environmental Thermodynamics",
+    "version": "1.0.0",
+    "scale_continuum": "Macro / Microclimatic Thermodynamics & Solar/Wind Vectors",
+    "path": "skills/bioclimatic-flows",
+    "description": "Calculates passive solar angles, thermodynamic stack ventilation loops, and diurnal thermal mass damping, generating publication-grade bioclimatic vector diagrams grounded in building physics.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "calculate_bioclimatic_flows",
+        "description": "Computes passive solar geometry, seasonal altitude angles, overhang depth sizing, and stack ventilation buoyancy loops."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/bioclimatic-flows/scripts/bioclimatic_calculator.py",
+        "description": "Astronomical solar geometry, overhang sizing, and buoyancy stack ventilation across 5 climate presets"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/bioclimatic-flows/SKILL.md"},
+      {"type": "manifest", "path": "skills/bioclimatic-flows/manifest.json"},
+      {"type": "python", "path": "skills/bioclimatic-flows/scripts/bioclimatic_calculator.py"}
+    ]
+  },
+  {
+    "skill_id": "interior-joinery",
+    "artifact_type": "architectural_skill",
+    "name": "interior-joinery",
+    "display_name": "Interior Joinery & Bespoke Millwork Detailing",
+    "version": "1.0.0",
+    "scale_continuum": "1:5 Custom Millwork, Shadow Reveals & Hardware Clearance",
+    "path": "skills/interior-joinery",
+    "description": "Generates 1:5 custom millwork, bespoke cabinetry reveals, and hardware integration drawings (Blum/Hettich clearances, 3mm shadow reveals, tactile material triptychs) proving fabrication competence.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "generate_1_5_joinery",
+        "description": "Draws 1:5 millwork reveals, shadow reveals (joint creux), slab deflection channels, and manufacturer hinge clearances (Blum/Hettich)."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/interior-joinery/scripts/joinery_detailer.py",
+        "description": "1:5 millwork detailer with shadow reveals, hardware routing, and tactile swatches across 5 empirical presets"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/interior-joinery/SKILL.md"},
+      {"type": "manifest", "path": "skills/interior-joinery/manifest.json"},
+      {"type": "python", "path": "skills/interior-joinery/scripts/joinery_detailer.py"}
+    ]
+  },
+  {
+    "skill_id": "grill-my-design",
+    "artifact_type": "architectural_skill",
+    "name": "grill-my-design",
+    "display_name": "Socratic Design Review & Tribunal Defense",
+    "version": "1.0.0",
+    "scale_continuum": "Socratic Defense Tribunal & 22 Lethal Render Trap Audit",
+    "path": "skills/grill-my-design",
+    "description": "Socratic architectural design review jury and portfolio cross-examiner. Interactively grills architects and designers on buildability, 1:20 constructive detailing, thermal breaks, spatial circulation, PMR/ADA compliance, and recruiter trust ergonomics before issuing high-stakes hiring and competition verdicts.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "grill_my_design",
+        "description": "Socratic architectural design review tribunal identifying all 22 lethal render traps across 7 typologies with 5 jury personas."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/grill-my-design/engine/cli.py",
+        "description": "Socratic jury review tribunal detecting 22 lethal render traps across 7 typologies with 5 personas"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/grill-my-design/SKILL.md"},
+      {"type": "manifest", "path": "skills/grill-my-design/manifest.json"},
+      {"type": "python", "path": "skills/grill-my-design/engine/cli.py"},
+      {"type": "python", "path": "skills/grill-my-design/engine/critique_engine.py"}
+    ]
+  },
+  {
+    "skill_id": "spatial-choreography",
+    "artifact_type": "architectural_skill",
+    "name": "spatial-choreography",
+    "display_name": "Spatial Choreography & Phenomenological Trajectories",
+    "version": "1.0.0",
+    "scale_continuum": "Phenomenological Spatial Trajectories & Courtyard Stereotomy",
+    "path": "skills/spatial-choreography",
+    "description": "Designs experiential spatial journeys, emotional thresholds, luminance lux choreography, acoustic sanctuary gradients, and subtractive courtyard stereotomy in architectural and interior design.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "model_spatial_journey",
+        "description": "Models phenomenological spatial trajectories across luminance lux levels, acoustic dBA, volumetric compression ratios, and evocative naming."
+      },
+      {
+        "name": "audit_courtyard_shading",
+        "description": "Calculates subtractive courtyard aspect ratios (H/W) and verifies self-shading microclimates."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/spatial-choreography/scripts/spatial_journey_matrix.py",
+        "description": "Evaluates experiential spatial sequences across lux gradients, dBA attenuation, and courtyard shading"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/spatial-choreography/SKILL.md"},
+      {"type": "manifest", "path": "skills/spatial-choreography/manifest.json"},
+      {"type": "python", "path": "skills/spatial-choreography/scripts/spatial_journey_matrix.py"}
+    ]
+  },
+  {
+    "skill_id": "spatial-stitch",
+    "artifact_type": "architectural_skill",
+    "name": "spatial-stitch",
+    "display_name": "Spatial Stitch Generative Layout Engine",
+    "version": "1.0.0",
+    "scale_continuum": "Generative Design Engine for Architectural Spreads & Systems",
+    "path": "skills/spatial-stitch",
+    "description": "Google Stitch-style generative design skillset for architectural portfolios, monograph publishing, multi-spread case studies, and editorial document design. Operates on spreads, tectonic plates, constructive 1:20 drawings, and Swiss typographic grids rather than web UI.",
+    "author": "Sara Bensalem Studio",
+    "mcp_tools": [
+      {
+        "name": "create_project",
+        "description": "Initializes a spatial stitch publication project."
+      },
+      {
+        "name": "get_project",
+        "description": "Retrieves project details, metadata, and spread manifest."
+      },
+      {
+        "name": "list_projects",
+        "description": "Lists all active spatial stitch projects."
+      },
+      {
+        "name": "generate_spread_from_text",
+        "description": "Generates 16:9 vector spread layouts from prompt across 10 archetypes."
+      },
+      {
+        "name": "edit_spreads",
+        "description": "Applies structural edits and content reflows to existing spreads."
+      },
+      {
+        "name": "generate_variants",
+        "description": "Generates design variants across different layout archetypes."
+      },
+      {
+        "name": "get_spread",
+        "description": "Retrieves raw SVG or HTML content of a specific spread."
+      },
+      {
+        "name": "audit_spread",
+        "description": "Audits spread layouts against Swiss grid rules and anti-render-trap constraints."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/spatial-stitch/scripts/spatial_stitch.py",
+        "description": "Google Stitch style generative CLI for architectural spreads, variant generation, and audits"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/spatial-stitch/SKILL.md"},
+      {"type": "manifest", "path": "skills/spatial-stitch/manifest.json"},
+      {"type": "python", "path": "skills/spatial-stitch/scripts/spatial_stitch.py"},
+      {"type": "python", "path": "skills/spatial-stitch/engine/server.py"}
+    ]
+  },
+  {
+    "skill_id": "design-md-extractor",
+    "artifact_type": "architectural_skill",
+    "name": "design-md-extractor",
+    "display_name": "DESIGN.md Reverse Engineering & Token Extractor",
+    "version": "1.0.0",
+    "scale_continuum": "Reverse-Engineering DESIGN.md & Stitch Design Systems from PDF/Web",
+    "path": "skills/design-md-extractor",
+    "description": "Reverse-engineers publication-grade DESIGN.md specifications and Google Stitch design systems from live websites (via headless browser / Playwright) and PDF documents (monographs, portfolios, brand guidelines via PyMuPDF). Exports tokens for Google Stitch, Tailwind CSS, Typst, and Antigravity Design Studio.",
+    "author": "Antigravity Visual Engineering",
+    "mcp_tools": [
+      {
+        "name": "extract_design_pdf",
+        "description": "Extracts design tokens, typography, palettes, and layout rules from PDF monographs into DESIGN.md."
+      },
+      {
+        "name": "extract_design_web",
+        "description": "Crawls live web architectures using headless Playwright to reverse-engineer design tokens into DESIGN.md."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/design-md-extractor/scripts/extract_from_pdf.py",
+        "description": "Reverse-engineers DESIGN.md and Stitch design systems from architectural PDF monographs"
+      },
+      {
+        "command": "python skills/design-md-extractor/scripts/extract_from_web.py",
+        "description": "Headless Playwright crawler extracting computed DOM styles, typography, and color tokens"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/design-md-extractor/SKILL.md"},
+      {"type": "manifest", "path": "skills/design-md-extractor/manifest.json"},
+      {"type": "python", "path": "skills/design-md-extractor/scripts/extract_from_pdf.py"},
+      {"type": "python", "path": "skills/design-md-extractor/scripts/extract_from_web.py"}
+    ]
+  },
+  {
+    "skill_id": "editorial-studio",
+    "artifact_type": "architectural_skill",
+    "name": "editorial-studio",
+    "display_name": "Editorial Studio & Preflight Publishing Engine",
+    "version": "1.0.0",
+    "scale_continuum": "Production-Grade Dual-Engine Publishing (Typst + Paged.js) & Preflight Print Compliance",
+    "path": "skills/editorial-studio",
+    "description": "Production-grade Antigravity publishing and visual product design system for books, magazines, architectural monographs, and portfolios. Enforces Swiss typographic discipline, multi-spread narrative pacing, ISO 128 vector drafting, dual-engine compilation (Typst + Paged.js), and automated preflight print compliance.",
+    "author": "Antigravity Editorial Engineering",
+    "mcp_tools": [
+      {
+        "name": "compile",
+        "description": "Unified dual-engine publication compiler supporting Typst and Paged.js with bleed, pagination, and ICC color profile controls."
+      },
+      {
+        "name": "preflight_audit",
+        "description": "Automated prepress compliance auditor verifying PDF/X-4 conformance, FOGRA51/52 CMYK, Total Area Coverage (TAC <= 320%), 3mm bleeds, font subsetting, and AABB collision linting."
+      }
+    ],
+    "cli_commands": [
+      {
+        "command": "python skills/editorial-studio/engine/compile.py",
+        "description": "Unified dual-engine compiler orchestrating Typst and Paged.js web-to-print compilation"
+      },
+      {
+        "command": "python skills/editorial-studio/preflight/audit_publication.py",
+        "description": "Preflight print compliance auditor checking PDF/X-4, FOGRA51/52 CMYK, TAC <= 320%, and collisions"
+      }
+    ],
+    "files": [
+      {"type": "markdown", "path": "skills/editorial-studio/SKILL.md"},
+      {"type": "manifest", "path": "skills/editorial-studio/manifest.json"},
+      {"type": "python", "path": "skills/editorial-studio/engine/compile.py"},
+      {"type": "python", "path": "skills/editorial-studio/preflight/audit_publication.py"}
+    ]
   }
 ]

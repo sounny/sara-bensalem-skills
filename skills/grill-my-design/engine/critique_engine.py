@@ -127,7 +127,7 @@ class GrillEngine:
                     "We designed a thermally decoupled self-supporting exterior chassis with pin connections.",
                     "This was a conceptual competition scheme where tectonic detailing was deferred to Stage 3."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly granite_hemp --output wall_section_1_20.svg',
+                remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly granite_hemp --output wall_section_1_20.svg',
                 round_number=1
             ))
 
@@ -145,7 +145,7 @@ class GrillEngine:
                     "The project was an urban masterplan focus, but I can produce a 1:20 tectonic assembly sheet.",
                     "I prioritized 3D atmospheric perspectives over technical working drawings in this spread."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --output wall_section_1_20.svg',
+                remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --output wall_section_1_20.svg',
                 round_number=1
             ))
 
@@ -181,7 +181,7 @@ class GrillEngine:
                     "Accessible routes are integrated into the main public sequence rather than segregated.",
                     "PMR clearances were not explicitly drafted on this schematic plan."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-anatomy\\scripts\\plan_compliance_engine.py" --door 930 --vestibule 1500 --corridor 1600 --output plan_1_100_pmr.svg',
+                remediation_command='python "skills/spatial-anatomy/scripts/plan_compliance_engine.py" --door 930 --vestibule 1500 --corridor 1600 --output plan_1_100_pmr.svg',
                 round_number=1
             ))
 
@@ -217,7 +217,7 @@ class GrillEngine:
                     "The massing uses self-shading overhangs calibrated to 45° summer solar zenith angle.",
                     "Solar loads were managed primarily via mechanical active chilled beam cooling."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\bioclimatic-flows\\scripts\\bioclimatic_calculator.py" --zone temperate_strasbourg --output bioclimatic_plate.svg',
+                remediation_command='python "skills/bioclimatic-flows/scripts/bioclimatic_calculator.py" --zone temperate_strasbourg --output bioclimatic_plate.svg',
                 round_number=2
             ))
 
@@ -255,7 +255,7 @@ class GrillEngine:
                     "I was an architectural intern handling 3D visualization, physical modeling, and diagramming.",
                     "This was an individual academic thesis project conceived and drafted entirely by me."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_PASSPORT --output passport_spread.svg',
+                remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_PASSPORT --output passport_spread.svg',
                 round_number=3
             ))
 
@@ -293,7 +293,7 @@ class GrillEngine:
                     "I used a dynamic editorial grid with varying column widths to differentiate drawings from narrative.",
                     "The layout was placed organically without a fixed underlying columnar grid."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output swiss_grid_spread.svg',
+                remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output swiss_grid_spread.svg',
                 round_number=3
             ))
 
@@ -311,7 +311,7 @@ class GrillEngine:
                     "This project was focused purely on macro-urban territorial analysis and transit infrastructure.",
                     "I omitted the 1:20 detail because I wanted to emphasize the atmospheric interior perspective."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output trifecta_spread.svg',
+                remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output trifecta_spread.svg',
                 round_number=3
             ))
 
@@ -329,7 +329,7 @@ class GrillEngine:
                     "We reduced secondary text blocks to 3-line curatorial summaries to give drawings room to breathe.",
                     "The layout was designed to pack maximum content into limited page limits."
                 ],
-                remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output airy_spread.svg',
+                remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output airy_spread.svg',
                 round_number=3
             ))
 

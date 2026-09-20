@@ -41,7 +41,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We recessed the glazing 600mm beneath deep architectural overhangs to provide complete passive summer shading.",
             "Solar gain was accepted as a passive heating strategy and tempered by active chilled ceiling beams."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\bioclimatic-flows\\scripts\\bioclimatic_calculator.py" --output bioclimatic_flow_plate.svg'
+        remediation_command='python "skills/bioclimatic-flows/scripts/bioclimatic_calculator.py" --output bioclimatic_flow_plate.svg'
     ),
     2: RenderTrapDefinition(
         trap_id=2,
@@ -61,7 +61,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We integrated a structural laminated glass balustrade (21.5mm SGP interlayer) designed as a load-bearing girder.",
             "This was an early conceptual competition render; structural chassis engineering was deferred to execution phase."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --output wall_section_1_20.svg'
     ),
     3: RenderTrapDefinition(
         trap_id=3,
@@ -81,7 +81,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Perimeter infill scribes (25mm) were integrated for on-site scribing against uneven masonry walls.",
             "The millwork was rendered flush for aesthetic minimalism without modeling physical construction tolerances."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\interior-joinery\\scripts\\joinery_detailer.py" --gap 3 --output joinery_1_5_detail.svg'
+        remediation_command='python "skills/interior-joinery/scripts/joinery_detailer.py" --gap 3 --output joinery_1_5_detail.svg'
     ),
     4: RenderTrapDefinition(
         trap_id=4,
@@ -101,7 +101,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "The stone acts strictly as cosmetic non-structural cladding over a cast-in-place post-tensioned concrete bracket.",
             "The rendering depicted solid stone conceptually; engineering review will replace it with composite cladding."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly commercial_curtain --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly commercial_curtain --output wall_section_1_20.svg'
     ),
     5: RenderTrapDefinition(
         trap_id=5,
@@ -121,7 +121,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "The wall is sheltered by a 1200mm roof overhang and finished with a breathable potassium silicate water-repellent impregnation.",
             "The drawing represented an early massing study where foundation and base detailing were omitted."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly nubian_sandstone --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly nubian_sandstone --output wall_section_1_20.svg'
     ),
     6: RenderTrapDefinition(
         trap_id=6,
@@ -141,7 +141,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "The deck rests on precast reinforced concrete pier caps isolated by neoprene elastomeric vibration pads.",
             "Water levels in the render were dramatized; physical construction sits above the statutory flood embankment."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly tropical_timber --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly tropical_timber --output wall_section_1_20.svg'
     ),
     7: RenderTrapDefinition(
         trap_id=7,
@@ -161,7 +161,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Aerodynamic wind tunnel testing was conducted to verify corner drag coefficients under 1.15.",
             "The tower form is an early masterplan block; aerodynamic shaping will occur during wind tunnel engineering."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\bioclimatic-flows\\scripts\\bioclimatic_calculator.py" --output bioclimatic_flow_plate.svg'
+        remediation_command='python "skills/bioclimatic-flows/scripts/bioclimatic_calculator.py" --output bioclimatic_flow_plate.svg'
     ),
     8: RenderTrapDefinition(
         trap_id=8,
@@ -181,7 +181,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Exposed ducts are double-walled spiral insulated acoustic pipe with perforated inner liners.",
             "The MEP visual was a generic Revit placeholder; acoustic coordination will be detailed in technical tender."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-choreography\\scripts\\spatial_journey_matrix.py" --output spatial_journey_plate.svg'
+        remediation_command='python "skills/spatial-choreography/scripts/spatial_journey_matrix.py" --output spatial_journey_plate.svg'
     ),
     9: RenderTrapDefinition(
         trap_id=9,
@@ -201,7 +201,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We specified heavy-duty Hawa Junior 100 pocket systems with integrated soft-close and vertical tolerance adjustment.",
             "The door was rendered full-height schematically; site framing will include a 150mm structural lintel drop."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\interior-joinery\\scripts\\joinery_detailer.py" --detail pocket_door_head --output joinery_1_5_detail.svg'
+        remediation_command='python "skills/interior-joinery/scripts/joinery_detailer.py" --detail pocket_door_head --output joinery_1_5_detail.svg'
     ),
     10: RenderTrapDefinition(
         trap_id=10,
@@ -220,7 +220,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "All diagrams include high-contrast typographic text labels directly adjacent to every indicator icon.",
             "The presentation slide was an early graphic concept and will be updated to accessible symbology."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_PASSPORT --output accessible_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_PASSPORT --output accessible_spread.svg'
     ),
     11: RenderTrapDefinition(
         trap_id=11,
@@ -240,7 +240,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We adopted dark titanium glassmorphic tokens with high-contrast slate text (#F1F5F9 text on #0B0F17 substrate).",
             "The portfolio was exported in high contrast for print; digital screen settings will be calibrated."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output high_contrast_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output high_contrast_spread.svg'
     ),
     12: RenderTrapDefinition(
         trap_id=12,
@@ -260,7 +260,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Each project demonstrates a distinct technical competency (BIM, parametric facade, adaptive reuse, PMR).",
             "I will curate the portfolio down to the 4 most relevant commercial projects for the partner interview."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_5_ACT_PORTFOLIO --output curated_portfolio.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_5_ACT_PORTFOLIO --output curated_portfolio.svg'
     ),
     13: RenderTrapDefinition(
         trap_id=13,
@@ -279,7 +279,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "I drafted concise Project Passport blocks specifying GIA, scale, structural system, and client program for every plate.",
             "I take full responsibility for the typographical oversight and have sanitized all document copy."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_PASSPORT --output clean_passport.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_PASSPORT --output clean_passport.svg'
     ),
     14: RenderTrapDefinition(
         trap_id=14,
@@ -299,7 +299,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We zoomed into primary tectonic details at full bleed, isolating individual orthographic drawings from the competition board.",
             "I will split the presentation board into dedicated landscape case-study leaves."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output disassembled_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output disassembled_spread.svg'
     ),
     15: RenderTrapDefinition(
         trap_id=15,
@@ -319,7 +319,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We integrated complete foundation strip footings, moisture barrier lap splices, and acoustic floating floor buildups.",
             "I mislabeled the drawing sheet; it will be corrected to show true tectonic sectional depth."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --output wall_section_1_20.svg'
     ),
     16: RenderTrapDefinition(
         trap_id=16,
@@ -339,7 +339,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "All functional zones maintain verified furniture footprints plus statutory 1500mm PMR wheelchair turning envelopes.",
             "We recalculated GIA and NIA schedules directly from CAD polylines to eliminate manual entry errors."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-anatomy\\scripts\\plan_compliance_engine.py" --output plan_1_100_pmr.svg'
+        remediation_command='python "skills/spatial-anatomy/scripts/plan_compliance_engine.py" --output plan_1_100_pmr.svg'
     ),
     17: RenderTrapDefinition(
         trap_id=17,
@@ -358,7 +358,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "The manufacturer certifications were acquired in professional practice; the academic portfolio has now been updated with technical tender plates.",
             "I will supplement the portfolio case study with our practice tender specification package."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly commercial_curtain --output wall_section_1_20.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly commercial_curtain --output wall_section_1_20.svg'
     ),
     18: RenderTrapDefinition(
         trap_id=18,
@@ -377,7 +377,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Raster elements are strictly restricted to 300 DPI photography and material textures behind crisp vector linework.",
             "The sample was compressed for email transfer; high-resolution vector PDF is provided for review."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output vector_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output vector_spread.svg'
     ),
     19: RenderTrapDefinition(
         trap_id=19,
@@ -396,7 +396,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "We audited all drawing title blocks and metadata tables to ensure 100% concordance with architectural programs.",
             "I corrected the project data passport across all portfolio sheets."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_PASSPORT --output clean_passport.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_PASSPORT --output clean_passport.svg'
     ),
     20: RenderTrapDefinition(
         trap_id=20,
@@ -415,7 +415,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Web compression was applied as a temporary measure; the official master PDF is authored with studio metadata.",
             "I have updated the PDF title and metadata dictionary to reflect professional monograph standards."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output sanitized_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output sanitized_spread.svg'
     ),
     21: RenderTrapDefinition(
         trap_id=21,
@@ -434,7 +434,7 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "Every spread is rendered full bleed without artificial shadow borders to optimize 4K screen readability.",
             "I will replace the mockup angles with direct full-bleed PDF spreads."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output full_bleed_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_MONOGRAPH_SPREAD --output full_bleed_spread.svg'
     ),
     22: RenderTrapDefinition(
         trap_id=22,
@@ -453,19 +453,25 @@ RENDER_TRAPS_CATALOG: Dict[int, RenderTrapDefinition] = {
             "For print publication, we adhere strictly to ISO A4 landscape with unified folio geometry throughout.",
             "I corrected the cover template to match the widescreen landscape grid of the case study leaves."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_PASSPORT --output unified_cover.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_PASSPORT --output unified_cover.svg'
     )
 }
 
+# Precompile regex triggers for microsecond matching performance across all 22 traps
+PRECOMPILED_TRAP_PATTERNS = {
+    trap_id: [re.compile(pat, re.IGNORECASE) for pat in trap.regex_triggers]
+    for trap_id, trap in RENDER_TRAPS_CATALOG.items()
+}
+
 def detect_render_traps(text: str) -> List[RenderTrapDefinition]:
-    """Scans text for occurrences of the 22 Lethal Render Traps."""
+    """Scans text for occurrences of the 22 Lethal Render Traps using precompiled regexes."""
     detected = []
     text_lower = text.lower()
     
-    for trap_id, trap in RENDER_TRAPS_CATALOG.items():
-        for pattern in trap.regex_triggers:
-            if re.search(pattern, text_lower, re.IGNORECASE):
-                detected.append(trap)
+    for trap_id, compiled_patterns in PRECOMPILED_TRAP_PATTERNS.items():
+        for pat in compiled_patterns:
+            if pat.search(text_lower):
+                detected.append(RENDER_TRAPS_CATALOG[trap_id])
                 break
                 
     return detected

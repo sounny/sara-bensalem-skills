@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Repacks web/sara-bensalem-skills.zip with the latest updated skills and mcp-server.
+Repacks web/sara-bensalem-skills.zip with the complete canonical 10 architectural skills,
+mcp-server, operational CLI scripts, tests, and documentation.
 """
 import os
 import zipfile
@@ -8,37 +9,34 @@ import zipfile
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ZIP_PATH = os.path.join(BASE_DIR, "web", "sara-bensalem-skills.zip")
 
+EXCLUDED_DIRS = {"__pycache__", ".git", ".pytest_cache", "venv", ".venv", "node_modules", ".agents"}
+EXCLUDED_EXTS = {".pyc", ".pyo", ".tmp", ".DS_Store"}
+
 def repack():
     print(f"Repacking {ZIP_PATH}...")
-    with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        # Add skills
-        skills_dir = os.path.join(BASE_DIR, "skills")
-        for root, dirs, files in os.walk(skills_dir):
-            if "__pycache__" in root or ".git" in root:
-                continue
-            for f in files:
-                if f.endswith(".pyc") or f.endswith(".tmp"):
-                    continue
-                full_path = os.path.join(root, f)
-                arcname = os.path.relpath(full_path, BASE_DIR).replace("\\", "/")
-                zf.write(full_path, arcname)
-                
-        # Add mcp-server
-        mcp_dir = os.path.join(BASE_DIR, "mcp-server")
-        for root, dirs, files in os.walk(mcp_dir):
-            if "__pycache__" in root or ".git" in root:
-                continue
-            for f in files:
-                if f.endswith(".pyc") or f.endswith(".tmp"):
-                    continue
-                full_path = os.path.join(root, f)
-                arcname = os.path.relpath(full_path, BASE_DIR).replace("\\", "/")
-                zf.write(full_path, arcname)
+    include_dirs = ["skills", "mcp-server", "scripts", "tests", "docs"]
+    include_files = ["README.md", "gemini_manifest.json"]
 
-        # Add README.md
-        readme_path = os.path.join(BASE_DIR, "README.md")
-        if os.path.exists(readme_path):
-            zf.write(readme_path, "README.md")
+    with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for d in include_dirs:
+            dir_path = os.path.join(BASE_DIR, d)
+            if not os.path.exists(dir_path):
+                continue
+            for root, dirs, files in os.walk(dir_path):
+                # Filter out excluded directory trees in-place
+                dirs[:] = [sub for sub in dirs if sub not in EXCLUDED_DIRS]
+                for f in files:
+                    ext = os.path.splitext(f)[1]
+                    if ext in EXCLUDED_EXTS or f.startswith("."):
+                        continue
+                    full_path = os.path.join(root, f)
+                    arcname = os.path.relpath(full_path, BASE_DIR).replace("\\", "/")
+                    zf.write(full_path, arcname)
+
+        for f_name in include_files:
+            f_path = os.path.join(BASE_DIR, f_name)
+            if os.path.exists(f_path):
+                zf.write(f_path, f_name)
 
     size_kb = os.path.getsize(ZIP_PATH) / 1024
     print(f"Repacking complete. Archive size: {size_kb:.1f} KB")

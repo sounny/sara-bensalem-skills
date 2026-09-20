@@ -48,7 +48,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "We integrated a sheltered 1200mm canopy overhang above the threshold preventing driving rain exposure.",
             "Threshold detailing was treated conceptually in schematic presentation."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly granite_hemp --output villa_wall_section.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly granite_hemp --output villa_wall_section.svg'
     ),
     ArchitecturalTypology.HIGH_RISE_COMMERCIAL: TypologyAuditProfile(
         typology=ArchitecturalTypology.HIGH_RISE_COMMERCIAL,
@@ -68,7 +68,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "Corner chamfers (15% building width) reduce aerodynamic cross-wind vortex shedding forces by 22%.",
             "Core and envelope engineering were estimated using standard commercial benchmark ratios."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\bioclimatic-flows\\scripts\\bioclimatic_calculator.py" --output tower_wind_aerodynamics.svg'
+        remediation_command='python "skills/bioclimatic-flows/scripts/bioclimatic_calculator.py" --output tower_wind_aerodynamics.svg'
     ),
     ArchitecturalTypology.CULTURAL_MUSEUM: TypologyAuditProfile(
         typology=ArchitecturalTypology.CULTURAL_MUSEUM,
@@ -88,7 +88,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "The circulation sequence flows through a continuous 1:15 universal ramp system with verified 1800mm passing bays.",
             "Gallery illumination was planned based on standard indirect diffuse ceiling cove fixtures."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-choreography\\scripts\\spatial_journey_matrix.py" --output museum_spatial_journey.svg'
+        remediation_command='python "skills/spatial-choreography/scripts/spatial_journey_matrix.py" --output museum_spatial_journey.svg'
     ),
     ArchitecturalTypology.ADAPTIVE_REUSE: TypologyAuditProfile(
         typology=ArchitecturalTypology.ADAPTIVE_REUSE,
@@ -108,7 +108,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "All new floor loads are carried by internal steel flitch plates bolted to reversible chemical anchors.",
             "Insulation was planned as standard rigid PIR with interior vapor retarder."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly granite_hemp --output heritage_wall_glaser.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly granite_hemp --output heritage_wall_glaser.svg'
     ),
     ArchitecturalTypology.MASS_TIMBER: TypologyAuditProfile(
         typology=ArchitecturalTypology.MASS_TIMBER,
@@ -128,7 +128,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "Timber elements are elevated 200mm on hot-dip galvanized steel plinths with continuous EPDM capillary breaks.",
             "Mass timber detailing will be coordinated with the timber prefabricator during Stage 4."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly alpine_monocoque --output clt_mass_timber_detail.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly alpine_monocoque --output clt_mass_timber_detail.svg'
     ),
     ArchitecturalTypology.RIPARIAN_WATERFRONT: TypologyAuditProfile(
         typology=ArchitecturalTypology.RIPARIAN_WATERFRONT,
@@ -148,7 +148,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "The foundation consists of precast reinforced concrete pier caps isolated by neoprene elastomeric pads.",
             "The water level shown in the render is conceptual and will be engineered above statutory flood lines."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\constructive-detail\\scripts\\wall_section_builder.py" --assembly tropical_timber --output waterfront_pier_detail.svg'
+        remediation_command='python "skills/constructive-detail/scripts/wall_section_builder.py" --assembly tropical_timber --output waterfront_pier_detail.svg'
     ),
     ArchitecturalTypology.URBAN_MASTERPLAN: TypologyAuditProfile(
         typology=ArchitecturalTypology.URBAN_MASTERPLAN,
@@ -168,7 +168,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "Service and delivery logistics are completely separated into an underground ring corridor decoupled from pedestrian plazas.",
             "FAR and density metrics were estimated based on local district zoning targets."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_URBAN_SYSTEM --output urban_masterplan_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_URBAN_SYSTEM --output urban_masterplan_spread.svg'
     ),
     ArchitecturalTypology.GENERAL_COMMERCIAL: TypologyAuditProfile(
         typology=ArchitecturalTypology.GENERAL_COMMERCIAL,
@@ -188,7 +188,7 @@ TYPOLOGY_PROFILES: Dict[ArchitecturalTypology, TypologyAuditProfile] = {
             "The envelope incorporates continuous thermal breaks and calculated solar shading louvers.",
             "The project was an academic exercise emphasizing schematic massing over working drawings."
         ],
-        remediation_command='python "C:\\Users\\sounn\\.gemini\\config\\skills\\spatial-stitch\\scripts\\spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output trifecta_spread.svg'
+        remediation_command='python "skills/spatial-stitch/scripts/spatial_stitch.py" generate --archetype THE_CONSTRUCTIVE_PROOF --output trifecta_spread.svg'
     )
 }
 

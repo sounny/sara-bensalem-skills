@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-monograph",
+  "version": "1.0.0",
+  "alias": "sara-bensalem-portfolio-design",
+  "description": "Master spatial portfolio design, curation, and architectural critique system created by Sara Bensalem. Provides Swiss typography rules, 10 layout archetypes, the 5-act spatial case study narrative, and a 100-point audit rubric to eliminate render traps and build high-converting architecture, interior architecture, and urban design portfolios.",
+  "author": "Sara Bensalem <sara@sarabensalem.com>",
+  "website": "https://skills.sarabensalem.com",
+  "github": "https://github.com/sounny/sara-bensalem-skills",
+  "tools": [
+    {
+      "name": "compile_monograph_spread",
+      "description": "Compiles 16:9, 2:1, 1:1, 4:3, and A4 landscape Swiss editorial spreads across 20 empirical looks with modular grids (6, 8, 9, 10, 12, 16 cols) and Project Passports."
+    },
+    {
+      "name": "audit_portfolio",
+      "description": "Quantitative 100-point structural portfolio audit engine evaluating page budgets, aspect ratios, word counts, and anti-render-trap redline alerts."
+    },
+    {
+      "name": "orchestrate_case_study",
+      "description": "Synthesizes multi-scale architectural plates into an integrated HTML5 technical dossier and publication case study."
+    },
+    {
+      "name": "portfolio_forensic_linter",
+      "description": "Forensic PDF linter detecting Antipatterns #18 (flattened rasters), #19 (metadata copy-paste), #20 (consumer metadata stamps), and inverted technical sheets."
+    }
+  ],
+  "commands": [
+    "python skills/portfolio-monograph/scripts/monograph_compiler.py",
+    "python skills/portfolio-monograph/scripts/audit_portfolio.py",
+    "python skills/portfolio-monograph/scripts/orchestrate_case_study.py",
+    "python skills/portfolio-monograph/scripts/portfolio_forensic_linter.py"
+  ]
+}

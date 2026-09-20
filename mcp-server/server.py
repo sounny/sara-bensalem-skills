@@ -158,6 +158,65 @@ TOOLS = [
             },
             "required": ["movement"]
         }
+    },
+    {
+        "name": "generate_spatial_journey",
+        "description": "Generates a 3-part phenomenological spatial journey (luminance gradient, acoustic sanctuary attenuation, volumetric compression/expansion) across spatial sequences.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "preset": {"type": "string", "enum": ["temperate_museum", "desert_sanctuary", "urban_courtyard"], "description": "Spatial sequence preset."},
+                "output_path": {"type": "string", "description": "Target SVG output file path."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "generate_monograph_spread",
+        "description": "Generates a publication-grade vector SVG monograph spread from 10 architectural archetypes using the Spatial Stitch generative design engine.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "archetype": {"type": "string", "description": "Layout archetype name (e.g. 'THE_CONSTRUCTIVE_PROOF', 'THE_PASSPORT', 'THE_5_ACT_PORTFOLIO', 'THE_MONOGRAPH_SPREAD')."},
+                "format": {"type": "string", "enum": ["LANDSCAPE_16_9", "SPREAD_A4_LANDSCAPE", "SINGLE_A4_PORTRAIT", "SQUARE_1_1"], "description": "Canvas format."},
+                "title": {"type": "string", "description": "Project title."},
+                "output_path": {"type": "string", "description": "Target output file path (.svg or .html)."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "audit_monograph_spread",
+        "description": "Runs the Sara Bensalem 100-Point Anti-Render-Trap Audit on a generated or existing architectural spread SVG.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "svg_file": {"type": "string", "description": "Absolute path to the SVG spread file to audit."}
+            },
+            "required": ["svg_file"]
+        }
+    },
+    {
+        "name": "extract_design_tokens",
+        "description": "Extracts dominant color palettes, relative luminance, and WCAG 2.1 contrast hierarchies from architectural images/renderings to generate DESIGN.md tokens.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "image_path": {"type": "string", "description": "Path to the architectural rendering or photograph."}
+            },
+            "required": ["image_path"]
+        }
+    },
+    {
+        "name": "audit_publication_preflight",
+        "description": "Performs prepress print preflight validation (FOGRA51/52 CMYK, Total Area Coverage, bleed zones, font embedding, image DPI) for editorial publications.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "file_path": {"type": "string", "description": "Path to PDF publication file to preflight."}
+            },
+            "required": ["file_path"]
+        }
     }
 ]
 
@@ -175,18 +234,29 @@ def handle_list_skills():
         "studio": 'Sara Bensalem Studio • Strasbourg Atelier [48°35\'05"N 07°45\'02"E]',
         "skills": [
             {"name": "portfolio-monograph", "role": "Multi-spread Swiss monograph publishing, 19 curated looks & Project Passports"},
-            {"name": "constructive-detail", "role": "1:20 buildable wall sections across 6 assemblies & Glaser U-values"},
-            {"name": "grill-my-design", "role": "Socratic architectural review jury across 5 personas (including Visual Curator)"},
-            {"name": "spatial-anatomy", "role": "1:100 plans, circulation vectors, 1500mm PMR wheelchair turning & Space for Hesitation"},
+            {"name": "constructive-detail", "role": "1:20 buildable wall sections across 6 assemblies & Glaser U-values (DIN 4108-3)"},
+            {"name": "grill-my-design", "role": "Socratic architectural review jury, 22 render traps & multi-round defense evaluation"},
+            {"name": "spatial-anatomy", "role": "1:100 regulatory plans, circulation vectors, 1500mm PMR wheelchair turning & Space for Hesitation"},
             {"name": "bioclimatic-flows", "role": "Solar geometry vectors, shading overhang depth & stack ventilation draft across 5 climate zones"},
-            {"name": "interior-joinery", "role": "1:5 custom millwork reveals, shadow reveals (joint creux) & concealed hardware tolerances"}
+            {"name": "interior-joinery", "role": "1:5 custom millwork reveals, shadow reveals (joint creux) & concealed hardware tolerances"},
+            {"name": "spatial-choreography", "role": "Phenomenological spatial journeys, luminance lux gradients, acoustic sanctuary & subtractive courtyards"},
+            {"name": "spatial-stitch", "role": "Generative Swiss 16:9 monograph vector spreads, layout archetypes & 100-point rubric audits"},
+            {"name": "design-md-extractor", "role": "Design token reverse engineering from images/drawings, palette extraction & WCAG contrast audit"},
+            {"name": "editorial-studio", "role": "Publication-grade prepress print preflight, FOGRA51 CMYK color compliance & typography audit"}
         ],
         "total_empirical_looks": len(load_json_resource("portfolio_looks_library.json", {})),
         "total_archetypes": len(ARCHETYPES)
     }
 
 def handle_grill(submission_text, persona="full", output_svg=None, return_questions=False, answers=None, round_num=None, typology=None):
-    sys.path.insert(0, os.path.join(SKILLS_DIR, "grill-my-design", "engine"))
+    grill_dir = os.path.join(SKILLS_DIR, "grill-my-design", "engine")
+    if "models" in sys.modules:
+        mod_file = getattr(sys.modules["models"], "__file__", "") or ""
+        if not mod_file.startswith(grill_dir):
+            del sys.modules["models"]
+    if grill_dir in sys.path:
+        sys.path.remove(grill_dir)
+    sys.path.insert(0, grill_dir)
     try:
         from critique_engine import GrillEngine
         from models import JuryPersona
@@ -344,6 +414,100 @@ def handle_call_tool(tool_name, arguments):
             if m in k or m in v.get("name", "").lower():
                 return v
         return {"error": f"Movement '{m}' not found.", "available_movements": list(langs.keys())}
+    elif tool_name == "generate_spatial_journey":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "spatial-choreography", "scripts"))
+        from spatial_journey_matrix import DEFAULT_ZONES, parse_sequence_arg, evaluate_journey, generate_journey_svg
+        seq_str = arguments.get("sequence")
+        out = arguments.get("output_path", "spatial_journey.svg")
+        zones = parse_sequence_arg(seq_str) if seq_str else DEFAULT_ZONES
+        out_svg, evaluation = generate_journey_svg(zones, output_path=out)
+        return {
+            "status": "success",
+            "file": out_svg,
+            "verdict": evaluation["verdict"],
+            "zones_count": len(zones),
+            "warnings": evaluation.get("warnings", [])
+        }
+    elif tool_name == "generate_monograph_spread":
+        stitch_dir = os.path.join(SKILLS_DIR, "spatial-stitch", "engine")
+        if "models" in sys.modules:
+            mod_file = getattr(sys.modules["models"], "__file__", "") or ""
+            if not mod_file.startswith(stitch_dir):
+                del sys.modules["models"]
+        if stitch_dir in sys.path:
+            sys.path.remove(stitch_dir)
+        sys.path.insert(0, stitch_dir)
+        from spread_generator import SpreadGenerator
+        from models import LayoutArchetype, CanvasFormat, ProjectPassport
+        arch_str = arguments.get("archetype", "THE_CONSTRUCTIVE_PROOF")
+        fmt_str = arguments.get("format", "LANDSCAPE_16_9")
+        title = arguments.get("title", "Project Monograph")
+        out = arguments.get("output_path", "monograph_spread.svg")
+        generator = SpreadGenerator()
+        archetype = getattr(LayoutArchetype, arch_str, LayoutArchetype.THE_CONSTRUCTIVE_PROOF)
+        fmt = getattr(CanvasFormat, fmt_str, CanvasFormat.LANDSCAPE_16_9)
+        passport = ProjectPassport(title=title, location="Strasbourg, France", role="Lead Architect")
+        spread = generator.generate(
+            project_id="mcp_proj",
+            prompt="Architectural publication monograph spread",
+            archetype=archetype,
+            format=fmt,
+            passport=passport
+        )
+        out_dir = os.path.dirname(out)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(spread.svg_content)
+        return {"status": "success", "file": out, "archetype": arch_str, "format": fmt_str, "title": title}
+    elif tool_name == "audit_monograph_spread":
+        stitch_dir = os.path.join(SKILLS_DIR, "spatial-stitch", "engine")
+        if "models" in sys.modules:
+            mod_file = getattr(sys.modules["models"], "__file__", "") or ""
+            if not mod_file.startswith(stitch_dir):
+                del sys.modules["models"]
+        if stitch_dir in sys.path:
+            sys.path.remove(stitch_dir)
+        sys.path.insert(0, stitch_dir)
+        from auditor import PortfolioAuditor
+        from models import SpreadInstance, LayoutArchetype, CanvasFormat
+        svg_file = arguments.get("svg_file", "")
+        with open(svg_file, "r", encoding="utf-8") as f:
+            svg_content = f.read()
+        spread = SpreadInstance(
+            spread_id="mcp_audit",
+            project_id="mcp",
+            title=os.path.basename(svg_file),
+            archetype=LayoutArchetype.THE_CONSTRUCTIVE_PROOF,
+            format=CanvasFormat.LANDSCAPE_16_9,
+            svg_content=svg_content,
+            html_content=""
+        )
+        auditor = PortfolioAuditor()
+        audit = auditor.audit(spread)
+        return {
+            "file": svg_file,
+            "total_score": audit.total_score,
+            "passed_checks": audit.passed_checks,
+            "critical_failures": audit.critical_failures,
+            "constructive_remediations": audit.constructive_remediations,
+            "category_scores": [
+                {"name": c.category_name, "awarded": c.awarded_points, "max": c.max_points, "status": c.status}
+                for c in audit.category_scores
+            ]
+        }
+    elif tool_name == "extract_design_tokens":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "design-md-extractor", "scripts"))
+        from extract_from_image import extract_palette_from_image
+        img_path = arguments.get("image_path", "")
+        palette_data = extract_palette_from_image(img_path)
+        return palette_data
+    elif tool_name == "audit_publication_preflight":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "editorial-studio", "preflight"))
+        from audit_publication import audit_pdf
+        pdf_path = arguments.get("file_path", "")
+        res = audit_pdf(pdf_path)
+        return res
     else:
         return {"error": f"Tool '{tool_name}' not found."}
 
