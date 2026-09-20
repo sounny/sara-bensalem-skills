@@ -493,6 +493,82 @@ class TestGrillMyDesign(unittest.TestCase):
         report = self.engine.grill(fluff_submission, persona=self.personas.HIRING_DIRECTOR)
         self.assertIn("RENDER TRAP", report.verdict)
 
+    def test_render_traps_detection_specific(self):
+        """Verify detection of specific Lethal Render Traps (1-22)."""
+        traps_submission = (
+            "A luxury all-glass box villa with a magic cantilever stair anchored into drywall, "
+            "cantilevered stone slab terrace, and full-height pocket door without deflection head."
+        )
+        report = self.engine.grill(traps_submission)
+        trap_ids = [v.trap_id for v in report.top_vulnerabilities if v.trap_id is not None]
+        self.assertTrue(any(t in [1, 2, 4, 9] for t in trap_ids))
+        self.assertEqual(report.verdict, "RENDER TRAP ALERT / SUSPECT CONSTRUCTIBILITY")
+
+    def test_typology_detection(self):
+        """Verify context-aware architectural typology detection."""
+        tower_text = "45-storey commercial office tower skyscraper in downtown core"
+        report_tower = self.engine.grill(tower_text)
+        self.assertEqual(report_tower.typology, "high_rise_commercial")
+
+        museum_text = "Public art museum with gallery exhibition spaces and civic auditorium"
+        report_museum = self.engine.grill(museum_text)
+        self.assertEqual(report_museum.typology, "cultural_museum")
+
+        water_text = "Riparian coastal timber boardwalk and pier hovering over wetland lake"
+        report_water = self.engine.grill(water_text)
+        self.assertEqual(report_water.typology, "riparian_waterfront")
+
+    def test_ask_question_payload_format(self):
+        """Verify get_ask_question_payload format strictly matches ask_question tool schema."""
+        submission = "Residential villa with all-glass facade and cantilevered concrete terrace"
+        report = self.engine.grill(submission)
+        payload = self.engine.get_ask_question_payload(report, max_questions=3)
+        self.assertIn("questions", payload)
+        self.assertGreater(len(payload["questions"]), 0)
+        for q in payload["questions"]:
+            self.assertIn("question", q)
+            self.assertIn("options", q)
+            self.assertIn("is_multi_select", q)
+            self.assertFalse(q["is_multi_select"])
+            self.assertGreaterEqual(len(q["options"]), 2)
+            self.assertTrue(q["options"][0].startswith("(Recommended)"))
+
+    def test_svg_crit_stamp_generation(self):
+        """Verify generate_svg_stamp creates well-formed XML SVG with tribunal seal."""
+        import xml.etree.ElementTree as ET
+        submission = "Mixed-use urban masterplan with mass timber CLT structure in Strasbourg"
+        report = self.engine.grill(submission)
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            svg_path = tf.name
+        try:
+            self.engine.generate_svg_stamp(report, output_path=svg_path, project_title="TEST URBAN PROJECT")
+            self.assertTrue(os.path.exists(svg_path))
+            with open(svg_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            self.assertIn("<svg", content)
+            self.assertIn("SARA BENSALEM", content)
+            self.assertIn("TRIBUNAL", content)
+            root = ET.fromstring(content)
+            self.assertIsNotNone(root)
+        finally:
+            if os.path.exists(svg_path):
+                os.remove(svg_path)
+
+    def test_evaluate_defense(self):
+        """Verify that a rigorous technical candidate defense boosts score."""
+        submission = "Residential villa with all-glass facade and cantilevered concrete terrace"
+        base_report = self.engine.grill(submission)
+        base_score = base_report.overall_score
+
+        answers = {
+            "Constructive Detailing": "We specified a structural thermal break module (Schöck Isokorb) with 80mm EPS core.",
+            "Environmental Performance": "We specified triple-glazed Low-E units with an SHGC of 0.22 and deep 450mm architectural louvers."
+        }
+        updated_report = self.engine.evaluate_defense(base_report, answers)
+        self.assertGreater(updated_report.overall_score, base_score)
+        self.assertIn("DEFENSE ACCEPTED", updated_report.verdict)
+
+
 
 class TestMCPServerHandlers(unittest.TestCase):
     """Tests MCP tool definitions and tool handlers in mcp-server/server.py."""

@@ -185,7 +185,7 @@ def handle_list_skills():
         "total_archetypes": len(ARCHETYPES)
     }
 
-def handle_grill(submission_text, persona="full"):
+def handle_grill(submission_text, persona="full", output_svg=None, return_questions=False, answers=None, round_num=None, typology=None):
     sys.path.insert(0, os.path.join(SKILLS_DIR, "grill-my-design", "engine"))
     try:
         from critique_engine import GrillEngine
@@ -199,16 +199,33 @@ def handle_grill(submission_text, persona="full"):
         elif p_str in ("visual", "visual_curator", "curator"): p_enum = JuryPersona.VISUAL_CURATOR
         
         engine = GrillEngine()
-        report = engine.grill(submission_text, p_enum)
-        return {
+        report = engine.grill(submission_text, p_enum, typology_override=typology, current_round=round_num or 1)
+        
+        if answers and isinstance(answers, dict):
+            report = engine.evaluate_defense(report, answers)
+            
+        svg_file = None
+        if output_svg:
+            engine.generate_svg_stamp(report, output_path=output_svg)
+            svg_file = output_svg
+
+        res = {
             "verdict": report.verdict,
             "overall_score": report.overall_score,
+            "pre_defense_score": report.pre_defense_score,
+            "typology": report.typology,
             "15s_takeaway": report.recruiter_15s_takeaway,
             "dimension_scores": [{"name": d.name, "score": d.score, "critique": d.critique} for d in report.dimension_scores],
-            "vulnerabilities": [{"question": v.interrogation_question, "vulnerability": v.vulnerability_detected, "remedy": v.redline_fix} for v in report.top_vulnerabilities],
+            "vulnerabilities": [{"question": v.interrogation_question, "vulnerability": v.vulnerability_detected, "remedy": v.redline_fix, "severity": v.severity.value, "trap_id": getattr(v, "trap_id", None)} for v in report.top_vulnerabilities],
             "defense_remedies": report.defense_remedies,
             "next_crit_prompt": report.next_crit_prompt
         }
+        if svg_file:
+            res["svg_plate"] = svg_file
+        if return_questions:
+            res["ask_questions_payload"] = engine.get_ask_question_payload(report, max_questions=3, round_num=round_num)
+            
+        return res
     except Exception as e:
         return {"error": str(e)}
 
@@ -228,7 +245,15 @@ def handle_call_tool(tool_name, arguments):
     if tool_name == "list_sara_skills":
         return handle_list_skills()
     elif tool_name == "grill_my_design":
-        return handle_grill(arguments.get("submission_text", ""), arguments.get("persona", "full"))
+        return handle_grill(
+            arguments.get("submission_text", ""), 
+            arguments.get("persona", "full"),
+            output_svg=arguments.get("output_svg"),
+            return_questions=arguments.get("return_questions", False),
+            answers=arguments.get("answers"),
+            round_num=arguments.get("round"),
+            typology=arguments.get("typology")
+        )
     elif tool_name == "validate_pmr_and_egress":
         door = arguments.get("door_clear_width") or arguments.get("door_clear_mm") or arguments.get("door_clear", 900)
         vest = arguments.get("vestibule_diameter") or arguments.get("vestibule_diameter_mm") or arguments.get("vestibule_dia", 1500)

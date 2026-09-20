@@ -29,12 +29,23 @@ class ScrutinyProbe(BaseModel):
     severity: Severity
     defense_options: List[str] = Field(default_factory=list)
     remediation_command: Optional[str] = None
+    trap_id: Optional[int] = None
+    failure_mechanism: Optional[str] = None
+    round_number: int = 1
 
 class DimensionScore(BaseModel):
     dimension_id: str
     name: str
     score: int = Field(ge=0, le=100)
     critique: str
+    pre_score: Optional[int] = None
+
+class RedlineMarkup(BaseModel):
+    callout_tag: str
+    title: str
+    detail: str
+    cad_action: str
+    severity: Severity
 
 class GrillReport(BaseModel):
     verdict: str  # STRONG HIRE, CONDITIONAL PASS, RENDER TRAP ALERT, REWORK
@@ -44,3 +55,8 @@ class GrillReport(BaseModel):
     defense_remedies: List[str]
     next_crit_prompt: str
     recruiter_15s_takeaway: str
+    typology: Optional[str] = None
+    pre_defense_score: Optional[int] = None
+    redline_markups: List[RedlineMarkup] = Field(default_factory=list)
+    audit_seal: Optional[str] = None
+    current_round: int = 1

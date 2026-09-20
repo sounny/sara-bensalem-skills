@@ -22,40 +22,97 @@ sequenceDiagram
     autonumber
     actor User as Designer / Candidate
     participant Agent as Antigravity Agent
-    participant Jury as 5-Persona Jury Tribunal
-    participant Tool as ask_question Tool
+    participant Engine as GrillEngine
+    participant Tool as ask_question Modal
 
     User->>Agent: Submit design, portfolio spread, or PDF
-    Agent->>Jury: Phase 1: Rapid Scan & Vulnerability Detection
-    Jury-->>Agent: Flag 2-4 critical technical vulnerabilities
-    Note over Agent,Tool: MANDATORY STOP & QUESTION
+    Agent->>Engine: Phase 1: Rapid Scan & 22 Render Trap Detection
+    Engine-->>Agent: Flag top vulnerabilities & typology profile
+    Note over Agent,Tool: MANDATORY STOP & QUESTION (/grill-me Parity)
     Agent->>Tool: Phase 2: Call ask_question with Socratic probes & options
     Tool->>User: Interactive Defense Modal (PMR, thermal breaks, role, etc.)
     User-->>Tool: Selects strategy or types technical defense
     Tool-->>Agent: User defense responses delivered
-    Agent->>Jury: Phase 3: Post-defense deliberation & re-scoring
-    Jury-->>Agent: Final score, updated verdict, and redline fixes
-    Agent->>User: Deliver the Defense & Fix Dossier
+    Agent->>Engine: Phase 3: Post-defense deliberation & re-scoring
+    Engine-->>Agent: Final score, updated verdict, and redline fixes
+    Agent->>User: Deliver the Defense & Fix Dossier + Vector SVG Plate
 ```
 
-### Phase 1: Rapid Scan & Vulnerability Detection
-The agent performs an initial diagnostic scan across the 5 dimensions:
-1. **Constructive Reality (1:20)**: Checks for continuous thermal breaks, EPDM membranes, structural load paths, and moisture plinth clearance (+150mm).
-2. **Spatial Anatomy & Code Egress (1:100)**: Checks for PMR/ADA 1500mm wheelchair turning circles, 900mm+ door clearances, and travel distance to fire stairs (<45m).
-3. **Bioclimatic & Environmental Physics**: Checks for solar heat gain coefficient (SHGC < 0.25), western facade louvers, natural stack cross-ventilation, and roof soil load.
-4. **Recruiter Trust Ergonomics (The 15-Second Test)**: Checks for Project Passport (Client, Year, Scale, Role, Location), individual line-item attribution, and anti-render-trap proof.
-5. **Swiss Typographic Grid**: Checks for 8/12/16 modular column grid, 4pt/8pt baseline lock, negative space breathing room (35%+), and multi-scalar Trust Trifecta (1:500 + 1:100 + 1:20).
+---
 
-### Phase 2: The Socratic Cross-Examination (MANDATORY `ask_question`)
-> [!IMPORTANT]
-> **DO NOT** output the final verdict or complete score report in Phase 1!
-> Just like Antigravity's native `/grill-me` command, **you MUST halt execution and call the `ask_question` tool** with 2 to 4 targeted cross-examination questions corresponding to the top vulnerabilities detected.
-> Each question must confront the designer with a specific buildability, spatial, or recruiter challenge and provide 3–4 realistic architectural defense options formatted as candidate first-person responses, with the most rigorous architectural solution prefixed with `(Recommended)`.
+## 🔍 The 22 Lethal Render Traps Engine
+
+`grill-my-design` automatically scans submissions for the **22 Lethal Render Traps** that destroy architectural credibility:
+
+| Trap # | Lethal Render Antipattern | Physical Failure Mechanism | The Tectonic Rescue |
+| :---: | :--- | :--- | :--- |
+| **#1** | **The Floating Glass Box** | Solar greenhouse overheating (>45°C), thermal shock cracking. | Recess head/sill frames; triple Low-E glazing; exterior louvers (SHGC <= 0.22). |
+| **#2** | **The Magic Cantilever Stair** | Treads shear plaster wall on day 1; violates 1.5 kN/m guard code. | Conceal a 250x100x8mm steel box stringer in wall; solid oak sleeves over steel tubes. |
+| **#3** | **The Zero-Reveal Millwork** | Hygroscopic wood expansion (2–3mm/m) causes doors to jam. | Detail a deliberate 3mm black shadow line reveal around all perimeter cabinet edges. |
+| **#4** | **The Cantilevered Stone Slab** | Natural stone has near-zero tensile strength (4–6 MPa); snaps. | Build internal welded RHS steel chassis; clad in lightweight aluminum honeycomb panels. |
+| **#5** | **The Uninsulated Rammed-Earth Wall** | Capillary groundwater suction wicks 1.2m up; base collapse. | Elevate earth wall 300mm on concrete plinth; dual EPDM damp-proof courses. |
+| **#6** | **The Frameless Timber-on-Water Deck**| Capillary rot and fungal decay disintegrate timber in 18 months. | Helical screw piles; elevate posts +300mm above 100-yr flood level; EPDM breaks. |
+| **#7** | **The Sharp 90° High-Rise Tower** | Dynamic cross-wind vortex shedding shears curtain wall gaskets. | Chamfer corners with 15% radius; wind relief slots; +/-25mm drift bellows. |
+| **#8** | **The Unanchored Ceiling Duct** | Mechanical vibrations transmit through rigid timber walls (NC > 40). | 2400mm inline silencer splitters; 50mm Sylomer elastomeric acoustic collars. |
+| **#9** | **The Full-Height Jamming Pocket Door**| Ceiling slab sag (10–12mm) crushes carriage; unsealed pocket leaks sound.| Extruded aluminum deflection head channels allowing 15mm sag; Athmer Schall-Ex drop seals. |
+| **#10**| **The Red/Green Cockpit / Dashboard** | Colorblind users (8% of men) cannot see emergency alerts. | Enforce redundant visual encoding: color + geometric glyphs + text + audio. |
+| **#11**| **The Grey-on-Grey / Beige UI** | Contrast ratio <2:1 violates WCAG AAA, creating eye strain. | Mandate minimum 7:1 contrast ratio using dark titanium tokens (#0B0F17 / #F1F5F9). |
+| **#12**| **The 100-Page Student Dump** | Cognitive fatigue causes reviewers to abandon portfolio in 45s. | Curate down to 5 flagship projects using the 5-Act Narrative; archive the rest. |
+| **#13**| **The Placeholder Latin Leak** | Leaving `Lorem ipsum` signals zero quality control. | Replace with authored 3-line Curatorial Statement defining structural load paths. |
+| **#14**| **The Poster Screenshot Infill Hack** | Pasting vertical A1 boards into horizontal 16:9 produces 3.5pt text.| Dissect raw vectors; re-layout across 12-column Swiss grid across 4 spreads. |
+| **#15**| **The Fake CAD Section Trap** | Labeling flat 2D elevations as sections with zero slab depth. | Cut true building sections showing 250mm concrete slab, screed to fall, plenum. |
+| **#16**| **The Impossible Spatial Math Error** | Gross dimensional blunders (e.g. 3.1 m² bedroom suite). | Calculate exact GIA/NIA; verify clearances against PMR 1500mm turning circles. |
+| **#17**| **The Wasted Manufacturer Credential** | Listing Knauf or Schöck training on CV but showing zero details. | Add dedicated 1:20 working detail plates citing exact manufacturer system codes. |
+| **#18**| **The Flattened Raster Print Trap** | Flattening vector drawings into heavy raster destroys lineweights. | Export scalable vector graphics (PDF/SVG) with ISO 128 lineweights (0.50mm cut). |
+| **#19**| **The Metadata Copy-Paste Leak** | Copy-pasting metadata (e.g. 3-storey villa claiming 18,000 m²). | Bind each project passport to its verified architectural program. |
+| **#20**| **The Default Consumer PDF Metadata Trap**| Leaving Canva, iLovePDF stamps and default export titles. | Sanitize PDF metadata with Ghostscript; inject professional author tags. |
+| **#21**| **The 3D Book Mockup Letterbox Trap** | Embedding spreads in 3D open book renders wastes 35% canvas. | Export true 1:1 vector spreads with full bleed, maximizing display canvas. |
+| **#22**| **Cover-to-Spread Aspect Ratio Mismatch**| Vertical cover with horizontal spreads causes PDF viewer jumps. | Unify the entire document on a consistent 16:9 widescreen landscape geometry. |
+
+---
+
+## 🏛️ Context-Aware Architectural Typologies
+
+The engine automatically detects the project typology and adapts its critical checkpoints:
+
+1. **`RESIDENTIAL_VILLA`**: Prioritizes hygrothermal moisture plinth (+150mm), window reveal detailing, private/public acoustic thresholds (DnTw >= 53 dB), and ground-floor universal PMR access.
+2. **`HIGH_RISE_COMMERCIAL`**: Prioritizes cross-wind vortex shedding mitigation (corner chamfers, wind-relief slots), core Net-to-Gross efficiency (>= 75%), dual pressurized fire stairs (<45m egress), and curtain wall drift bellows (+/-25mm).
+3. **`CULTURAL_MUSEUM`**: Prioritizes luminance lux decompression choreography (max delta log10 lux < 1.8), gallery acoustic dampening (RT60 <= 0.85s), daylight autonomy without UV damage (<50 lux), and universal PMR promenade ramps (1:12 slope).
+4. **`ADAPTIVE_REUSE`**: Prioritizes historic masonry hygrothermal breathability (lime-hemp, no cementitious barriers), Glaser condensation prevention, reversible structural flitch plates, and decoupled timber frames.
+5. **`MASS_TIMBER`**: Prioritizes CLT end-grain moisture protection, acoustic impact isolation (Sylomer resilient mounts), fire char layer calculations (60–90 min), and concealed steel knife plate connections.
+6. **`RIPARIAN_WATERFRONT`**: Prioritizes helical screw piles, finished floor elevation +450mm above 100-year flood splash line, continuous EPDM capillary breaks, and marine 316 A4 stainless hardware.
+7. **`URBAN_MASTERPLAN`**: Prioritizes transit morphology, declared Floor Area Ratio (FAR) and ground coverage math, 5-minute pedestrian catchment isochrones (400m radius), and urban microclimate wind corridors.
+
+---
+
+## ⚡ The 3-Round Socratic Defense Protocol (`ask_question`)
+
+When interrogating a submission, the tribunal organizes questions into focused defense rounds:
+
+### Round 1: Constructive Integrity & Code Egress
+- Focus: Continuous thermal breaks, structural load paths, slab thickness, and universal PMR 1500mm turning circles.
+- Mandatory Stop: Call `ask_question` with 2–3 targeted probes.
+
+### Round 2: Thermodynamics, Climate & Phenomenological Comfort
+- Focus: Solar Heat Gain Coefficient (SHGC), natural stack ventilation, acoustic dampening, and luminance gradients.
+
+### Round 3: Recruiter Trust, Swiss Grid & Attributed Craft
+- Focus: Project Passport metadata, individual line-item contribution, 12-column Swiss grid discipline, and zero Latin placeholders.
 
 #### Example `ask_question` Call Schema (`/grill-me` Parity):
 ```json
 {
   "questions": [
+    {
+      "question": "[Environmental] [TRAP #1] You specified expansive floor-to-ceiling glazing with no exterior louvers. What is your calculated Solar Heat Gain Coefficient (SHGC), and how do you prevent severe summer greenhouse overheating?",
+      "options": [
+        "(Recommended) We specified triple glazing with Low-E soft coatings (SHGC <= 0.22) and integrated motorized external venetian louvers.",
+        "The facade incorporates automated exterior solar fins calibrated to the local 48° summer solar azimuth.",
+        "We recessed the glazing 600mm beneath deep architectural overhangs to provide complete passive summer shading.",
+        "Solar gain was accepted as a passive heating strategy and tempered by active chilled ceiling beams."
+      ],
+      "is_multi_select": false
+    },
     {
       "question": "[Constructive Lead] Where is your continuous thermal break at the cantilevered concrete terrace slab to prevent interior condensation and mold?",
       "options": [
@@ -67,7 +124,7 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
       "is_multi_select": false
     },
     {
-      "question": "[Spatial Chair] Can a wheelchair user complete a statutory 1500mm turning maneuver in your entrance vestibule and primary sanitary core?",
+      "question": "[Spatial Chair] Show me your universal accessibility clearances. Can a wheelchair user complete a 1500mm turning maneuver in your entrance vestibule and primary WC?",
       "options": [
         "(Recommended) All entrance vestibules and primary sanitary facilities maintain verified 1500mm turning diameter circles.",
         "Door openings are minimum 930mm clear width with zero-threshold flush sills.",
@@ -75,74 +132,37 @@ The agent performs an initial diagnostic scan across the 5 dimensions:
         "PMR clearances were not explicitly drafted on this schematic plan."
       ],
       "is_multi_select": false
-    },
-    {
-      "question": "[Hiring Director] In this 4-person competition team, what was your exact individual line-item contribution?",
-      "options": [
-        "(Recommended) I was the Lead Technical Detailer responsible for 1:20 envelope sections and BIM coordination.",
-        "I led the schematic design and spatial massing in a 3-person competition team.",
-        "I was an architectural intern handling 3D visualization, physical modeling, and diagramming.",
-        "This was an individual academic thesis project conceived and drafted entirely by me."
-      ],
-      "is_multi_select": false
     }
   ]
 }
 ```
 
-> [!NOTE]
-> The engine can generate this payload automatically via `python -m engine.cli --text "<submission copy>" --ask-questions`.
+---
 
+## 🎨 Visual Redline Stamp & Crit Sheet SVG Generator
 
-### Phase 3: Post-Defense Deliberation & Dossier
-After the user submits their defense via `ask_question`:
-1. The agent re-evaluates the design using `evaluate_defense(report, user_answers)`.
-2. If the user presents credible technical solutions (e.g. specifying structural thermal breaks, verified turning circles, or transparent attribution), award up to **+20 to +25 points** per defended dimension.
-3. Deliver the final **Defense & Fix Dossier**:
-   - **Pre- vs Post-Defense Scorecard**: Show the progression before and after questioning.
-   - **Tribunal Verdict**:
-     - `STRONG HIRE / ADVANCE TO NEXT ROUND (DEFENSE ACCEPTED)` (Score $\ge 85$)
-     - `CONDITIONAL PASS / SUBMIT REDLINE AMENDMENTS` (Score $70\text{--}84$)
-     - `RENDER TRAP ALERT / REWORK REQUIRED` (Score $< 70$)
-   - **The 3 Critical Vulnerabilities & Redline Remedies**: Exact CAD modifications needed.
-   - **Tectonic Rescue Package**: Prescribe 1:20 wall section, 1:5 joinery reveal, or Project Passport template to seal the portfolio.
+`grill-my-design` generates a publication-grade **16:9 vector SVG Socratic Crit Sheet** (1920x1080):
+- **Strasbourg Atelier Tribunal Seal**: Official stamped circular seal (`PASSED TRIBUNAL // STRONG HIRE` in `#1B4332`, `CONDITIONAL` in `#92400E`, `RENDER TRAP ALERT` in `#991B1B`).
+- **5-Dimension Radar & Score Progression HUD**: Displays Pre-Defense vs Post-Defense scores and dimension bar gauges.
+- **Itemized Redline Callouts**: Highlights detected defects with calibrated lineweights (0.50mm cut, 0.25mm boundary, 0.13mm hairline).
+- **Tectonic Rescue Package**: Prescribes exact 1-click terminal commands to automatically generate missing drawings.
 
 ---
 
-## 🎭 The 5 Jury Personas
+## 💻 CLI Execution Commands
 
-When running `/grill-my-design`, you can request a specific persona or engage the full tribunal:
-
-1. **The Technical Partner / Constructive Lead (The "Detail Nazi")**:
-   - Focus: 1:20 wall sections, water ingress, thermal bridging, expansion joints, hidden flitch plates, MEP plenum drops, and material junctions.
-   - Signature question: *"How does this actually get built, and where will it leak in 5 years?"*
-
-2. **The 15-Second Hiring Director (The "Recruiter Filter")**:
-   - Focus: 10–30s eye-tracking, Project Passports, individual work attribution, uncropped drawings, zero render fluff, work authorization.
-   - Signature question: *"Did you actually draw this, or did you just download a Lumion asset pack?"*
-
-3. **The Spatial Theorist & Master Planner (The "Crit Chair")**:
-   - Focus: Programmatic sequence, spatial hierarchy, PMR/accessibility turning circles, threshold psychology, civic dialogue.
-   - Signature question: *"Why does this building exist in this place, and how does the human body move through it?"*
-
-4. **The Environmental & Bioclimatic Auditor**:
-   - Focus: Passive solar heat gain coefficient (SHGC), natural stack cross-ventilation, embodied carbon, lifecycle durability.
-   - Signature question: *"You drew green trees on the roof—what is the soil structural load, and what is your solar heat gain in July?"*
-
-5. **The Visual Curator & Swiss Typographer (The "Swiss Eye")**:
-   - Focus: 8/12/16 modular grids, 2:1 and 16:9 panoramic spread pacing, negative space breathing room (35%+), typographic hierarchy, multi-scalar drawing integration without visual vibration.
-   - Signature question: *"Is this an unreadable cacophony of competing drawings, or an elegant editorial monograph with clear visual breathing room?"*
-
----
-
-## 💻 CLI & Engine Execution
-
-You can also run the tribunal locally from PowerShell / bash:
+Run the tribunal from PowerShell / bash:
 
 ```bash
-# Non-interactive quick scan
-python -m engine.cli --text "Project description or portfolio copy" --persona full
+# Rapid diagnostic scan with SVG crit sheet generation
+python -m engine.cli --text "Residential villa in Strasbourg with glass box facade" --svg crit_sheet.svg
 
-# Interactive Socratic cross-examination loop
-python -m engine.cli --text "Project description or portfolio copy" --persona full --interactive
+# Output JSON payload formatted for the ask_question tool (/grill-me parity)
+python -m engine.cli --text "High-rise tower with sharp 90-degree corners" --ask-questions --round 1
+
+# Interactive terminal cross-examination loop
+python -m engine.cli --text "Museum with stone cantilever slab" --interactive
+
+# Full programmatic JSON report export
+python -m engine.cli --text "Waterfront boardwalk over lake" --json
 ```
