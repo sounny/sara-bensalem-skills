@@ -15,6 +15,7 @@ Website: https://skills.sarabensalem.com
 """
 
 import math
+import sys
 import json
 import argparse
 import os
@@ -323,30 +324,81 @@ DEFAULT_ZONES = [
 ]
 
 def main():
-    parser = argparse.ArgumentParser(description="Sara Bensalem Spatial Choreography & Phenomenological Engine")
+    parser = argparse.ArgumentParser(
+        description="Sara Bensalem Spatial Choreography & Phenomenological Engine.\n"
+                    "Evaluates perceptual spatial journeys (luminance, acoustics, volumetric compression) and subtractive courtyard self-shading.\n"
+                    "Exit codes: 0 = Perceptual / shading compliance (PASS), 1 = Transition risk or insufficient shading (REVISE), 2 = CLI argument error."
+    )
     parser.add_argument("--sequence", "-s", type=str, default=None, help="Custom sequence: 'Name:lux:dba:height_m:material:title,...'")
     parser.add_argument("--output", "-o", default="spatial_journey.svg", help="Output SVG Path")
     parser.add_argument("--json", action="store_true", help="Output JSON evaluation")
     parser.add_argument("--demo", action="store_true", help="Run demonstrator")
+    parser.add_argument("--audit-courtyard", action="store_true", help="Audit subtractive courtyard self-shading aspect ratio")
+    parser.add_argument("--courtyard-height", type=float, default=12.0, help="Courtyard wall height in meters (default: 12.0m)")
+    parser.add_argument("--courtyard-width", type=float, default=6.0, help="Courtyard width in meters (default: 6.0m)")
+    parser.add_argument("--solar-altitude", type=float, default=65.0, help="Solar altitude angle in degrees (default: 65.0)")
     args = parser.parse_args()
+
+    CYAN = "\033[1;36m"
+    GREEN = "\033[1;32m"
+    RED = "\033[1;31m"
+    YELLOW = "\033[1;33m"
+    RESET = "\033[0m"
+
+    if args.audit_courtyard:
+        res = audit_courtyard(args.courtyard_height, args.courtyard_width, args.solar_altitude)
+        is_pass = res.get("verdict") == "PASS" and res.get("self_shading_verified", False)
+
+        if args.json:
+            print(json.dumps(res, indent=2))
+        else:
+            print(f"{CYAN}{'=' * 74}{RESET}")
+            print(f"{CYAN}SUBTRACTIVE COURTYARD SELF-SHADING AUDIT (DESERT STANDARD H/W >= 1.5){RESET}")
+            print(f"Dimensions       : Height {res['height_m']}m x Width {res['width_m']}m")
+            print(f"Aspect Ratio     : {res['aspect_ratio']} ({res['target_aspect_ratio']})")
+            print(f"Solar Altitude   : {res['solar_altitude_deg']}°")
+            print(f"Ground Shaded    : {res['shaded_ground_fraction']}")
+            v_color = GREEN if is_pass else RED
+            print(f"Verdict          : {v_color}{res['verdict']}{RESET}")
+            if is_pass:
+                print(f"{GREEN}[PASS] Deep vertical stereotomy provides verified microclimate solar protection.{RESET}")
+            else:
+                print(f"{RED}[REVISE] Insufficient self-shading: Aspect ratio {res['aspect_ratio']} < 1.50. Deepen volumetric carve.{RESET}")
+            print(f"{CYAN}{'=' * 74}{RESET}")
+
+        sys.exit(0 if is_pass else 1)
 
     zones = parse_sequence_arg(args.sequence) if args.sequence else DEFAULT_ZONES
     out_svg, eval_data = generate_journey_svg(zones, output_path=args.output)
+    is_pass = eval_data.get("verdict") == "PASS"
 
     if args.json:
+        eval_data["output_svg"] = out_svg
         print(json.dumps(eval_data, indent=2))
     else:
-        print("=" * 72)
-        print("SPATIAL CHOREOGRAPHY ENGINE -- PHENOMENOLOGICAL JOURNEY MATRIX")
-        print(f"VERDICT: {eval_data['verdict']}")
-        print(f"SVG PLATE: {out_svg}")
-        print("=" * 72)
-        print("Transition                          | Lux Log d  | dBA Drop   | Vol Ratio ")
-        print("-" * 72)
+        print(f"{CYAN}{'=' * 74}{RESET}")
+        print(f"{CYAN}SPATIAL CHOREOGRAPHY ENGINE -- PHENOMENOLOGICAL JOURNEY MATRIX{RESET}")
+        v_color = GREEN if is_pass else RED
+        print(f"Journey Verdict  : {v_color}{eval_data['verdict']}{RESET}")
+        print(f"SVG Trajectory   : {out_svg}")
+        print(f"{CYAN}{'-' * 74}{RESET}")
+        print(f"{'Transition':<35} | {'Lux Log d':<10} | {'dBA Drop':<10} | {'Vol Ratio'}")
+        print(f"{'-' * 74}")
         for t in eval_data["transitions"]:
-            warn_str = f" [!] {t['lux_warning']}" if t["lux_warning"] else ""
+            warn_str = f" {RED}[!] {t['lux_warning']}{RESET}" if t.get("lux_warning") else ""
             print(f"{t['from']:<35} | {t['lux_delta_log']:<10} | {t['dba_drop']:<10} | {t['volumetric_ratio']:<10}{warn_str}")
-        print("=" * 72)
+        print(f"{CYAN}{'-' * 74}{RESET}")
+
+        if eval_data.get("warnings"):
+            print(f"{RED}PERCEPTUAL DISORIENTATION WARNINGS ({len(eval_data['warnings'])}):{RESET}")
+            for w in eval_data["warnings"]:
+                print(f"  {RED}[X] {w}{RESET}")
+        else:
+            print(f"{GREEN}[OK] Harmonious phenomenological gradient across all thresholds (delta E log <= 1.8).{RESET}")
+        print(f"{CYAN}{'=' * 74}{RESET}")
+
+    sys.exit(0 if is_pass else 1)
 
 if __name__ == "__main__":
     main()
+

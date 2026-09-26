@@ -196,18 +196,66 @@ def generate_plan_svg(output_path="plan_1_100_accessible.svg",
     return output_path
 
 def main():
-    parser = argparse.ArgumentParser(description="Sara Bensalem Spatial Anatomy & PMR Compliance Engine")
-    parser.add_argument("--door", type=float, default=900, help="Door clear opening in mm")
-    parser.add_argument("--vestibule", type=float, default=1500, help="Vestibule diameter in mm")
-    parser.add_argument("--corridor", type=float, default=1600, help="Corridor clear width in mm")
+    parser = argparse.ArgumentParser(
+        description="Sara Bensalem Spatial Anatomy & PMR Compliance Engine.\n"
+                    "Validates 1:100 architectural floor plans against French PMR, US ADA, and emergency egress.\n"
+                    "Exit codes: 0 = Statutory & PMR compliant, 1 = Statutory non-compliant / permitting risk, 2 = CLI argument error."
+    )
+    parser.add_argument("--door", type=float, default=900, help="Door clear passage opening in mm (statutory min: 830mm)")
+    parser.add_argument("--vestibule", type=float, default=1500, help="Vestibule wheelchair rotation diameter in mm (statutory min: 1500mm)")
+    parser.add_argument("--corridor", type=float, default=1600, help="Corridor two-way clear passing width in mm (statutory min: 1400mm)")
+    parser.add_argument("--hesitation", type=float, default=2400, help="Space for Hesitation threshold buffer in mm (trauma-informed min: 2000mm)")
+    parser.add_argument("--travel", type=float, default=24.0, help="Emergency egress travel distance in m (statutory max: 30.0m)")
     parser.add_argument("--output", "-o", default="plan_1_100_accessible.svg", help="Output SVG Path")
+    parser.add_argument("--json", action="store_true", help="Output raw JSON evaluation data")
     args = parser.parse_args()
 
-    report = validate_plan_compliance(args.door, args.vestibule, args.corridor)
-    print(json.dumps(report, indent=2))
-    
+    report = validate_plan_compliance(
+        door_clear_mm=args.door,
+        vestibule_dia_mm=args.vestibule,
+        corridor_width_mm=args.corridor,
+        hesitation_width_mm=args.hesitation,
+        travel_distance_m=args.travel
+    )
     out = generate_plan_svg(args.output, args.door, args.vestibule, args.corridor)
-    print(f"Plan drawing generated: {out}")
+
+    is_compliant = (report.get("compliance_status") == "COMPLIANT") and report.get("all_passed", False)
+
+    if args.json:
+        report["output_svg"] = out
+        print(json.dumps(report, indent=2))
+    else:
+        CYAN = "\033[1;36m"
+        GREEN = "\033[1;32m"
+        RED = "\033[1;31m"
+        YELLOW = "\033[1;33m"
+        RESET = "\033[0m"
+
+        print(f"{CYAN}{'=' * 74}{RESET}")
+        print(f"{CYAN}SARA BENSALEM SPATIAL ANATOMY & STATUTORY COMPLIANCE ENGINE (1:100){RESET}")
+        print(f"Drawing Generated : {out}")
+        verdict_color = GREEN if is_compliant else RED
+        print(f"Compliance Status : {verdict_color}{report['compliance_status']} -- {report['verdict']}{RESET}")
+        print(f"{CYAN}{'-' * 74}{RESET}")
+        print(f"{'Metric':<26} | {'Value':<10} | {'Threshold':<16} | {'Status'}")
+        print(f"{'-' * 74}")
+        for m_name, m_info in report["metrics"].items():
+            st_color = GREEN if m_info["status"] == "PASS" else RED
+            val_str = f"{m_info['value']} mm" if "mm" in m_name else f"{m_info['value']} m"
+            thresh_str = f">= {m_info.get('min_required')} mm" if "min_required" in m_info else f"<= {m_info.get('max_allowed')} m"
+            print(f"{m_name:<26} | {val_str:<10} | {thresh_str:<16} | {st_color}{m_info['status']}{RESET}")
+        print(f"{CYAN}{'-' * 74}{RESET}")
+
+        if report["violations"]:
+            print(f"{RED}STATUTORY CODE INFRACTIONS DETECTED ({len(report['violations'])}):{RESET}")
+            for v in report["violations"]:
+                print(f"  {RED}[X] {v}{RESET}")
+        else:
+            print(f"{GREEN}[OK] All French PMR (Arrêté 24/12/2015) & US ADA 2010 parameters satisfied.{RESET}")
+        print(f"{CYAN}{'=' * 74}{RESET}")
+
+    sys.exit(0 if is_compliant else 1)
 
 if __name__ == "__main__":
     main()
+

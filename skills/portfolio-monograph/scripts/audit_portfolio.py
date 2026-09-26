@@ -249,12 +249,75 @@ def audit_pdf(pdf_path):
     }
 
 def main():
-    parser = argparse.ArgumentParser(description="Sara Bensalem 100-Point Portfolio Audit Engine")
+    parser = argparse.ArgumentParser(
+        description="Sara Bensalem 100-Point Portfolio Audit Engine.\n"
+                    "Audits architectural portfolio PDFs against the 100-Point Rubric and detects lethal render traps.\n"
+                    "Exit codes: 0 = Benchmark distinction / pass (score >= 65, no fatal traps), 1 = Audit failure (score < 65 or fatal render traps), 2 = CLI argument error."
+    )
     parser.add_argument("--pdf", required=True, help="Path to portfolio PDF file")
+    parser.add_argument("--json", action="store_true", help="Output raw JSON audit report")
     args = parser.parse_args()
 
     result = audit_pdf(args.pdf)
-    print(json.dumps(result, indent=2))
+    score = result.get("total_score", result.get("overall_score", 0))
+    traps = result.get("traps_detected", [])
+    has_fatal_traps = any(
+        "Render Trap" in t or "Flattened" in t or "Missing 1:20" in t or "Universal Accessibility" in t
+        for t in traps
+    ) or (result.get("status") == "error")
+
+    is_passing = (score >= 65) and not has_fatal_traps and (result.get("status") != "error")
+
+    if args.json:
+        print(json.dumps(result, indent=2))
+    else:
+        CYAN = "\033[1;36m"
+        GREEN = "\033[1;32m"
+        RED = "\033[1;31m"
+        YELLOW = "\033[1;33m"
+        RESET = "\033[0m"
+
+        print(f"{CYAN}{'=' * 74}{RESET}")
+        print(f"{CYAN}SARA BENSALEM 100-POINT PORTFOLIO FORENSIC AUDIT ENGINE{RESET}")
+        print(f"File Audited      : {result.get('filename', args.pdf)}")
+        print(f"File Size / Pages : {result.get('file_size_mb', 0)} MB | {result.get('total_pages', 0)} pages")
+        score_color = GREEN if score >= 85 else (YELLOW if score >= 65 else RED)
+        print(f"Total Audit Score : {score_color}{score}/100 -- {result.get('verdict', 'UNKNOWN')}{RESET}")
+        print(f"{CYAN}{'-' * 74}{RESET}")
+
+        if "category_scores" in result:
+            print(f"{'Audit Dimension':<30} | {'Awarded':<10} | {'Max':<6} | {'Rating'}")
+            print(f"{'-' * 74}")
+            for cat_name, cat_val in result["category_scores"].items():
+                c_score = cat_val.get("score", 0)
+                c_max = cat_val.get("max", 20)
+                pct = (c_score / max(1, c_max)) * 100
+                col = GREEN if pct >= 75 else (YELLOW if pct >= 50 else RED)
+                label = "STRONG" if pct >= 75 else ("MARGINAL" if pct >= 50 else "CRITICAL")
+                print(f"{cat_name:<30} | {c_score:<10} | {c_max:<6} | {col}{label}{RESET}")
+            print(f"{CYAN}{'-' * 74}{RESET}")
+
+        if traps:
+            print(f"{RED}VULNERABILITIES & RENDER TRAPS DETECTED ({len(traps)}):{RESET}")
+            for t in traps:
+                print(f"  {RED}[!] {t}{RESET}")
+            print(f"{CYAN}{'-' * 74}{RESET}")
+
+        remedies = result.get("prescribed_remedies", result.get("actionable_remedies", []))
+        if remedies:
+            print(f"{YELLOW}PRESCRIBED REMEDIATIONS:{RESET}")
+            for r in remedies:
+                print(f"  {YELLOW}-> {r}{RESET}")
+            print(f"{CYAN}{'-' * 74}{RESET}")
+
+        if is_passing:
+            print(f"{GREEN}[PASS] Portfolio satisfies Tier-1 hiring & publication threshold.{RESET}")
+        else:
+            print(f"{RED}[FAIL] Portfolio flagged for review (Score: {score}/100, Traps: {len(traps)}).{RESET}")
+        print(f"{CYAN}{'=' * 74}{RESET}")
+
+    sys.exit(0 if is_passing else 1)
 
 if __name__ == "__main__":
     main()
+

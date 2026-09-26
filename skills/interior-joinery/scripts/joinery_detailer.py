@@ -13,6 +13,7 @@ import sys
 import os
 import argparse
 import json
+import html
 
 JOINERY_PRESETS = {
     "cabinetry_reveal": {
@@ -95,7 +96,8 @@ JOINERY_PRESETS = {
 def xml_escape(val):
     if val is None:
         return ""
-    return str(val).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+    val_str = html.unescape(str(val))
+    return val_str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabinetry_reveal",
                          custom_gap=None, custom_carcase=None, custom_door=None, custom_hardware=None,
@@ -113,6 +115,7 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
     height = 1000
 
     esc_name = xml_escape(title.upper())
+    esc_folio = xml_escape(title[:24].upper())
     esc_typology = xml_escape(preset['typology'][:42])
     esc_hw_1 = xml_escape(hw[:46])
     esc_hw_2 = xml_escape(hw[46:92])
@@ -247,7 +250,7 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
   <!-- Folio Footer -->
   <line x1="60" y1="920" x2="1140" y2="920" stroke="#DDD9D0" stroke-width="1" />
   <text x="60" y="945" class="mono-label">SARA BENSALEM STUDIO • 1:5 ARCHITECTURAL MILLWORK &amp; JOINERY ENGINE • STRASBOURG ATELIER</text>
-  <text x="1140" y="945" class="mono-bold" text-anchor="end">TYPOLOGY: {esc_name[:24]} // PLATE 05</text>
+  <text x="1140" y="945" class="mono-bold" text-anchor="end">TYPOLOGY: {esc_folio} // PLATE 05</text>
 </svg>"""
 
     if output_path:
@@ -270,7 +273,10 @@ def generate_joinery_svg(output_path="joinery_1_5_detail.svg", detail_key="cabin
     return output_path, meta
 
 def main():
-    parser = argparse.ArgumentParser(description="Sara Bensalem 1:5 Custom Joinery Detailer")
+    parser = argparse.ArgumentParser(
+        description="Sara Bensalem 1:5 Custom Joinery Detailer.\n"
+                    "Exit codes: 0 = Compliant / buildable detail, 1 = Tectonic violation (shadow reveal < 3.0mm), 2 = CLI argument error."
+    )
     parser.add_argument("--detail", default="cabinetry_reveal", choices=list(JOINERY_PRESETS.keys()), help="Joinery Preset Key")
     parser.add_argument("--gap", type=float, default=None, help="Custom shadow reveal in mm (e.g. 3.0, 5.0, 8.0)")
     parser.add_argument("--carcase", type=float, default=None, help="Custom carcase thickness in mm (e.g. 18.0, 19.0, 22.0)")
@@ -293,14 +299,29 @@ def main():
         custom_deflection=args.deflection
     )
 
+    is_compliant = meta["shadow_reveal_mm"] >= 3.0
+
     if args.json:
+        meta["status"] = "COMPLIANT" if is_compliant else "NON_COMPLIANT"
         print(json.dumps(meta, indent=2))
     else:
-        print("=" * 70)
-        print(f"1:5 JOINERY DETAIL GENERATED: {out}")
-        print(f"Shadow Reveal: {meta['shadow_reveal_mm']} mm | Carcase: {meta['carcase_mm']} mm | Leaf: {meta['door_leaf_mm']} mm")
-        print(f"Hardware: {meta['hardware'][:60]}...")
-        print("=" * 70)
+        CYAN = "\033[1;36m"
+        GREEN = "\033[1;32m"
+        RED = "\033[1;31m"
+        RESET = "\033[0m"
+        print(f"{CYAN}{'=' * 72}{RESET}")
+        print(f"{CYAN}SARA BENSALEM 1:5 CUSTOM JOINERY & MILLWORK ENGINE{RESET}")
+        print(f"Plate Generated : {out}")
+        print(f"Shadow Reveal   : {meta['shadow_reveal_mm']} mm | Carcase: {meta['carcase_mm']} mm | Leaf: {meta['door_leaf_mm']} mm")
+        print(f"Hardware Spec   : {meta['hardware'][:60]}...")
+        if is_compliant:
+            print(f"{GREEN}[PASS] Tectonic Integrity Verified: Shadow reveal >= 3.0mm avoids door binding.{RESET}")
+        else:
+            print(f"{RED}[FAIL] Tectonic Violation: Shadow reveal {meta['shadow_reveal_mm']}mm < 3.0mm (Zero-Reveal Millwork Antipattern).{RESET}")
+        print(f"{CYAN}{'=' * 72}{RESET}")
+
+    sys.exit(0 if is_compliant else 1)
 
 if __name__ == "__main__":
     main()
+

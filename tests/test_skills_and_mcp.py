@@ -118,14 +118,90 @@ class TestAuditPortfolio(unittest.TestCase):
         self.assertEqual(result.get("total_score"), 0)
         self.assertEqual(result.get("score"), 0)
 
+    @staticmethod
+    def _create_synthetic_portfolio_pdf(target_path=None, page_count=20):
+        """
+        Creates a fast, realistic multi-page architectural portfolio PDF fixture.
+        Emulates a comprehensive 20-spread monograph with verified Project Passports,
+        1:20 constructive wall section annotations, 1:100 statutory floor plans,
+        1500mm PMR accessibility turning circles, bioclimatic simulations, and 1:5 joinery.
+        Executes in ~20ms, completely avoiding slow remote streaming from virtual cloud storage.
+        """
+        import fitz
+        if target_path is None:
+            tf = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+            target_path = tf.name
+            tf.close()
+
+        doc = fitz.open()
+        for p in range(page_count):
+            page = doc.new_page(width=842, height=595)  # A4 landscape
+            if p == 0:
+                # Act 1: Hook, Passport, Distinctions, Contact
+                page.insert_text((50, 50), "PORTFOLIO 2026 — SARA BENSALEM ATELIER D'ARCHITECTURE")
+                page.insert_text((50, 75), "Project Passport: Lead Project Architect | Individual Role: Concept, Detailing & Tender")
+                page.insert_text((50, 95), "Typology: Cultural & Civic Center | Gross Floor Area: 12,500 m2 | Team: 4 architects")
+                page.insert_text((50, 115), "Contact: sara@sarabensalem.com | LinkedIn: linkedin.com/in/sarabensalem | Curriculum Vitae")
+                page.insert_text((50, 135), "Academic Distinction: Master of Architecture, CEPT / ENSAS. Built projects under construction on-site supervision.")
+            elif p == 1:
+                # Act 2: Flagship Tectonic Proof & Wall Section
+                page.insert_text((50, 50), "ACT II: FLAGSHIP TECTONIC PROOF — 1:20 WALL SECTION & ENVELOPE ASSEMBLY")
+                page.insert_text((50, 75), "Constructive proof: 1:20 detail section with Schöck Isokorb thermal break and 1.52mm EPDM waterproofing membrane.")
+                page.insert_text((50, 95), "120mm mineral wool insulation, vapor barrier, and calculated U-value of 0.18 W/m2K (DIN 4108-3 compliance).")
+                page.insert_text((50, 115), "Site constraint: high seismic zone 4, groundwater salinity, and flood risk mitigation (+450mm plinth).")
+            elif p == 2:
+                # Act 3: Statutory Egress & PMR Compliance
+                page.insert_text((50, 50), "ACT III: SPATIAL ANATOMY & STATUTORY COMPLIANCE — 1:100 GROUND FLOOR PLAN")
+                page.insert_text((50, 75), "1:100 scale setting out plan with structural column grid (A-F, 1-8). Clear egress travel distances < 30m.")
+                page.insert_text((50, 95), "Universal accessibility: 1500mm PMR wheelchair turning circle and 900mm clear door openings throughout.")
+                page.insert_text((50, 115), "Enclosed pressurized fire stair cores with dual egress discharge directly to external public realm.")
+            elif p == 3:
+                # Act 4: Bioclimatic & Environmental Physics
+                page.insert_text((50, 50), "ACT IV: BIOCLIMATIC FLOWS & ENVIRONMENTAL SIMULATION")
+                page.insert_text((50, 75), "Solar radiation analysis and daylight autonomy simulations via Ladybug and Honeybee engines.")
+                page.insert_text((50, 95), "Passive thermodynamic stack effect cooling with 22m solar chimney and diurnal thermal mass damping.")
+                page.insert_text((50, 115), "Calculated summer shading overhangs and UTCI outdoor thermal comfort optimization.")
+            elif p == 4:
+                # Act 5: Craft & Bespoke Interior Joinery
+                page.insert_text((50, 50), "ACT V: CRAFT & BESPOKE INTERIOR JOINERY — 1:5 REVEAL DETAILS")
+                page.insert_text((50, 75), "1:5 bespoke joinery details featuring continuous 3mm shadow reveal (joint creux) and Blum Movento hardware.")
+                page.insert_text((50, 95), "Ceiling slab deflection tolerance channels (15mm live load allowance) and integrated millwork reglet.")
+                page.insert_text((50, 115), "Macro-to-micro synthesis: Regional site plan (1:5000), urban transect, and micro 1:5 tactile connection.")
+            else:
+                page.insert_text((50, 50), f"PROJECT SPREAD {p + 1}: PROGRAMMATIC CIRCULATION & CROSS SECTION")
+                page.insert_text((50, 75), "Longitudinal spatial anatomy section showing central atrium, acoustic baffles, and diurnal lux distribution.")
+                page.insert_text((50, 95), "Tectonic materiality: local granite, cross-laminated timber, and recycled bronze screen cladding.")
+                page.insert_text((50, 115), "Designed with Swiss 12-column modular grid and baseline rhythm. Approved for tender.")
+            # Vector linework simulating technical plates
+            shape = page.new_shape()
+            shape.draw_rect(fitz.Rect(50, 160, 792, 540))
+            shape.finish(color=(0.3, 0.3, 0.3), width=0.5)
+            shape.commit()
+        doc.save(target_path)
+        doc.close()
+        return target_path
+
     def test_sample_portfolio_audit(self):
-        """Audit an existing real portfolio PDF from the library."""
+        """Audit an architectural portfolio PDF using fast synthetic fixture or local file."""
         sample_pdf = os.path.join(
             "g:\\", "My Drive", "Portfolios", "Palak_Bhattad_MUD_CEPT",
             "Palak_Bhattad_Selected_Works_MUD_CEPT.pdf"
         )
-        if os.path.exists(sample_pdf):
-            result = self.audit_pdf(sample_pdf)
+        # Check if fast local access is available; otherwise use fast synthetic fixture
+        is_fast_local = (
+            os.path.exists(sample_pdf) and
+            os.environ.get("RUN_HEAVY_PORTFOLIO_TEST", "").lower() in ("1", "true", "yes")
+        )
+
+        temp_fixture = None
+        if is_fast_local:
+            target_pdf = sample_pdf
+        else:
+            temp_fixture = self._create_synthetic_portfolio_pdf(page_count=20)
+            target_pdf = temp_fixture
+
+        try:
+            result = self.audit_pdf(target_pdf)
             self.assertNotIn("error", result)
             self.assertIn("filename", result)
             self.assertIn("total_score", result)
@@ -138,6 +214,9 @@ class TestAuditPortfolio(unittest.TestCase):
             self.assertIn("prescribed_remedies", result)
             self.assertGreater(result["total_score"], 0)
             self.assertLessEqual(result["total_score"], 100)
+        finally:
+            if temp_fixture and os.path.exists(temp_fixture):
+                os.remove(temp_fixture)
 
     def test_empty_pdf_handled_gracefully(self):
         """Auditing a 0-byte file returns an error dictionary with zero score."""
@@ -454,6 +533,28 @@ class TestInteriorJoinery(unittest.TestCase):
             if os.path.exists(temp_path):
                 os.remove(temp_path)
 
+    def test_joinery_title_xml_escaping(self):
+        """Verify titles with special characters (<Oak>, &) slice raw string before escaping and produce well-formed XML."""
+        adversarial_titles = [
+            "Custom Millwork <Oak>",
+            "Architectural Woods & Metal",
+            "Bespoke 'Satin' Finishes & \"Joinery\"",
+            "Pavilion > Entrance < Reveal & Trim"
+        ]
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            temp_path = tf.name
+        try:
+            for title in adversarial_titles:
+                self.gen_svg(temp_path, custom_title=title)
+                self.assertTrue(os.path.exists(temp_path))
+                with open(temp_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+                root = ET.fromstring(content)
+                self.assertIsNotNone(root)
+        finally:
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+
 
 class TestGrillMyDesign(unittest.TestCase):
     """Tests the Socratic jury review engine and the 5 critique personas."""
@@ -758,6 +859,103 @@ class TestMCPServerHandlers(unittest.TestCase):
         """Test PMR / egress MCP tool with alias argument names."""
         res = self.server.handle_call_tool("validate_pmr_and_egress", {"door_clear_mm": 900, "vestibule_dia": 1550})
         self.assertEqual(res["compliance_status"], "COMPLIANT")
+
+    def test_milestone3_new_tools_registered(self):
+        """Verify all new Milestone 3 MCP tools are registered in server.TOOLS."""
+        tool_names = [t["name"] for t in self.server.TOOLS]
+        expected = [
+            "model_spatial_journey", "audit_courtyard_shading",
+            "generate_spatial_stitch_spread", "audit_spatial_spread",
+            "extract_design_system_pdf", "compile_publication_monograph"
+        ]
+        for t in expected:
+            self.assertIn(t, tool_names)
+
+    def test_handle_model_spatial_journey(self):
+        """Test model_spatial_journey tool endpoint with custom zones."""
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            out_file = tf.name
+        try:
+            res = self.server.handle_call_tool("model_spatial_journey", {
+                "output_svg": out_file,
+                "zones": [
+                    {"name": "Forecourt", "lux": 75000, "dba": 62, "height": 0.0, "material": "Porphyry"},
+                    {"name": "Vestibule", "lux": 1200, "dba": 45, "height": 3.4, "material": "Oak Board"},
+                    {"name": "Inner Chamber", "lux": 80, "dba": 22, "height": 8.0, "material": "Earthen Render"}
+                ]
+            })
+            self.assertEqual(res.get("status"), "success")
+            self.assertTrue(os.path.exists(out_file))
+            self.assertIn("verdict", res)
+            self.assertIn("transitions", res)
+        finally:
+            if os.path.exists(out_file):
+                os.remove(out_file)
+
+    def test_handle_audit_courtyard_shading(self):
+        """Test audit_courtyard_shading tool endpoint for self-shading adequacy."""
+        res_pass = self.server.handle_call_tool("audit_courtyard_shading", {
+            "courtyard_height": 16.0,
+            "courtyard_width": 8.0
+        })
+        self.assertEqual(res_pass["verdict"], "PASS")
+        self.assertEqual(res_pass["aspect_ratio"], 2.0)
+        self.assertTrue(res_pass["self_shading_verified"])
+
+        res_fail = self.server.handle_call_tool("audit_courtyard_shading", {
+            "courtyard_height": 6.0,
+            "courtyard_width": 12.0
+        })
+        self.assertEqual(res_fail["verdict"], "INSUFFICIENT_SHADING_DEEPEN_CARVE")
+        self.assertFalse(res_fail["self_shading_verified"])
+
+    def test_handle_generate_spatial_stitch_spread_and_audit(self):
+        """Test generate_spatial_stitch_spread and audit_spatial_spread endpoints."""
+        with tempfile.NamedTemporaryFile(suffix=".svg", delete=False) as tf:
+            out_file = tf.name
+        try:
+            gen_res = self.server.handle_call_tool("generate_spatial_stitch_spread", {
+                "archetype": "THE_CONSTRUCTIVE_PROOF",
+                "format": "LANDSCAPE_16_9",
+                "title": "Strasbourg Atelier Tectonic Plate",
+                "output_svg": out_file
+            })
+            self.assertEqual(gen_res["status"], "success")
+            self.assertTrue(os.path.exists(out_file))
+
+            aud_res = self.server.handle_call_tool("audit_spatial_spread", {
+                "svg_path": out_file
+            })
+            self.assertIn("total_score", aud_res)
+            self.assertGreaterEqual(aud_res["total_score"], 80)
+        finally:
+            if os.path.exists(out_file):
+                os.remove(out_file)
+
+    def test_handle_extract_design_system_pdf(self):
+        """Test extract_design_system_pdf tool endpoint."""
+        test_pdf = os.path.join(self.server.SKILLS_DIR, "editorial-studio", "test_qc.pdf")
+        if os.path.exists(test_pdf):
+            res = self.server.handle_call_tool("extract_design_system_pdf", {
+                "pdf_path": test_pdf,
+                "max_pages": 3
+            })
+            self.assertEqual(res["status"], "success")
+            self.assertIn("design_system", res)
+            self.assertIn("title", res)
+        else:
+            res = self.server.handle_call_tool("extract_design_system_pdf", {
+                "pdf_path": "nonexistent_file.pdf"
+            })
+            self.assertIn("error", res)
+
+    def test_handle_compile_publication_monograph(self):
+        """Test compile_publication_monograph tool endpoint error and success handling."""
+        res_err = self.server.handle_call_tool("compile_publication_monograph", {
+            "input_path": "nonexistent_source_doc.typ"
+        })
+        self.assertEqual(res_err.get("status"), "error")
+        self.assertIn("error", res_err)
 
 
 if __name__ == "__main__":

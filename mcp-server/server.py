@@ -213,9 +213,87 @@ TOOLS = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "file_path": {"type": "string", "description": "Path to PDF publication file to preflight."}
+                "file_path": {"type": "string", "description": "Path to PDF publication file to preflight."},
+                "pdf_path": {"type": "string", "description": "Alternative path parameter to PDF publication file."}
             },
-            "required": ["file_path"]
+            "required": []
+        }
+    },
+    {
+        "name": "model_spatial_journey",
+        "description": "Models and evaluates a multi-threshold phenomenological spatial journey (luminance lux gradients, acoustic attenuation, volumetric compression) across custom zones or named sequences.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "sequence_name": {"type": "string", "description": "Optional preset sequence name or colon-delimited sequence string."},
+                "zones": {"type": "array", "description": "List of spatial zone objects or colon-delimited zone strings ('Name:lux:dba:height_m:material:title')."},
+                "output_svg": {"type": "string", "description": "Target SVG output file path."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "audit_courtyard_shading",
+        "description": "Audits subtractive courtyard stereotomy for self-shading adequacy against the desert standard (H/W >= 1.50).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courtyard_height": {"type": "number", "description": "Courtyard wall height in meters."},
+                "courtyard_width": {"type": "number", "description": "Courtyard width in meters."},
+                "solar_altitude_deg": {"type": "number", "description": "Optional solar altitude angle in degrees (default: 65.0)."}
+            },
+            "required": ["courtyard_height", "courtyard_width"]
+        }
+    },
+    {
+        "name": "generate_spatial_stitch_spread",
+        "description": "Generates a publication-grade vector SVG monograph spread from 10 architectural archetypes using the Spatial Stitch generative design engine.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "archetype": {"type": "string", "description": "Layout archetype name (e.g. 'THE_CONSTRUCTIVE_PROOF', 'THE_PASSPORT', 'THE_5_ACT_PORTFOLIO', 'THE_MONOGRAPH_SPREAD')."},
+                "format": {"type": "string", "enum": ["LANDSCAPE_16_9", "SPREAD_A4_LANDSCAPE", "SINGLE_A4_PORTRAIT", "SQUARE_1_1"], "description": "Canvas format."},
+                "title": {"type": "string", "description": "Project title."},
+                "output_svg": {"type": "string", "description": "Target output file path (.svg)."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "audit_spatial_spread",
+        "description": "Runs the Sara Bensalem 100-Point Anti-Render-Trap Audit on a generated or existing architectural spread SVG.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "svg_path": {"type": "string", "description": "Absolute path to the SVG spread file to audit."},
+                "svg_file": {"type": "string", "description": "Alternative path parameter to SVG spread file."}
+            },
+            "required": []
+        }
+    },
+    {
+        "name": "extract_design_system_pdf",
+        "description": "Extracts typographic scales, column grids, margins, and color palettes from any architectural portfolio or monograph PDF to produce a Google Stitch design-system.json structure.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "pdf_path": {"type": "string", "description": "Path to PDF monograph, portfolio, or brand guide."},
+                "max_pages": {"type": "integer", "description": "Maximum pages to sample for typographic inspection (default: 10)."}
+            },
+            "required": ["pdf_path"]
+        }
+    },
+    {
+        "name": "compile_publication_monograph",
+        "description": "Compiles a high-speed publication monograph via dual-engine Typst or W3C CSS Paged.js web-to-print pipelines.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "input_path": {"type": "string", "description": "Path to input document (.typ, .html, or manifest.json)."},
+                "output_path": {"type": "string", "description": "Destination path for compiled PDF (optional)."},
+                "engine": {"type": "string", "enum": ["typst", "pagedjs", "both", "auto"], "description": "Compilation engine (default: 'auto')."}
+            },
+            "required": ["input_path"]
         }
     }
 ]
@@ -233,12 +311,12 @@ def handle_list_skills():
     return {
         "studio": 'Sara Bensalem Studio • Strasbourg Atelier [48°35\'05"N 07°45\'02"E]',
         "skills": [
-            {"name": "portfolio-monograph", "role": "Multi-spread Swiss monograph publishing, 19 curated looks & Project Passports"},
+            {"name": "portfolio-monograph", "alias": "sara-bensalem-portfolio-design", "role": "Multi-spread Swiss monograph publishing, 19 curated looks & Project Passports"},
             {"name": "constructive-detail", "role": "1:20 buildable wall sections across 6 assemblies & Glaser U-values (DIN 4108-3)"},
-            {"name": "grill-my-design", "role": "Socratic architectural review jury, 22 render traps & multi-round defense evaluation"},
             {"name": "spatial-anatomy", "role": "1:100 regulatory plans, circulation vectors, 1500mm PMR wheelchair turning & Space for Hesitation"},
             {"name": "bioclimatic-flows", "role": "Solar geometry vectors, shading overhang depth & stack ventilation draft across 5 climate zones"},
             {"name": "interior-joinery", "role": "1:5 custom millwork reveals, shadow reveals (joint creux) & concealed hardware tolerances"},
+            {"name": "grill-my-design", "role": "Socratic architectural review jury, 22 render traps & multi-round defense evaluation"},
             {"name": "spatial-choreography", "role": "Phenomenological spatial journeys, luminance lux gradients, acoustic sanctuary & subtractive courtyards"},
             {"name": "spatial-stitch", "role": "Generative Swiss 16:9 monograph vector spreads, layout archetypes & 100-point rubric audits"},
             {"name": "design-md-extractor", "role": "Design token reverse engineering from images/drawings, palette extraction & WCAG contrast audit"},
@@ -414,21 +492,55 @@ def handle_call_tool(tool_name, arguments):
             if m in k or m in v.get("name", "").lower():
                 return v
         return {"error": f"Movement '{m}' not found.", "available_movements": list(langs.keys())}
-    elif tool_name == "generate_spatial_journey":
+    elif tool_name in ("generate_spatial_journey", "model_spatial_journey"):
         sys.path.insert(0, os.path.join(SKILLS_DIR, "spatial-choreography", "scripts"))
-        from spatial_journey_matrix import DEFAULT_ZONES, parse_sequence_arg, evaluate_journey, generate_journey_svg
-        seq_str = arguments.get("sequence")
-        out = arguments.get("output_path", "spatial_journey.svg")
-        zones = parse_sequence_arg(seq_str) if seq_str else DEFAULT_ZONES
+        from spatial_journey_matrix import DEFAULT_ZONES, parse_sequence_arg, evaluate_journey, generate_journey_svg, SpatialZone
+        seq_str = arguments.get("sequence_name") or arguments.get("sequence") or arguments.get("preset")
+        out = arguments.get("output_svg") or arguments.get("output_path", "spatial_journey.svg")
+        zones_arg = arguments.get("zones")
+        zones = None
+        if isinstance(zones_arg, list):
+            zones = []
+            for z in zones_arg:
+                if isinstance(z, dict):
+                    zones.append(SpatialZone(
+                        name=z.get("name", "Zone"),
+                        phenomenological_title=z.get("phenomenological_title", z.get("title", "Threshold")),
+                        target_lux=float(z.get("target_lux", z.get("lux", 300))),
+                        target_dba=float(z.get("target_dba", z.get("dba", 35))),
+                        ceiling_height_m=float(z.get("ceiling_height_m", z.get("height", 3.5))),
+                        width_m=float(z.get("width_m", z.get("width", 3.0))),
+                        material_finish=z.get("material_finish", z.get("material", "Hemp-Lime Plaster")),
+                        nrc_rating=float(z.get("nrc_rating", 0.35))
+                    ))
+                elif isinstance(z, str):
+                    parsed = parse_sequence_arg(z)
+                    zones.extend(parsed)
+        elif isinstance(seq_str, str) and ":" in seq_str:
+            zones = parse_sequence_arg(seq_str)
+
+        if not zones:
+            zones = DEFAULT_ZONES
         out_svg, evaluation = generate_journey_svg(zones, output_path=out)
         return {
             "status": "success",
             "file": out_svg,
+            "output_svg": out_svg,
             "verdict": evaluation["verdict"],
             "zones_count": len(zones),
-            "warnings": evaluation.get("warnings", [])
+            "warnings": evaluation.get("warnings", []),
+            "transitions": evaluation.get("transitions", []),
+            "evaluation": evaluation
         }
-    elif tool_name == "generate_monograph_spread":
+    elif tool_name == "audit_courtyard_shading":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "spatial-choreography", "scripts"))
+        from spatial_journey_matrix import audit_courtyard
+        h = float(arguments.get("courtyard_height") or arguments.get("height_m") or 12.0)
+        w = float(arguments.get("courtyard_width") or arguments.get("width_m") or 6.0)
+        sol = float(arguments.get("solar_altitude_deg") or arguments.get("solar_altitude") or 65.0)
+        res = audit_courtyard(height_m=h, width_m=w, solar_altitude_deg=sol)
+        return res
+    elif tool_name in ("generate_spatial_stitch_spread", "generate_monograph_spread"):
         stitch_dir = os.path.join(SKILLS_DIR, "spatial-stitch", "engine")
         if "models" in sys.modules:
             mod_file = getattr(sys.modules["models"], "__file__", "") or ""
@@ -442,7 +554,7 @@ def handle_call_tool(tool_name, arguments):
         arch_str = arguments.get("archetype", "THE_CONSTRUCTIVE_PROOF")
         fmt_str = arguments.get("format", "LANDSCAPE_16_9")
         title = arguments.get("title", "Project Monograph")
-        out = arguments.get("output_path", "monograph_spread.svg")
+        out = arguments.get("output_svg") or arguments.get("output_path", "monograph_spread.svg")
         generator = SpreadGenerator()
         archetype = getattr(LayoutArchetype, arch_str, LayoutArchetype.THE_CONSTRUCTIVE_PROOF)
         fmt = getattr(CanvasFormat, fmt_str, CanvasFormat.LANDSCAPE_16_9)
@@ -459,8 +571,8 @@ def handle_call_tool(tool_name, arguments):
             os.makedirs(out_dir, exist_ok=True)
         with open(out, "w", encoding="utf-8") as f:
             f.write(spread.svg_content)
-        return {"status": "success", "file": out, "archetype": arch_str, "format": fmt_str, "title": title}
-    elif tool_name == "audit_monograph_spread":
+        return {"status": "success", "file": out, "output_svg": out, "archetype": arch_str, "format": fmt_str, "title": title}
+    elif tool_name in ("audit_spatial_spread", "audit_monograph_spread"):
         stitch_dir = os.path.join(SKILLS_DIR, "spatial-stitch", "engine")
         if "models" in sys.modules:
             mod_file = getattr(sys.modules["models"], "__file__", "") or ""
@@ -471,7 +583,9 @@ def handle_call_tool(tool_name, arguments):
         sys.path.insert(0, stitch_dir)
         from auditor import PortfolioAuditor
         from models import SpreadInstance, LayoutArchetype, CanvasFormat
-        svg_file = arguments.get("svg_file", "")
+        svg_file = arguments.get("svg_path") or arguments.get("svg_file", "")
+        if not os.path.exists(svg_file):
+            return {"error": f"SVG file not found: {svg_file}", "total_score": 0}
         with open(svg_file, "r", encoding="utf-8") as f:
             svg_content = f.read()
         spread = SpreadInstance(
@@ -487,6 +601,7 @@ def handle_call_tool(tool_name, arguments):
         audit = auditor.audit(spread)
         return {
             "file": svg_file,
+            "svg_path": svg_file,
             "total_score": audit.total_score,
             "passed_checks": audit.passed_checks,
             "critical_failures": audit.critical_failures,
@@ -496,6 +611,34 @@ def handle_call_tool(tool_name, arguments):
                 for c in audit.category_scores
             ]
         }
+    elif tool_name == "extract_design_system_pdf":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "design-md-extractor", "scripts"))
+        from extract_from_pdf import extract_pdf_design
+        pdf_path = arguments.get("pdf_path", "")
+        max_p = int(arguments.get("max_pages", 10))
+        try:
+            res = extract_pdf_design(pdf_path, max_pages=max_p)
+            return {
+                "status": "success",
+                "pdf_path": pdf_path,
+                "title": res.get("title", ""),
+                "design_system": res.get("stitch_ds", {}),
+                "stitch_ds": res.get("stitch_ds", {}),
+                "design_md": res.get("design_md", "")
+            }
+        except Exception as e:
+            return {"error": str(e), "pdf_path": pdf_path}
+    elif tool_name == "compile_publication_monograph":
+        sys.path.insert(0, os.path.join(SKILLS_DIR, "editorial-studio"))
+        from engine.compile import compile_document
+        in_path = arguments.get("input_path", "")
+        out_path = arguments.get("output_path")
+        eng = arguments.get("engine", "auto")
+        try:
+            res = compile_document(input_path=in_path, output_path=out_path, engine=eng)
+            return res
+        except Exception as e:
+            return {"status": "error", "error": str(e), "input_path": in_path}
     elif tool_name == "extract_design_tokens":
         sys.path.insert(0, os.path.join(SKILLS_DIR, "design-md-extractor", "scripts"))
         from extract_from_image import extract_palette_from_image
@@ -505,9 +648,12 @@ def handle_call_tool(tool_name, arguments):
     elif tool_name == "audit_publication_preflight":
         sys.path.insert(0, os.path.join(SKILLS_DIR, "editorial-studio", "preflight"))
         from audit_publication import audit_pdf
-        pdf_path = arguments.get("file_path", "")
-        res = audit_pdf(pdf_path)
-        return res
+        pdf_path = arguments.get("pdf_path") or arguments.get("file_path", "")
+        try:
+            res = audit_pdf(pdf_path)
+            return res
+        except Exception as e:
+            return {"status": "error", "error": str(e), "file_path": pdf_path}
     else:
         return {"error": f"Tool '{tool_name}' not found."}
 
