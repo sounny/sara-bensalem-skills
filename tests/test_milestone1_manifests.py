@@ -113,11 +113,7 @@ class TestManifestSyntaxAndSchemas(unittest.TestCase):
         self.assertIsInstance(first["files"], list)
         for f in first["files"]:
             fpath = f.get("path")
-            # In CI or local test environments, the absolute path might not match the original absolute path
-            # But the file is in the repo under docs/
-            filename = fpath.split("\\")[-1]
-            local_path = os.path.join(os.path.dirname(__file__), "..", "docs", filename)
-            self.assertTrue(os.path.exists(local_path), f"Referenced research file does not exist locally: {local_path}")
+            self.assertTrue(os.path.exists(fpath), f"Referenced research file does not exist: {fpath}")
 
     def test_gemini_manifest_contains_all_10_skills(self):
         """Verify gemini_manifest.json registers all 10 canonical architectural skills."""
