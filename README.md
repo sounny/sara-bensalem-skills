@@ -401,7 +401,13 @@ The studio includes a high-performance Model Context Protocol (MCP) server provi
 
 ### LLM Agent Configuration
 
+Get the code:
+```bash
+git clone https://github.com/sounny/sara-bensalem-skills.git
+```
+
 #### Claude Desktop (`claude_desktop_config.json`)
+Replace the example path with the folder where you cloned the repo; the server file is `mcp-server/server.py`.
 ```json
 {
   "mcpServers": {
